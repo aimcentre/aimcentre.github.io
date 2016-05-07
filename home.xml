@@ -14,6 +14,7 @@
 		<script src="http://abvasvmc.github.io/js/bootstrap.min.js"></script>
 		<script src="http://abvasvmc.github.io/js/moment.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script src="http://abvasvmc.github.io/home.js"></script>
 	  
 		<script type="text/javascript">
 			//Site Specific Configuration
