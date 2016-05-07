@@ -128,7 +128,7 @@ function showAnnouncements(paregnPageId, displayDivId, panelHeading, cacheSeed){
 //A utility function that shows images in a given page in the carousel
 function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
-	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToPage, "&t=", cacheSeed);
+	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToDataPage, "&t=", cacheSeed);
 
 	var feed = new google.feeds.Feed(feed_url);
 	feed.load(function(result) {
