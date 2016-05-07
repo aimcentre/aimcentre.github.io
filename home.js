@@ -176,6 +176,8 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
 				}).get();	
 
 				for(var i=0; i<images.length; i = i+1){
+					var img = images[i];
+					
 					//adding indicator
 					var li = document.createElement("li");
 					$(li).attr("data-target", displayDivId);
