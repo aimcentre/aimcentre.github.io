@@ -175,7 +175,7 @@
 			function initialize(feedUrlSeed) {
 
 				//Loading carousel images
-				showCarouselImages("/carousel-data", "#myCarousel", feedUrlSeed)
+				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed)
 
 				//Initializing Carousel dimensions
 				//var carousel_width = $("#myCarousel").width();
