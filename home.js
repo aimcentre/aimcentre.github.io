@@ -177,7 +177,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
 
 				for(var i=0; i<images.length; i = i+1){
 					var img = images[i];
-					
+
 					//adding indicator
 					var li = document.createElement("li");
 					$(li).attr("data-target", displayDivId);
@@ -190,7 +190,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
 
 					//adding image
 					var img_div = document.createElement("div");
-					img_div.css("background-image", "url('".concat(img, "')"));
+					$(img_div).css("background-image", "url('".concat(img, "')"));
 					if(i == 0){
 						$(img_div).addClass("active");
 					}
