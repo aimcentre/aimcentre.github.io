@@ -191,6 +191,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
 					//adding image
 					var img_div = document.createElement("div");
 					$(img_div).css("background-image", "url('".concat(img, "')"));
+					$(img_div).addClass("item");
 					if(i == 0){
 						$(img_div).addClass("active");
 					}
