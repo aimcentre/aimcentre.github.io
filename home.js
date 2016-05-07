@@ -175,8 +175,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
 					return $(this).attr('src')
 				}).get();	
 
-				var i = 0;
-				foreach(var img in images){
+				for(var i=0; i<images.length; i = i+1){
 					//adding indicator
 					var li = document.createElement("li");
 					$(li).attr("data-target", displayDivId);
@@ -195,7 +194,6 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
 					}
 					carousel_inner.appendChild(img_div);
 
-					i = i + 1;
 				}				
 		}
 			gadgets.window.adjustHeight();
