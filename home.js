@@ -126,11 +126,19 @@ function showAnnouncements(paregnPageId, displayDivId, panelHeading, cacheSeed){
 
 
 //A utility function that shows images in a given page in the carousel
-function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
+function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio){
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
 	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToDataPage, "&t=", cacheSeed);
-
 	var feed = new google.feeds.Feed(feed_url);
+	
+	//setting carousel dimentions
+	var display_div_id = "#".concat(displayDivId);
+	var carousel_width = $(display_div_id).width();
+	var carousel_height = Math.round(aspectRatio * carousel_width);
+	$(display_div_id).height(carousel_height);
+	gadgets.window.adjustHeight();
+	
+	//Loading carousel images from the data page
 	feed.load(function(result) {
 		if (!result.error) {
 			if(result.feed.entries.length > 0){

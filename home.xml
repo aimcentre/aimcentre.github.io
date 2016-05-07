@@ -8,8 +8,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 		<link rel="stylesheet" href="http://abvasvmc.github.io/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://abvasvmc.github.io/home.css">
+		
 		<script src="http://abvasvmc.github.io/js/jquery.min.js"></script>
 		<script src="http://abvasvmc.github.io/js/bootstrap.min.js"></script>
 		<script src="http://abvasvmc.github.io/js/moment.js"></script>
@@ -23,138 +24,10 @@
 			var siteName = "www3";
 		</script>
 
-		<style>
-			.container{
-			    width:100%;
-				padding:0;
-				margin-top:0;
-				margin-left:0; 
-				margin-right:0;
-				margin-bottom:10px;
-				top: -10px;
-		  	}
-		  
-			.page-title{
-				font:normal 26px 'Open Sans',sans-serif;
-				color:#66002e!important;
-			}
-			  
-			.feed-panel-heading{
-				font: 600 19px "Open Sans",sans-serif;
-				color: #66002e!important;
-				margin-top:0;
-				padding-top:0;
-			}
-
-			.feed-item{
-				margin-bottom:15px;
-			}
-			  
-			.feed-item a, .feed-item a:visited{
-				color: #298cca!important;
-			}
-			  
-			.feed-item-title{
-				color:#298cca;
-				text-decoration:none;
-				font-size: 14px;
-				font-weight: bold;
-			}
-			  
-			.feed-item-title:visited{
-				color:#298cca;
-			}
-			  
-			.feed-item-thumb{
-			  	width: 90px;
-			  	height: 75px;
-			  	background-size: contain;
-			  	background-repeat: no-repeat;
-			  	background-position: center;
-			  	float: left;
-			  	display: block;
-			  	margin-right: 7px;
-			  	background-color: #695E4A;
-			}
-
-			.feed-item-posted-date{
-			  	font-size: 0.8em;
-			  	font-style:italic;
-			}
-
-			#myCarousel{
-				overflow: hidden;
-				position: relative;
-				width: 100%;
-			}
-			  
-			#myCarousel > .carousel-inner{
-				position: relative;
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				right: 0;
-				top: 0;
-			}
-			  
-			#myCarousel > .carousel-inner > .item{
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				right: 0;
-				top: 0;
-				background-repeat:no-repeat;
-				background-position: center; 
-				background-size:cover;
-			}
-
-			#sites-searchbox-form{
-				display:none;
-			}
-		</style>
-		
 		<div class="row">
 			<div class="col-md-6">
 				<div class="container">
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
-						<!-- Indicators -->
-						<!--
-						<ol class="carousel-indicators">
-						  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						  <li data-target="#myCarousel" data-slide-to="1"></li>
-						  <li data-target="#myCarousel" data-slide-to="2"></li>
-						  <li data-target="#myCarousel" data-slide-to="3"></li>
-						</ol>
-						-->
-
-						<!-- Wrapper for slides -->
-						<!--
-						<div class="carousel-inner" role="listbox">
-						  <div class="item active" style="background-image:url('https://googledrive.com/host/0B6_K8wh5BIw4NFplNHE1Tk9oVUU/img1.jpg')">
-						  </div>
-
-						  <div class="item" style="background-image:url('https://googledrive.com/host/0B6_K8wh5BIw4NFplNHE1Tk9oVUU/img2.jpg')">
-						  </div>
-
-						  <div class="item" style="background-image:url('https://googledrive.com/host/0B6_K8wh5BIw4NFplNHE1Tk9oVUU/img3.jpg')">
-						  </div>
-
-						  <div class="item" style="background-image:url('https://googledrive.com/host/0B6_K8wh5BIw4NFplNHE1Tk9oVUU/img2.jpg')">
-						  </div>
-						</div>
-						-->
-
-						<!-- Left and right controls -->
-						<!--
-						<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-						  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						  <span class="sr-only">Previous</span>
-						</a>
-						<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-						  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-						  <span class="sr-only">Next</span>
-						</a>
-						-->
 					</div>
 				</div>
 				<div id="myWelcome">
@@ -176,16 +49,12 @@
 			//Initialize feed loader
 			google.load("feeds", "1");
 			
-			
 			//Page initialization routine. This is called by google.setOnLoadCallback callback
 			function initialize(feedUrlSeed) {
 
 				//Loading carousel images
-				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed)
-				var carousel_width = $("#myCarousel").width();
-				var carousel_height = Math.round(9 * carousel_width / 16);
-				$("#myCarousel").height(carousel_height);
-				gadgets.window.adjustHeight();
+				var aspectRatio = 9.0/16;
+				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
 
 				//Loading welcome message from the Welcome page
 				showPageContents("/welcome", "myWelcome", feedUrlSeed);
@@ -221,8 +90,6 @@
 				*/
 				
 				initialize(Math.floor((Math.random() * 100000)));
-				//google.setOnLoadCallback(initialize);	
-
 			});			
 			
 			gadgets.util.registerOnLoadHandler(function() { 
