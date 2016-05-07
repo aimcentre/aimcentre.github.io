@@ -199,7 +199,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
 					carousel_inner.appendChild(img_div);
 
 				}				
-		}
+			}
 			gadgets.window.adjustHeight();
 		}
 	});			
