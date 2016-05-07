@@ -266,13 +266,13 @@
 				});			
 			} //End: function showAnnouncements(paregnPageId, displayDivId)
 			
-			//A utility function which shows contents of a given page in a specified display div
-			function showPageContents(pathToPage, displayDivId, cacheSeed){
+
+			//A utility function that shows images in a given page in the carousel
+			function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
 				var feed_url_base = "https://sites.google.com/feeds/content/"; 
 				var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToPage, "&t=", cacheSeed);
 
 				var feed = new google.feeds.Feed(feed_url);
-				feed.includeHistoricalEntries();
 				feed.load(function(result) {
 					if (!result.error) {
 						if(result.feed.entries.length > 0){
@@ -292,6 +292,7 @@
 					}
 				});			
 			} //End: function showPageContents(paregnPageId, displayDivId)
+
 			
 			//Page initialization routine. This is called by google.setOnLoadCallback callback
 			function initialize(feedUrlSeed) {
