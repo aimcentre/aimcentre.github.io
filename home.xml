@@ -182,12 +182,10 @@
 
 				//Loading carousel images
 				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed)
-
-				//Initializing Carousel dimensions
-				//var carousel_width = $("#myCarousel").width();
-				//var carousel_height = Math.round(9 * carousel_width / 16);
-				//$("#myCarousel").height(carousel_height);
-				//gadgets.window.adjustHeight();
+				var carousel_width = $("#myCarousel").width();
+				var carousel_height = Math.round(9 * carousel_width / 16);
+				$("#myCarousel").height(carousel_height);
+				gadgets.window.adjustHeight();
 
 				//Loading welcome message from the Welcome page
 				showPageContents("/welcome", "myWelcome", feedUrlSeed);
