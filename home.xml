@@ -170,51 +170,18 @@
 			//Initialize feed loader
 			google.load("feeds", "1");
 			
-			//function to convert date into a string
-			//Intl.DateTimeFormat does a nice job but it fails for Safari 
-			function Date2Str(date){
-				var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",  "November", "December"];
-				
-			}
-			
-			
-			
-
-			//A utility function that shows images in a given page in the carousel
-			function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
-				var feed_url_base = "https://sites.google.com/feeds/content/"; 
-				var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToPage, "&t=", cacheSeed);
-
-				var feed = new google.feeds.Feed(feed_url);
-				feed.load(function(result) {
-					if (!result.error) {
-						if(result.feed.entries.length > 0){
-							var entry = result.feed.entries[0];
-							var container = document.getElementById(displayDivId);
-							
-							var h = document.createElement("h3");
-							h.className = "page-title";
-							h.innerHTML = entry.title;
-							container.appendChild(h);
-							
-							var content = document.createElement("div");
-							content.innerHTML = entry.content;
-							container.appendChild(content);
-						}
-						gadgets.window.adjustHeight();
-					}
-				});			
-			} //End: function showPageContents(paregnPageId, displayDivId)
-
 			
 			//Page initialization routine. This is called by google.setOnLoadCallback callback
 			function initialize(feedUrlSeed) {
 
+				//Loading carousel images
+				showCarouselImages("/carousel-data", "#myCarousel", feedUrlSeed)
+
 				//Initializing Carousel dimensions
-				var carousel_width = $("#myCarousel").width();
-				var carousel_height = Math.round(9 * carousel_width / 16);
-				$("#myCarousel").height(carousel_height);
-				gadgets.window.adjustHeight();
+				//var carousel_width = $("#myCarousel").width();
+				//var carousel_height = Math.round(9 * carousel_width / 16);
+				//$("#myCarousel").height(carousel_height);
+				//gadgets.window.adjustHeight();
 
 				//Loading welcome message from the Welcome page
 				showPageContents("/welcome", "myWelcome", feedUrlSeed);
@@ -228,6 +195,7 @@
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
 			
+
 			//Calling initialization routing on page loading
 			$(document).ready(function () {
 				/*
