@@ -7,9 +7,19 @@
      <![CDATA[
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://googledrive.com/host/0B6_K8wh5BIw4UTA3UjZDWGdxVVU/bootstrap.min.css">
+
+
+		<link rel="stylesheet" href="http://abvasvmc.github.io/css/bootstrap.min.css">
 		<script src="https://googledrive.com/host/0B6_K8wh5BIw4UTA3UjZDWGdxVVU/jquery.min.js"></script>
-		<script src="https://googledrive.com/host/0B6_K8wh5BIw4UTA3UjZDWGdxVVU/bootstrap.min.js"></script>
+		<script src="http://abvasvmc.github.io/js/bootstrap.min.js"></script>
+
+
+		<!-- <link rel="stylesheet" href="https://googledrive.com/host/0B6_K8wh5BIw4UTA3UjZDWGdxVVU/bootstrap.min.css"> -->
+
+		<script src="https://googledrive.com/host/0B6_K8wh5BIw4UTA3UjZDWGdxVVU/jquery.min.js"></script>
+		
+		<!-- <script src="https://googledrive.com/host/0B6_K8wh5BIw4UTA3UjZDWGdxVVU/bootstrap.min.js"></script> -->
+		
 		<script src="https://googledrive.com/host/0B6_K8wh5BIw4UTA3UjZDWGdxVVU/moment.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	  
