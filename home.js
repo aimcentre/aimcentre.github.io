@@ -145,6 +145,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed){
 				//Creating wrapper for slides
 				var carousel_inner = document.createElement("div");
 				$(carousel_inner).attr("role", "listbox");
+				$(carousel_inner).addClass("carousel-inner");
 				container.appendChild(carousel_inner);
 
 				//Creating left control
