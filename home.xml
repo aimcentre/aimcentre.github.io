@@ -115,7 +115,12 @@
 		        	prevWindowWidth = w;					  
 		        }
 				$( "#log" ).append( "<div>Handler for .resize() called.</div>" );
-		    });		   
+		    });	
+
+		    //On window back button
+			$(window).on('popstate', function() {
+			      gadgets.window.adjustHeight();
+			    });		    	   
 			
 		</script>
      ]]>
