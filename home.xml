@@ -122,6 +122,11 @@
 			      gadgets.window.adjustHeight();
 			    });		    	   
 			
+		    //On window forward button
+			$(window).on('pushstate', function() {
+			      gadgets.window.adjustHeight();
+			    });		    	   
+
 		</script>
      ]]>
   </Content> 
