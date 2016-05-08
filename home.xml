@@ -117,16 +117,11 @@
 				$( "#log" ).append( "<div>Handler for .resize() called.</div>" );
 		    });	
 
-		    //On window back button
-			$(window).on('popstate', function() {
-			      gadgets.window.adjustHeight();
-			    });		    	   
+		    //On window back/forward buttons
+		    $(window).bind('statechange',function(){
+		    	gadgets.window.adjustHeight();
+			});
 			
-		    //On window forward button
-			$(window).on('pushstate', function() {
-			      gadgets.window.adjustHeight();
-			    });		    	   
-
 		</script>
      ]]>
   </Content> 
