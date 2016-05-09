@@ -116,11 +116,10 @@
 		        	
 		        	prevWindowWidth = w;					  
 		        }
-				$( "#log" ).append( "<div>Handler for .resize() called.</div>" );
 		    });	
 
 		    //On window back buttons
-		    $(window).on('hashchange', function() {
+		    $(window).on('hashchange', function(e) {
 			    console.log("hashchanged");
 			    gadgets.window.adjustHeight();
 
