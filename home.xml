@@ -120,10 +120,10 @@
 		    });	
 
 		    //On window back buttons
-		    $(window).bind('pushstate',function(){
+		    window.onhashchange = function() {
 		    	alert("statechanges");
 		    	gadgets.window.adjustHeight();
-			});
+			};
 			
 		</script>
      ]]>
