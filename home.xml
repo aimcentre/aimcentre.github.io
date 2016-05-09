@@ -121,6 +121,7 @@
 
 		    //On window back/forward buttons
 		    $(window).bind('statechange',function(){
+		    	alert("statechanges");
 		    	gadgets.window.adjustHeight();
 			});
 			
