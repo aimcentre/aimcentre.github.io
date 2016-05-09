@@ -124,7 +124,7 @@
 			    console.log("hashchanged");
 			    gadgets.window.adjustHeight();
 
-			});
+			}).trigger('hashchange');
 			
 		</script>
      ]]>
