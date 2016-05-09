@@ -118,10 +118,7 @@
 		        }
 		    });	
 
-		    //On window back buttons
-		    $(window).on("navigate", function (event, data) {
-		    	alert('test 2');
-			});
+		    alert('test 2');
 			
 		</script>
      ]]>
