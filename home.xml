@@ -93,7 +93,7 @@
 				
 				initialize(Math.floor((Math.random() * 100000)));
 
-				$('#sites-searchbox-form', window.parent.document).hide();
+				$("#sites-chrome-header-wrapper", window.parent.document).hide();
 
 			});			
 			
