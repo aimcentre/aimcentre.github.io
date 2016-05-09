@@ -119,8 +119,8 @@
 				$( "#log" ).append( "<div>Handler for .resize() called.</div>" );
 		    });	
 
-		    //On window back/forward buttons
-		    $(window).bind('statechange',function(){
+		    //On window back buttons
+		    $(window).bind('pushstate',function(){
 		    	alert("statechanges");
 		    	gadgets.window.adjustHeight();
 			});
