@@ -119,8 +119,8 @@
 		    });	
 
 		    //On window back buttons
-		    $(window).on('hashchange', function(e) {
-			    console.log("hashchanged");
+		    $(window).on('popstate', function () {
+			    alert("popstate")
 			    gadgets.window.adjustHeight();
 
 			}).trigger('hashchange');
