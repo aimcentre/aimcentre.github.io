@@ -121,7 +121,7 @@
 
 		    //On window back buttons
 		    $(window).on('hashchange', function() {
-			    alert("statechanges");
+			    console.log("hashchanged");
 			    gadgets.window.adjustHeight();
 
 			});
