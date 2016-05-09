@@ -92,6 +92,14 @@
 				*/
 				
 				initialize(Math.floor((Math.random() * 100000)));
+
+			    //On window back buttons
+			    $(window).on('popstate', function () {
+				    alert("popstate")
+				    gadgets.window.adjustHeight();
+
+				}).trigger('hashchange');
+				
 			});			
 			
 			gadgets.util.registerOnLoadHandler(function() { 
@@ -117,13 +125,6 @@
 		        	prevWindowWidth = w;					  
 		        }
 		    });	
-
-		    //On window back buttons
-		    $(window).on('popstate', function () {
-			    alert("popstate")
-			    gadgets.window.adjustHeight();
-
-			}).trigger('hashchange');
 			
 		</script>
      ]]>
