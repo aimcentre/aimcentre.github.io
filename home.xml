@@ -92,6 +92,8 @@
 				*/
 				
 				initialize(Math.floor((Math.random() * 100000)));
+
+				$("#sites-chrome-userheader",opener.document).css("display", "hidden");
 			});			
 			
 			gadgets.util.registerOnLoadHandler(function() { 
