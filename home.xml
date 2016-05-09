@@ -93,8 +93,6 @@
 				
 				initialize(Math.floor((Math.random() * 100000)));
 
-				$("#sites-chrome-header-wrapper", window.parent.document).hide();
-
 			});			
 			
 			gadgets.util.registerOnLoadHandler(function() { 
@@ -120,6 +118,8 @@
 		        	prevWindowWidth = w;					  
 		        }
 		    });	
+			
+			$("#sites-chrome-header-wrapper", window.parent.document).hide();
 			
 		</script>
      ]]>
