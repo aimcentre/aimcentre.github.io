@@ -117,8 +117,6 @@
 		        	prevWindowWidth = w;					  
 		        }
 		    });	
-
-		    alert('test 2');
 			
 		</script>
      ]]>
