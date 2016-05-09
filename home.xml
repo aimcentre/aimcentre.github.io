@@ -120,7 +120,7 @@
 
 		    //On window back buttons
 		    $(window).on("navigate", function (event, data) {
-		    	alert("button");
+		    	gadgets.window.adjustHeight();
 			});
 			
 		</script>
