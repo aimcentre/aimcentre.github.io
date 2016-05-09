@@ -83,5 +83,6 @@
 	background-size:cover;
 }
 
-#myWelcome{
+.inner{
+	width:95%;
 }
