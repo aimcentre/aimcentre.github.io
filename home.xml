@@ -118,9 +118,7 @@
 		        	prevWindowWidth = w;					  
 		        }
 		    });	
-			
-			$("#sites-chrome-header-wrapper", window.parent.document).hide();
-			
+						
 		</script>
      ]]>
   </Content> 
