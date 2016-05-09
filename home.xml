@@ -117,12 +117,8 @@
 		        	prevWindowWidth = w;					  
 		        }
 		    });	
-
-		    //On window back buttons
-		    $(window).on("navigate", function (event, data) {
-		    	alert('test');
-			});
 			
+			alert('test');
 		</script>
      ]]>
   </Content> 
