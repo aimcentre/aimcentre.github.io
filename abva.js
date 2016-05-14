@@ -45,7 +45,24 @@ function showAnnouncements(parentPagePath, displayDivId, panelHeading, cacheSeed
 	  url: feed_url,
 	  dataType: "jsonp",
 	  success: function (data) {
-	  	feed = jQuery.parseXML(data).documentElement;
+	  	var feed = jQuery.parseXML(data).documentElement;
+	  	var entries = feed. getElementsByTagName("entry");
+	  	if(entries.length > 0){
+	  		var ids = entries[0].getElementsByTagName("id");
+	  		if(ids.length > 0){
+		  		var url = $(ids[0]).text();
+		  		if(url.endsWith("/")){
+		  			url = url.slice(0,-1);
+		  		}
+		  		var pos = url.lastIndexOf("/");
+		  		var id = url.slice(pos+1);
+
+		  		showAnnouncements2(id, displayDivId, panelHeading, cacheSeed);
+		  	}
+	  	}
+
+
+
 	  }
 	});
 }
