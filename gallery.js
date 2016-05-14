@@ -1,34 +1,36 @@
-var GalleryRootUrl = "";
-var FeedUrlBase = 
+var FeedUrlBase = "https://sites.google.com/feeds/content/"; 
+var SiteDomain = "";
+var SiteName = "";
+var GalleryRoot = "";
+var GalleryTitle = "";
+
 function seed(){
 	return Math.floor(Math.random() * 100000);
+}
+
+function getGalleryFeed(galleryDataPagePath){
+	var gallery_feed_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=", GalleryRoot, "/", galleryDataPagePath);
+	return gallery_feed_url;
 }
 
 function InitGallery(){
 	// Get userprefs
 	var prefs = new gadgets.Prefs();
 	
-	//Gallery Title
-	var gallery_title = prefs.getString("galleryTitle");
-	if(gallery_title == ""){
-		gallery_title = "Gallery"
-	}
-	var title_div = document.getElementById("myGalleryTitle");
-	$(title_div).text(gallery_title);
-	
-	//Gallery Root
-	var gallery_root = prefs.getString("galleryRoot");
-	if(gallery_root == ""){
-		gallery_title = "gallery"
-	}
-	
+	SiteDomain = prefs.getString("siteDomain");
+	SiteName = prefs.getString("siteName");
+	GalleryRoot = prefs.getString("galleryRoot");
+	GalleryTitle = prefs.getString("galleryTitle");
 }
 
 function showGallery(pathToGallery, numberOfYears){
-	var feed_url_base = "https://sites.google.com/feeds/content/"; 
-	var gallery_root = feed_url_base.concat("?path=", pathToGallery);
-	var current_year = new Date().getFullYear();
 	
+	if(GalleryTitle != ""){
+		var title_div = document.getElementById("myGalleryTitle");
+		$(title_div).text(GalleryTitle);
+	}
+	
+	var current_year = new Date().getFullYear();
 	var container = document.getElementById("myGallery");
 	var page_links = document.getElementById("pageLinks");
 	for (var i = 0; i < numberOfYears; i++){
