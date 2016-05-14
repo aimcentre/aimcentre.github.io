@@ -21,7 +21,7 @@ function InitGallery(){
 	if(gallery_root == ""){
 		gallery_title = "gallery"
 	}
-	GalleryRootUrl = 
+	
 }
 
 function showGallery(pathToGallery, numberOfYears){
