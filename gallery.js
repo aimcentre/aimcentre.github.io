@@ -1,4 +1,4 @@
-var FeedUrlBase = "https://sites.google.com/feeds/content/"; 
+var FeedUrlBase = "https://sites.google.com/feeds/content/";
 var SiteDomain = "";
 var SiteName = "";
 var GalleryRoot = "";
@@ -73,7 +73,7 @@ function showAlbumCollectionByPath(year){
 } //End: showGallery(year)
 
 function showAlbumCollectionByParentPageId(parentId){
-	var feed_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?parent=", parentId);
+	var feed_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?parent=", parentId, "&kind=announcement");
 	var feed = new google.feeds.Feed(feed_url);
 	
 	//TODO: Set maximum number of entries to be retrieved to be a large number
