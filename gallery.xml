@@ -3,7 +3,7 @@
   <ModulePrefs title="Gallery" height="100">
   	<Require feature="dynamic-height"/> 
   </ModulePrefs>
-  <UserPref name="mylist" display_name="Add Terms" datatype="list" />
+  <UserPref name="mylist" display_name="Add Terms" datatype="string" />
   <Content type="html">
      <![CDATA[
 		<meta charset="utf-8">
