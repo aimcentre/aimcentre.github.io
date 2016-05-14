@@ -19,7 +19,6 @@ function showGallery(pathToGallery, numberOfYears){
 	
 	var container = document.getElementById("myGallery");
 	var page_links = document.getElementById("pageLinks");
-	container.appendChild(page_links);
 	for (var i = 0; i < numberOfYears; i++){
 		var year = current_year - i;
 		

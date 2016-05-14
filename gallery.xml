@@ -28,7 +28,7 @@
 		<div class="row">
 			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
-			<div>
+			<div id="myGallery">
 				<div class="inner">
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					</div>
