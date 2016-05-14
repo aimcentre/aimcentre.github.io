@@ -23,7 +23,7 @@ function showGallery(pathToGallery, numberOfYears){
 		else{
 			$(year_link).html(link_start_tag.concat(year, "</a>"));
 		}
-		page_links.appendChild(heading);
+		page_links.appendChild(year_link);
 		//heading.className = "feed-panel-heading hidden-xs";
 	}
 } //End: showGallery(pathToGallery, numberOfYears)
