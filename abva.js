@@ -219,7 +219,7 @@ function showGallery(pathToGalleryDataRoot, displayDivId, cacheSeed, aspectRatio
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
 	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToGalleryDataRoot, "&t=", cacheSeed);
 
-	$.get( "ajax/test.html", function( data ) {
+	$.get(feed_url, function(data) {
 
 		alert( "Load was performed." );
 	});
