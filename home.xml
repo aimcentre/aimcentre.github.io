@@ -62,7 +62,7 @@
 				showPageContents("/welcome", "myWelcome", feedUrlSeed);
 				
 				//Loading Special Events feed
-				//showAnnouncements("5712403047090218682", "myEventsfeed", "Special Events", feedUrlSeed);
+				showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
 				
 				//Loading News feed
 				showAnnouncements("/news", "myNewsfeed", "News", feedUrlSeed);
