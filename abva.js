@@ -37,9 +37,22 @@ function Date2Str(date){
 
 
 //A utility function which shows posts from an announcement-type page in a specified display div
-function showAnnouncements(paregnPageId, displayDivId, panelHeading, cacheSeed){
+function showAnnouncements(parentPagePath, displayDivId, panelHeading, cacheSeed){
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
-	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?parent=", paregnPageId, "&t=", cacheSeed);
+	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", parentPagePath, "&t=", cacheSeed);
+
+	$.ajax({
+	  url: feed_url,
+	  dataType: "jsonp",
+	  success: function (data) {
+	  	feed - jQuery.parseXML(data).documentElement;
+	  }
+	});
+}
+
+function showAnnouncements2(parentPageId, displayDivId, panelHeading, cacheSeed){
+	var feed_url_base = "https://sites.google.com/feeds/content/"; 
+	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?parent=", parentPageId, "&t=", cacheSeed);
 	var feed = new google.feeds.Feed(feed_url);
 	feed.load(function(result) {
 		var container = document.getElementById(displayDivId);
