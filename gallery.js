@@ -7,7 +7,9 @@ function InitGallery(){
 	// Get userprefs
 	var prefs = new gadgets.Prefs();
 	var x = prefs;
-	//var gadget_title = prefs.GetTitle();
+	var gallery_title = prefs.getString("galleryTitle");
+	var title = document.getElementById("myGalleryTitle");
+	$(title).text(gallery_title);
 }
 
 function showGallery(pathToGallery, numberOfYears){

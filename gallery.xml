@@ -3,7 +3,7 @@
   <ModulePrefs title="Gallery" height="100">
   	<Require feature="dynamic-height"/> 
   </ModulePrefs>
-  <UserPref name="galleryName" display_name="Gallery Name" datatype="string" />
+  <UserPref name="galleryTitle" display_name="Gallery Title" datatype="string" />
   <Content type="html">
      <![CDATA[
 		<meta charset="utf-8">
@@ -25,7 +25,8 @@
 			var siteName = "www3";
 		</script>
 
-		<div id="myGallery" class="row">
+		<div class="row">
+			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
 			<div>
 				<div class="inner">
