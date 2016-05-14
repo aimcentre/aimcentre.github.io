@@ -83,7 +83,7 @@ function showAlbumCollectionByParentPageId(parentId){
 		if (!result.error) {
 			if(result.feed.entries.length > 0){
 				var entry = result.feed.entries[0];
-				var container = document.getElementById(displayDivId);
+//				var container = document.getElementById(displayDivId);
 				
 //				var h = document.createElement("h3");
 //				h.className = "page-title";
