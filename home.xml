@@ -62,10 +62,10 @@
 				showPageContents("/welcome", "myWelcome", feedUrlSeed);
 				
 				//Loading Special Events feed
-				showAnnouncements("5712403047090218682", "myEventsfeed", "Special Events", feedUrlSeed);
+				//showAnnouncements("5712403047090218682", "myEventsfeed", "Special Events", feedUrlSeed);
 				
 				//Loading News feed
-				showAnnouncements("9115262703149858176", "myNewsfeed", "News", feedUrlSeed);
+				showAnnouncements("/news", "myNewsfeed", "News", feedUrlSeed);
 				
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
