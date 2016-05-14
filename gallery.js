@@ -89,7 +89,7 @@ function showAlbumCollectionByParentPageId(parentId){
 				//album cover
 				var cover = document.createElement("div");
 				album_covers.appendChild(cover);
-				div.className = "album-cover";
+				cover.className = "album-cover";
 				$(cover).innerHTML(entry.title);
 				
 //				var container = document.getElementById(displayDivId);
