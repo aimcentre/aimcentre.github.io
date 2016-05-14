@@ -9,11 +9,6 @@ function seed(){
 	return Math.floor(Math.random() * 100000);
 }
 
-function getGalleryFeed(galleryDataPagePath){
-	var gallery_feed_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=", GalleryRoot, "/", galleryDataPagePath);
-	return gallery_feed_url;
-}
-
 function InitGallery(){
 	//Get userprefs and initialize variables
 	var prefs = new gadgets.Prefs();
@@ -26,12 +21,13 @@ function InitGallery(){
 		HistoryLength = 5;
 	}
 	
-	//Create gallery skeleton
+	//Set gallery title
 	if(GalleryTitle != ""){
 		var title_div = document.getElementById("myGalleryTitle");
 		$(title_div).text(GalleryTitle);
 	}
 	
+	//set gallery year links
 	var current_year = new Date().getFullYear();
 	var container = document.getElementById("myGallery");
 	var page_links = document.getElementById("pageLinks");
@@ -40,7 +36,7 @@ function InitGallery(){
 		
 		//adding the year to the page links
 		var year_link = document.createElement("span");
-		var link_start_tag = "<a href='#' onclick='alert();return false;'>";
+		var link_start_tag = "<a href='#' onclick='showAlbumCollection(year);return false;'>";
 		if(i < HistoryLength - 1){
 			$(year_link).html(link_start_tag.concat(year, "</a> | "));
 		}
@@ -49,15 +45,38 @@ function InitGallery(){
 		}
 		page_links.appendChild(year_link);
 	} //End: for (var i = 0; i < HistoryLength; i++){
-
-		
 }
 
-function showGallery(pathToGallery, numberOfYears, activeYear){
+function showAlbumCollection(year){
+	var album_root_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=", GalleryRoot, "/", year);
 	
-} //End: showGallery(pathToGallery, numberOfYears)
+	$.ajax({
+	  url: feed_url,
+	  dataType: "jsonp",
+	  success: function (data) {
+	  	var feed = jQuery.parseXML(data).documentElement;
+	  	var entries = feed. getElementsByTagName("entry");
+	  	if(entries.length > 0){
+	  		var ids = entries[0].getElementsByTagName("id");
+	  		if(ids.length > 0){
+		  		var url = $(ids[0]).text();
+		  		if(url.endsWith("/")){
+		  			url = url.slice(0,-1);
+		  		}
+		  		var pos = url.lastIndexOf("/");
+		  		var id = url.slice(pos+1);
 
-	
+		  		//showAnnouncements2(id, displayDivId, panelHeading, cacheSeed);
+		  	}
+	  	}
+
+
+
+	  }
+	});	
+} //End: showGallery(year)
+
+
 //A utility function which shows contents of a given page in a specified display div
 function showPageContents(pathToPage, displayDivId, cacheSeed){
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
