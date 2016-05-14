@@ -2,6 +2,19 @@
 	margin-left:15px;
 	margin-right:15px;
 }
+
+.album-cover{
+	width: 90px;
+	height: 75px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	float: left;
+	display: block;
+	margin-right: 7px;
+	background-color: #695E4A;
+}
+
 .container{
 	width:100%;
 	padding:0;

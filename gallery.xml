@@ -38,7 +38,7 @@
 				<div class="inner">
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					</div>
-					<div id="myWelcome">
+					<div id="myAlbumCovers">
 					</div>
 				</div>
 			</div>

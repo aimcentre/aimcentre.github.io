@@ -81,8 +81,17 @@ function showAlbumCollectionByParentPageId(parentId){
 	//Loading the feed
 	feed.load(function(result) {
 		if (!result.error) {
-			if(result.feed.entries.length > 0){
-				var entry = result.feed.entries[0];
+			
+			var album_covers = document.getElementById("myAlbumCovers");
+			for(var i=0;i<result.feed.entries.length; ++i){
+				var entry = result.feed.entries[i];
+				
+				//album cover
+				var cover = document.createElement("div");
+				album_covers.appendChild(cover);
+				div.className = "album-cover";
+				$(cover).innerHTML(entry.title);
+				
 //				var container = document.getElementById(displayDivId);
 				
 //				var h = document.createElement("h3");
@@ -95,6 +104,9 @@ function showAlbumCollectionByParentPageId(parentId){
 //				container.appendChild(content);
 			}
 			gadgets.window.adjustHeight();
+		}
+		else{
+			throw new Error("Failed to load feed ".concat(feed_url));
 		}
 	});			
 }
