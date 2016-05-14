@@ -3,6 +3,7 @@ var SiteDomain = "";
 var SiteName = "";
 var GalleryRoot = "";
 var GalleryTitle = "";
+var HistoryLength = 4;
 
 function seed(){
 	return Math.floor(Math.random() * 100000);
@@ -14,17 +15,18 @@ function getGalleryFeed(galleryDataPagePath){
 }
 
 function InitGallery(){
-	// Get userprefs
+	//Get userprefs and initialize variables
 	var prefs = new gadgets.Prefs();
-	
 	SiteDomain = prefs.getString("siteDomain");
 	SiteName = prefs.getString("siteName");
 	GalleryRoot = prefs.getString("galleryRoot");
 	GalleryTitle = prefs.getString("galleryTitle");
-}
-
-function showGallery(pathToGallery, numberOfYears, activeYear){
+	HistoryLength = parseInt(prefs.getString("historyLength"));
+	if(HistoryLength == NaN){
+		HistoryLength = 5;
+	}
 	
+	//Create gallery skeleton
 	if(GalleryTitle != ""){
 		var title_div = document.getElementById("myGalleryTitle");
 		$(title_div).text(GalleryTitle);
@@ -33,21 +35,26 @@ function showGallery(pathToGallery, numberOfYears, activeYear){
 	var current_year = new Date().getFullYear();
 	var container = document.getElementById("myGallery");
 	var page_links = document.getElementById("pageLinks");
-	for (var i = 0; i < numberOfYears; i++){
+	for (var i = 0; i < HistoryLength; i++){
 		var year = current_year - i;
 		
 		//adding the year to the page links
 		var year_link = document.createElement("span");
 		var link_start_tag = "<a href='#' onclick='alert();return false;'>";
-		if(i < numberOfYears - 1){
+		if(i < HistoryLength - 1){
 			$(year_link).html(link_start_tag.concat(year, "</a> | "));
 		}
 		else{
 			$(year_link).html(link_start_tag.concat(year, "</a>"));
 		}
 		page_links.appendChild(year_link);
-		//heading.className = "feed-panel-heading hidden-xs";
-	}
+	} //End: for (var i = 0; i < HistoryLength; i++){
+
+		
+}
+
+function showGallery(pathToGallery, numberOfYears, activeYear){
+	
 } //End: showGallery(pathToGallery, numberOfYears)
 
 	
