@@ -36,7 +36,7 @@ function InitGallery(){
 		
 		//adding the year to the page links
 		var year_link = document.createElement("span");
-		var link_start_tag = "<a href='#' onclick='showAlbumCollection(".concat(year,");return false;'>");
+		var link_start_tag = "<a href='#' onclick='showAlbumCollectionByPath(".concat(year,");return false;'>");
 		if(i < HistoryLength - 1){
 			$(year_link).html(link_start_tag.concat(year, "</a> | "));
 		}
@@ -47,7 +47,7 @@ function InitGallery(){
 	} //End: for (var i = 0; i < HistoryLength; i++){
 }
 
-function showAlbumCollection(year){
+function showAlbumCollectionByPath(year){
 	var album_root_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=/", GalleryRoot, "/", year);
 	
 	$.ajax({
@@ -64,18 +64,40 @@ function showAlbumCollection(year){
 		  			url = url.slice(0,-1);
 		  		}
 		  		var pos = url.lastIndexOf("/");
-		  		var id = url.slice(pos+1);
-
-		  		//showAnnouncements2(id, displayDivId, panelHeading, cacheSeed);
+		  		var album_data_parent_id = url.slice(pos+1);
+				showAlbumCollectionByParentPageId(album_data_parent_id);
 		  	}
 	  	}
-
-
-
 	  }
 	});	
 } //End: showGallery(year)
 
+function showAlbumCollectionByParentPageId(parentId){
+	var feed_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?parent=/", parentId);
+	var feed = new google.feeds.Feed(feed_url);
+	
+	//TODO: Set maximum number of entries to be retrieved to be a large number
+	
+	//Loading the feed
+	feed.load(function(result) {
+		if (!result.error) {
+			if(result.feed.entries.length > 0){
+				var entry = result.feed.entries[0];
+				var container = document.getElementById(displayDivId);
+				
+//				var h = document.createElement("h3");
+//				h.className = "page-title";
+//				h.innerHTML = entry.title;
+//				container.appendChild(h);
+				
+//				var content = document.createElement("div");
+//				content.innerHTML = entry.content;
+//				container.appendChild(content);
+			}
+			gadgets.window.adjustHeight();
+		}
+	});			
+}
 
 //A utility function which shows contents of a given page in a specified display div
 function showPageContents(pathToPage, displayDivId, cacheSeed){
