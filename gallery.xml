@@ -3,7 +3,7 @@
   <ModulePrefs title="Gallery" height="100">
   	<Require feature="dynamic-height"/> 
   </ModulePrefs>
-  <UserPref name="mylist" display_name="Add Terms" datatype="string" />
+  <UserPref name="galleryName" display_name="Gallery Name" datatype="string" />
   <Content type="html">
      <![CDATA[
 		<meta charset="utf-8">
@@ -19,6 +19,9 @@
 		<script src="https://abvasvmc.github.io/gallery.js"></script>
 	  
 		<script type="text/javascript">
+			// Get userprefs
+			var prefs = new gadgets.Prefs();
+			
 			//Site Specific Configuration
 			//===========================
 			var siteDomain = "abva.org";
