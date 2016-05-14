@@ -22,7 +22,7 @@ function InitGallery(){
 	GalleryRoot = prefs.getString("galleryRoot");
 	GalleryTitle = prefs.getString("galleryTitle");
 	HistoryLength = parseInt(prefs.getString("historyLength"));
-	if(HistoryLength == NaN){
+	if(isNaN(HistoryLength)){
 		HistoryLength = 5;
 	}
 	
