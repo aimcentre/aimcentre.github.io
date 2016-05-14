@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
-  <ModulePrefs title="Carousel" height="100">
+  <ModulePrefs title="Gallery" height="100">
   	<Require feature="dynamic-height"/> 
   </ModulePrefs>
   <Content type="html">
