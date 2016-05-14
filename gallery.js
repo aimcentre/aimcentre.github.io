@@ -1,4 +1,5 @@
-
+var GalleryRootUrl = "";
+var FeedUrlBase = 
 function seed(){
 	return Math.floor(Math.random() * 100000);
 }
@@ -6,18 +7,26 @@ function seed(){
 function InitGallery(){
 	// Get userprefs
 	var prefs = new gadgets.Prefs();
-	var x = prefs;
+	
+	//Gallery Title
 	var gallery_title = prefs.getString("galleryTitle");
 	if(gallery_title == ""){
 		gallery_title = "Gallery"
 	}
 	var title_div = document.getElementById("myGalleryTitle");
 	$(title_div).text(gallery_title);
+	
+	//Gallery Root
+	var gallery_root = prefs.getString("galleryRoot");
+	if(gallery_root == ""){
+		gallery_title = "gallery"
+	}
+	GalleryRootUrl = 
 }
 
 function showGallery(pathToGallery, numberOfYears){
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
-	var gallery_root = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToGallery);
+	var gallery_root = feed_url_base.concat("?path=", pathToGallery);
 	var current_year = new Date().getFullYear();
 	
 	var container = document.getElementById("myGallery");
