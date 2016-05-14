@@ -36,7 +36,7 @@ function InitGallery(){
 		
 		//adding the year to the page links
 		var year_link = document.createElement("span");
-		var link_start_tag = "<a href='#' onclick='showAlbumCollection(year);return false;'>";
+		var link_start_tag = "<a href='#' onclick='showAlbumCollection(".concat(year,");return false;'>");
 		if(i < HistoryLength - 1){
 			$(year_link).html(link_start_tag.concat(year, "</a> | "));
 		}
