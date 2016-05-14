@@ -26,22 +26,11 @@
 		</script>
 
 		<div class="row">
-			<div class="col-md-6">
+			<div>
 				<div class="inner">
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					</div>
 					<div id="myWelcome">
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="visible-sm"><br /></div>
-				<div class="row">
-					<div class="inner">
-						<div id="myEventsfeed" class="col-sm-6">
-						</div>
-						<div id="myNewsfeed" class="col-sm-6">
-						</div>
 					</div>
 				</div>
 			</div>
@@ -60,13 +49,13 @@
 				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
 
 				//Loading welcome message from the Welcome page
-				showPageContents("/welcome", "myWelcome", feedUrlSeed);
+//				showPageContents("/welcome", "myWelcome", feedUrlSeed);
 				
 				//Loading Special Events feed
-				showAnnouncements("5712403047090218682", "myEventsfeed", "Special Events", feedUrlSeed);
+//				showAnnouncements("5712403047090218682", "myEventsfeed", "Special Events", feedUrlSeed);
 				
 				//Loading News feed
-				showAnnouncements("9115262703149858176", "myNewsfeed", "News", feedUrlSeed);
+//				showAnnouncements("9115262703149858176", "myNewsfeed", "News", feedUrlSeed);
 				
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
