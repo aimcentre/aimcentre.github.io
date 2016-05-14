@@ -38,7 +38,7 @@ function showGallery(pathToGallery, numberOfYears, activeYear){
 		
 		//adding the year to the page links
 		var year_link = document.createElement("span");
-		var link_start_tag = "<a href='#' onclick='allert();return false;'>";
+		var link_start_tag = "<a href='#' onclick='alert();return false;'>";
 		if(i < numberOfYears - 1){
 			$(year_link).html(link_start_tag.concat(year, "</a> | "));
 		}
