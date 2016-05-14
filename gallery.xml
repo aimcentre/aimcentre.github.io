@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="Carousel" height="100">
+  	<Require feature="dynamic-height"/> 
+  </ModulePrefs>
+  <Content type="html">
+     <![CDATA[
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://abvasvmc.github.io/home.css">
+		
+		<script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
+		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
+		<script src="https://abvasvmc.github.io/js/moment.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script src="https://abvasvmc.github.io/home.js"></script>
+	  
+		<script type="text/javascript">
+			//Site Specific Configuration
+			//===========================
+			var siteDomain = "abva.org";
+			var siteName = "www3";
+		</script>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="inner">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					</div>
+					<div id="myWelcome">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="visible-sm"><br /></div>
+				<div class="row">
+					<div class="inner">
+						<div id="myEventsfeed" class="col-sm-6">
+						</div>
+						<div id="myNewsfeed" class="col-sm-6">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		
+			//Initialize feed loader
+			google.load("feeds", "1");
+			
+			//Page initialization routine. This is called by google.setOnLoadCallback callback
+			function initialize(feedUrlSeed) {
+
+				//Loading carousel images
+				var aspectRatio = 9.0/16;
+				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
+
+				//Loading welcome message from the Welcome page
+				showPageContents("/welcome", "myWelcome", feedUrlSeed);
+				
+				//Loading Special Events feed
+				showAnnouncements("5712403047090218682", "myEventsfeed", "Special Events", feedUrlSeed);
+				
+				//Loading News feed
+				showAnnouncements("9115262703149858176", "myNewsfeed", "News", feedUrlSeed);
+				
+				////gadgets.window.adjustHeight();
+			} //End: function initialize()
+			
+
+			//Calling initialization routing on page loading
+			$(document).ready(function () {
+				/*
+				//Getting the last updated time for the site to generate a cache-elimination seed for feeds. 
+				var feed_url_base = "https://sites.google.com/feeds/activity/"; 
+				var feed_url = feed_url_base.concat(siteDomain, "/", siteName);
+				var feed = new google.feeds.Feed(feed_url);
+				feed.load(function(result) {
+					if (!result.error && result.feed.entries.length > 0) {
+						var entry = result.feed.entries[0];
+						var seed = JSON.stringify(entry);
+						initialize(seed);
+					}
+					else{
+						var seed = Math.floor(Math.random() * 10000);
+						initialize(seed);
+					}
+				});
+				*/
+				
+				initialize(Math.floor((Math.random() * 100000)));
+
+			});			
+			
+			gadgets.util.registerOnLoadHandler(function() { 
+				gadgets.window.adjustHeight();
+		   });
+		   
+		   //Resize listener for gadget resizing on layout changes
+		   var prevWindowWidth= -1;
+		   $( window ).resize(function() {
+		        if(prevWindowWidth < 0){
+		        	prevWindowWidth = $(window).width();
+		        }
+		        else{
+		        	var w = $(window).width();
+		        	var resize_required = (prevWindowWidth >= 768 && w < 768) ||
+		        						  (prevWindowWidth < 768 && w >= 768) ||
+		        						  (prevWindowWidth >= 992 && w < 992) ||
+		        						  (prevWindowWidth < 992 && w >= 992);
+		        	if(resize_required){
+		        		gadgets.window.adjustHeight();
+		        	}
+		        	
+		        	prevWindowWidth = w;					  
+		        }
+		    });	
+						
+		</script>
+     ]]>
+  </Content> 
+</Module>
