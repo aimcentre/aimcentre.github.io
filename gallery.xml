@@ -46,8 +46,8 @@
 
 				//Loading carousel images
 				var aspectRatio = 9.0/16;
-				showGallery("/news", displayDivId, cacheSeed, aspectRatio);
-//				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio);
+				showGallery("/news", "displayDivId", feedUrlSeed, aspectRatio);
+//				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, feedUrlSeed);
 
 				//Loading welcome message from the Welcome page
 //				showPageContents("/welcome", "myWelcome", feedUrlSeed);
