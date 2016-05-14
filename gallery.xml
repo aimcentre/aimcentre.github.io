@@ -19,9 +19,6 @@
 		<script src="https://abvasvmc.github.io/gallery.js"></script>
 	  
 		<script type="text/javascript">
-			// Get userprefs
-			var prefs = new gadgets.Prefs();
-			//var gadget_title = prefs.GetTitle();
 			//Site Specific Configuration
 			//===========================
 			var siteDomain = "abva.org";
@@ -47,6 +44,8 @@
 			
 			//Page initialization routine. This is called by google.setOnLoadCallback callback
 			function initialize(feedUrlSeed) {
+			
+				InitGallery();
 
 				//Loading carousel images
 				var aspectRatio = 9.0/16;

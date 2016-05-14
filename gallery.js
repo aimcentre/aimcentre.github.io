@@ -3,6 +3,13 @@ function seed(){
 	return Math.floor(Math.random() * 100000);
 }
 
+function InitGallery(){
+	// Get userprefs
+	var prefs = new gadgets.Prefs();
+	var x = prefs;
+	//var gadget_title = prefs.GetTitle();
+}
+
 function showGallery(pathToGallery, numberOfYears){
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
 	var gallery_root = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToGallery);
