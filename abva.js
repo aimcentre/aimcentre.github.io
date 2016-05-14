@@ -223,7 +223,7 @@ function showGallery(pathToGalleryDataRoot, displayDivId, cacheSeed, aspectRatio
 	  url: feed_url,
 	  dataType: "jsonp",
 	  success: function (data) {
-	    console.log(data)
+	    console.log(data);
 	    alert(data);
 	  }
 	});
