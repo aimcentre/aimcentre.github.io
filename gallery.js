@@ -51,7 +51,7 @@ function showAlbumCollection(year){
 	var album_root_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=", GalleryRoot, "/", year);
 	
 	$.ajax({
-	  url: feed_url,
+	  url: album_root_url,
 	  dataType: "jsonp",
 	  success: function (data) {
 	  	var feed = jQuery.parseXML(data).documentElement;
