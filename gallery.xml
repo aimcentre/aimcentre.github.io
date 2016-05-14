@@ -21,7 +21,7 @@
 		<script type="text/javascript">
 			// Get userprefs
 			var prefs = new gadgets.Prefs();
-			var gadget_title = prefs.GetTitle();
+			//var gadget_title = prefs.GetTitle();
 			//Site Specific Configuration
 			//===========================
 			var siteDomain = "abva.org";
