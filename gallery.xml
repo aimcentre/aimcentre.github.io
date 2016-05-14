@@ -25,10 +25,10 @@
 			var siteName = "www3";
 		</script>
 
-		<div class="row">
+		<div id="myGallery" class="row">
 			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
-			<div id="myGallery">
+			<div>
 				<div class="inner">
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					</div>
