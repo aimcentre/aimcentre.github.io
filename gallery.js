@@ -23,7 +23,7 @@ function InitGallery(){
 	GalleryTitle = prefs.getString("galleryTitle");
 }
 
-function showGallery(pathToGallery, numberOfYears){
+function showGallery(pathToGallery, numberOfYears, activeYear){
 	
 	if(GalleryTitle != ""){
 		var title_div = document.getElementById("myGalleryTitle");
@@ -38,7 +38,7 @@ function showGallery(pathToGallery, numberOfYears){
 		
 		//adding the year to the page links
 		var year_link = document.createElement("span");
-		var link_start_tag = "<a href='#'>";
+		var link_start_tag = "<a href='#' onclick='allert();return false;'>";
 		if(i < numberOfYears - 1){
 			$(year_link).html(link_start_tag.concat(year, "</a> | "));
 		}
