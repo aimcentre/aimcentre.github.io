@@ -214,4 +214,14 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 } //End: function showPageContents(paregnPageId, displayDivId)
 
 
+//A utility function that shows images gallery
+function showGallery(pathToGalleryDataRoot, displayDivId, cacheSeed, aspectRatio){
+	var feed_url_base = "https://sites.google.com/feeds/content/"; 
+	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToGalleryDataRoot, "&t=", cacheSeed);
+
+	$.get( "ajax/test.html", function( data ) {
+
+		alert( "Load was performed." );
+	});
+}
 
