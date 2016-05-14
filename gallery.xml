@@ -56,7 +56,6 @@
 
 				//Loading carousel images
 				var aspectRatio = 9.0/16;
-				showGallery("/gallery", 4);
 //				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, feedUrlSeed);
 
 				//Loading welcome message from the Welcome page
