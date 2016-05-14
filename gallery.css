@@ -1,0 +1,88 @@
+
+.container{
+	width:100%;
+	padding:0;
+	margin-top:0;
+	margin-left:0; 
+	margin-right:0;
+	margin-bottom:10px;
+	top: -10px;
+}
+
+.page-title{
+	font:normal 26px 'Open Sans',sans-serif;
+	color:#66002e!important;
+}
+  
+.feed-panel-heading{
+	font: 600 19px "Open Sans",sans-serif;
+	color: #66002e!important;
+	margin-top:0;
+	padding-top:0;
+}
+
+.feed-item{
+	margin-bottom:15px;
+}
+  
+.feed-item a, .feed-item a:visited{
+	color: #298cca!important;
+}
+  
+.feed-item-title{
+	color:#298cca;
+	text-decoration:none;
+	font-size: 14px;
+	font-weight: bold;
+}
+  
+.feed-item-title:visited{
+	color:#298cca;
+}
+  
+.feed-item-thumb{
+	width: 90px;
+	height: 75px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	float: left;
+	display: block;
+	margin-right: 7px;
+	background-color: #695E4A;
+}
+
+.feed-item-posted-date{
+	font-size: 0.8em;
+	font-style:italic;
+}
+
+#myCarousel{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+  
+#myCarousel > .carousel-inner{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+  
+#myCarousel > .carousel-inner > .item{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-repeat:no-repeat;
+	background-position: center; 
+	background-size:cover;
+}
+
+.inner{
+	width:95%;
+}

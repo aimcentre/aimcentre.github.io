@@ -16,7 +16,7 @@
 		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
 		<script src="https://abvasvmc.github.io/js/moment.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script src="https://abvasvmc.github.io/abva.js"></script>
+		<script src="https://abvasvmc.github.io/gallery.js"></script>
 	  
 		<script type="text/javascript">
 			//Site Specific Configuration
@@ -25,7 +25,8 @@
 			var siteName = "www3";
 		</script>
 
-		<div class="row">
+		<div id="myGallery" class="row">
+			<div id="pageLinks"></div>
 			<div>
 				<div class="inner">
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -46,7 +47,7 @@
 
 				//Loading carousel images
 				var aspectRatio = 9.0/16;
-				showGallery("/news", "displayDivId", feedUrlSeed, aspectRatio);
+				showGallery("/gallery", 4);
 //				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, feedUrlSeed);
 
 				//Loading welcome message from the Welcome page
