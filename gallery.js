@@ -65,7 +65,7 @@ function showAlbumCollectionByPath(year){
 		  		}
 		  		var pos = url.lastIndexOf("/");
 		  		var album_data_parent_id = url.slice(pos+1);
-				showAlbumCollectionByParentPageId(album_data_parent_id);
+				//showAlbumCollectionByParentPageId(album_data_parent_id);
 		  	}
 	  	}
 	  }
