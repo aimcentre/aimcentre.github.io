@@ -8,8 +8,11 @@ function InitGallery(){
 	var prefs = new gadgets.Prefs();
 	var x = prefs;
 	var gallery_title = prefs.getString("galleryTitle");
-	var title = document.getElementById("myGalleryTitle");
-	$(title).text(gallery_title);
+	if(gallery_title == ""){
+		gallery_title = "Gallery"
+	}
+	var title_div = document.getElementById("myGalleryTitle");
+	$(title_div).text(gallery_title);
 }
 
 function showGallery(pathToGallery, numberOfYears){
