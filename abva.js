@@ -45,7 +45,7 @@ function showAnnouncements(parentPagePath, displayDivId, panelHeading, cacheSeed
 	  url: feed_url,
 	  dataType: "jsonp",
 	  success: function (data) {
-	  	feed - jQuery.parseXML(data).documentElement;
+	  	feed = jQuery.parseXML(data).documentElement;
 	  }
 	});
 }
