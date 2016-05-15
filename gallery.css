@@ -12,6 +12,9 @@
 	position:relative;
 }
 
+.album{
+	float:left;
+}
 .album-title{
 	font: normal 20px 'Open Sans',sans-serif;
 	color: #66002e!important;
