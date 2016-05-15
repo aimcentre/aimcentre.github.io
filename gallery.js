@@ -117,11 +117,12 @@ function showAlbumCollectionByParentPageId(parentId){
 					}).get();
 					for(var k=0; k<images.length; ++k){
 						var src = images[k];
-						var img = document.createElement("img");
-						$(img).attr('src', src);
-						$(img).addClass("gallery-img");
+						//var img = document.createElement("img");
+						//$(img).attr('src', src);
+						var img = document.createElement("div");
+						$(img).addClass("album-img");
+						$(img).css("background-image", "url('".concat(src, "');"));
 						album.appendChild(img);
-						gadgets.window.adjustHeight();
 					}
 				}
 			}

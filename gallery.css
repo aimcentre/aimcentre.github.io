@@ -9,7 +9,7 @@
 }
 
 #galleryDataRoot{
-	
+	position:relative;
 }
 
 .album-title{
@@ -17,6 +17,10 @@
 	color: #66002e!important;
 }
 
+.album-img{
+	width:400px;
+	height:300px;
+}
 .album-cover{
 	width: 90px;
 	height: 75px;
