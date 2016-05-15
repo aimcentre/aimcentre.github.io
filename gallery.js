@@ -115,8 +115,8 @@ function showAlbumCollectionByParentPageId(parentId){
 					var images = $(content).find('img').map(function(){
 						return $(this).attr('src')
 					}).get();
-					for(var i=0; i<images.length; ++i){
-						var src = images[i];
+					for(var k=0; k<images.length; ++k){
+						var src = images[k];
 						var img = document.createElement("img");
 						$(img).attr('src', src);
 						$(img).addClass("gallery-img");
