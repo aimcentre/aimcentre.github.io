@@ -108,6 +108,9 @@ function showAlbumCollectionByParentPageId(parentId){
 					album.appendChild(title);
 					$(title).addClass("album-title");
 					$(title).html(entry.title);
+					
+					//adding images
+					
 				}
 			}
 			
@@ -120,7 +123,9 @@ function showAlbumCollectionByParentPageId(parentId){
 					$(this).hide();
 				}
 			});
-				
+			
+			gadgets.window.adjustHeight();
+			
 //			for(var i=0;i<result.feed.entries.length; ++i){
 				
 				
@@ -135,7 +140,7 @@ function showAlbumCollectionByParentPageId(parentId){
 //				content.innerHTML = entry.content;
 //				container.appendChild(content);
 //			}
-			gadgets.window.adjustHeight();
+//			gadgets.window.adjustHeight();
 		}
 		else{
 			throw new Error("Failed to load feed ".concat(feed_url));
