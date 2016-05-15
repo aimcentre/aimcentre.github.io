@@ -121,6 +121,7 @@ function showAlbumCollectionByParentPageId(parentId){
 						$(img).attr('src', src);
 						$(img).addClass("gallery-img");
 						album.appendChild(img);
+						gadgets.window.adjustHeight();
 					}
 				}
 			}
