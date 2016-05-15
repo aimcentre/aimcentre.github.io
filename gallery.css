@@ -28,6 +28,9 @@
 	background-position:center;
 	background-repeat:no-repeat;
 	margin:10px;
+	border-radius: 21px; 
+	-moz-border-radius: 21px; 
+	-webkit-border-radius: 21px; 
 }
 .album-cover{
 	width: 90px;
