@@ -82,20 +82,46 @@ function showAlbumCollectionByParentPageId(parentId){
 	feed.load(function(result) {
 		if (!result.error) {
 			
-			var gallery_data = document.getElementById("galleryData");
-			for(var i=0;i<result.feed.entries.length; ++i){
-				var entry = result.feed.entries[i];
+			//obtaining the specified gallery
+			var id = "gallery-".concat(parentId);
+			var gallery_data = document.getElementById(id);
+			
+			//if the gallery is not already loaded, load it.
+			if(gallery_data == null){
+				gallery_data = document.createElement("div");
+				$(gallery_data).attr("id", id);
+				$(gallery_data).addClass("gallery-data");
 				
-				//album
-				var album = document.createElement("div");
-				gallery_data.appendChild(album);
-				$(album).addClass("album");
+				var gallery_data_root = document.getElementById("galleryDataRoot");
+				gallery_data_root.appendChild(gallery_data);
 				
-				//album title
-				var title = document.createElement("div");
-				album.appendChild(title);
-				$(title).addClass("album-title");
-				$(title).html(entry.title);
+				for(var i=0;i<result.feed.entries.length; ++i){
+					var entry = result.feed.entries[i];
+					
+					//album
+					var album = document.createElement("div");
+					gallery_data.appendChild(album);
+					$(album).addClass("album");
+					
+					//album title
+					var title = document.createElement("div");
+					album.appendChild(title);
+					$(title).addClass("album-title");
+					$(title).html(entry.title);
+				}
+			}
+			
+			//making select gallery visible and everything else hidden
+			$( ".gallery-data" ).each(function() {
+				if($(this).attr("id") == id){
+					$(this).styles("display", "none");
+				}
+				else{
+					$(this).styles("display", "normal");
+				}
+			});
+				
+//			for(var i=0;i<result.feed.entries.length; ++i){
 				
 				
 //				var container = document.getElementById(displayDivId);
@@ -108,7 +134,7 @@ function showAlbumCollectionByParentPageId(parentId){
 //				var content = document.createElement("div");
 //				content.innerHTML = entry.content;
 //				container.appendChild(content);
-			}
+//			}
 			gadgets.window.adjustHeight();
 		}
 		else{
