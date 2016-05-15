@@ -9,12 +9,11 @@
 }
 
 #galleryDataRoot{
-	position:relative;
 }
 
 .album{
 	clear:both;	
-	
+	padding-top:20px;
 }
 .album-title{
 	font: normal 20px 'Open Sans',sans-serif;
