@@ -13,7 +13,7 @@
 }
 
 .album{
-	float:left;
+	
 }
 .album-title{
 	font: normal 20px 'Open Sans',sans-serif;
@@ -21,11 +21,13 @@
 }
 
 .album-img{
-	width:400px;
+	float:left;
+	width:450px;
 	height:300px;
 	background-size:contain;
 	background-position:center;
 	background-repeat:no-repeat;
+	margin:10px;
 }
 .album-cover{
 	width: 90px;
