@@ -110,7 +110,18 @@ function showAlbumCollectionByParentPageId(parentId){
 					$(title).html(entry.title);
 					
 					//adding images
-					
+					var content = document.createElement("content");
+					content.innerHTML = entry.content;        
+					var images = $(content).find('img').map(function(){
+						return $(this).attr('src')
+					}).get();
+					for(var i=0; i<images.length; ++i){
+						var src = images[i];
+						var img = document.createElement("img");
+						$(img).attr('src', src);
+						$(img).addClass("gallery-img");
+						album.appendChild(img);
+					}
 				}
 			}
 			
