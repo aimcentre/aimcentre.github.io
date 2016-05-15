@@ -65,7 +65,7 @@ function showAlbumCollectionByPath(year){
 		  		}
 		  		var pos = url.lastIndexOf("/");
 		  		var album_data_parent_id = url.slice(pos+1);
-				//showAlbumCollectionByParentPageId(album_data_parent_id);
+				showAlbumCollectionByParentPageId(album_data_parent_id);
 		  	}
 	  	}
 	  }
@@ -82,15 +82,21 @@ function showAlbumCollectionByParentPageId(parentId){
 	feed.load(function(result) {
 		if (!result.error) {
 			
-			var album_covers = document.getElementById("myAlbumCovers");
+			var gallery_data = document.getElementById("galleryData");
 			for(var i=0;i<result.feed.entries.length; ++i){
 				var entry = result.feed.entries[i];
 				
-				//album cover
-				var cover = document.createElement("div");
-				album_covers.appendChild(cover);
-				cover.className = "album-cover";
-				$(cover).html(entry.title);
+				//album
+				var album = document.createElement("div");
+				gallery_data.appendChild(album);
+				$(album).addClass("album");
+				
+				//album title
+				var title = document.createElement("div");
+				album.appendChild(title);
+				$(title).addClass("album-title");
+				$(title).html(entry.title);
+				
 				
 //				var container = document.getElementById(displayDivId);
 				

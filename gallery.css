@@ -8,6 +8,14 @@
 	color:#66002e!important;
 }
 
+.album{
+}
+
+.album-title{
+	font: normal 20px 'Open Sans',sans-serif;
+	color: #66002e!important;
+}
+
 .album-cover{
 	width: 90px;
 	height: 75px;
