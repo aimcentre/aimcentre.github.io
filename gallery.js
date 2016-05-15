@@ -125,6 +125,10 @@ function showAlbumCollectionByParentPageId(parentId){
 						$(img).css("background-image", "url(\"".concat(src, "\")"));
 						album.appendChild(img);
 					}
+					
+					var clear = document.createElement("content");
+					$(clear).css("clear", "both");
+					gallery_data.appendChild(clear);
 				}
 			}
 			
