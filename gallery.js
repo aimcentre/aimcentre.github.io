@@ -114,10 +114,10 @@ function showAlbumCollectionByParentPageId(parentId){
 			//making select gallery visible and everything else hidden
 			$( ".gallery-data" ).each(function() {
 				if($(this).attr("id") == id){
-					$(this).hide();
+					$(this).show();
 				}
 				else{
-					$(this).show();
+					$(this).hide();
 				}
 			});
 				
