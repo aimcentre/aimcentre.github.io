@@ -8,14 +8,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://abvasvmc.github.io/home.css">
+		<link rel="stylesheet" href="http://abvasvmc.github.io/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://abvasvmc.github.io/home.css">
 		
-		<script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
-		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
-		<script src="https://abvasvmc.github.io/js/moment.js"></script>
+		<script src="http://abvasvmc.github.io/js/jquery.min.js"></script>
+		<script src="http://abvasvmc.github.io/js/bootstrap.min.js"></script>
+		<script src="http://abvasvmc.github.io/js/moment.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script src="https://abvasvmc.github.io/abva.js"></script>
+		<script src="http://abvasvmc.github.io/abva.js"></script>
 	  
 		<script type="text/javascript">
 			//Site Specific Configuration
