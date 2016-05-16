@@ -75,7 +75,6 @@
 			$(document).ready(function () {
 				
 				initialize(Math.floor((Math.random() * 100000)));
-				$('.carousel-control.right').click(function(){ return false; });
 			});			
 			
 			gadgets.util.registerOnLoadHandler(function() { 

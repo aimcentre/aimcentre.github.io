@@ -190,7 +190,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 				var left = document.createElement("a");
 				$(left).addClass("left");
 				$(left).addClass("carousel-control");
-				$(left).attr("href", displayDivId);
+				$(left).attr("href", "#" + displayDivId);
 				$(left).attr("role", "button");
 				$(left).attr("data-slide", "prev");
 				$(left).html("<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span> <span class='sr-only'>Previous</span>");
@@ -201,7 +201,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 				var right = document.createElement("a");
 				$(right).addClass("right");
 				$(right).addClass("carousel-control");
-				$(right).attr("href", displayDivId);
+				$(right).attr("href", "#" + displayDivId);
 				$(right).attr("role", "button");
 				$(right).attr("data-slide", "next");
 				$(right).html("<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span> <span class='sr-only'>Next</span>");
@@ -219,7 +219,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 
 					//adding indicator
 					var li = document.createElement("li");
-					$(li).attr("data-target", displayDivId);
+					$(li).attr("data-target", "#" + displayDivId);
 					$(li).attr("data-slide-to", i);
 					if(i == 0){
 						$(right).addClass("active");
