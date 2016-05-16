@@ -179,7 +179,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 				var ol = document.createElement("ol");
 				$(ol).addClass("carousel-indicators");
 				container.appendChild(ol);
-
+/*
 				//Creating wrapper for slides
 				var carousel_inner = document.createElement("div");
 				$(carousel_inner).attr("role", "listbox");
@@ -206,7 +206,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 				$(right).attr("data-slide", "next");
 				$(right).html("<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span> <span class='sr-only'>Next</span>");
 				container.appendChild(right);
-
+*/
 				//getting the first image, if any
 				var content = document.createElement("content");
 				content.innerHTML = entry.content;        
