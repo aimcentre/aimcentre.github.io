@@ -103,7 +103,7 @@
 		    });	
 
 		    initialize(Math.floor((Math.random() * 100000)));
-						
+			gadgets.window.adjustHeight();			
 		</script>
 
 		<script src="http://abvasvmc.github.io/js/bootstrap.min.js"></script>
