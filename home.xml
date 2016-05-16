@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="http://abvasvmc.github.io/home.css">
 		
 		<script src="http://abvasvmc.github.io/js/jquery.min.js"></script>
-		
+		<script src="http://abvasvmc.github.io/js/bootstrap.min.js"></script>
 		<script src="http://abvasvmc.github.io/js/moment.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script src="http://abvasvmc.github.io/abva.js"></script>
@@ -74,8 +74,8 @@
 			//Calling initialization routing on page loading
 			$(document).ready(function () {
 				
-				//initialize(Math.floor((Math.random() * 100000)));
-				gadgets.window.adjustHeight();
+				initialize(Math.floor((Math.random() * 100000)));
+				$('.carousel-control.right').click(function(){ return false; });
 			});			
 			
 			gadgets.util.registerOnLoadHandler(function() { 
@@ -101,12 +101,8 @@
 		        	prevWindowWidth = w;					  
 		        }
 		    });	
-
-		    initialize(Math.floor((Math.random() * 100000)));
-			gadgets.window.adjustHeight();			
+						
 		</script>
-
-		<script src="http://abvasvmc.github.io/js/bootstrap.min.js"></script>
      ]]>
   </Content> 
 </Module>
