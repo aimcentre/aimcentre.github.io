@@ -97,9 +97,10 @@
 		        						  (prevWindowWidth >= 992 && w < 992) ||
 		        						  (prevWindowWidth < 992 && w >= 992);
 		        	if(resize_required){
-		        		gadgets.window.adjustHeight();
+		        		//gadgets.window.adjustHeight();
 		        	}
 		        	
+		        	gadgets.window.adjustHeight();
 		        	prevWindowWidth = w;					  
 		        }
 		    });	
