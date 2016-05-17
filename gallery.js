@@ -109,6 +109,11 @@ function showAlbumCollectionByParentPageId(parentId){
 					$(title).addClass("album-title");
 					$(title).html(entry.title);
 					
+					//album image container
+					var album_images = document.createElement("div");
+					album.appendChild(album_images);
+					album_images.addClass("row");
+					
 					//adding images
 					var content = document.createElement("content");
 					content.innerHTML = entry.content;        
@@ -123,7 +128,7 @@ function showAlbumCollectionByParentPageId(parentId){
 						$(img).addClass("album-img");
 						$(img).addClass("col-sm-12");
 						$(img).css("background-image", "url(\"".concat(src, "\")"));
-						album.appendChild(img);
+						album_images.appendChild(img);
 					}
 					
 					var clear = document.createElement("content");
