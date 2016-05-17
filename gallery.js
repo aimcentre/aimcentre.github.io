@@ -50,31 +50,49 @@ function InitGallery(){
 }
 
 function showAlbumCollectionByPath(year){
-	var album_root_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=/", GalleryRoot, "/", year, "&t=", Math.floor((Math.random() * 100000)));
 	
-	$.ajax({
-	  url: album_root_url,
-	  dataType: "jsonp",
-	  success: function (data) {
-	  	var feed = jQuery.parseXML(data).documentElement;
-	  	var entries = feed. getElementsByTagName("entry");
-	  	if(entries.length > 0){
-	  		var ids = entries[0].getElementsByTagName("id");
-	  		if(ids.length > 0){
-		  		var url = $(ids[0]).text();
-		  		if(url.match("/$")){
-		  			url = url.slice(0,-1);
-		  		}
-		  		var pos = url.lastIndexOf("/");
-		  		var album_data_parent_id = url.slice(pos+1);
-				showAlbumCollectionByParentPageId(album_data_parent_id);
-		  	}
-	  	}
-	  }
-	});	
+	var albem_set_div_id = "album_set_" + year;
+	var gallery_data = document.getElementById(albem_set_div_id);
+	
+	if(gallery_data == null){
+		var album_root_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=/", GalleryRoot, "/", year, "&t=", Math.floor((Math.random() * 100000)));
+		
+		$.ajax({
+		  url: album_root_url,
+		  dataType: "jsonp",
+		  success: function (data) {
+			var feed = jQuery.parseXML(data).documentElement;
+			var entries = feed. getElementsByTagName("entry");
+			if(entries.length > 0){
+				var ids = entries[0].getElementsByTagName("id");
+				if(ids.length > 0){
+					var url = $(ids[0]).text();
+					if(url.match("/$")){
+						url = url.slice(0,-1);
+					}
+					var pos = url.lastIndexOf("/");
+					var album_data_parent_id = url.slice(pos+1);
+					showAlbumCollectionByParentPageId(album_data_parent_id, albem_set_div_id);
+				}
+			}
+		  }
+		});
+	}
+	else{
+		//making select gallery visible and everything else hidden
+		$( ".gallery-data" ).each(function() {
+			if($(this).attr("id") == albem_set_div_id){
+				$(this).show();
+			}
+			else{
+				$(this).hide();
+			}
+		});
+		gadgets.window.adjustHeight();
+	}
 } //End: showGallery(year)
 
-function showAlbumCollectionByParentPageId(parentId){
+function showAlbumCollectionByParentPageId(parentId, albumSetDivId){
 	var feed_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?parent=", parentId, "&kind=announcement", "&t=", Math.floor((Math.random() * 100000)));
 	var feed = new google.feeds.Feed(feed_url);
 	
@@ -85,15 +103,10 @@ function showAlbumCollectionByParentPageId(parentId){
 		if (!result.error) {
 			
 			//obtaining the specified gallery
-			var id = "gallery-".concat(parentId);
-			var gallery_data = document.getElementById(id);
-			
-			
-			
-			//if the gallery is not already loaded, load it.
+			var gallery_data = document.getElementById(albumSetDivId);
 			if(gallery_data == null){
 				gallery_data = document.createElement("div");
-				$(gallery_data).attr("id", id);
+				$(gallery_data).attr("id", albumSetDivId);
 				$(gallery_data).addClass("gallery-data");
 				
 				var gallery_data_root = document.getElementById("galleryDataRoot");
@@ -150,7 +163,7 @@ function showAlbumCollectionByParentPageId(parentId){
 			
 			//making select gallery visible and everything else hidden
 			$( ".gallery-data" ).each(function() {
-				if($(this).attr("id") == id){
+				if($(this).attr("id") == albumSetDivId){
 					$(this).show();
 				}
 				else{
