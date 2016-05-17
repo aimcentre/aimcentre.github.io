@@ -36,7 +36,9 @@ function InitGallery(){
 		
 		//adding the year to the page links
 		var year_link = document.createElement("span");
-		var link_start_tag = "<a href='#' onclick='event.preventDefault();showAlbumCollectionByPath(".concat(year,");return false;'>");
+		var link_action = "showAlbumCollectionByPath(" + year + ");return false;";
+		//var link_start_tag = "<a href='#' onclick='event.preventDefault();showAlbumCollectionByPath(".concat(year,");return false;'>");
+		var link_start_tag = "<a href='#' ontouch='"+link_action+"' onclick='"+link_action+"' >");
 		if(i < HistoryLength - 1){
 			$(year_link).html(link_start_tag.concat(year, "</a> | "));
 		}
