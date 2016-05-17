@@ -112,7 +112,6 @@ function showAlbumCollectionByParentPageId(parentId){
 					//album image container
 					var album_images = document.createElement("div");
 					album.appendChild(album_images);
-					$(album_images).css("border", "solid 2px red");
 					
 					//adding images
 					var content = document.createElement("content");
@@ -124,11 +123,16 @@ function showAlbumCollectionByParentPageId(parentId){
 						var src = images[k];
 						//var img = document.createElement("img");
 						//$(img).attr('src', src);
+						var wrapper = document.createElement("div");
+						$(wrapper).addClass("col-md-3");
+						album_images.appendChild(wrapper);
+						
 						var img = document.createElement("div");
 						$(img).addClass("album-img");
-						$(img).addClass("col-md-3");
+						
 						$(img).css("background-image", "url(\"".concat(src, "\")"));
-						album_images.appendChild(img);
+						$(img).css("margin", "10px");
+						wrapper.appendChild(img);
 					}
 					
 					var clear = document.createElement("content");
