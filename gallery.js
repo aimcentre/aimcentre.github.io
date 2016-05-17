@@ -50,7 +50,7 @@ function InitGallery(){
 }
 
 function showAlbumCollectionByPath(year){
-	var album_root_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=/", GalleryRoot, "/", year);
+	var album_root_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=/", GalleryRoot, "/", year, "&t=", Math.floor((Math.random() * 100000)));
 	
 	$.ajax({
 	  url: album_root_url,
