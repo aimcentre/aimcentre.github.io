@@ -52,6 +52,8 @@ function InitGallery(){
 function showAlbumCollectionByPath(year){
 	var album_root_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=/", GalleryRoot, "/", year);
 	
+	alert('test');
+		
 	$.ajax({
 	  url: album_root_url,
 	  dataType: "jsonp",
