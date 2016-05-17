@@ -31,7 +31,7 @@
 			var siteName = "www3";
 		</script>
 
-		<div id="myGallery" style="border: solid 1px green;">
+		<div id="myGallery">
 			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
 			<div id="galleryDataRoot">
