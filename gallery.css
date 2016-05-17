@@ -15,14 +15,39 @@
 	clear:both;	
 	padding-top:20px;
 }
+
 .album-title{
 	font: normal 20px 'Open Sans',sans-serif;
 	color: #66002e!important;
 }
 
+.wrapper {
+  width: 50%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+}
+.wrapper:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+.album-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* fill parent */
+  background-color: deepskyblue;
+  /* let's see it! */
+  color: white;
+}
+
+/*
 .album-img{
 	float:left;
-/*	height:300px;*/
 	background-size:cover;
 	background-position:center;
 	background-repeat:no-repeat;
@@ -31,6 +56,8 @@
 	-webkit-border-radius: 21px; 
 	border: solid wpx orange;
 }
+*/
+
 .album-cover{
 	width: 90px;
 	height: 75px;

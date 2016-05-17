@@ -126,12 +126,11 @@ function showAlbumCollectionByParentPageId(parentId){
 						//$(img).attr('src', src);
 						var wrapper = document.createElement("div");
 						$(wrapper).addClass("col-md-3");
+						$(wrapper).addClass("wrapper");
 						album_images.appendChild(wrapper);
 						
-						//var img = document.createElement("div");
-						//$(img).css("background-image", "url(\"".concat(src, "\")"));
-						var img = document.createElement("img");
-						$(img).attr("src", src);
+						var img = document.createElement("div");
+						$(img).css("background-image", "url(\"".concat(src, "\")"));
 						$(img).addClass("album-img");
 						$(wrapper).addClass("col-md-12");
 						wrapper.appendChild(img);
