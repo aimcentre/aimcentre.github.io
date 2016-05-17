@@ -133,7 +133,7 @@ function showAlbumCollectionByParentPageId(parentId){
 					
 					var clear = document.createElement("content");
 					$(clear).css("clear", "both");
-					gallery_data.appendChild(clear);
+					album_images.appendChild(clear);
 				}
 			}
 			
