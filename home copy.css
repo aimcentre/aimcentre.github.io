@@ -65,67 +65,22 @@
 
 
 
-.wrapper {
-  /* width: 100%;*/
-  /* whatever width you want */
-  display: inline-block;
-  position: relative;
-}
-
-.wrapper:after {
-  padding-top: 75%;
-  /* 16:9 ratio */
-  display: block;
-  content: '';
-}
-.album-img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  border-radius: 21px; 
-  -moz-border-radius: 21px; 
-  -webkit-border-radius: 21px; 
-  margin: 10px;
-}
-
-
-
-
-
-  
-.carousel-inner{
+#myCarousel > .carousel-inner{
 	position: relative;
 	height: 100%;
 	width: 100%;
+	position: absolute;
 	right: 0;
 	top: 0;
 }
   
-.carousel-inner:after {
-  padding-top: 75%;
-  display: block;
-  content: '';
-}
-
-.carousel-inner > .item{
-  	position: absolute;
-	top: 0;
-	bottom: 0;
-  	right: 0;
-  	left: 0;
-
-/*	height: 100%;
+#myCarousel > .carousel-inner > .item{
+	height: 100%;
 	width: 100%;
 	position: absolute;
 	right: 0;
-	top: 0;*/
-	
+	top: 0;
 	background-repeat:no-repeat;
 	background-position: center; 
 	background-size:cover;
