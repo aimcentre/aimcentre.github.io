@@ -58,9 +58,9 @@ function showAlbumCollectionByPath(year){
 	  success: function (data) {
 	  	var feed = jQuery.parseXML(data).documentElement;
 	  	var entries = feed. getElementsByTagName("entry");
-		alert(entries.length);
 	  	if(entries.length > 0){
 	  		var ids = entries[0].getElementsByTagName("id");
+			alert("id count: " + ids.length);
 	  		if(ids.length > 0){
 		  		var url = $(ids[0]).text();
 		  		if(url.endsWith("/")){
