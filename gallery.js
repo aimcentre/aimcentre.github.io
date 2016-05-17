@@ -121,6 +121,7 @@ function showAlbumCollectionByParentPageId(parentId){
 						//$(img).attr('src', src);
 						var img = document.createElement("div");
 						$(img).addClass("album-img");
+						$(img).addClass("col-sm-3");
 						$(img).css("background-image", "url(\"".concat(src, "\")"));
 						album.appendChild(img);
 					}
