@@ -128,10 +128,12 @@ function showAlbumCollectionByParentPageId(parentId){
 						$(wrapper).addClass("col-md-3");
 						album_images.appendChild(wrapper);
 						
-						var img = document.createElement("div");
+						//var img = document.createElement("div");
+						//$(img).css("background-image", "url(\"".concat(src, "\")"));
+						var img = document.createElement("img");
+						$(img).attr("src", src);
 						$(img).addClass("album-img");
 						$(img).addClass("col-md-12");
-						$(img).css("background-image", "url(\"".concat(src, "\")"));
 						$(img).css("margin", "10px");
 						wrapper.appendChild(img);
 					}
