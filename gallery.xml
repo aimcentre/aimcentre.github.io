@@ -31,10 +31,10 @@
 			var siteName = "www3";
 		</script>
 
-		<div id="myGallery" class="row">
+		<div id="myGallery">
 			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
-			<div id="galleryDataRoot">
+			<div id="galleryDataRoot" class="container">
 			</div>
 		</div>
 		
