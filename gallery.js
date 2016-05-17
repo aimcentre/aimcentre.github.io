@@ -112,7 +112,7 @@ function showAlbumCollectionByParentPageId(parentId){
 					//album image container
 					var album_images = document.createElement("div");
 					album.appendChild(album_images);
-					//album_images.addClass("row");
+					album_images.addClass("row");
 					
 					//adding images
 					var content = document.createElement("content");
@@ -126,7 +126,7 @@ function showAlbumCollectionByParentPageId(parentId){
 						//$(img).attr('src', src);
 						var img = document.createElement("div");
 						$(img).addClass("album-img");
-						$(img).addClass("col-sm-12");
+						$(img).addClass("col-md-3");
 						$(img).css("background-image", "url(\"".concat(src, "\")"));
 						album_images.appendChild(img);
 					}
