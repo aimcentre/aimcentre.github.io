@@ -86,10 +86,11 @@
 		   //Resize listener for gadget resizing on layout changes
 		   var prevWindowWidth= -1;
 		   var carousel_aspect_ratio = -1;
+		   var prevSwitchedWidth = -1;
 		   $( window ).resize(function() {
 		        if(prevWindowWidth < 0){
 		        	prevWindowWidth = $(window).width();
-
+		        	prevSwitchedWidth = prevWindowWidth;
 		        	carousel_aspect_ratio = $("#myCarousel").width() / $("#myCarousel").height()
 		        }
 		        else{
@@ -97,9 +98,13 @@
 		        	var resize_required = (prevWindowWidth >= 768 && w < 768) ||
 		        						  (prevWindowWidth < 768 && w >= 768) ||
 		        						  (prevWindowWidth >= 992 && w < 992) ||
-		        						  (prevWindowWidth < 992 && w >= 992);
+		        						  (prevWindowWidth < 992 && w >= 992) | 
+		        						  (prevWindowWidth <= w - 20) ||
+		        						  (prevWindowWidth >= w+20);
+
 		        	if(resize_required){
-		        		//gadgets.window.adjustHeight();
+		        		gadgets.window.adjustHeight();
+		        		prevSwitchedWidth = w;
 		        	}
 		        	
 		        	if(carousel_aspect_ratio > 0){
@@ -107,7 +112,7 @@
 		        		$("#myCarousel").height(new_carousel_height)
 		        	}
 		        	
-		        	gadgets.window.adjustHeight();
+		        	//gadgets.window.adjustHeight();
 		        	prevWindowWidth = w;					  
 		        }
 		    });	
