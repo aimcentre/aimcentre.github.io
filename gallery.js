@@ -60,7 +60,6 @@ function showAlbumCollectionByPath(year){
 	  	var entries = feed. getElementsByTagName("entry");
 	  	if(entries.length > 0){
 	  		var ids = entries[0].getElementsByTagName("id");
-			alert("id count: " + ids.length);
 	  		if(ids.length > 0){
 		  		var url = $(ids[0]).text();
 		  		if(url.endsWith("/")){
@@ -68,6 +67,7 @@ function showAlbumCollectionByPath(year){
 		  		}
 		  		var pos = url.lastIndexOf("/");
 		  		var album_data_parent_id = url.slice(pos+1);
+				alert("album_data_parent_id: " + album_data_parent_id);
 				showAlbumCollectionByParentPageId(album_data_parent_id);
 		  	}
 	  	}
