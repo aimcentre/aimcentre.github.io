@@ -126,8 +126,6 @@ function showAlbumCollectionByParentPageId(parentId){
 						//$(img).attr('src', src);
 						var wrapper = document.createElement("div");
 						$(wrapper).addClass("col-md-3");
-						$(wrapper).addClass("col-sm-4");
-						$(wrapper).addClass("col-xs-12");
 						album_images.appendChild(wrapper);
 						
 						//var img = document.createElement("div");
@@ -135,7 +133,6 @@ function showAlbumCollectionByParentPageId(parentId){
 						var img = document.createElement("img");
 						$(img).attr("src", src);
 						$(img).addClass("album-img");
-						$(img).css("margin", "10px");
 						wrapper.appendChild(img);
 					}
 					
