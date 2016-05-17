@@ -65,9 +65,7 @@ function showAlbumCollectionByPath(year){
 		  		if(url.match("/$")){
 		  			url = url.slice(0,-1);
 		  		}
-				
 		  		var pos = url.lastIndexOf("/");
-				alert("posxx: " + pos);
 		  		var album_data_parent_id = url.slice(pos+1);
 				showAlbumCollectionByParentPageId(album_data_parent_id);
 		  	}
