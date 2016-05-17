@@ -27,8 +27,8 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="inner wrapper">
-						<div id="myCarousel" class="carousel slide wrapper-child" data-ride="carousel">
+					<div class="inner">
+						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 						</div>
 						<div id="myWelcome">
 						</div>

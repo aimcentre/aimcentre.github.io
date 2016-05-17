@@ -184,6 +184,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 				var carousel_inner = document.createElement("div");
 				$(carousel_inner).attr("role", "listbox");
 				$(carousel_inner).addClass("carousel-inner");
+				$(carousel_inner).addClass("wrapper");
 				container.appendChild(carousel_inner);
 
 				//Creating left control
@@ -231,6 +232,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 					var img_div = document.createElement("div");
 					$(img_div).css("background-image", "url('".concat(img, "')"));
 					$(img_div).addClass("item");
+					$(img_div).addClass("wrapper-child");
 					if(i == 0){
 						$(img_div).addClass("active");
 					}
