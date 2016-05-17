@@ -112,7 +112,7 @@ function showAlbumCollectionByParentPageId(parentId){
 					//album image container
 					var album_images = document.createElement("div");
 					album.appendChild(album_images);
-					album_images.css("border", "solid 2px red");
+					$(album_images).css("border", "solid 2px red");
 					
 					//adding images
 					var content = document.createElement("content");
