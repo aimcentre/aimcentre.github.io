@@ -126,6 +126,8 @@ function showAlbumCollectionByParentPageId(parentId){
 						//$(img).attr('src', src);
 						var wrapper = document.createElement("div");
 						$(wrapper).addClass("col-md-3");
+						$(wrapper).addClass("col-sm-6");
+						$(wrapper).addClass("col-xs-12");
 						album_images.appendChild(wrapper);
 						
 						//var img = document.createElement("div");
