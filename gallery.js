@@ -80,8 +80,6 @@ function showAlbumCollectionByParentPageId(parentId){
 	
 	//TODO: Set maximum number of entries to be retrieved to be a large number
 	
-	alert('test');
-	
 	//Loading the feed
 	feed.load(function(result) {
 		if (!result.error) {
