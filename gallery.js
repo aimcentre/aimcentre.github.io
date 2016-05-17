@@ -60,9 +60,8 @@ function showAlbumCollectionByPath(year){
 	  	var entries = feed. getElementsByTagName("entry");
 	  	if(entries.length > 0){
 	  		var ids = entries[0].getElementsByTagName("id");
-			alert("ids: " + ids.length);
 	  		if(ids.length > 0){
-				
+				alert("ids.length: " + ids.length);
 		  		var url = $(ids[0]).text();
 		  		if(url.endsWith("/")){
 		  			url = url.slice(0,-1);
