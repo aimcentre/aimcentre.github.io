@@ -27,7 +27,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="inner">
+					<div class="inner" id="myCarouselParent">
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 						</div>
 						<div id="myWelcome">
