@@ -86,6 +86,8 @@ function showAlbumCollectionByParentPageId(parentId){
 			var id = "gallery-".concat(parentId);
 			var gallery_data = document.getElementById(id);
 			
+			alert('test');
+			
 			//if the gallery is not already loaded, load it.
 			if(gallery_data == null){
 				gallery_data = document.createElement("div");
