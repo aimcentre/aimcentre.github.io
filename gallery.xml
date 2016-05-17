@@ -34,7 +34,7 @@
 		<div id="myGallery">
 			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
-			<div id="galleryDataRoot" class="container">
+			<div id="galleryDataRoot">
 			</div>
 		</div>
 		
