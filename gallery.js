@@ -62,12 +62,12 @@ function showAlbumCollectionByPath(year){
 	  		var ids = entries[0].getElementsByTagName("id");
 	  		if(ids.length > 0){
 		  		var url = $(ids[0]).text();
-//		  		if(url.endsWith("/")){
-//		  			url = url.slice(0,-1);
-//		  		}
+		  		if(url.match("/$")){
+		  			url = url.slice(0,-1);
+		  		}
 				
 		  		var pos = url.lastIndexOf("/");
-				alert("posx: " + pos);
+				alert("posxx: " + pos);
 		  		var album_data_parent_id = url.slice(pos+1);
 				showAlbumCollectionByParentPageId(album_data_parent_id);
 		  	}
