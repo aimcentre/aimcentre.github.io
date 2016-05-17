@@ -57,12 +57,13 @@
 	font-style:italic;
 }
 
+/*
 #myCarousel{
 	overflow: hidden;
 	position: relative;
 	width: 100%;
 }
-
+*/
 
 
 .wrapper {
@@ -125,7 +126,7 @@
 	position: absolute;
 	right: 0;
 	top: 0;*/
-	
+
 	background-repeat:no-repeat;
 	background-position: center; 
 	background-size:cover;
