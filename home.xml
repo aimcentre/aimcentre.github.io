@@ -85,10 +85,12 @@
 		   
 		   //Resize listener for gadget resizing on layout changes
 		   var prevWindowWidth= -1;
+		   var carousel_aspect_ratio = -1;
 		   $( window ).resize(function() {
 		        if(prevWindowWidth < 0){
 		        	prevWindowWidth = $(window).width();
-		        	prevSwitchedWidth = prevWindowWidth;
+
+		        	carousel_aspect_ratio = $("#myCarousel").width() / $("#myCarousel").height()
 		        }
 		        else{
 		        	var w = $(window).width();
@@ -98,6 +100,11 @@
 		        						  (prevWindowWidth < 992 && w >= 992);
 		        	if(resize_required){
 		        		//gadgets.window.adjustHeight();
+		        	}
+		        	
+		        	if(carousel_aspect_ratio > 0){
+		        		var new_carousel_height = $("#myCarousel").width() / carousel_aspect_ratio;
+		        		$("#myCarousel").height(new_carousel_height)
 		        	}
 		        	
 		        	gadgets.window.adjustHeight();
