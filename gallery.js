@@ -52,12 +52,11 @@ function InitGallery(){
 function showAlbumCollectionByPath(year){
 	var album_root_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?path=/", GalleryRoot, "/", year);
 	
-	alert('test');
-		
 	$.ajax({
 	  url: album_root_url,
 	  dataType: "jsonp",
 	  success: function (data) {
+		 alert('test');
 	  	var feed = jQuery.parseXML(data).documentElement;
 	  	var entries = feed. getElementsByTagName("entry");
 	  	if(entries.length > 0){
