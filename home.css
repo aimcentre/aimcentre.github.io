@@ -57,33 +57,6 @@
 	font-style:italic;
 }
 
-.wrapper {
-  /* width: 100%;*/
-  /* whatever width you want */
-  display: inline-block;
-  position: relative;
-}
-.wrapper:after {
-  padding-top: 75%;
-  /* 16:9 ratio */
-  display: block;
-  content: '';
-}
-.wrapper-child {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  border-radius: 21px; 
-  -moz-border-radius: 21px; 
-  -webkit-border-radius: 21px; 
-  margin: 10px;
-}
 
 #myCarousel{
 	overflow: hidden;
@@ -108,7 +81,7 @@
 	top: 0;
 	background-repeat:no-repeat;
 	background-position: center; 
-	background-size:cover;
+	background-size:contain;
 }
 
 .inner{
