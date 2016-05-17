@@ -51,7 +51,7 @@ function showAnnouncements(parentPagePath, displayDivId, panelHeading, cacheSeed
 	  		var ids = entries[0].getElementsByTagName("id");
 	  		if(ids.length > 0){
 		  		var url = $(ids[0]).text();
-		  		if(url.endsWith("/")){
+		  		if(url.match("/$")){
 		  			url = url.slice(0,-1);
 		  		}
 		  		var pos = url.lastIndexOf("/");
