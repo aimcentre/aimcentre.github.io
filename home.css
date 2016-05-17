@@ -57,29 +57,19 @@
 	font-style:italic;
 }
 
-/*
-#myCarousel{
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-}
-*/
-
-
 .wrapper {
   /* width: 100%;*/
   /* whatever width you want */
   display: inline-block;
   position: relative;
 }
-
 .wrapper:after {
   padding-top: 75%;
   /* 16:9 ratio */
   display: block;
   content: '';
 }
-.album-img {
+.wrapper-child {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -95,38 +85,27 @@
   margin: 10px;
 }
 
-
-
-
-
+#myCarousel{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
   
-.carousel-inner{
+#myCarousel > .carousel-inner{
 	position: relative;
 	height: 100%;
 	width: 100%;
+	position: absolute;
 	right: 0;
 	top: 0;
 }
   
-.carousel-inner:after {
-  padding-top: 75%;
-  display: block;
-  content: '';
-}
-
-.carousel-inner > .item{
-  	position: absolute;
-	top: 0;
-	bottom: 0;
-  	right: 0;
-  	left: 0;
-
-/*	height: 100%;
+#myCarousel > .carousel-inner > .item{
+	height: 100%;
 	width: 100%;
 	position: absolute;
 	right: 0;
-	top: 0;*/
-
+	top: 0;
 	background-repeat:no-repeat;
 	background-position: center; 
 	background-size:cover;
