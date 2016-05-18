@@ -46,7 +46,11 @@ function InitGallery(){
 			$(year_link).html(link_start_tag.concat(year, "</a>"));
 		}
 		page_links.appendChild(year_link);
+
 	} //End: for (var i = 0; i < HistoryLength; i++){
+		
+	//displaying the album set of the current year
+	showAlbumCollectionByPath(new Date().getFullYear());
 }
 
 function showAlbumCollectionByPath(year){
