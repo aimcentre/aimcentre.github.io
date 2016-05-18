@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs title="Hello World!">
-    <Require feature="dynamic-height"/> 
+     
     <Require feature="opensocial-0.8" />
   </ModulePrefs>
   <UserPref name="siteDomain" display_name="Site Domain" datatype="string" required="true"/>
@@ -34,7 +34,7 @@
         var siteName = "www3";
       </script>
 
-      Hello, small world 6!
+      Hello, small world 7!
 
       <div>Picture Gallery</div>
       <div id="myGallery">
