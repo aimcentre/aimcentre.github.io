@@ -33,7 +33,7 @@
         var siteName = "www3";
       </script>
 
-      Hello, small world 3!
+      Hello, small world 4!
 
       <div>Picture Gallery</div>
       <div id="myGallery">
@@ -51,8 +51,13 @@
 
           //InitGallery();
 
-
         } //End: function initialize()
+
+        //Calling initialization routing on page loading
+        $(document).ready(function () {
+          initialize(Math.floor((Math.random() * 100000)));
+        });     
+
 
       </script>
 
