@@ -95,7 +95,7 @@ function showAnnouncements2(parentPageId, displayDivId, panelHeading, cacheSeed)
 				//item wrapper
 				var entry = result.feed.entries[i];
 				var div = document.createElement("div");
-				div.className = "feed-item";
+				$(div).addClass("feed-item");
 				
 				//item heading
 				var h = document.createElement("a");
