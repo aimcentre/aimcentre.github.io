@@ -124,8 +124,8 @@
 		        						  (prevWindowWidth < 768 && w >= 768) ||
 		        						  (prevWindowWidth >= 992 && w < 992) ||
 		        						  (prevWindowWidth < 992 && w >= 992) | 
-		        						  (prevWindowWidth <= w - 20) ||
-		        						  (prevWindowWidth >= w+20);
+		        						  (prevWindowWidth <= w - 5) ||
+		        						  (prevWindowWidth >= w+5);
 
 		        	if(resize_required){
 		        		gadgets.window.adjustHeight();
