@@ -34,7 +34,7 @@
         var siteName = "www3";
       </script>
 
-      Hello, small world 11!
+      Hello, small world 12!
 
       <div>Picture Gallery</div>
       <div id="myGallery">
@@ -50,7 +50,7 @@
         //Page initialization routine. This is called by google.setOnLoadCallback callback
         function initialize(feedUrlSeed) {
 
-          //InitGallery();
+          InitGallery();
 
         } //End: function initialize()
 
