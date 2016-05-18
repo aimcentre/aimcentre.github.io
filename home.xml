@@ -40,7 +40,14 @@
 						<div class="inner">
 							<div id="myEventsfeed" class="col-sm-6">
 							</div>
-							<div id="myNewsfeed" class="col-sm-6">
+							<div class="col-sm-6">
+								<div style="height:50px;border: solid 1px #66002e;">
+									FB and Sign Up Sheet Place Holder
+								</div>
+								</div>
+								<div id="myNewsfeed">
+									
+								</div>
 							</div>
 						</div>
 					</div>
