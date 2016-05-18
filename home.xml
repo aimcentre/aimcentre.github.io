@@ -40,7 +40,7 @@
 						<div class="inner">
 							<div  class="col-sm-12" style="height:50px;border: solid 1px #66002e;">
 								Follow us on <a href="https://www.facebook.com/groups/ABVA.SVMC/" target="_top">Facebook</a> or 
-								<a href="/sign-up" target="_top">sign up</a> for the program mailing list.
+								<a href="sign-up" target="_top">sign up</a> for the program mailing list.
 							</div>
 							<div id="myEventsfeed" class="col-sm-6">
 							</div>
