@@ -33,6 +33,7 @@
 			var siteName = "www3";
 		</script>
 
+	    <div>Picture Gallery</div>
 		<div id="myGallery">
 			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
