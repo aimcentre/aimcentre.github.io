@@ -33,8 +33,6 @@
 			var siteName = "www3";
 		</script>
 
-		Test Message
-
 		<div id="myGallery">
 			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
