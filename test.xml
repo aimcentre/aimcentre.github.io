@@ -60,7 +60,7 @@
         });     
 
         gadgets.util.registerOnLoadHandler(function() { 
-//          gadgets.window.adjustHeight();
+          gadgets.window.adjustHeight();
         });
 
       </script>
