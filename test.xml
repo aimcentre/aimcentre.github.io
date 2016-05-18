@@ -34,7 +34,7 @@
         var siteName = "www3";
       </script>
 
-      Hello, small world 12!
+      Hello, small world 13!
 
       <div>Picture Gallery</div>
       <div id="myGallery">
@@ -57,11 +57,12 @@
         //Calling initialization routing on page loading
         $(document).ready(function () {
           initialize(Math.floor((Math.random() * 100000)));
+          gadgets.window.adjustHeight();
         });     
 
-        gadgets.util.registerOnLoadHandler(function() { 
-          gadgets.window.adjustHeight();
-        });
+//        gadgets.util.registerOnLoadHandler(function() { 
+//          gadgets.window.adjustHeight();
+//        });
 
       </script>
 
