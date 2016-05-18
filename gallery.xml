@@ -9,7 +9,7 @@
   <UserPref name="galleryTitle" display_name="Gallery Title" datatype="string" />
   <UserPref name="historyLength" display_name="Number of Years to Show" datatype="string" />
   
-  <Content type="html">
+  <Content type="html" view="home">
      <![CDATA[
      	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 		<meta charset="utf-8">
