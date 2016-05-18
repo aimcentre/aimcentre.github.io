@@ -36,18 +36,15 @@
 				</div>
 				<div class="col-md-6">
 					<div class="visible-sm"><br /></div>
+					<div style="height:50px;border: solid 1px #66002e;">
+						FB and Sign Up Sheet Place Holder
+					</div>
 					<div class="row">
 						<div class="inner">
 							<div id="myEventsfeed" class="col-sm-6">
 							</div>
-							<div class="col-sm-6">
-								<div style="height:50px;border: solid 1px #66002e;">
-									FB and Sign Up Sheet Place Holder
-								</div>
-								</div>
-								<div id="myNewsfeed">
-									
-								</div>
+							<div id="myNewsfeed" class="col-sm-6">
+							</div>
 							</div>
 						</div>
 					</div>
