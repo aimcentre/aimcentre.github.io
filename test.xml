@@ -37,12 +37,24 @@
 
       <div>Picture Gallery</div>
       <div id="myGallery">
-      <div id="myGalleryTitle" class="page-title"></div>
-      <div id="pageLinks"></div>
-      <div id="galleryDataRoot">
-      </div>
+        <div id="myGalleryTitle" class="page-title"></div>
+        <div id="pageLinks"></div>
+        <div id="galleryDataRoot"></div>
       </div>
 
+      <script type="text/javascript">
+        //Initialize feed loader
+        google.load("feeds", "1");
+        
+        //Page initialization routine. This is called by google.setOnLoadCallback callback
+        function initialize(feedUrlSeed) {
+
+          //InitGallery();
+
+
+        } //End: function initialize()
+
+      </script>
 
     ]]>
   </Content>
