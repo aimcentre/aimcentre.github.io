@@ -68,6 +68,9 @@
 			
 			//Page initialization routine. This is called by google.setOnLoadCallback callback
 			function initialize(feedUrlSeed) {
+				
+				//Getting user prefs
+				var prefs = new gadgets.Prefs();
 				siteDomain = prefs.getString("siteDomain");
 				siteName = prefs.getString("siteName");
 				siteRoot = prefs.getString("siteRoot");
