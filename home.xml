@@ -46,11 +46,12 @@
 					<div class="visible-sm"><br /></div>
 					<div class="row">
 						<div class="inner">
-							<div  class="col-sm-12" id="follow-us-panel">
+<!--							<div  class="col-sm-12" id="follow-us-panel">
 								<div class="feed-panel-heading">Stay Tuned</div>
 								Follow us on <a href="https://www.facebook.com/groups/ABVA.SVMC/" target="_top">Facebook</a> or 
 								<a id="signup-sheet-link" href="#" target="_top">sign up</a> for the program mailing list.
 							</div>
+-->							
 							<div id="myEventsfeed" class="col-sm-6">
 							</div>
 							<div id="myNewsfeed" class="col-sm-6">
