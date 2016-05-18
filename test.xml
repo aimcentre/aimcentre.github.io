@@ -58,6 +58,9 @@
           initialize(Math.floor((Math.random() * 100000)));
         });     
 
+        gadgets.util.registerOnLoadHandler(function() { 
+          gadgets.window.adjustHeight();
+        });
 
       </script>
 
