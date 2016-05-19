@@ -24,7 +24,7 @@
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 		<link rel="stylesheet" href="https://abvasvmc.github.io/gallery.css">
-		<script src="https://abvasvmc.github.io/gallery.js"></script>
+		<script src="https://abvasvmc.github.io/gallery2.js"></script>
 	  
 		<script type="text/javascript">
 			//Site Specific Configuration
@@ -64,6 +64,13 @@
 //				gadgets.window.adjustHeight();
 //		   	});
 		   
+
+		   
+			window.addEventListener('popstate', function(event)
+			{
+			    alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+			});				
+
 		   //Resize listener for gadget resizing on layout changes
 		   var prevWindowWidth= -1;
 		   $( window ).resize(function() {
