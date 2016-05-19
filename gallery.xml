@@ -49,46 +49,15 @@
 			function initialize(feedUrlSeed) {
 
 				InitGallery();
-
-				//Loading carousel images
-				var aspectRatio = 9.0/16;
-//				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, feedUrlSeed);
-
-				//Loading welcome message from the Welcome page
-//				showPageContents("/welcome", "myWelcome", feedUrlSeed);
-				
-				//Loading Special Events feed
-//				showAnnouncements("5712403047090218682", "myEventsfeed", "Special Events", feedUrlSeed);
-				
-				//Loading News feed
-//				showAnnouncements("9115262703149858176", "myNewsfeed", "News", feedUrlSeed);
 				
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
 			
 
 			//Calling initialization routing on page loading
-			$(document).ready(function () {
-				/*
-				//Getting the last updated time for the site to generate a cache-elimination seed for feeds. 
-				var feed_url_base = "https://sites.google.com/feeds/activity/"; 
-				var feed_url = feed_url_base.concat(siteDomain, "/", siteName);
-				var feed = new google.feeds.Feed(feed_url);
-				feed.load(function(result) {
-					if (!result.error && result.feed.entries.length > 0) {
-						var entry = result.feed.entries[0];
-						var seed = JSON.stringify(entry);
-						initialize(seed);
-					}
-					else{
-						var seed = Math.floor(Math.random() * 10000);
-						initialize(seed);
-					}
-				});
-				*/
-				
+			$(document).ready(function () {				
 				initialize(Math.floor((Math.random() * 100000)));
-				gadgets.window.adjustHeight();
+				//KR: gadgets.window.adjustHeight();
 
 			});			
 			

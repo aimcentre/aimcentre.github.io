@@ -92,7 +92,7 @@ function showAlbumCollectionByPath(year){
 				$(this).hide();
 			}
 		});
-		gadgets.window.adjustHeight();
+		//KR: gadgets.window.adjustHeight();
 	}
 } //End: showGallery(year)
 
@@ -176,62 +176,11 @@ function showAlbumCollectionByParentPageId(parentId, albumSetDivId){
 			});
 			
 			gadgets.window.adjustHeight();
-			
-//			for(var i=0;i<result.feed.entries.length; ++i){
-				
-				
-//				var container = document.getElementById(displayDivId);
-				
-//				var h = document.createElement("h3");
-//				h.className = "page-title";
-//				h.innerHTML = entry.title;
-//				container.appendChild(h);
-				
-//				var content = document.createElement("div");
-//				content.innerHTML = entry.content;
-//				container.appendChild(content);
-//			}
-//			gadgets.window.adjustHeight();
 		}
 		else{
-			throw new Error("Failed to load feed ".concat(feed_url));
+//			throw new Error("Failed to load feed ".concat(feed_url));
 		}
 	});			
-}
-
-//A utility function which shows contents of a given page in a specified display div
-function showPageContents(pathToPage, displayDivId, cacheSeed){
-	var feed_url_base = "https://sites.google.com/feeds/content/"; 
-	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToPage, "&t=", cacheSeed);
-
-	var feed = new google.feeds.Feed(feed_url);
-	feed.includeHistoricalEntries();
-	feed.load(function(result) {
-		if (!result.error) {
-			if(result.feed.entries.length > 0){
-				var entry = result.feed.entries[0];
-				var container = document.getElementById(displayDivId);
-				
-				var h = document.createElement("h3");
-				h.className = "page-title";
-				h.innerHTML = entry.title;
-				container.appendChild(h);
-				
-				var content = document.createElement("div");
-				content.innerHTML = entry.content;
-				container.appendChild(content);
-			}
-			gadgets.window.adjustHeight();
-		}
-	});			
-} //End: function showPageContents(paregnPageId, displayDivId)
-
-
-//function to convert date into a string
-//Intl.DateTimeFormat does a nice job but it fails for Safari 
-function Date2Str(date){
-	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",  "November", "December"];
-	
 }
 
 
