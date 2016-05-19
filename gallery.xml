@@ -41,10 +41,10 @@
 		</div>
 		
 		<script type="text/javascript">
-//		
-//			//Initialize feed loader
-//			google.load("feeds", "1");
-//			
+		
+			//Initialize feed loader
+			google.load("feeds", "1");
+			
 //			//Page initialization routine. This is called by google.setOnLoadCallback callback
 //			function initialize(feedUrlSeed) {
 //
@@ -62,7 +62,6 @@
 			
 			//Calling initialization routing on gadget loading
 			gadgets.util.registerOnLoadHandler(function() { 
-				google.load("feeds", "1");
 				InitGallery();
 				gadgets.window.adjustHeight();
 		   	});
