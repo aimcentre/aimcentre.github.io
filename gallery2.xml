@@ -66,10 +66,10 @@
 		   
 
 		   
-			window.addEventListener('popstate', function(event)
-			{
-			    alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
-			});				
+//			window.addEventListener('popstate', function(event)
+//			{
+//			    alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+//			});				
 
 		   //Resize listener for gadget resizing on layout changes
 		   var prevWindowWidth= -1;
