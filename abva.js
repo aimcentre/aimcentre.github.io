@@ -60,9 +60,6 @@ function showAnnouncements(parentPagePath, displayDivId, panelHeading, cacheSeed
 		  		showAnnouncements2(id, displayDivId, panelHeading, cacheSeed);
 		  	}
 	  	}
-
-
-
 	  }
 	});
 }
@@ -166,7 +163,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	var carousel_width = $(display_div_id).width();
 	var carousel_height = Math.round(aspectRatio * carousel_width);
 	$(display_div_id).height(carousel_height);
-	gadgets.window.adjustHeight();
+	//KR: gadgets.window.adjustHeight();
 	
 	//Loading carousel images from the data page
 	feed.load(function(result) {
@@ -242,20 +239,4 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 		}
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
-
-
-//A utility function that shows images gallery
-function showGallery(pathToGalleryDataRoot, displayDivId, cacheSeed, aspectRatio){
-	var feed_url_base = "https://sites.google.com/feeds/content/"; 
-	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToGalleryDataRoot, "&t=", cacheSeed);
-
-	$.ajax({
-	  url: feed_url,
-	  dataType: "jsonp",
-	  success: function (data) {
-	    console.log(data);
-	    alert(data);
-	  }
-	});
-}
 

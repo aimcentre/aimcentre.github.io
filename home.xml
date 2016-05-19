@@ -21,16 +21,6 @@
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script src="https://abvasvmc.github.io/abva.js"></script>
 	  
-		<script type="text/javascript">
-			//Site Specific Configuration
-			//===========================
-			var siteDomain = null;
-			var siteName = null;
-			var siteRoot = null;
-			
-			//var siteDomain = "abva.org";
-			//var siteName = "www3";
-		</script>
 
 		<div class="container-fluid">
 			<div class="row">
@@ -46,12 +36,6 @@
 					<div class="visible-sm"><br /></div>
 					<div class="row">
 						<div class="inner">
-<!--							<div  class="col-sm-12" id="follow-us-panel">
-								<div class="feed-panel-heading">Stay Tuned</div>
-								Follow us on <a href="https://www.facebook.com/groups/ABVA.SVMC/" target="_top">Facebook</a> or 
-								<a id="signup-sheet-link" href="#" target="_top">sign up</a> for the program mailing list.
-							</div>
--->							
 							<div id="myEventsfeed" class="col-sm-6">
 							</div>
 							<div id="myNewsfeed" class="col-sm-6">
@@ -68,6 +52,11 @@
 			//Initialize feed loader
 			google.load("feeds", "1");
 			
+
+			var siteDomain = null;
+			var siteName = null;
+			var siteRoot = null;
+
 			//Page initialization routine. This is called by google.setOnLoadCallback callback
 			function initialize(feedUrlSeed) {
 				
@@ -97,16 +86,19 @@
 			} //End: function initialize()
 			
 
-			//Calling initialization routing on page loading
-			$(document).ready(function () {
-				
+//			//Calling initialization routing on page loading
+//			$(document).ready(function () {
+//				
+//				initialize(Math.floor((Math.random() * 100000)));
+//				gadgets.window.adjustHeight();
+//			});			
+//
+
+			//Calling initialization routing on gadget loading
+			gadgets.util.registerOnLoadHandler(function() { 
 				initialize(Math.floor((Math.random() * 100000)));
 				gadgets.window.adjustHeight();
-			});			
-			
-//			gadgets.util.registerOnLoadHandler(function() { 
-//				gadgets.window.adjustHeight();
-//		   });
+		   });
 		   
 		   //Resize listener for gadget resizing on layout changes
 		   var prevWindowWidth= -1;
