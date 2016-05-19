@@ -98,6 +98,7 @@ function showAlbumCollectionByPath(year){
 } //End: showGallery(year)
 
 function showAlbumCollectionByParentPageId(parentId, albumSetDivId){
+	google.load("feeds", "1");
 	var feed_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?parent=", parentId, "&kind=announcement", "&t=", Math.floor((Math.random() * 100000)));
 	var feed = new google.feeds.Feed(feed_url);
 	
