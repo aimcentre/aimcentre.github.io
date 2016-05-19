@@ -5,8 +5,6 @@ var GalleryRoot = "";
 var GalleryTitle = "";
 var HistoryLength = 4;
 
-google.load("feeds", "1");
-
 function seed(){
 	return Math.floor(Math.random() * 100000);
 }
