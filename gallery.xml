@@ -55,7 +55,7 @@
 			
 			//Calling initialization routing on gadget loading
 			gadgets.util.registerOnLoadHandler(function() { 
-				
+				google.load("feeds", "1");
 				InitGallery();
 				gadgets.window.adjustHeight();
 		   	});
