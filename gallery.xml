@@ -34,10 +34,10 @@
 		</div>
 		
 		<script type="text/javascript">
-//		
-//			//Initialize feed loader
-//			google.load("feeds", "1");
-//			
+		
+			//Initialize feed loader
+			google.load("feeds", "1");
+			
 //			//Page initialization routine. This is called by google.setOnLoadCallback callback
 //			function initialize(feedUrlSeed) {
 //
@@ -73,7 +73,7 @@
 		        						  (prevWindowWidth >= 992 && w < 992) ||
 		        						  (prevWindowWidth < 992 && w >= 992);
 		        	if(resize_required){
-		        		//gadgets.window.adjustHeight();
+		        		gadgets.window.adjustHeight();
 		        	}
 		        	
 		        	prevWindowWidth = w;					  

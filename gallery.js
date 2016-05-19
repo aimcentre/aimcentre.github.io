@@ -65,7 +65,6 @@ function showAlbumCollectionByPath(year){
 		  url: album_root_url,
 		  dataType: "jsonp",
 		  success: function (data) {
-			google.load("feeds", "1");
 			var feed = jQuery.parseXML(data).documentElement;
 			var entries = feed. getElementsByTagName("entry");
 			if(entries.length > 0){
@@ -98,7 +97,6 @@ function showAlbumCollectionByPath(year){
 } //End: showGallery(year)
 
 function showAlbumCollectionByParentPageId(parentId, albumSetDivId){
-	google.load("feeds", "1");
 	var feed_url = FeedUrlBase.concat(SiteDomain, "/", SiteName, "/?parent=", parentId, "&kind=announcement", "&t=", Math.floor((Math.random() * 100000)));
 	var feed = new google.feeds.Feed(feed_url);
 	
