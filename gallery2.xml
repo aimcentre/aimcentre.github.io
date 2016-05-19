@@ -18,9 +18,9 @@
 
 		<link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
 		
-		<script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
-		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
-		<script src="https://abvasvmc.github.io/js/moment.js"></script>
+		<script type="text/javascript" src="https://abvasvmc.github.io/js/jquery.min.js"></script>
+		<script type="text/javascript" src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://abvasvmc.github.io/js/moment.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 		<link rel="stylesheet" href="https://abvasvmc.github.io/gallery.css">
@@ -32,7 +32,8 @@
 			var siteDomain = "abva.org";
 			var siteName = "www3";
 		</script>
-
+		
+		<div>My Gallery</div>
 		<div id="myGallery">
 			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
@@ -45,14 +46,14 @@
 			//Initialize feed loader
 			google.load("feeds", "1");
 			
-			//Page initialization routine. This is called by google.setOnLoadCallback callback
-			function initialize(feedUrlSeed) {
-
-				InitGallery();
-				
-				////gadgets.window.adjustHeight();
-			} //End: function initialize()
-			
+//			//Page initialization routine. This is called by google.setOnLoadCallback callback
+//			function initialize(feedUrlSeed) {
+//
+//				InitGallery();
+//				
+//				////gadgets.window.adjustHeight();
+//			} //End: function initialize()
+//			
 //
 //			//Calling initialization routing on page loading
 //			$(document).ready(function () {				
@@ -60,7 +61,7 @@
 //				//KR: gadgets.window.adjustHeight();
 //			});			
 //			
-			gadgets.util.registerOnLoadHandler(InitGallery());
+//			gadgets.util.registerOnLoadHandler(InitGallery());
 		   
 
 		   
