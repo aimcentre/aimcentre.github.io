@@ -26,13 +26,6 @@
 		<link rel="stylesheet" href="https://abvasvmc.github.io/gallery.css">
 		<script src="https://abvasvmc.github.io/gallery.js"></script>
 	  
-		<script type="text/javascript">
-			//Site Specific Configuration
-			//===========================
-			var siteDomain = "abva.org";
-			var siteName = "www3";
-		</script>
-
 		<div id="myGallery">
 			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
@@ -62,7 +55,7 @@
 			
 			//Calling initialization routing on gadget loading
 			gadgets.util.registerOnLoadHandler(function() { 
-				google.load("feeds", "1");
+				
 				InitGallery();
 				gadgets.window.adjustHeight();
 		   	});
