@@ -53,16 +53,14 @@
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
 			
-
-			//Calling initialization routing on page loading
-			$(document).ready(function () {				
-				initialize(Math.floor((Math.random() * 100000)));
-				//KR: gadgets.window.adjustHeight();
-			});			
-			
-//			gadgets.util.registerOnLoadHandler(function() { 
-//				gadgets.window.adjustHeight();
-//		   	});
+//
+//			//Calling initialization routing on page loading
+//			$(document).ready(function () {				
+//				initialize(Math.floor((Math.random() * 100000)));
+//				//KR: gadgets.window.adjustHeight();
+//			});			
+//			
+			gadgets.util.registerOnLoadHandler(InitGallery());
 		   
 
 		   
