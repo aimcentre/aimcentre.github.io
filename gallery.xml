@@ -59,6 +59,11 @@
 				initialize(Math.floor((Math.random() * 100000)));
 				//KR: gadgets.window.adjustHeight();
 
+				window.addEventListener('popstate', function(event)
+				{
+				    alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+				});				
+
 			});			
 			
 //			gadgets.util.registerOnLoadHandler(function() { 
