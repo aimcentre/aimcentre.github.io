@@ -1,18 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
-<Module>
-  <ModulePrefs title="Gallery">
-  	<Require feature="dynamic-height"/> 
-  	<Require feature="opensocial-0.8" />
-  </ModulePrefs>
-  <UserPref name="siteDomain" display_name="Site Domain" datatype="string" required="true"/>
-  <UserPref name="siteName" display_name="Site Name" datatype="string" required="true"/>
-  <UserPref name="galleryRoot" display_name="Gallery Root" datatype="string" required="true"/>
-  <UserPref name="galleryTitle" display_name="Gallery Title" datatype="string" />
-  <UserPref name="historyLength" display_name="Number of Years to Show" datatype="string" />
-  
-  <Content type="html" view="default">
-     <![CDATA[
-     	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,7 +20,8 @@
 			var siteDomain = "abva.org";
 			var siteName = "www3";
 		</script>
-
+	</head>
+	<body>
 		<div id="myGallery">
 			<div id="myGalleryTitle" class="page-title"></div>
 			<div id="pageLinks"></div>
@@ -88,6 +77,5 @@
 		    });	
 						
 		</script>
-     ]]>
-  </Content> 
-</Module>
+	</body>
+</html>
