@@ -175,7 +175,7 @@ function showAlbumCollectionByParentPageId(parentId, albumSetDivId){
 				}
 			});
 			
-			//KR2: gadgets.window.adjustHeight();
+			gadgets.window.adjustHeight();
 		}
 		else{
 //			throw new Error("Failed to load feed ".concat(feed_url));
