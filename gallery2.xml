@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
-  <ModulePrefs title="hello world example" /> 
+  <ModulePrefs title="Gallery">
+  	<Require feature="dynamic-height"/> 
+  </ModulePrefs>
+  <UserPref name="siteDomain" display_name="Site Domain" datatype="string" required="true"/>
+  <UserPref name="siteName" display_name="Site Name" datatype="string" required="true"/>
+  <UserPref name="galleryRoot" display_name="Gallery Root" datatype="string" required="true"/>
+  <UserPref name="galleryTitle" display_name="Gallery Title" datatype="string" />
+  <UserPref name="historyLength" display_name="Number of Years to Show" datatype="string" />
   <Content type="html">
      <![CDATA[ 
        Hello, world!
