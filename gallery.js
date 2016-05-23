@@ -87,6 +87,7 @@ function showAlbumCollectionByPath(year){
 		$( ".gallery-data" ).each(function() {
 			if($(this).attr("id") == albem_set_div_id){
 				$(this).show();
+				gadgets.window.adjustHeight();
 			}
 			else{
 				$(this).hide();
