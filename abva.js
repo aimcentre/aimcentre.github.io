@@ -40,7 +40,7 @@ function showAlerts(pathToPage, displayDivId, cacheSeed){
 				
 				try {
 					
-					if(entry.contentSnippettrim().length > 0){
+					if(entry.contentSnippet.trim().length > 0){
 						$(container).html(entry.content);
 						$(container).show();
 					}
