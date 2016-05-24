@@ -64,7 +64,7 @@ function showAnnouncements(parentPagePath, displayDivId, panelHeading, cacheSeed
 	});
 }
 
-function showAnnouncements2(parentPageId, displayDivId, panelHeading, cacheSeed){
+function showAnnouncements2(parentPageId, displayDivId, panelHeading, cacheSeed, trialCount){
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
 	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?parent=", parentPageId, "&t=", cacheSeed);
 	var feed = new google.feeds.Feed(feed_url);
@@ -146,9 +146,19 @@ function showAnnouncements2(parentPageId, displayDivId, panelHeading, cacheSeed)
 			gadgets.window.adjustHeight();
 		}
 		else{
-			container.innerHTML = "Failed to load items from the feed.";
+			if(trialCount == null){
+				trialCount = 1;
+			}
+			
+			if(trialCount < 20){
+				//try to reload the content
+				showAnnouncements2(parentPageId, displayDivId, panelHeading, cacheSeed, trialCount+1);
+			}
+			else{
+				container.innerHTML = "Failed to load items from the feed.";
+			}
 		}
-	});			
+	});
 } //End: function showAnnouncements(paregnPageId, displayDivId)
 
 
