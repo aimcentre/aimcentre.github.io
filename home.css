@@ -95,6 +95,8 @@
 
 #myAlerts{
 	margin-top:20px;
+	font-weight:bold;
+	color:#990000;
 }
 .inner{
 	width:95%;
