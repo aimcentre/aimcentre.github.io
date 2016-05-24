@@ -67,8 +67,6 @@
 				siteName = prefs.getString("siteName");
 				siteRoot = prefs.getString("siteRoot");
 			
-				//Signup sheet link
-				$("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
 
 				//Loading carousel images
 				var aspectRatio = 9.0/16;
