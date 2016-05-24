@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
-  <ModulePrefs title="ABVA Home" height="100">
+  <ModulePrefs title="ABVA Home Gadget" height="100">
   	<Require feature="dynamic-height"/> 
   </ModulePrefs>
   <UserPref name="siteDomain" display_name="Site Domain" datatype="string" required="true"/>
@@ -13,13 +13,13 @@
      	<meta http-equiv="Cache-control" content="public">
 
 		<link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://abvasvmc.github.io/home.css">
+		<link rel="stylesheet" href="https://abvasvmc.github.io/abva.css">
 		
 		<script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
 		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
 		<script src="https://abvasvmc.github.io/js/moment.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script src="https://abvasvmc.github.io/abva2.js"></script>
+		<script src="https://abvasvmc.github.io/abva.js"></script>
 
 		<div class="container-fluid">
 			<div class="row">
@@ -67,26 +67,36 @@
 				siteName = prefs.getString("siteName");
 				siteRoot = prefs.getString("siteRoot");
 			
+				//Signup sheet link
+				$("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
 
 				//Loading carousel images
 				var aspectRatio = 9.0/16;
 				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
 				
 				//Loading any alerts
-//				showAlerts("/data-pages/alerts", "myAlerts", feedUrlSeed);
+				showAlerts("/data-pages/alerts", "myAlerts", feedUrlSeed);
 
 				//Loading welcome message from the Welcome page
-//				showPageContents("/welcome", "myWelcome", feedUrlSeed);
+				showPageContents("/welcome", "myWelcome", feedUrlSeed);
 				
 				//Loading Special Events feed
-//				showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
+				showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
 				
 				//Loading News feed
-//				showAnnouncements("/news", "myNewsfeed", "News", feedUrlSeed);
+				showAnnouncements("/news", "myNewsfeed", "News", feedUrlSeed);
 				
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
 			
+
+//			//Calling initialization routing on page loading
+//			$(document).ready(function () {
+//				
+//				initialize(Math.floor((Math.random() * 100000)));
+//				gadgets.window.adjustHeight();
+//			});			
+//
 
 			//Calling initialization routing on gadget loading
 			gadgets.util.registerOnLoadHandler(function() { 
