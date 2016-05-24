@@ -7,5 +7,5 @@
   <UserPref name="siteName" display_name="Site Name" datatype="string" required="true"/>
   <UserPref name="siteRoot" display_name="Site Root" datatype="string" required="true"/>
   
-  <Content type="url" href="http://abvasvmc.github.io/home.html" />
+  <Content type="url" href="https://abvasvmc.github.io/home.html" />
 </Module>
