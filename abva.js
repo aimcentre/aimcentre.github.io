@@ -1,5 +1,4 @@
 
-
 //A utility function which shows contents of a given page in a specified display div
 function showPageContents(pathToPage, displayDivId, cacheSeed){
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
@@ -26,6 +25,38 @@ function showPageContents(pathToPage, displayDivId, cacheSeed){
 		}
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
+
+function showAlerts(pathToPage, displayDivId, cacheSeed){
+	var feed_url_base = "https://sites.google.com/feeds/content/"; 
+	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToPage, "&t=", cacheSeed);
+
+	var feed = new google.feeds.Feed(feed_url);
+	feed.includeHistoricalEntries();
+	feed.load(function(result) {
+		if (!result.error) {
+			if(result.feed.entries.length > 0){
+				var entry = result.feed.entries[0];
+				var container = document.getElementById(displayDivId);
+				
+				try {
+					
+					if(entry.contentSnippettrim().length > 0){
+						$(container).html(entry.content);
+						$(container).show();
+					}
+					else{
+						$(container).hide();
+					}
+				}
+				catch(err) {
+					$(container).html(err.message);
+					$(container).show();
+				}
+			}
+			gadgets.window.adjustHeight();
+		}
+	});			
+}
 
 
 //function to convert date into a string

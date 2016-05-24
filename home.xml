@@ -20,13 +20,14 @@
 		<script src="https://abvasvmc.github.io/js/moment.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script src="https://abvasvmc.github.io/abva.js"></script>
-	  
 
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="inner">
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						</div>
+						<div id="myAlerts" class="alert alert-danger">
 						</div>
 						<div id="myWelcome">
 						</div>
@@ -72,6 +73,9 @@
 				//Loading carousel images
 				var aspectRatio = 9.0/16;
 				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
+				
+				//Loading any alerts
+				showAlerts("/data-pages/alerts", "myAlerts", feedUrlSeed);
 
 				//Loading welcome message from the Welcome page
 				showPageContents("/welcome", "myWelcome", feedUrlSeed);
