@@ -93,6 +93,9 @@
 	background-size:cover;
 }
 
+#myAlerts{
+	margin-top:10px;
+}
 .inner{
 	width:95%;
 }
