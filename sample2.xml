@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="Zombies!" height="350" />
+  <Content type="html">
+  <![CDATA[
+  <div id="zombiecontainer"
+    style="text-align:center;">
+  </div>
+  <script type="text/javascript">
+  var counter = 0;
+
+  // Preload the images using gadgets.io.getProxyUrl()
+  function load(imageList) {
+    var ret = [];
+    for (var i = 0, j = imageList.length; i < j; ++i) {
+      var img = document.createElement("img");
+      img.src = gadgets.io.getProxyUrl(imageList[i]);
+      ret.push(img);
+    }
+    return ret;
+  }
+
+  var files = [
+    "https://photos.google.com/share/AF1QipNuF6RB5m0PkTHfNnZjzkxu78r7Kz3A6NPh-aUrIE-p98do-uQRlp24vGqaN97pRA/photo/AF1QipPKGGY5x2dQfl-zFgT9Db9Be4Fkd-y1ObNy6bOo?key=ZW9jV1hzWjY2WWZ6VFFZS3pnbktCbWdIUlVHQThR",
+    "https://photos.google.com/share/AF1QipNuF6RB5m0PkTHfNnZjzkxu78r7Kz3A6NPh-aUrIE-p98do-uQRlp24vGqaN97pRA/photo/AF1QipPzeHkfvrfhwFtcKAcg5Yfl1uNYa1FCFnv2ioLA?key=ZW9jV1hzWjY2WWZ6VFFZS3pnbktCbWdIUlVHQThR"
+  ];
+
+  var images = load(files);
+  browse();
+
+  // Browse through photos sequentially. When you get to the end of the array, start over.
+  function browse(){
+    if (counter == images.length)
+    {
+      counter = 0;
+    }
+    document.getElementById("zombiecontainer").innerHTML = "";
+    document.getElementById("zombiecontainer").appendChild(images[counter]);
+    counter++;
+  }
+
+  </script>
+  <br />
+  <div style="text-align: center;">
+    <input type=submit value="Next ->" onClick="browse()">
+  </div>
+  ]]>
+  </Content>
+</Module>
