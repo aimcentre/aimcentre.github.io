@@ -27,7 +27,7 @@
 					<div class="inner">
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 						</div>
-						<div id="myAlerts" class="alert alert-danger">
+						<div id="myAlerts" class="alert alert-warning ">
 						</div>
 						<div id="myWelcome">
 						</div>
