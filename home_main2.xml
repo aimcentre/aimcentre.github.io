@@ -75,28 +75,20 @@
 				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
 				
 				//Loading any alerts
-				showAlerts("/data-pages/alerts", "myAlerts", feedUrlSeed);
+//				showAlerts("/data-pages/alerts", "myAlerts", feedUrlSeed);
 
 				//Loading welcome message from the Welcome page
-				showPageContents("/welcome", "myWelcome", feedUrlSeed);
+//				showPageContents("/welcome", "myWelcome", feedUrlSeed);
 				
 				//Loading Special Events feed
-				showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
+//				showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
 				
 				//Loading News feed
-				showAnnouncements("/news", "myNewsfeed", "News", feedUrlSeed);
+//				showAnnouncements("/news", "myNewsfeed", "News", feedUrlSeed);
 				
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
 			
-
-//			//Calling initialization routing on page loading
-//			$(document).ready(function () {
-//				
-//				initialize(Math.floor((Math.random() * 100000)));
-//				gadgets.window.adjustHeight();
-//			});			
-//
 
 			//Calling initialization routing on gadget loading
 			gadgets.util.registerOnLoadHandler(function() { 
