@@ -9,9 +9,8 @@
   
   <Content type="html">
      <![CDATA[
-     	<meta http-equiv="Cache-control" content="private">
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+     	<meta http-equiv="Cache-control" content="public">
 
 		<link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://abvasvmc.github.io/home.css">
