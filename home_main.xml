@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
-  <ModulePrefs title="Carousel" height="100">
+  <ModulePrefs title="ABVA Home" height="100">
   	<Require feature="dynamic-height"/> 
   </ModulePrefs>
   <UserPref name="siteDomain" display_name="Site Domain" datatype="string" required="true"/>
