@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+			var siteDomain = "abva.org";
+			var siteName = "abva-dev";
+			var siteRoot =  "https://sites.google.com/a/abva.org/abva-dev";
+		</script>
+
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://abvasvmc.github.io/abva.css">
+		
+		<script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
+		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
+		<script src="https://abvasvmc.github.io/js/moment.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script src="https://abvasvmc.github.io/abva.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="inner">
+						<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						</div>
+						<div id="myAlerts" class="alert alert-warning" style="display:none;">
+						</div>
+						<div id="myWelcome">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="visible-sm"><br /></div>
+					<div class="row">
+						<div class="inner">
+							<div id="myEventsfeed" class="col-sm-6">
+							</div>
+							<div id="myNewsfeed" class="col-sm-6">
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		
+			//Initialize feed loader
+			google.load("feeds", "1");
+			
+
+			var siteDomain = null;
+			var siteName = null;
+			var siteRoot = null;
+
+			//Page initialization routine. This is called by google.setOnLoadCallback callback
+			function initialize(feedUrlSeed) {
+				
+				//Getting user prefs
+				var prefs = new gadgets.Prefs();
+				siteDomain = prefs.getString("siteDomain");
+				siteName = prefs.getString("siteName");
+				siteRoot = prefs.getString("siteRoot");
+			
+				//Signup sheet link
+				$("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
+
+				//Loading carousel images
+				var aspectRatio = 9.0/16;
+				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
+				
+				//Loading any alerts
+				showAlerts("/data-pages/alerts", "myAlerts", feedUrlSeed);
+
+				//Loading welcome message from the Welcome page
+				showPageContents("/welcome", "myWelcome", feedUrlSeed);
+				
+				//Loading Special Events feed
+				showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
+				
+				//Loading News feed
+				showAnnouncements("/news", "myNewsfeed", "News", feedUrlSeed);
+				
+				////gadgets.window.adjustHeight();
+			} //End: function initialize()
+			
+
+			//Calling initialization routing on page loading
+			$(document).ready(function () {
+				
+				initialize(Math.floor((Math.random() * 100000)));
+				gadgets.window.adjustHeight();
+			});			
+
+
+//			//Calling initialization routing on gadget loading
+//			gadgets.util.registerOnLoadHandler(function() { 
+//				initialize(Math.floor((Math.random() * 100000)));
+//				gadgets.window.adjustHeight();
+//		   });
+
+		   
+		   //Resize listener for gadget resizing on layout changes
+		   var prevWindowWidth= -1;
+		   var carousel_aspect_ratio = -1;
+		   var prevSwitchedWidth = -1;
+		   $( window ).resize(function() {
+		        if(prevWindowWidth < 0){
+		        	prevWindowWidth = $(window).width();
+		        	prevSwitchedWidth = prevWindowWidth;
+		        	carousel_aspect_ratio = $("#myCarousel").width() / $("#myCarousel").height()
+		        }
+		        else{
+		        	var w = $(window).width();
+		        	var resize_required = (prevWindowWidth >= 768 && w < 768) ||
+		        						  (prevWindowWidth < 768 && w >= 768) ||
+		        						  (prevWindowWidth >= 992 && w < 992) ||
+		        						  (prevWindowWidth < 992 && w >= 992) | 
+		        						  (prevWindowWidth <= w - 5) ||
+		        						  (prevWindowWidth >= w+5);
+
+		        	if(resize_required){
+		        		gadgets.window.adjustHeight();
+		        		prevSwitchedWidth = w;
+		        	}
+		        	
+		        	if(carousel_aspect_ratio > 0){
+		        		var new_carousel_height = $("#myCarousel").width() / carousel_aspect_ratio;
+		        		$("#myCarousel").height(new_carousel_height)
+		        	}
+		        	
+		        	//gadgets.window.adjustHeight();
+		        	prevWindowWidth = w;					  
+		        }
+		    });	
+						
+		</script>
+    </body>
+</html>
