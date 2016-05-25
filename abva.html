@@ -51,22 +51,9 @@
 			google.load("feeds", "1");
 			
 
-			var siteDomain = null;
-			var siteName = null;
-			var siteRoot = null;
-
 			//Page initialization routine. This is called by google.setOnLoadCallback callback
 			function initialize(feedUrlSeed) {
 				
-				//Getting user prefs
-				var prefs = new gadgets.Prefs();
-				siteDomain = prefs.getString("siteDomain");
-				siteName = prefs.getString("siteName");
-				siteRoot = prefs.getString("siteRoot");
-			
-				//Signup sheet link
-				$("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
-
 				//Loading carousel images
 				var aspectRatio = 9.0/16;
 				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
