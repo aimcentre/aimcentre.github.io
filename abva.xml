@@ -102,6 +102,7 @@
 			gadgets.util.registerOnLoadHandler(function() { 
 				initialize(Math.floor((Math.random() * 100000)));
 				gadgets.window.adjustHeight();
+				window.history.pushState({}, '', document.URL);
 		   });
 		   
 		   //Resize listener for gadget resizing on layout changes
