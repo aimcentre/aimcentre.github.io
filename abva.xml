@@ -66,6 +66,9 @@
 				siteDomain = prefs.getString("siteDomain");
 				siteName = prefs.getString("siteName");
 				siteRoot = prefs.getString("siteRoot");
+				
+				calendarId = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
+				apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
 			
 				//Signup sheet link
 				$("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
@@ -85,7 +88,11 @@
 				
 				//Loading News feed
 				showAnnouncements("/news", "myNewsfeed", "News", feedUrlSeed);
-				
+
+				//Loading calendar events
+				showCalendarEvents(calendarId, apiKey, "myNewsfeed");
+
+
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
 			
