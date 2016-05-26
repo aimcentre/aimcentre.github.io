@@ -287,7 +287,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 function showCalendarEvents(calendarId, apiKey, displayDivId){
 	$.ajax({
 	    type: 'GET',
-	    url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarId+ '/events?key=' + apiKey),
+	    url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarId+ '/events?key=' + apiKey + '&singleEvents=true'),
 	    dataType: 'json',
 	    success: function (response) {
 	        //do whatever you want with each
