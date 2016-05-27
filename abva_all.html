@@ -15,7 +15,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<!--<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>-->
 		<!--<script src="https://abvasvmc.github.io/js/moment.js"></script>>-->
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<!--<script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
 		
 	</head>
 	<body>
@@ -306,13 +306,13 @@ google.loader.rpl({":swfobject":{"versions":{":2.1":{"uncompressed":"swfobject_s
 							h.appendChild(document.createTextNode(entry.title));
 							div.appendChild(h);
 
-							//posted time
-							var published = document.createElement("div");							
-							var formatter = moment(entry.publishedDate, "UTZ");
-							var date_str = formatter.format('dddd MMMM DD, YYYY');	
-							published.appendChild(document.createTextNode("Posted: ".concat(date_str)));
-							$(published).addClass("feed-item-posted-date");
-							//div.appendChild(published);
+//							//posted time
+//							var published = document.createElement("div");							
+//							var formatter = moment(entry.publishedDate, "UTZ");
+//							var date_str = formatter.format('dddd MMMM DD, YYYY');	
+//							published.appendChild(document.createTextNode("Posted: ".concat(date_str)));
+//							$(published).addClass("feed-item-posted-date");
+//							//div.appendChild(published);
 
 							//getting the first image, if any
 							var content = document.createElement("content");
