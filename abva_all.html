@@ -259,13 +259,13 @@
 							h.appendChild(document.createTextNode(entry.title));
 							div.appendChild(h);
 
-							//posted time
-							var published = document.createElement("div");							
-							var formatter = moment(entry.publishedDate, "UTZ");
-							var date_str = formatter.format('dddd MMMM DD, YYYY');	
-							published.appendChild(document.createTextNode("Posted: ".concat(date_str)));
-							$(published).addClass("feed-item-posted-date");
-							//div.appendChild(published);
+//							//posted time
+//							var published = document.createElement("div");							
+//							var formatter = moment(entry.publishedDate, "UTZ");
+//							var date_str = formatter.format('dddd MMMM DD, YYYY');	
+//							published.appendChild(document.createTextNode("Posted: ".concat(date_str)));
+//							$(published).addClass("feed-item-posted-date");
+//							//div.appendChild(published);
 
 							//getting the first image, if any
 							var content = document.createElement("content");
