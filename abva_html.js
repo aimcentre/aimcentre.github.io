@@ -310,8 +310,10 @@ function appendCalendarItemToFeed(item, targetDiv){
 	
 	if(item.description != undefined){
 		var metadata = item.description.match(/\[.*\]/g);
-		for(var i=0; i<metadata.length; ++i){
-			
+		if(metadata != undefined){
+			for(var i=0; i<metadata.length; ++i){
+				
+			}
 		}
 	}
 	appendItemToFeed(item.summary, item.description, thumbnailUrl, fullPageUrl, targetDiv);
