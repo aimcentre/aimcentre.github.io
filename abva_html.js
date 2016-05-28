@@ -284,27 +284,25 @@ function appendItemToFeed(title, description, thumbnailUrl, fullPageUrl, targetD
 	
 	//item wrapper
 	var wrapper = document.createElement("div");
-	$(wrapper).addClass("feed-item");
 	targetDiv.appendChild(wrapper);
+	$(wrapper).addClass("feed-item");
 	
 	//item heading
 	var h = document.createElement("a");
+	wrapper.appendChild(h);
 	$(h).attr("href", "#");
 	$(h).attr("target", "_top");
 	$(h).addClass("feed-item-title");
 	h.appendChild(document.createTextNode(title));
-	wrapper.appendChild(h);
 	
 	//item body
+	var content_div = document.createElement("div");
+	wrapper.appendChild(content_div);
 	if(description != undefined){
-		var content_div = document.createElement("div");
-		if(item.description != undefined){
-			content_div.appendChild(document.createTextNode(item.description));
-		}
-		wrapper.appendChild(content_div);
+		content_div.appendChild(document.createTextNode(item.description));
 	}
-	
 }
+
 function appendCalendarItemToFeed(item, targetDiv){
 	
 	var thumbnailUrl = null;
@@ -341,7 +339,7 @@ function appendCalendarItemToFeed(item, targetDiv){
 }
 
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime){
+function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, startTime, endTime){
 
 	if(startTime == null)
 		startTime = new Date();
@@ -350,7 +348,20 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime
 		endTime = new Date(startTime);
 		endTime.setDate(endTime.getDate() + 7);
 	}
+	
+	if(panelHeading != undefined){
+		//Panel heading for all devices that are larger than xs
+		var heading = document.createElement("h3");
+		heading.className = "feed-panel-heading hidden-xs";
+		heading.appendChild(document.createTextNode(panelHeading));
+		container.appendChild(heading);
 		
+		//panel heading for xs devices, which uses same styles as page titles
+		heading = document.createElement("h3");
+		heading.className = "page-title visible-xs";
+		heading.appendChild(document.createTextNode(panelHeading));
+		container.appendChild(heading);
+	}
 
 	var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + 
 			  '/events?alwaysIncludeEmail=false&orderBy=startTime&singleEvents=true' + 
