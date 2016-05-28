@@ -299,7 +299,7 @@ function appendItemToFeed(title, description, thumbnailUrl, fullPageUrl, targetD
 	var content_div = document.createElement("div");
 	wrapper.appendChild(content_div);
 	if(description != undefined){
-		content_div.appendChild(document.createTextNode(item.description));
+		content_div.appendChild(document.createTextNode(description));
 	}
 }
 
