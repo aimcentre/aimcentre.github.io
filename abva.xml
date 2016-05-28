@@ -95,7 +95,7 @@
 				showAnnouncements("/news", "myNewsfeed", "News", feedUrlSeed);
 
 				//Loading calendar events
-				showCalendarEvents(calendarId, apiKey, "myNewsfeed");
+				//showCalendarEvents(calendarId, apiKey, "myNewsfeed");
 
 
 				////gadgets.window.adjustHeight();
