@@ -307,6 +307,8 @@ function appendItemToFeed(title, description, thumbnailUrl, fullPageUrl, targetD
 }
 function appendCalendarItemToFeed(item, targetDiv){
 	
+	var thumbnailUrl = null;
+	var fullPageUrl = null;
 	appendItemToFeed(item.summary, item.description, thumbnailUrl, fullPageUrl, targetDiv);
 	
 
