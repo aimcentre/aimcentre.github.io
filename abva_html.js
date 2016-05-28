@@ -278,3 +278,37 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
+function timeString(t){
+	return t.getFullYear() + "-" + t.getMonth() + "-" + t.getDate() + "T" + t.getHours() + ":" + t.getMinutes() + ":" + t.getSeconds();
+}
+
+function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime){
+
+	if(startTime == null)
+		startTime = new Date().getTime();
+
+	if(endTime == null){
+		endTime = new Date(startTime);
+		endTime.setDate(endTime.getDate() + 7);
+	}
+		
+
+	var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + 
+			  '/events?alwaysIncludeEmail=false&orderBy=startTime&singleEvents=true' + 
+			  '&timeMin=' + timeString(startTime) + 
+			  '&timeMax=' + timeString(endTime) + 
+			  '&key=' + apiKey;
+			  //'timeZone=UTC-07%3A00&key=AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4'
+	$.ajax({
+	    type: 'GET',
+	    url: encodeURI(url),
+	    dataType: 'json',
+	    success: function (response) {
+	        //do whatever you want with each
+	        var div = $("#"+displayDivId);
+	    },
+	    error: function (response) {
+	        //tell that an error has occurred
+	    }
+	});	
+}
