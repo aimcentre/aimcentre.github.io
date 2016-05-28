@@ -306,9 +306,8 @@ function appendItemToFeed(title, description, thumbnailUrl, fullPageUrl, targetD
 	
 }
 function appendCalendarItemToFeed(item, targetDiv){
-	//item wrapper
-	var div = document.createElement("div");
-	$(div).addClass("feed-item");
+	
+	appendItemToFeed(item.summary, item.description, thumbnailUrl, fullPageUrl, targetDiv);
 	
 
 /*
