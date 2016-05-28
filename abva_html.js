@@ -278,9 +278,6 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
-function timeString(t){
-	return t.getFullYear() + "-" + t.getMonth() + "-" + t.getDate() + "T" + t.getHours() + ":" + t.getMinutes() + ":" + t.getSeconds();
-}
 
 function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime){
 
@@ -295,8 +292,8 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime
 
 	var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + 
 			  '/events?alwaysIncludeEmail=false&orderBy=startTime&singleEvents=true' + 
-			  '&timeMin=' + timeString(startTime) + 
-			  '&timeMax=' + timeString(endTime) + 
+			  '&timeMin=' + startTime.toISOString() + 
+			  '&timeMax=' + endTime.toISOString() + 
 			  '&key=' + apiKey;
 			  //'timeZone=UTC-07%3A00&key=AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4'
 
