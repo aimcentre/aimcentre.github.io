@@ -286,9 +286,6 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	var wrapper = document.createElement("div");
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
-	$(wrapper).css("max-height", "150px");
-	$(wrapper).css("overflow", "hidden");
-	$(wrapper).css("text-overflow", "ellipsis");
 	
 	//item heading
 	var h = document.createElement("a");
