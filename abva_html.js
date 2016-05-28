@@ -352,8 +352,8 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime
 	    dataType: 'json',
 	    success: function (response) {
 	        //do whatever you want with each
-	        var container = $("#"+displayDivId);
-	        
+	        var container = document.getElementById(displayDivId);
+
 	        for(var i=0; i<response.items.length; ++i){
 	        	appendCalendarItemToFeed(response.items[i], container);
 	        }
