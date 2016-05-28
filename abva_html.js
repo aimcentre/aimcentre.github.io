@@ -317,7 +317,7 @@ function appendCalendarItemToFeed(item, targetDiv){
 					//Thumbnail URL
 					thumbnailUrl = meta.substring(3, meta.length-1); 
 				}
-				else if(meta.match("/^\[P:")){
+				else if(meta.match(/^\[P:/)){
 					//Full Page URL
 					fullPageUrl = meta.substring(3, meta.length-1); 
 				}
