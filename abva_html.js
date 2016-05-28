@@ -278,7 +278,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
-function appendItemToFeed(title, description, thumbnailUrl, fullPageUrl, targetDiv){
+function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, targetDiv){
 	if(title == undefined)
 		return;
 	
@@ -311,11 +311,21 @@ function appendItemToFeed(title, description, thumbnailUrl, fullPageUrl, targetD
 	var content_div = document.createElement("div");
 	wrapper.appendChild(content_div);
 	if(description != undefined){
-		content_div.appendChild(document.createTextNode(description));
+		var short_desc = null;
+		if(shortDescLength == undefined)
+			short_desc = description;
+		else{
+			//trim the string to the maximum length
+			var short_desc = description.substr(0, shortDescLength);
+			
+			//re-trim if we are in the middle of a word
+			short_desc = short_desc.substr(0, Math.min(short_desc.length, short_desc.lastIndexOf(" ")));
+		}
+		content_div.appendChild(document.createTextNode(short_desc));
 	}
 }
 
-function appendCalendarItemToFeed(item, targetDiv){
+function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 	
 	var thumbnailUrl = null;
 	var fullPageUrl = null;
@@ -342,7 +352,7 @@ function appendCalendarItemToFeed(item, targetDiv){
 			}
 		}
 	}
-	appendItemToFeed(item.summary, item.description, thumbnailUrl, fullPageUrl, targetDiv);
+	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, targetDiv);
 	
 
 /*
@@ -374,7 +384,7 @@ function appendCalendarItemToFeed(item, targetDiv){
 }
 
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, startTime, endTime){
+function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, startTime, endTime){
 
 	if(startTime == null)
 		startTime = new Date();
@@ -416,7 +426,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, star
 	        var container = document.getElementById(displayDivId);
 
 	        for(var i=0; i<response.items.length; ++i){
-	        	appendCalendarItemToFeed(response.items[i], container);
+	        	appendCalendarItemToFeed(response.items[i], shortDescLength, container);
 	        }
 	    },
 	    error: function (response) {
