@@ -322,14 +322,20 @@ function appendCalendarItemToFeed(item, targetDiv){
 		if(metadata != undefined){
 			for(var i=0; i<metadata.length; ++i){
 				var meta = metadata[i];
+				var remove_meta = false;
 				if(meta.match(/^\[T:/)){
 					//Thumbnail URL
-					thumbnailUrl = meta.substring(3, meta.length-1); 
+					thumbnailUrl = meta.substring(3, meta.length-1);
+					remove_meta = true;
 				}
 				else if(meta.match(/^\[P:/)){
 					//Full Page URL
-					fullPageUrl = meta.substring(3, meta.length-1); 
+					fullPageUrl = meta.substring(3, meta.length-1);
+					remove_meta = true;
 				}
+				
+				if(remove_meta)
+					item.description = item.description.replace(meta, "");
 			}
 		}
 	}
