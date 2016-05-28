@@ -278,11 +278,14 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
-
-function appendCalendarItemToFeed(item, targetDiv){
+function appendItemToFeed(title, description, thumbnailUrl, fullPageUrl, targetDiv){
+	if(title == undefined)
+		return;
+	
 	//item wrapper
-	var div = document.createElement("div");
-	$(div).addClass("feed-item");
+	var wrapper = document.createElement("div");
+	$(wrapper).addClass("feed-item");
+	targetDiv.appendChild(wrapper);
 	
 	//item heading
 	var h = document.createElement("a");
@@ -290,7 +293,23 @@ function appendCalendarItemToFeed(item, targetDiv){
 	$(h).attr("target", "_top");
 	$(h).addClass("feed-item-title");
 	h.appendChild(document.createTextNode(item.summary));
-	div.appendChild(h);
+	wrapper.appendChild(h);
+	
+	//item body
+	if(description != undefined){
+		var content_div = document.createElement("div");
+		if(item.description != undefined){
+			content_div.appendChild(document.createTextNode(item.description));
+		}
+		wrapper.appendChild(content_div);
+	}
+	
+}
+function appendCalendarItemToFeed(item, targetDiv){
+	//item wrapper
+	var div = document.createElement("div");
+	$(div).addClass("feed-item");
+	
 
 /*
 	//getting the first image, if any
@@ -308,13 +327,6 @@ function appendCalendarItemToFeed(item, targetDiv){
 	}
 */
 
-	//item body
-	var content_div = document.createElement("div");
-	if(item.description != undefined){
-		content_div.appendChild(document.createTextNode(item.description));
-	}
-	
-	div.appendChild(content_div);
 /*	
 	//item read-more link
 	var more = document.createElement("a");
@@ -325,7 +337,6 @@ function appendCalendarItemToFeed(item, targetDiv){
 	content_div.appendChild(more);
 */	
 
-	targetDiv.appendChild(div);
 }
 
 
