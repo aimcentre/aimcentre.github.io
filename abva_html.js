@@ -295,6 +295,15 @@ function appendItemToFeed(title, description, thumbnailUrl, fullPageUrl, targetD
 	$(h).addClass("feed-item-title");
 	h.appendChild(document.createTextNode(title));
 	
+	//item thumbnail
+	if(thumbnailUrl != undefined){
+		var thumb = document.createElement("div");
+		wrapper.appendChild(thumb);
+		$(thumb).addClass("feed-item-thumb");
+		$(thumb).css("background-image", "url(".concat(thumbnailUrl,")"));
+	}
+	
+	
 	//item body
 	var content_div = document.createElement("div");
 	wrapper.appendChild(content_div);
