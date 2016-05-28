@@ -279,6 +279,53 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 } //End: function showPageContents(paregnPageId, displayDivId)
 
 
+function appendCalendarItemToFeed(item, targetDiv){
+	//item wrapper
+	var div = document.createElement("div");
+	$(div).addClass("feed-item");
+	
+	//item heading
+	var h = document.createElement("a");
+	$(h).attr("href", "#");
+	$(h).attr("target", "_top");
+	$(h).addClass("feed-item-title");
+	h.appendChild(document.createTextNode(item.summary));
+	div.appendChild(h);
+
+/*
+	//getting the first image, if any
+	var content = document.createElement("content");
+	content.innerHTML = entry.content;        
+	var images = $(content).find('img').map(function(){
+		return $(this).attr('src')
+	}).get();					
+	if(images.length > 0){
+		var thumb = document.createElement("div");
+		$(thumb).addClass("feed-item-thumb");
+		$(thumb).css("background-image", "url(".concat(images[0],")"));
+
+		div.appendChild(thumb);
+	}
+*/
+
+	//item body
+	var content_div = document.createElement("div");
+	content_div.appendChild(document.createTextNode(item.description));
+	div.appendChild(content_div);
+/*	
+	//item read-more link
+	var more = document.createElement("a");
+	var more_link =  (siteRoot != null && siteRoot.length > 0) ? entry.link.replace(canonical_site_url, siteRoot) : canonical_site_url;
+	$(more).attr("href", more_link);
+	$(more).attr("target", "_top");
+	more.appendChild(document.createTextNode(" more"));
+	content_div.appendChild(more);
+*/	
+
+	container.appendChild(div);
+}
+
+
 function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime){
 
 	if(startTime == null)
@@ -306,6 +353,9 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime
 	    success: function (response) {
 	        //do whatever you want with each
 	        var div = $("#"+displayDivId);
+	        for(var i=0; i<response.items.length; ++i){
+	        	appendCalendarItemToFeed(response.items[i], div);
+	        }
 	    },
 	    error: function (response) {
 	        //tell that an error has occurred
