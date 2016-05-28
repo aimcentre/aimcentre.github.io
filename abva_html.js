@@ -309,10 +309,18 @@ function appendCalendarItemToFeed(item, targetDiv){
 	var fullPageUrl = null;
 	
 	if(item.description != undefined){
-		var metadata = item.description.match(/\[.*\]/g);
+		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
 		if(metadata != undefined){
 			for(var i=0; i<metadata.length; ++i){
-				
+				var meta = metadata[i];
+				if(meta.match("/\[T:")){
+					//Thumbnail URL
+					thumbnailUrl = meta.substring(3, meta.length-1); 
+				}
+				else if(meta.match("/\[P:")){
+					//Full Page URL
+					fullPageUrl = meta.substring(3, meta.length-1); 
+				}
 			}
 		}
 	}
