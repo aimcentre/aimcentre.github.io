@@ -307,6 +307,13 @@ function appendCalendarItemToFeed(item, targetDiv){
 	
 	var thumbnailUrl = null;
 	var fullPageUrl = null;
+	
+	if(item.description != undefined){
+		var metadata = item.description.match(/\[.*\]/g);
+		for(var i=0; i<metadata.length; ++i){
+			
+		}
+	}
 	appendItemToFeed(item.summary, item.description, thumbnailUrl, fullPageUrl, targetDiv);
 	
 
