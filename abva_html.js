@@ -298,7 +298,6 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime
 			  //'timeZone=UTC-07%3A00&key=AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4'
 
 	url = encodeURI(url);
-	url = url.replace(/:/g, "%3A");
 
 	$.ajax({
 	    type: 'GET',
