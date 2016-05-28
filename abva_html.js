@@ -322,7 +322,7 @@ function appendCalendarItemToFeed(item, targetDiv){
 	content_div.appendChild(more);
 */	
 
-	container.appendChild(div);
+	targetDiv.appendChild(div);
 }
 
 
@@ -352,9 +352,10 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime
 	    dataType: 'json',
 	    success: function (response) {
 	        //do whatever you want with each
-	        var div = $("#"+displayDivId);
+	        var container = $("#"+displayDivId);
+	        
 	        for(var i=0; i<response.items.length; ++i){
-	        	appendCalendarItemToFeed(response.items[i], div);
+	        	appendCalendarItemToFeed(response.items[i], container);
 	        }
 	    },
 	    error: function (response) {
