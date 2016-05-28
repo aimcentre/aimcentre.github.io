@@ -310,7 +310,10 @@ function appendCalendarItemToFeed(item, targetDiv){
 
 	//item body
 	var content_div = document.createElement("div");
-	content_div.appendChild(document.createTextNode(item.description));
+	if(item.description ~= undefined){
+		content_div.appendChild(document.createTextNode(item.description));
+	}
+	
 	div.appendChild(content_div);
 /*	
 	//item read-more link
