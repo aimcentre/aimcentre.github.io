@@ -287,7 +287,6 @@ function appendItemToFeed(title, description, thumbnailUrl, fullPageUrl, targetD
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
 	$(wrapper).css("max-height", "150px");
-	$(wrapper).css("white-space", "nowrap");
 	$(wrapper).css("overflow", "hidden");
 	$(wrapper).css("text-overflow", "ellipsis");
 	
