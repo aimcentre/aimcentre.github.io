@@ -299,9 +299,12 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime
 			  '&timeMax=' + timeString(endTime) + 
 			  '&key=' + apiKey;
 			  //'timeZone=UTC-07%3A00&key=AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4'
+
+	url = encodeURI(url);
+
 	$.ajax({
 	    type: 'GET',
-	    url: encodeURI(url),
+	    url: url,
 	    dataType: 'json',
 	    success: function (response) {
 	        //do whatever you want with each
