@@ -313,11 +313,11 @@ function appendCalendarItemToFeed(item, targetDiv){
 		if(metadata != undefined){
 			for(var i=0; i<metadata.length; ++i){
 				var meta = metadata[i];
-				if(meta.match("/\[T:")){
+				if(meta.match(/^\[T:/)){
 					//Thumbnail URL
 					thumbnailUrl = meta.substring(3, meta.length-1); 
 				}
-				else if(meta.match("/\[P:")){
+				else if(meta.match("/^\[P:")){
 					//Full Page URL
 					fullPageUrl = meta.substring(3, meta.length-1); 
 				}
