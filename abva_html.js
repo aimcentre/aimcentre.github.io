@@ -285,7 +285,7 @@ function timeString(t){
 function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime){
 
 	if(startTime == null)
-		startTime = new Date().getTime();
+		startTime = new Date();
 
 	if(endTime == null){
 		endTime = new Date(startTime);
