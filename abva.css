@@ -65,9 +65,9 @@
 .feed-item.alert{
 	background-color:#FCF8E3;
 	border: solid #D48B3B 1px;
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .feed-item.alert > .feed-item-thumb{
@@ -79,11 +79,11 @@
 }
 
 .feed-item.highlight{
-	background-color:#FCF8E3;
-	border: solid #D48B3B 1px;
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 10px;
+	background-color:#DAF4F7;
+	border: solid #37D237 1px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
   
