@@ -354,6 +354,8 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 		if(trimmed){
 		}
 	}
+	else
+		content_div.appendChild(document.createTextNode(" "));
 }
 
 function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
