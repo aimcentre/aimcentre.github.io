@@ -72,14 +72,14 @@
 	color: #AD0606!important;
 }
 	
-.feed-item.highlight{
+.feed-item.feature{
 	background-color:#DAF4F7;
 	border: solid #37D237 1px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
-.feed-item.highlight > .feed-item-title{
+.feed-item.feature > .feed-item-title{
 	color: #296722!important;
 }
 
