@@ -382,7 +382,7 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 				}
 				else if(meta.match(/^\[Type:/i)){
 					//Type
-					type =  meta.substring(6, meta.length-1).toLowerCase();
+					type =  meta.substring(6, meta.length-1).trim().toLowerCase();
 					remove_meta = true;
 				}
 				
