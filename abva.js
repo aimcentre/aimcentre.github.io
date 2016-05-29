@@ -133,7 +133,7 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
 	if(type != undefined){
-		if(type != "alert"){
+		if(type != "warning"){
 			$(wrapper).addClass("alert");
 			$(wrapper).addClass(type);
 		}
@@ -144,7 +144,7 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	wrapper.appendChild(h);
 	$(h).addClass("feed-item-title");
 	h.appendChild(document.createTextNode(title));
-	if(type == "alert")
+	if(type == "warning")
 		$(h).html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;" + $(h).html());
 	
 	//Date/time
