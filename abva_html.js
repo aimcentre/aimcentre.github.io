@@ -278,7 +278,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
-function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, stratTime, endTime, targetDiv){
+function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, strat, end, targetDiv){
 	if(title == undefined)
 		return;
 	
@@ -302,10 +302,24 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	wrapper.appendChild(t);
 	$(t).addClass("feed-item-time");
 	var t_str = null;
-	if(stratTime.getDate() == endTime.getDate())
-		t_str = stratTime.toDateString() + ", " + stratTime.toLocaleTimeString();
-	else
-		t_str = stratTime.toDateString() + " - " + endTime.toDateString();
+	if(start.dateTime == undefined){
+		//an all-day event
+		start = new Date(start.date);
+		end = new Date(end.date);
+		if(start == end)
+			t_str = start.toDateString();
+		else
+			t_str = start.toDateString() + " - " + end.toDateString();
+	}
+	else{
+		start = new Date(start.dateTime);
+		end = new Date(end.dateTime);
+		
+		if(start.getDate() == end.getDate())
+			t_str = start.toDateString() + ", " + start.toLocaleTimeString();
+		else
+			t_str = start.toDateString() + " - " + end.toDateString();
+	}
 	t.appendChild(document.createTextNode(t_str));
 		
 	//item thumbnail
@@ -375,7 +389,7 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 			}
 		}
 	}
-	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, new Date(item.start.dateTime), new Date(item.end.dateTime), targetDiv);
+	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, targetDiv);
 	
 
 /*
