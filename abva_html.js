@@ -299,9 +299,9 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	var h = document.createElement("div");
 	wrapper.appendChild(h);
 	$(h).addClass("feed-item-title");
-	h.appendChild(document.createTextNode(title));
 	if(type == "warning")
-		$(h).html("<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;" + $(h).html());
+		title = "<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;" + title;
+	$(h).html(title);
 	
 	//Date/time
 	var t = document.createElement("div");
