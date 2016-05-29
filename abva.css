@@ -83,7 +83,10 @@
 .feed-item.alert > .feed-item-title{
 	color: #AD0606!important;
 }
-
+.feed-item.alert > .feed-item-title:before{
+	content: "<span class='glyphicon glyphicon-asterisk'></span>";
+}
+	
 .feed-item.highlight{
 	background-color:#DAF4F7;
 	border: solid #37D237 1px;
