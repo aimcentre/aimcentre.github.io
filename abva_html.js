@@ -297,6 +297,8 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	$(h).addClass("feed-item-title");
 	h.appendChild(document.createTextNode(title));
 	
+	//Date/time
+		
 	//item thumbnail
 	if(thumbnailUrl != undefined){
 		var thumb = document.createElement("div");
@@ -364,7 +366,7 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 			}
 		}
 	}
-	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start.dateTime, item.end.dateTime, targetDiv);
+	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, new Date(item.start.dateTime), new Date(item.end.dateTime), targetDiv);
 	
 
 /*
