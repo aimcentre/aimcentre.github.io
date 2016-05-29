@@ -340,9 +340,7 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	if(description != undefined){
 		var short_desc = null;
 		var trimmed = false;
-		if(shortDescLength == undefined)
-			short_desc = description;
-		else if(description.length > shortDescLength){
+		if(shortDescLength != undefined && description.length > shortDescLength){
 			//trim the string to the maximum length
 			var short_desc = description.substr(0, shortDescLength);
 			
@@ -352,6 +350,9 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 			if(short_desc.length < description.length)
 				trimmed = true;
 		}
+		else
+			short_desc = description;
+		
 		content_div.appendChild(document.createTextNode(short_desc));
 		
 		if(trimmed){
