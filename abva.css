@@ -84,7 +84,7 @@
 	color: #AD0606!important;
 }
 .feed-item.alert > .feed-item-title:before{
-	content: "<span class='glyphicon glyphicon-asterisk'></span>";
+	content: "*";
 }
 	
 .feed-item.highlight{
