@@ -34,6 +34,10 @@
 	padding-bottom:15px;
 	clear: both;
 }
+
+.feed-item.alert{
+	border:solid 1px #AA0000;
+}
   
 .feed-item a, .feed-item a:visited{
 	color: #298cca!important;

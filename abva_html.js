@@ -278,7 +278,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
-function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, targetDiv){
+function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, isAlert, targetDiv){
 	if(title == undefined)
 		return;
 	
@@ -286,6 +286,8 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	var wrapper = document.createElement("div");
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
+	if(isAlert)
+		$(wrapper).addClass("alert");
 	
 	//item heading
 	var h = document.createElement("a");
@@ -333,6 +335,7 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 	
 	var thumbnailUrl = null;
 	var fullPageUrl = null;
+	var isAlert = false;
 	
 	if(item.description != undefined){
 		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
@@ -350,13 +353,18 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 					fullPageUrl = meta.substring(3, meta.length-1);
 					remove_meta = true;
 				}
+				else if(meta.match(/^\[Alert\]/)){
+					//Full Page URL
+					isAlert = true;
+					remove_meta = true;
+				}
 				
 				if(remove_meta)
 					item.description = item.description.replace(meta, "");
 			}
 		}
 	}
-	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, targetDiv);
+	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, isAlert, targetDiv);
 	
 
 /*
