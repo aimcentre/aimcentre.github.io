@@ -417,11 +417,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	if(startTime == null)
 		startTime = new Date();
 
-	if(endTime == null){
-		endTime = new Date(startTime);
-		endTime.setDate(endTime.getDate() + 8);
-	}
-	
+
 	if(panelHeading != undefined){
 		var container = document.getElementById(displayDivId);
 		
@@ -442,6 +438,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 			  '/events?alwaysIncludeEmail=false&orderBy=startTime&singleEvents=true' + 
 			  '&timeMin=' + startTime.toISOString() + 
 			  '&timeMax=' + endTime.toISOString() + 
+			  '&maxResults=' + maxItems +
 			  '&key=' + apiKey;
 			  //'timeZone=UTC-07%3A00&key=AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4'
 
