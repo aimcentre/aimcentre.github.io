@@ -67,9 +67,14 @@
 }
 
 .feed-item.alert > .feed-item-thumb{
-	background-color: #FFFFFF;
+	background-color: transparent;
 	background-image: url('http://www.abva.org/data-pages/thumbnails/alert2.png');
 }
+
+.feed-item.alert > a{
+	color: #AD0606!important;
+}
+
   
 .feed-item-posted-date{
 	font-size: 0.8em;
