@@ -88,10 +88,10 @@
 				showPageContents("/welcome", "myWelcome", feedUrlSeed);
 
 				//Loading Special Events feed
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 125, 5);
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 140, 5);
 				
 				//Loading News feed
-				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 125, 5);
+				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 140, 5);
 
 			} //End: function initialize()
 
