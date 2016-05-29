@@ -298,6 +298,15 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	h.appendChild(document.createTextNode(title));
 	
 	//Date/time
+	var t = document.createElement("div");
+	wrapper.appendChild(t);
+	$(t).addClass("feed-item-time");
+	var t_str = null;
+	if(stratTime.getDate() == endTime.getDate())
+		t_str = stratTime.toDateString() + ", " + stratTime.toLocaleTimeString();
+	else
+		t_str = stratTime.toDateString() + " - " + stratTime.toDateString();
+	t.appendChild(document.createTextNode(t_str));
 		
 	//item thumbnail
 	if(thumbnailUrl != undefined){

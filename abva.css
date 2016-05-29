@@ -49,6 +49,10 @@
 .feed-item-title:visited{
 	color:#298cca;
 }
+
+.feed-item-time{
+	font-weight:bold;
+}
   
 .feed-item-thumb{
 	width: 90px;
