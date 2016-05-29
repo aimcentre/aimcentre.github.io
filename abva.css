@@ -80,7 +80,7 @@
 	background-color: transparent;
 }
 
-.feed-item.alert > a, .feed-item.alert > a:visited{
+.feed-item.alert > .feed-item-title{
 	color: #AD0606!important;
 }
 
@@ -91,7 +91,7 @@
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
-.feed-item.highlight > a, .feed-item.highlight > a:visited{
+.feed-item.highlight > .feed-item-title{
 	color: #296722!important;
 }
 
