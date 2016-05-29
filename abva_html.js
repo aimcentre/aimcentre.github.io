@@ -278,7 +278,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
-function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, isAlert, targetDiv){
+function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, targetDiv){
 	if(title == undefined)
 		return;
 	
@@ -286,8 +286,8 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	var wrapper = document.createElement("div");
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
-	if(isAlert)
-		$(wrapper).addClass("alert");
+	if(type != undefined)
+		$(wrapper).addClass(type);
 	
 	//item heading
 	var h = document.createElement("a");
@@ -335,7 +335,7 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 	
 	var thumbnailUrl = null;
 	var fullPageUrl = null;
-	var isAlert = false;
+	var type = null;
 	
 	if(item.description != undefined){
 		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
@@ -343,19 +343,19 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 			for(var i=0; i<metadata.length; ++i){
 				var meta = metadata[i];
 				var remove_meta = false;
-				if(meta.match(/^\[T:/)){
+				if(meta.match(/^\[T:/i)){
 					//Thumbnail URL
 					thumbnailUrl = meta.substring(3, meta.length-1);
 					remove_meta = true;
 				}
-				else if(meta.match(/^\[P:/)){
+				else if(meta.match(/^\[P:/i)){
 					//Full Page URL
 					fullPageUrl = meta.substring(3, meta.length-1);
 					remove_meta = true;
 				}
-				else if(meta.match(/^\[Alert\]/)){
-					//Full Page URL
-					isAlert = true;
+				else if(meta.match(/^\[Type:/i)){
+					//Type
+					type =  meta.substring(6, meta.length-1).toLowerCase();
 					remove_meta = true;
 				}
 				
@@ -364,7 +364,7 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 			}
 		}
 	}
-	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, isAlert, targetDiv);
+	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, targetDiv);
 	
 
 /*
@@ -403,7 +403,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 
 	if(endTime == null){
 		endTime = new Date(startTime);
-		endTime.setDate(endTime.getDate() + 7);
+		endTime.setDate(endTime.getDate() + 8);
 	}
 	
 	if(panelHeading != undefined){

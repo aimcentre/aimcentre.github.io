@@ -78,6 +78,14 @@
 	color: #AD0606!important;
 }
 
+.feed-item.highlight{
+	background-color:#FCF8E3;
+	border: solid #D48B3B 1px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 10px;
+}
+
   
 .feed-item-posted-date{
 	font-size: 0.8em;
