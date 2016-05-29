@@ -386,6 +386,7 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 
 				$(snippet_div).html($(snippet_div).html() + " ... <a href = '#' onclick='show(\"" + full_desc_id + "\"); hide(\"" + snippet_id + "\"); return false;' >more.</a>");
 				
+				description = description.trim().replace("\n", "<br />");
 				$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >See less.</a>");
 			}
 			else{
