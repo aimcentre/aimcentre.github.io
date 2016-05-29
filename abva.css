@@ -67,7 +67,7 @@
 	border: solid #D48B3B 1px;
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
-	border-radius: 25px;
+	border-radius: 10px;
 }
 
 .feed-item.alert > .feed-item-thumb{
