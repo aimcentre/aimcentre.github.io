@@ -296,7 +296,7 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	var h = document.createElement("a");
 	wrapper.appendChild(h);
 	$(h).attr("href", "#");
-	$(h).attr("target", "_top");
+	$(h).attr("onclick", "return false;");
 	$(h).addClass("feed-item-title");
 	h.appendChild(document.createTextNode(title));
 	
