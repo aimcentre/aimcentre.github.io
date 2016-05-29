@@ -427,7 +427,7 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 }
 
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, startTime, endTime){
+function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, startTime, endTime){
 
 	if(startTime == null)
 		startTime = new Date();
@@ -469,8 +469,11 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	    success: function (response) {
 	        //do whatever you want with each
 	        var container = document.getElementById(displayDivId);
+			
+			if(maxItems == undefined || maxItems < response.items.length)
+				maxItems = response.items.length;
 
-	        for(var i=0; i<response.items.length; ++i){
+	        for(var i=0; i<maxItems; ++i){
 	        	appendCalendarItemToFeed(response.items[i], shortDescLength, container);
 	        }
 	    },
