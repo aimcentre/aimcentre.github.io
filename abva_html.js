@@ -290,9 +290,10 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
 	if(type != undefined){
-		$(wrapper).addClass("alert");
-		if(type != "alert")
+		if(type != "alert"){
+			$(wrapper).addClass("alert");
 			$(wrapper).addClass(type);
+		}
 	}
 	
 	//item heading
