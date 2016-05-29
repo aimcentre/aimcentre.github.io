@@ -396,24 +396,6 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 		}
 	}
 	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, targetDiv);
-	
-
-/*
-	//getting the first image, if any
-	var content = document.createElement("content");
-	content.innerHTML = entry.content;        
-	var images = $(content).find('img').map(function(){
-		return $(this).attr('src')
-	}).get();					
-	if(images.length > 0){
-		var thumb = document.createElement("div");
-		$(thumb).addClass("feed-item-thumb");
-		$(thumb).css("background-image", "url(".concat(images[0],")"));
-
-		div.appendChild(thumb);
-	}
-*/
-
 /*	
 	//item read-more link
 	var more = document.createElement("a");
@@ -470,7 +452,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	        //do whatever you want with each
 	        var container = document.getElementById(displayDivId);
 			
-			if(maxItems == undefined || maxItems < response.items.length)
+			if(maxItems == undefined || maxItems > response.items.length)
 				maxItems = response.items.length;
 
 	        for(var i=0; i<maxItems; ++i){
