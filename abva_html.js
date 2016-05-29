@@ -305,7 +305,7 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	if(stratTime.getDate() == endTime.getDate())
 		t_str = stratTime.toDateString() + ", " + stratTime.toLocaleTimeString();
 	else
-		t_str = stratTime.toDateString() + " - " + stratTime.toDateString();
+		t_str = stratTime.toDateString() + " - " + endTime.toDateString();
 	t.appendChild(document.createTextNode(t_str));
 		
 	//item thumbnail
