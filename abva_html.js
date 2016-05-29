@@ -309,6 +309,7 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	wrapper.appendChild(content_div);
 	if(description != undefined){
 		var short_desc = null;
+		var trimmed = false;
 		if(shortDescLength == undefined)
 			short_desc = description;
 		else{
@@ -317,8 +318,14 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 			
 			//re-trim if we are in the middle of a word
 			short_desc = short_desc.substr(0, Math.min(short_desc.length, short_desc.lastIndexOf(" ")));
+			
+			if(short_desc.length < description.length)
+				trimmed = true;
 		}
 		content_div.appendChild(document.createTextNode(short_desc));
+		
+		if(trimmed){
+		}
 	}
 }
 
@@ -392,6 +399,8 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	}
 	
 	if(panelHeading != undefined){
+		var container = document.getElementById(displayDivId);
+		
 		//Panel heading for all devices that are larger than xs
 		var heading = document.createElement("h3");
 		heading.className = "feed-panel-heading hidden-xs";
