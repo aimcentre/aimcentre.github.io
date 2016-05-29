@@ -82,10 +82,10 @@
 
 				//Loading carousel images
 				var aspectRatio = 9.0/16;
-				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
+				showCarouselImages("/data-pages/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
 				
 				//Loading welcome message from the Welcome page
-				showPageContents("/welcome", "myWelcome", feedUrlSeed);
+				showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed);
 
 				//Loading Special Events feed
 				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 140, 5);
