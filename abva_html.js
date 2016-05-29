@@ -370,9 +370,9 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 			var full_desc_id = "fd_" + new Date().getTime() + Math.random().toString().substr(2,100);
 			$(full_desc_div).attr("id", full_desc_id);
 
-			$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + full_desc_id + "\"); return false;' >less</a>");
-			$(snippet_div).html($(snippet_div).html() + " <a href = '#' onclick='return false;' >more</a>"); 
+			$(snippet_div).html($(snippet_div).html() + " <a href = '#' onclick='show(\"" + full_desc_id + "\"); hide(\"" + snippet_id + "\"); return false;' >more</a>");
 			
+			$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >less</a>");
 		}
 	}
 }
