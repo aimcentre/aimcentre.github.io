@@ -342,7 +342,7 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 		var trimmed = false;
 		if(shortDescLength == undefined)
 			short_desc = description;
-		else{
+		else if(description.length > shortDescLength){
 			//trim the string to the maximum length
 			var short_desc = description.substr(0, shortDescLength);
 			
