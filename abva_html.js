@@ -300,6 +300,8 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	wrapper.appendChild(h);
 	$(h).addClass("feed-item-title");
 	h.appendChild(document.createTextNode(title));
+	if(type == "alert")
+		$(h).html("<span class='glyphicon glyphicon-asterisk'></span>" + $(h).html() + "<span class='glyphicon glyphicon-asterisk'></span>");
 	
 	//Date/time
 	var t = document.createElement("div");
