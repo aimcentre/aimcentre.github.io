@@ -278,7 +278,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
-function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, targetDiv){
+function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, stratTime, endTime, targetDiv){
 	if(title == undefined)
 		return;
 	
@@ -364,7 +364,7 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 			}
 		}
 	}
-	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, targetDiv);
+	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start.dateTime, item.end.dateTime, targetDiv);
 	
 
 /*
