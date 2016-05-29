@@ -304,8 +304,8 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	var t_str = null;
 	if(start.dateTime == undefined){
 		//an all-day event
-		start = new Date(start.date);
-		end = new Date(end.date);
+		start = new Date(start.date.split('-').join('/'));
+		end = new Date(end.date.split('-').join('/'));
 		if(start == end)
 			t_str = start.toDateString();
 		else
