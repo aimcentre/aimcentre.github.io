@@ -323,6 +323,7 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 		//an all-day event
 		start = new Date(start.date.split('-').join('/'));
 		end = new Date(end.date.split('-').join('/'));
+		end = end.setTime(end.getTime() - 1);
 		if(start == end)
 			t_str = start.toDateString();
 		else
