@@ -63,14 +63,18 @@
 
 				//Loading welcome message from the Welcome page
 				showPageContents("/welcome", "myWelcome", feedUrlSeed);
+
 				
+				var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
+				var newsCalendarI = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
+				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
+
 				//Loading Special Events feed
-				showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 125, 5);
+				//showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
 				
 				//Loading calendar events
-				var calendarId = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
-				var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
-				showCalendarEvents(calendarId, apiKey, "myNewsfeed", "News", 125, 5);
+				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 125, 5);
 
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
