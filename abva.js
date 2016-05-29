@@ -364,19 +364,28 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 		$(snippet_div).html(short_desc);
 		
 		if(trimmed){
-			var full_desc_div = document.createElement("div");
-			wrapper.appendChild(full_desc_div);
-			$(full_desc_div).hide();	
-
-			var snippet_id = "sn_" + new Date().getTime() + Math.random().toString().substr(2,100);
-			$(snippet_div).attr("id", snippet_id);
 			
-			var full_desc_id = "fd_" + new Date().getTime() + Math.random().toString().substr(2,100);
-			$(full_desc_div).attr("id", full_desc_id);
+			if(fullPageUrl == null){
+				var full_desc_div = document.createElement("div");
+				wrapper.appendChild(full_desc_div);
+				$(full_desc_div).hide();	
 
-			$(snippet_div).html($(snippet_div).html() + " <a href = '#' onclick='show(\"" + full_desc_id + "\"); hide(\"" + snippet_id + "\"); return false;' >more</a>");
-			
-			$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >less</a>");
+				var snippet_id = "sn_" + new Date().getTime() + Math.random().toString().substr(2,100);
+				$(snippet_div).attr("id", snippet_id);
+				
+				var full_desc_id = "fd_" + new Date().getTime() + Math.random().toString().substr(2,100);
+				$(full_desc_div).attr("id", full_desc_id);
+
+				$(snippet_div).html($(snippet_div).html() + " ... <a href = '#' onclick='show(\"" + full_desc_id + "\"); hide(\"" + snippet_id + "\"); return false;' >more.</a>");
+				
+				$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >See less.</a>");
+			}
+			else{
+				var canonical_site_url = "https://sites.google.com/a/" + siteDomain + "/" + siteName;
+				var more = document.createElement("a");
+				var more_link =  (siteRoot != null && siteRoot.length > 0) ? fullPageUrl.replace(canonical_site_url, siteRoot) : fullPageUrl;
+				$(snippet_div).html($(snippet_div).html() + " ... <a href = '" + more_link + "' target = '_top' >more.</a>");
+			}
 		}
 	}
 }
@@ -423,11 +432,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	if(startTime == null)
 		startTime = new Date();
 
-	if(endTime == null){
-		endTime = new Date(startTime);
-		endTime.setDate(endTime.getDate() + 8);
-	}
-	
+
 	if(panelHeading != undefined){
 		var container = document.getElementById(displayDivId);
 		
@@ -447,9 +452,13 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + 
 			  '/events?alwaysIncludeEmail=false&orderBy=startTime&singleEvents=true' + 
 			  '&timeMin=' + startTime.toISOString() + 
-			  '&timeMax=' + endTime.toISOString() + 
 			  '&key=' + apiKey;
-			  //'timeZone=UTC-07%3A00&key=AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4'
+			  
+	if(endTime != undefined)
+		url = url + '&timeMax=' + endTime.toISOString();
+
+	if(maxItems != undefined)
+		url = url + '&maxResults=' + maxItems;
 
 	url = encodeURI(url);
 
