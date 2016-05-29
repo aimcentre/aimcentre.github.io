@@ -68,18 +68,6 @@
 	background-color: #695E4A;
 }
 
-.feed-item.alert{
-	background-color:#FFFFFF; /*#FCF8E3;*/
-	border: solid #D48B3B 1px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-
-.feed-item.alert > .feed-item-thumb{
-	background-color: transparent;
-}
-
 .feed-item.alert > .feed-item-title{
 	color: #AD0606!important;
 }
