@@ -280,6 +280,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 
 function show(divId){$("#" + divId).show();}
 function hide(divId){$("#" + divId).hide();}
+
 function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, targetDiv){
 	if(title == undefined)
 		return;
@@ -358,19 +359,28 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 		$(snippet_div).html(short_desc);
 		
 		if(trimmed){
-			var full_desc_div = document.createElement("div");
-			wrapper.appendChild(full_desc_div);
-			$(full_desc_div).hide();	
-
-			var snippet_id = "sn_" + new Date().getTime() + Math.random().toString().substr(2,100);
-			$(snippet_div).attr("id", snippet_id);
 			
-			var full_desc_id = "fd_" + new Date().getTime() + Math.random().toString().substr(2,100);
-			$(full_desc_div).attr("id", full_desc_id);
+			if(fullPageUrl == null){
+				var full_desc_div = document.createElement("div");
+				wrapper.appendChild(full_desc_div);
+				$(full_desc_div).hide();	
 
-			$(snippet_div).html($(snippet_div).html() + " <a href = '#' onclick='show(\"" + full_desc_id + "\"); hide(\"" + snippet_id + "\"); return false;' >more</a>");
-			
-			$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >less</a>");
+				var snippet_id = "sn_" + new Date().getTime() + Math.random().toString().substr(2,100);
+				$(snippet_div).attr("id", snippet_id);
+				
+				var full_desc_id = "fd_" + new Date().getTime() + Math.random().toString().substr(2,100);
+				$(full_desc_div).attr("id", full_desc_id);
+
+				$(snippet_div).html($(snippet_div).html() + "<a href = '#' onclick='show(\"" + full_desc_id + "\"); hide(\"" + snippet_id + "\"); return false;' > ... more</a>");
+				
+				$(full_desc_div).html(description + "<a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' > ... less</a>");
+			}
+			else{
+				var canonical_site_url = "https://sites.google.com/a/" + siteDomain + "/" + siteName;
+				var more = document.createElement("a");
+				var more_link =  (siteRoot != null && siteRoot.length > 0) ? fullPageUrl.replace(canonical_site_url, siteRoot) : fullPageUrl;
+				$(snippet_div).html($(snippet_div).html() + " <a href = '" + more_link + "' target = '_top' >... more</a>");
+			}
 		}
 	}
 }
