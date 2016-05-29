@@ -299,6 +299,8 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	var h = document.createElement("div");
 	wrapper.appendChild(h);
 	$(h).addClass("feed-item-title");
+	$(h).addClass("glyphicon");
+	$(h).addClass("glyphicon-asterisk");
 	h.appendChild(document.createTextNode(title));
 	
 	//Date/time
