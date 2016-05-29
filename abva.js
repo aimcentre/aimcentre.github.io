@@ -284,8 +284,16 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
-function show(divId){$("#" + divId).show();}
-function hide(divId){$("#" + divId).hide();}
+function show(divId){
+	$("#" + divId).show();
+	gadgets.window.adjustHeight();	
+}
+
+function hide(divId){
+	$("#" + divId).hide();
+	gadgets.window.adjustHeight();	
+}
+
 function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, targetDiv){
 	if(title == undefined)
 		return;
