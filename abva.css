@@ -36,7 +36,7 @@
 }
 
 .feed-item.alert{
-	border:solid 1px #AA0000;
+	background-color:solid 1px #FBFB78;
 }
   
 .feed-item a, .feed-item a:visited{
