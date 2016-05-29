@@ -335,8 +335,10 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	
 	
 	//item body
-	var content_div = document.createElement("div");
-	wrapper.appendChild(content_div);
+	var snippet_div = document.createElement("div");
+	wrapper.appendChild(snippet_div);
+	$(wrapper).show();
+	
 	if(description != undefined){
 		var short_desc = null;
 		var trimmed = false;
@@ -353,13 +355,23 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 		else
 			short_desc = description;
 		
-		content_div.appendChild(document.createTextNode(short_desc));
+		$(snippet_div).html(short_desc);
 		
 		if(trimmed){
+			var full_desc_div = document.createElement("div");
+			wrapper.appendChild(full_desc_div);
+			$(full_desc_div).hide();	
+			$(full_desc_div).html(description + " <a href = '#' onclick='return false;' >less</a>");
+			
+			$(snippet_div).html($(snippet_div).html() + " <a href = '#' onclick='return false;' >more</a>"); 
+			
+			var snippet_id = "sn_" + new Date().getTime() + Math.random().toString().substr(2,100);
+			$(snippet_div).attr("id", snippet_id);
+			
+			var full_desc_id = "fd_" + new Date().getTime() + Math.random().toString().substr(2,100);
+			$(full_desc_div).attr("id", full_desc_id);
 		}
 	}
-	else
-		content_div.appendChild(document.createTextNode(" "));
 }
 
 function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
