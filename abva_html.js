@@ -437,10 +437,13 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + 
 			  '/events?alwaysIncludeEmail=false&orderBy=startTime&singleEvents=true' + 
 			  '&timeMin=' + startTime.toISOString() + 
-			  '&timeMax=' + endTime.toISOString() + 
-			  '&maxResults=' + maxItems +
 			  '&key=' + apiKey;
-			  //'timeZone=UTC-07%3A00&key=AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4'
+			  
+	if(endTime != undefined)
+		url = url + '&timeMax=' + endTime.toISOString();
+
+	if(maxItems != undefined)
+		url = url + '&maxResults=' + maxItems;
 
 	url = encodeURI(url);
 
