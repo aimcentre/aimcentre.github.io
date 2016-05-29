@@ -24,7 +24,6 @@
 		
 		<script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
 		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
-		<script src="https://abvasvmc.github.io/js/moment.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script src="https://abvasvmc.github.io/abva.js"></script>
 
@@ -74,8 +73,9 @@
 				siteName = prefs.getString("siteName");
 				siteRoot = prefs.getString("siteRoot");
 				
-				calendarId = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
-				apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
+				var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
+				var newsCalendarI = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
+				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
 			
 				//Signup sheet link
 				$("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
@@ -84,34 +84,16 @@
 				var aspectRatio = 9.0/16;
 				showCarouselImages("/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
 				
-				//Loading any alerts
-				showAlerts("/data-pages/alerts", "myAlerts", feedUrlSeed);
-
 				//Loading welcome message from the Welcome page
 				showPageContents("/welcome", "myWelcome", feedUrlSeed);
-				
-				var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
-				var newsCalendarI = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
-				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
 
 				//Loading Special Events feed
 				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 125, 5);
-				//showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
 				
-				//Loading calendar events
+				//Loading News feed
 				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 125, 5);
 
-				////gadgets.window.adjustHeight();
 			} //End: function initialize()
-			
-
-//			//Calling initialization routing on page loading
-//			$(document).ready(function () {
-//				
-//				initialize(Math.floor((Math.random() * 100000)));
-//				gadgets.window.adjustHeight();
-//			});			
-//
 
 			//Calling initialization routing on gadget loading
 			gadgets.util.registerOnLoadHandler(function() { 
