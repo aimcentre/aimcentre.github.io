@@ -292,8 +292,8 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	if(type != undefined){
 		if(type != "warning"){
 			$(wrapper).addClass("alert");
-			$(wrapper).addClass(type);
 		}
+		$(wrapper).addClass(type);
 	}
 	
 	//item heading
