@@ -409,16 +409,6 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 		}
 	}
 	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, targetDiv);
-/*	
-	//item read-more link
-	var more = document.createElement("a");
-	var more_link =  (siteRoot != null && siteRoot.length > 0) ? entry.link.replace(canonical_site_url, siteRoot) : canonical_site_url;
-	$(more).attr("href", more_link);
-	$(more).attr("target", "_top");
-	more.appendChild(document.createTextNode(" more"));
-	content_div.appendChild(more);
-*/	
-
 }
 
 

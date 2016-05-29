@@ -287,31 +287,189 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 function timeString(t){
 	return t.getFullYear() + "-" + t.getMonth() + "-" + t.getDate() + "T" + t.getHours() + ":" + t.getMinutes() + ":" + t.getSeconds();
 }
+function show(divId){$("#" + divId).show();}
+function hide(divId){$("#" + divId).hide();}
+function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, targetDiv){
+	if(title == undefined)
+		return;
+	
+	//item wrapper
+	var wrapper = document.createElement("div");
+	targetDiv.appendChild(wrapper);
+	$(wrapper).addClass("feed-item");
+	if(type != undefined){
+		$(wrapper).addClass("alert");
+		if(type != "alert")
+			$(wrapper).addClass(type);
+	}
+	
+	//item heading
+	var h = document.createElement("div");
+	wrapper.appendChild(h);
+	$(h).addClass("feed-item-title");
+	h.appendChild(document.createTextNode(title));
+	
+	//Date/time
+	var t = document.createElement("div");
+	wrapper.appendChild(t);
+	$(t).addClass("feed-item-time");
+	var t_str = null;
+	if(start.dateTime == undefined){
+		//an all-day event
+		start = new Date(start.date.split('-').join('/'));
+		end = new Date(end.date.split('-').join('/'));
+		if(start == end)
+			t_str = start.toDateString();
+		else
+			t_str = start.toDateString() + " - " + end.toDateString();
+	}
+	else{
+		start = new Date(start.dateTime);
+		end = new Date(end.dateTime);
+		
+		if(start.getDate() == end.getDate())
+			t_str = start.toDateString() + ", " + start.toLocaleTimeString();
+		else
+			t_str = start.toDateString() + " - " + end.toDateString();
+	}
+	t.appendChild(document.createTextNode(t_str));
+		
+	//item thumbnail
+	if(thumbnailUrl != undefined){
+		var thumb = document.createElement("div");
+		wrapper.appendChild(thumb);
+		$(thumb).addClass("feed-item-thumb");
+		$(thumb).css("background-image", "url(".concat(thumbnailUrl,")"));
+	}
+	
+	
+	//item body
+	var snippet_div = document.createElement("div");
+	wrapper.appendChild(snippet_div);
+	$(wrapper).show();
+	
+	if(description != undefined){
+		var short_desc = null;
+		var trimmed = false;
+		if(shortDescLength != undefined && description.length > shortDescLength){
+			//trim the string to the maximum length
+			var short_desc = description.substr(0, shortDescLength);
+			
+			//re-trim if we are in the middle of a word
+			short_desc = short_desc.substr(0, Math.min(short_desc.length, short_desc.lastIndexOf(" ")));
+			
+			if(short_desc.length < description.length)
+				trimmed = true;
+		}
+		else
+			short_desc = description;
+		
+		$(snippet_div).html(short_desc);
+		
+		if(trimmed){
+			var full_desc_div = document.createElement("div");
+			wrapper.appendChild(full_desc_div);
+			$(full_desc_div).hide();	
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime){
+			var snippet_id = "sn_" + new Date().getTime() + Math.random().toString().substr(2,100);
+			$(snippet_div).attr("id", snippet_id);
+			
+			var full_desc_id = "fd_" + new Date().getTime() + Math.random().toString().substr(2,100);
+			$(full_desc_div).attr("id", full_desc_id);
+
+			$(snippet_div).html($(snippet_div).html() + " <a href = '#' onclick='show(\"" + full_desc_id + "\"); hide(\"" + snippet_id + "\"); return false;' >more</a>");
+			
+			$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >less</a>");
+		}
+	}
+}
+
+function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
+	
+	var thumbnailUrl = null;
+	var fullPageUrl = null;
+	var type = null;
+	
+	if(item.description != undefined){
+		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
+		if(metadata != undefined){
+			for(var i=0; i<metadata.length; ++i){
+				var meta = metadata[i];
+				var remove_meta = false;
+				if(meta.match(/^\[T:/i)){
+					//Thumbnail URL
+					thumbnailUrl = meta.substring(3, meta.length-1);
+					remove_meta = true;
+				}
+				else if(meta.match(/^\[P:/i)){
+					//Full Page URL
+					fullPageUrl = meta.substring(3, meta.length-1);
+					remove_meta = true;
+				}
+				else if(meta.match(/^\[Type:/i)){
+					//Type
+					type =  meta.substring(6, meta.length-1).trim().toLowerCase();
+					remove_meta = true;
+				}
+				
+				if(remove_meta)
+					item.description = item.description.replace(meta, "");
+			}
+		}
+	}
+	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, targetDiv);
+}
+
+
+function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, startTime, endTime){
 
 	if(startTime == null)
-		startTime = new Date().getTime();
+		startTime = new Date();
 
 	if(endTime == null){
 		endTime = new Date(startTime);
-		endTime.setDate(endTime.getDate() + 7);
+		endTime.setDate(endTime.getDate() + 8);
 	}
+	
+	if(panelHeading != undefined){
+		var container = document.getElementById(displayDivId);
 		
+		//Panel heading for all devices that are larger than xs
+		var heading = document.createElement("h3");
+		heading.className = "feed-panel-heading hidden-xs";
+		heading.appendChild(document.createTextNode(panelHeading));
+		container.appendChild(heading);
+		
+		//panel heading for xs devices, which uses same styles as page titles
+		heading = document.createElement("h3");
+		heading.className = "page-title visible-xs";
+		heading.appendChild(document.createTextNode(panelHeading));
+		container.appendChild(heading);
+	}
 
 	var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + 
 			  '/events?alwaysIncludeEmail=false&orderBy=startTime&singleEvents=true' + 
-			  '&timeMin=' + timeString(startTime) + 
-			  '&timeMax=' + timeString(endTime) + 
+			  '&timeMin=' + startTime.toISOString() + 
+			  '&timeMax=' + endTime.toISOString() + 
 			  '&key=' + apiKey;
 			  //'timeZone=UTC-07%3A00&key=AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4'
+
+	url = encodeURI(url);
+
 	$.ajax({
 	    type: 'GET',
-	    url: encodeURI(url),
+	    url: url,
 	    dataType: 'json',
 	    success: function (response) {
 	        //do whatever you want with each
-	        var div = $("#"+displayDivId);
+	        var container = document.getElementById(displayDivId);
+			
+			if(maxItems == undefined || maxItems > response.items.length)
+				maxItems = response.items.length;
+
+	        for(var i=0; i<maxItems; ++i){
+	        	appendCalendarItemToFeed(response.items[i], shortDescLength, container);
+	        }
 	    },
 	    error: function (response) {
 	        //tell that an error has occurred
