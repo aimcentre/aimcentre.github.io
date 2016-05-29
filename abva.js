@@ -284,9 +284,6 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
-function timeString(t){
-	return t.getFullYear() + "-" + t.getMonth() + "-" + t.getDate() + "T" + t.getHours() + ":" + t.getMinutes() + ":" + t.getSeconds();
-}
 function show(divId){$("#" + divId).show();}
 function hide(divId){$("#" + divId).hide();}
 function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, targetDiv){
