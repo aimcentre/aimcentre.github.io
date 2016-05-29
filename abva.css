@@ -73,6 +73,7 @@
 }
 	
 .feed-item.feature{
+	padding: 15px;
 	background-color:#DAF4F7;
 	border: solid #37D237 1px;
 	-webkit-border-radius: 5px;
