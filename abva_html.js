@@ -469,7 +469,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	if(maxItems != undefined)
 		url = url + '&maxResults=' + maxItems;
 
-	if(singleEvents)
+	if(singleEvents == true)
 		url = url + '&singleEvents=true';
 	else
 		url = url + '&singleEvents=false';
