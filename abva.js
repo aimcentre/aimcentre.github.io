@@ -266,7 +266,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 				}
 				else if(meta.match(/^\[Tagline:/i)){
 					//Tagline
-					tagline =  meta.substring(9, meta.length-1).trim().toLowerCase();
+					tagline =  meta.substring(9, meta.length-1).trim();
 					remove_meta = true;
 				}
 				
