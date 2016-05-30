@@ -281,7 +281,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 function show(divId){$("#" + divId).show();}
 function hide(divId){$("#" + divId).hide();}
 
-function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, targetDiv){
+function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline){
 	if(title == undefined)
 		return;
 	
@@ -307,28 +307,33 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	var t = document.createElement("div");
 	wrapper.appendChild(t);
 	$(t).addClass("feed-item-time");
-	var t_str = null;
-	if(start.dateTime == undefined){
-		//an all-day event
-		start = new Date(start.date.split('-').join('/'));
-		end = new Date(end.date.split('-').join('/'));
-		end.setTime(end.getTime() - 1);
-		if(start == end)
-			t_str = start.toDateString();
-		else
-			t_str = start.toDateString() + " - " + end.toDateString();
+	if(tagline != null){
+		$(t).html(tagline);
 	}
 	else{
-		start = new Date(start.dateTime);
-		end = new Date(end.dateTime);
-		
-		if(start.getDate() == end.getDate())
-			t_str = start.toDateString() + ", " + start.toLocaleTimeString();
-		else
-			t_str = start.toDateString() + " - " + end.toDateString();
+		var t_str = null;
+		if(start.dateTime == undefined){
+			//an all-day event
+			start = new Date(start.date.split('-').join('/'));
+			end = new Date(end.date.split('-').join('/'));
+			end.setTime(end.getTime() - 1);
+			if(start == end)
+				t_str = start.toDateString();
+			else
+				t_str = start.toDateString() + " - " + end.toDateString();
+		}
+		else{
+			start = new Date(start.dateTime);
+			end = new Date(end.dateTime);
+			
+			if(start.getDate() == end.getDate())
+				t_str = start.toDateString() + ", " + start.toLocaleTimeString();
+			else
+				t_str = start.toDateString() + " - " + end.toDateString();
+		}
+		$(t).html(t_str);
 	}
-	t.appendChild(document.createTextNode(t_str));
-		
+	
 	//item thumbnail
 	if(thumbnailUrl != undefined){
 		var thumb = document.createElement("div");
@@ -388,11 +393,12 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	}
 }
 
-function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
+function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 	
 	var thumbnailUrl = null;
 	var fullPageUrl = null;
 	var type = null;
+	var tagline = null;
 	
 	if(item.description != undefined){
 		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
@@ -415,17 +421,22 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 					type =  meta.substring(6, meta.length-1).trim().toLowerCase();
 					remove_meta = true;
 				}
+				else if(meta.match(/^\[Tagline:/i)){
+					//Tagline
+					tagline =  meta.substring(9, meta.length-1).trim().toLowerCase();
+					remove_meta = true;
+				}
 				
 				if(remove_meta)
 					item.description = item.description.replace(meta, "");
 			}
 		}
 	}
-	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, targetDiv);
+	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline);
 }
 
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, startTime, endTime){
+function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, startTime, endTime, singleEvents){
 
 	if(startTime == null)
 		startTime = new Date();
@@ -458,6 +469,11 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	if(maxItems != undefined)
 		url = url + '&maxResults=' + maxItems;
 
+	if(singleEvents)
+		url = url + '&singleEvents=true';
+	else
+		url = url + '&singleEvents=false';
+
 	url = encodeURI(url);
 
 	$.ajax({
@@ -472,7 +488,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 				maxItems = response.items.length;
 
 	        for(var i=0; i<maxItems; ++i){
-	        	appendCalendarItemToFeed(response.items[i], shortDescLength, container);
+	        	appendCalendarItemToFeed(container, response.items[i], shortDescLength);
 	        }
 	    },
 	    error: function (response) {
