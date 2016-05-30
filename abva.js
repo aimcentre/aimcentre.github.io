@@ -242,7 +242,8 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 	var fullPageUrl = null;
 	var type = null;
 	var tagline = null;
-	
+	var allowGrouping = true;
+
 	if(item.description != undefined){
 		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
 		if(metadata != undefined){
@@ -269,6 +270,12 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 					tagline =  meta.substring(9, meta.length-1).trim();
 					remove_meta = true;
 				}
+				else if(meta.match(/^\[Grouping:/i)){
+					//Grouping
+					if(meta.substring(10, meta.length-1).trim() == "no")
+						allowGrouping = false;
+					remove_meta = true;
+				}
 				
 				if(remove_meta)
 					item.description = item.description.replace(meta, "");
@@ -276,6 +283,8 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 		}
 	}
 	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline);
+
+	return allowGrouping;
 }
 
 
@@ -334,9 +343,12 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	        	
 	        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
 	        		continue;
+	        	
+	        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength);
 
-	        	title_list.push(title);
-	        	appendCalendarItemToFeed(container, response.items[i], shortDescLength);
+	        	if(allow_grouping)
+	        		title_list.push(title);
+
 	        	count = count + 1;
 
 	        	if(maxItems != undefined &&  maxItems <= count)
