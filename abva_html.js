@@ -436,7 +436,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 }
 
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, startTime, endTime, singleEvents){
+function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, startTime, endTime, groupByTitle){
 
 	if(startTime == null)
 		startTime = new Date();
@@ -466,13 +466,8 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	if(endTime != undefined)
 		url = url + '&timeMax=' + endTime.toISOString();
 
-	if(maxItems != undefined)
+	if(if(groupByTitle == false && maxItems != undefined)
 		url = url + '&maxResults=' + maxItems;
-
-	if(singleEvents == true)
-		url = url + '&singleEvents=true';
-	else
-		url = url + '&singleEvents=false';
 
 	url = encodeURI(url);
 
@@ -483,12 +478,21 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	    success: function (response) {
 	        //do whatever you want with each
 	        var container = document.getElementById(displayDivId);
-			
-			if(maxItems == undefined || maxItems > response.items.length)
-				maxItems = response.items.length;
 
-	        for(var i=0; i<maxItems; ++i){
+	        var title_list = [];
+	        int count = 0;
+	        for(var i=0; i<response.items.length; ++i){
+	        	var title = response.items[i];
+	        	
+	        	if(groupByTitle == true && title_list.contains(title))
+	        		continue;
+
+	        	title_list.push(title);
 	        	appendCalendarItemToFeed(container, response.items[i], shortDescLength);
+	        	count = count + 1;
+
+	        	if(maxItems != undefined &&  maxItems <= count)
+	        		break;
 	        }
 	    },
 	    error: function (response) {
