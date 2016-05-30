@@ -66,12 +66,12 @@
 				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
 
 				//Loading Special Events feed
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 125, 5);
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 125, 5, true);
 				//showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
 				
 				//Loading calendar events
 				//showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, startTime, endTime, groupByTitle)
-				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 125, 5, null, null, true);
+				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 125, 5, true);
 
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
