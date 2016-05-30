@@ -124,7 +124,7 @@ function hide(divId){
 	gadgets.window.adjustHeight();	
 }
 
-function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, targetDiv){
+function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline){
 	if(title == undefined)
 		return;
 	
@@ -132,8 +132,11 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	var wrapper = document.createElement("div");
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
-	if(type != undefined)
+	if(type != undefined){
+		if(type != "warning")
+			$(wrapper).addClass("alert");
 		$(wrapper).addClass(type);
+	}
 	
 	//item heading
 	var h = document.createElement("div");
@@ -147,28 +150,33 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	var t = document.createElement("div");
 	wrapper.appendChild(t);
 	$(t).addClass("feed-item-time");
-	var t_str = null;
-	if(start.dateTime == undefined){
-		//an all-day event
-		start = new Date(start.date.split('-').join('/'));
-		end = new Date(end.date.split('-').join('/'));
-		end.setTime(end.getTime() - 1);
-		if(start == end)
-			t_str = start.toDateString();
-		else
-			t_str = start.toDateString() + " - " + end.toDateString();
+	if(tagline != null){
+		$(t).html(tagline);
 	}
 	else{
-		start = new Date(start.dateTime);
-		end = new Date(end.dateTime);
-		
-		if(start.getDate() == end.getDate())
-			t_str = start.toDateString() + ", " + start.toLocaleTimeString();
-		else
-			t_str = start.toDateString() + " - " + end.toDateString();
+		var t_str = null;
+		if(start.dateTime == undefined){
+			//an all-day event
+			start = new Date(start.date.split('-').join('/'));
+			end = new Date(end.date.split('-').join('/'));
+			end.setTime(end.getTime() - 1);
+			if(start == end)
+				t_str = start.toDateString();
+			else
+				t_str = start.toDateString() + " - " + end.toDateString();
+		}
+		else{
+			start = new Date(start.dateTime);
+			end = new Date(end.dateTime);
+			
+			if(start.getDate() == end.getDate())
+				t_str = start.toDateString() + ", " + start.toLocaleTimeString();
+			else
+				t_str = start.toDateString() + " - " + end.toDateString();
+		}
+		$(t).html(t_str);
 	}
-	t.appendChild(document.createTextNode(t_str));
-		
+	
 	//item thumbnail
 	if(thumbnailUrl != undefined){
 		var thumb = document.createElement("div");
@@ -216,7 +224,6 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 
 				$(snippet_div).html($(snippet_div).html() + " ... <a href = '#' onclick='show(\"" + full_desc_id + "\"); hide(\"" + snippet_id + "\"); return false;' >more.</a>");
 				
-				description = description.trim().replace("\n", "<br /><br />");
 				$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >See less.</a>");
 			}
 			else{
@@ -229,11 +236,12 @@ function appendItemToFeed(title, description, shortDescLength, thumbnailUrl, ful
 	}
 }
 
-function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
+function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 	
 	var thumbnailUrl = null;
 	var fullPageUrl = null;
 	var type = null;
+	var tagline = null;
 	
 	if(item.description != undefined){
 		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
@@ -256,17 +264,22 @@ function appendCalendarItemToFeed(item, shortDescLength, targetDiv){
 					type =  meta.substring(6, meta.length-1).trim().toLowerCase();
 					remove_meta = true;
 				}
+				else if(meta.match(/^\[Tagline:/i)){
+					//Tagline
+					tagline =  meta.substring(9, meta.length-1).trim().toLowerCase();
+					remove_meta = true;
+				}
 				
 				if(remove_meta)
 					item.description = item.description.replace(meta, "");
 			}
 		}
 	}
-	appendItemToFeed(item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, targetDiv);
+	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline);
 }
 
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, startTime, endTime){
+function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, groupByTitle, startTime, endTime){
 
 	if(startTime == null)
 		startTime = new Date();
@@ -296,8 +309,13 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	if(endTime != undefined)
 		url = url + '&timeMax=' + endTime.toISOString();
 
-	if(maxItems != undefined)
-		url = url + '&maxResults=' + maxItems;
+	if(maxItems != undefined){
+		if(groupByTitle == false)
+			url = url + '&maxResults=' + maxItems;
+		else
+			url = url + '&maxResults=' + 10 * maxItems;
+	}
+		
 
 	url = encodeURI(url);
 
@@ -308,12 +326,21 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	    success: function (response) {
 	        //do whatever you want with each
 	        var container = document.getElementById(displayDivId);
-			
-			if(maxItems == undefined || maxItems > response.items.length)
-				maxItems = response.items.length;
 
-	        for(var i=0; i<maxItems; ++i){
-	        	appendCalendarItemToFeed(response.items[i], shortDescLength, container);
+	        var title_list = [];
+	        var count = 0;
+	        for(var i=0; i<response.items.length; ++i){
+	        	var title = response.items[i].summary;
+	        	
+	        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
+	        		continue;
+
+	        	title_list.push(title);
+	        	appendCalendarItemToFeed(container, response.items[i], shortDescLength);
+	        	count = count + 1;
+
+	        	if(maxItems != undefined &&  maxItems <= count)
+	        		break;
 	        }
 	    },
 	    error: function (response) {
