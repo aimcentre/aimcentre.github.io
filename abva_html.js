@@ -466,7 +466,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	if(endTime != undefined)
 		url = url + '&timeMax=' + endTime.toISOString();
 
-	if(if(groupByTitle == false && maxItems != undefined)
+	if(groupByTitle == false && maxItems != undefined)
 		url = url + '&maxResults=' + maxItems;
 
 	url = encodeURI(url);
