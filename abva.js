@@ -272,7 +272,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 				}
 				else if(meta.match(/^\[Grouping:/i)){
 					//Grouping
-					if(meta.substring(10, meta.length-1).trim() == "no")
+					if(meta.substring(10, meta.length-1).trim().toLowerCase() == "no")
 						allowGrouping = false;
 					remove_meta = true;
 				}
