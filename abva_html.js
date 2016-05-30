@@ -480,7 +480,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	        var container = document.getElementById(displayDivId);
 
 	        var title_list = [];
-	        int count = 0;
+	        var count = 0;
 	        for(var i=0; i<response.items.length; ++i){
 	        	var title = response.items[i];
 	        	
