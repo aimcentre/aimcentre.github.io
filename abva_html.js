@@ -484,7 +484,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	        for(var i=0; i<response.items.length; ++i){
 	        	var title = response.items[i];
 	        	
-	        	if(groupByTitle == true && title_list.contains(title))
+	        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
 	        		continue;
 
 	        	title_list.push(title);
