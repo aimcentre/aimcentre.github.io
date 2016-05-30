@@ -482,7 +482,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	        var title_list = [];
 	        var count = 0;
 	        for(var i=0; i<response.items.length; ++i){
-	        	var title = response.items[i];
+	        	var title = response.items[i].summary;
 	        	
 	        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
 	        		continue;
