@@ -176,9 +176,9 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	var tomorrow = new Date(today.getTime() + 86400000);
 	var prefix = null;
 	if(start.getDate() == today.getDate())
-		prefix = "<span class="today">Today: </span>";
+		prefix = "<span class='today'>Today: </span>";
 	else if(start.getDate() == tomorrow.getDate())
-		prefix = "<span class="tomorrow">Tomorrow: </span>";
+		prefix = "<span class='tomorrow'>Tomorrow: </span>";
 
 	$(t).html(prefix + tagline);
 	
