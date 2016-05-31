@@ -55,7 +55,10 @@
 	font-size: smaller;
 	margin-bottom: 5px;
 }
-  
+
+.feed-item-time > .today, .feed-item-time > .tomorrow{
+	color:#008000;
+}	
 .feed-item-thumb{
 	width: 90px;
 	height: 75px;

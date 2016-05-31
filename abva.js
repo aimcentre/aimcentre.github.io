@@ -150,32 +150,37 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	var t = document.createElement("div");
 	wrapper.appendChild(t);
 	$(t).addClass("feed-item-time");
-	if(tagline != null){
-		$(t).html(tagline);
-	}
-	else{
-		var t_str = null;
+	if(tagline == null){
 		if(start.dateTime == undefined){
 			//an all-day event
 			start = new Date(start.date.split('-').join('/'));
 			end = new Date(end.date.split('-').join('/'));
 			end.setTime(end.getTime() - 1);
 			if(start == end)
-				t_str = start.toDateString();
+				tagline = start.toDateString();
 			else
-				t_str = start.toDateString() + " - " + end.toDateString();
+				tagline = start.toDateString() + " - " + end.toDateString();
 		}
 		else{
 			start = new Date(start.dateTime);
 			end = new Date(end.dateTime);
 			
 			if(start.getDate() == end.getDate())
-				t_str = start.toDateString() + ", " + start.toLocaleTimeString();
+				tagline = start.toDateString() + ", " + start.toLocaleTimeString();
 			else
-				t_str = start.toDateString() + " - " + end.toDateString();
+				tagline = start.toDateString() + " - " + end.toDateString();
 		}
-		$(t).html(t_str);
 	}
+	
+	var today = new Date();
+	var tomorrow = new Date(today.getTime() + 86400000);
+	var prefix = null;
+	if(start.getDate() == today.getDate())
+		prefix = "<span class="today">Today: </span>";
+	else if(start.getDate() == tomorrow.getDate())
+		prefix = "<span class="tomorrow">Tomorrow: </span>";
+
+	$(t).html(prefix + tagline);
 	
 	//item thumbnail
 	if(thumbnailUrl != undefined){
