@@ -173,7 +173,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 		
 		if(tagline == null){
 			if(start.getDate() == end.getDate())
-				tagline = start.toDateString() + ", " + start.toLocaleTimeString();
+				tagline = start.toDateString() + ", " + start.toLocaleTimeString() + " - " + end.toLocaleTimeString();
 			else
 				tagline = start.toDateString() + " - " + end.toDateString();
 		}
