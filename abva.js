@@ -158,7 +158,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 		//an all-day event
 		start = new Date(start.date.split('-').join('/'));
 		end = new Date(end.date.split('-').join('/'));
-		end.setTime(end.getTime() - 1);
+		end.setTime(end.getTime() - 86400000);
 		
 		if(tagline == null){
 			if(start == end)
