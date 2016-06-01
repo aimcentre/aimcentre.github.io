@@ -57,7 +57,8 @@
 }
 
 .feed-item-time > .today, .feed-item-time > .tomorrow{
-	color:#006000;
+	color:#DF24FF;
+	font-weight: bolder;
 }	
 .feed-item-thumb{
 	width: 90px;

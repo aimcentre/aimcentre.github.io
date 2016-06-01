@@ -153,8 +153,71 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	
 	var today = new Date();
 	var tomorrow = new Date(today.getTime() + 86400000);
-	var prefix = null;
-
+	
+	if(start.dateTime == undefined){
+		//an all-day event
+		start = new Date(start.date.split('-').join('/'));
+		end = new Date(end.date.split('-').join('/'));
+		end.setTime(end.getTime() - 1);
+		
+		if(tagline == null){
+			if(start == end)
+				tagline = start.toDateString();
+			else
+				tagline = start.toDateString() + " - " + end.toDateString();
+		}
+	}
+	else{
+		start = new Date(start.dateTime);
+		end = new Date(end.dateTime);
+		
+		if(tagline == null){
+			if(start.getDate() == end.getDate())
+				tagline = start.toDateString() + ", " + start.toLocaleTimeString();
+			else
+				tagline = start.toDateString() + " - " + end.toDateString();
+		}
+	}
+	
+	var prefix = "";
+	if(start.getDate() == today.getDate())
+		prefix = "<span class='today'>Today: </span>";
+	else if(start.getDate() == tomorrow.getDate())
+		prefix = "<span class='tomorrow'>Tomorrow: </span>";
+	
+	$(t).html(prefix + tagline);
+/*
+	if(tagline == null){
+		if(start.dateTime == undefined){
+			//an all-day event
+			start = new Date(start.date.split('-').join('/'));
+			end = new Date(end.date.split('-').join('/'));
+			end.setTime(end.getTime() - 1);
+			if(start == end)
+				tagline = start.toDateString();
+			else
+				tagline = start.toDateString() + " - " + end.toDateString();
+			
+			if(start.getDate() == today.getDate())
+				prefix = "<span class='today'>Today: </span>";
+			else if(start.getDate() == tomorrow.getDate())
+				prefix = "<span class='tomorrow'>Tomorrow: </span>";
+		}
+		else{
+			start = new Date(start.dateTime);
+			end = new Date(end.dateTime);
+			
+			if(start.getDate() == end.getDate())
+				tagline = start.toDateString() + ", " + start.toLocaleTimeString();
+			else
+				tagline = start.toDateString() + " - " + end.toDateString();
+			
+			if(start.getDate() == today.getDate())
+				prefix = "<span class='today'>Today: </span>";
+			else if(start.getDate() == tomorrow.getDate())
+				prefix = "<span class='tomorrow'>Tomorrow: </span>";
+		}
+	}
 	if(tagline == null){
 		if(start.dateTime == undefined){
 			//an all-day event
@@ -187,8 +250,9 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 		}
 	}
 	
-
 	$(t).html(prefix + tagline);
+*/
+	
 	
 	//item thumbnail
 	if(thumbnailUrl != undefined){
