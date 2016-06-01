@@ -172,8 +172,17 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 		end = new Date(end.dateTime);
 		
 		if(tagline == null){
-			if(start.getDate() == end.getDate())
-				tagline = start.toDateString() + ", " + start.toLocaleTimeString() + " - " + end.toLocaleTimeString();
+			if(start.getDate() == end.getDate()){
+				var s_h = start.getHours();
+				var e_h = end.getHours();
+				var s_ampm = (s_h < 12 && e_h >= 12) ? "am" : "";
+				var e_ampm = e_ampm = e_h < 12 : "am" : "pm";
+				
+				tagline = start.toDateString() + ", " + 
+							(start.getHours() % 12 + 1) + ":" + start.getMinutes() + s_ampm + " - " + 
+							(end.getHours() % 12 + 1) + ":" + end.getMinutes() + e_ampm;
+				//tagline = start.toDateString() + ", " + start.toLocaleTimeString() + " - " + end.toLocaleTimeString();
+			}
 			else
 				tagline = start.toDateString() + " - " + end.toDateString();
 		}
