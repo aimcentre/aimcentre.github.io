@@ -179,8 +179,8 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 				var e_ampm = e_h < 12 ? "am" : "pm";
 				
 				tagline = start.toDateString() + ", " + 
-							(start.getHours() % 12 + 1) + ":" + start.getMinutes() + s_ampm + " - " + 
-							(end.getHours() % 12 + 1) + ":" + end.getMinutes() + e_ampm;
+							(start.getHours() % 12 + 1) + ":" + ("0" + start.getMinutes()).slice(-2) + s_ampm + " - " + 
+							(end.getHours() % 12 + 1) + ":" + ("0" + end.getMinutes()).slice(-2) + e_ampm;
 				//tagline = start.toDateString() + ", " + start.toLocaleTimeString() + " - " + end.toLocaleTimeString();
 			}
 			else
