@@ -176,7 +176,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 				var s_h = start.getHours();
 				var e_h = end.getHours();
 				var s_ampm = (s_h < 12 && e_h >= 12) ? "am" : "";
-				var e_ampm = e_ampm = e_h < 12 : "am" : "pm";
+				var e_ampm = e_h < 12 ? "am" : "pm";
 				
 				tagline = start.toDateString() + ", " + 
 							(start.getHours() % 12 + 1) + ":" + start.getMinutes() + s_ampm + " - " + 
