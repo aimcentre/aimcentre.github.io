@@ -90,7 +90,7 @@
 				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 140, 5, true);
 				
 				//Loading News feed
-				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 140, 5, true);
+				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "Program News", 140, 5, true);
 
 			} //End: function initialize()
 
