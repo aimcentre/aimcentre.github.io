@@ -189,79 +189,13 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	}
 	
 	var prefix = "";
-	if(start.getDate() == today.getDate())
-		prefix = "<span class='today'>Today: </span>";
-	else if(start.getDate() == tomorrow.getDate())
-		prefix = "<span class='tomorrow'>Tomorrow: </span>";
-	
-	$(t).html(prefix + tagline);
-/*
-	if(tagline == null){
-		if(start.dateTime == undefined){
-			//an all-day event
-			start = new Date(start.date.split('-').join('/'));
-			end = new Date(end.date.split('-').join('/'));
-			end.setTime(end.getTime() - 1);
-			if(start == end)
-				tagline = start.toDateString();
-			else
-				tagline = start.toDateString() + " - " + end.toDateString();
-			
-			if(start.getDate() == today.getDate())
-				prefix = "<span class='today'>Today: </span>";
-			else if(start.getDate() == tomorrow.getDate())
-				prefix = "<span class='tomorrow'>Tomorrow: </span>";
-		}
-		else{
-			start = new Date(start.dateTime);
-			end = new Date(end.dateTime);
-			
-			if(start.getDate() == end.getDate())
-				tagline = start.toDateString() + ", " + start.toLocaleTimeString();
-			else
-				tagline = start.toDateString() + " - " + end.toDateString();
-			
-			if(start.getDate() == today.getDate())
-				prefix = "<span class='today'>Today: </span>";
-			else if(start.getDate() == tomorrow.getDate())
-				prefix = "<span class='tomorrow'>Tomorrow: </span>";
-		}
+	if(type != "warning"){
+		if(start.getDate() == today.getDate())
+			prefix = "<span class='today'>Today: </span>";
+		else if(start.getDate() == tomorrow.getDate())
+			prefix = "<span class='tomorrow'>Tomorrow: </span>";
 	}
-	if(tagline == null){
-		if(start.dateTime == undefined){
-			//an all-day event
-			start = new Date(start.date.split('-').join('/'));
-			end = new Date(end.date.split('-').join('/'));
-			end.setTime(end.getTime() - 1);
-			if(start == end)
-				tagline = start.toDateString();
-			else
-				tagline = start.toDateString() + " - " + end.toDateString();
-			
-			if(start.getDate() == today.getDate())
-				prefix = "<span class='today'>Today: </span>";
-			else if(start.getDate() == tomorrow.getDate())
-				prefix = "<span class='tomorrow'>Tomorrow: </span>";
-		}
-		else{
-			start = new Date(start.dateTime);
-			end = new Date(end.dateTime);
-			
-			if(start.getDate() == end.getDate())
-				tagline = start.toDateString() + ", " + start.toLocaleTimeString();
-			else
-				tagline = start.toDateString() + " - " + end.toDateString();
-			
-			if(start.getDate() == today.getDate())
-				prefix = "<span class='today'>Today: </span>";
-			else if(start.getDate() == tomorrow.getDate())
-				prefix = "<span class='tomorrow'>Tomorrow: </span>";
-		}
-	}
-	
 	$(t).html(prefix + tagline);
-*/
-	
 	
 	//item thumbnail
 	if(thumbnailUrl != undefined){
@@ -310,7 +244,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 
 				$(snippet_div).html($(snippet_div).html() + " ... <a href = '#' onclick='show(\"" + full_desc_id + "\"); hide(\"" + snippet_id + "\"); return false;' >more.</a>");
 				
-				$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >See less.</a>");
+				$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >less.</a>");
 			}
 			else{
 				var canonical_site_url = "https://sites.google.com/a/" + siteDomain + "/" + siteName;
