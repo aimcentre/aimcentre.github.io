@@ -97,7 +97,7 @@
 	margin-top:3px;
 }
 
-.feed-item. .attachments a, .feed-item. .attachments a:visited{
+.feed-item .attachments a, .feed-item .attachments a:visited{
 	font-size: smaller;
 	color:#064ED6!important;
 }
