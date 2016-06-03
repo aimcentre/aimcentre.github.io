@@ -259,6 +259,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	if(attachments.length > 0){
 		var attachments_div = document.createElement("div");
 		wrapper.appendChild(attachments_div);
+		$(attachments_div).addClass("attachments")
 		for(var i=0; i< attachments.length; ++i){
 			var attachment = document.createElement("div");
 			attachments_div.appendChild(attachment);
