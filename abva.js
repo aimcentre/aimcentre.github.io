@@ -269,7 +269,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 			var href = "";
 			if(splitter_idx > 0){
 				label = attachments[i].substring(0, splitter_idx).trim();
-				href = attachments[i].substring(splitter_idx+1, attachments[i].length).trim();
+				href = attachments[i].substring(splitter_idx+2, attachments[i].length).trim();
 			}
 			else{
 				label = "Attachment " + (i+1);
