@@ -264,7 +264,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 			attachments_div.appendChild(attachment);
 			$(attachment).addClass("attachment");
 			
-			var splitter_idx = attachments[i].indexOf("|");
+			var splitter_idx = attachments[i].indexOf(":=");
 			var label = "";
 			var href = "";
 			if(splitter_idx > 0){
