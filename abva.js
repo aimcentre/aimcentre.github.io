@@ -275,7 +275,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 				label = "Attachment " + (i+1);
 				href = attachments[i].trim();
 			}
-			$(attachment).html("<span class='glyphicon glyphicon-attach'></span>&nbsp;<a href='" + href + "' target='_top'>" + label + "</a>");
+			$(attachment).html("<span class='glyphicon glyphicon-link'></span>&nbsp;<a href='" + href + "' target='_top'>" + label + "</a>");
 		}
 	}
 }
