@@ -124,7 +124,7 @@ function hide(divId){
 	gadgets.window.adjustHeight();	
 }
 
-function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline){
+function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline, attachments){
 	if(title == undefined)
 		return;
 	
@@ -254,6 +254,30 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 			}
 		}
 	}
+	
+	//Attachments
+	if(attachments.length > 0){
+		var attachments_div = document.createElement("div");
+		wrapper.appendChild(attachments_div);
+		for(var i=0; i< attachments.length; ++i){
+			var attachment = document.createElement("div");
+			attachments_div.appendChild(attachment);
+			$(attachment).addClass("attachment");
+			
+			var splitter_idx = attachments[i].indexOf("|");
+			var label = "";
+			var href = "";
+			if(splitter_idx > 0){
+				label = attachments[i].substring(0, splitter_idx).trim();
+				href = attachments[i].substring(splitter_idx+1, attachments[i].length).trim();
+			}
+			else{
+				label = "Attachment " + (i+1);
+				href = attachments[i].trim();
+			}
+			$(attachment).html("<a href='" + href + "'>" + label + "</a>";
+		}
+	}
 }
 
 function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
@@ -263,6 +287,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 	var type = null;
 	var tagline = null;
 	var allowGrouping = true;
+	var attachments = [];
 
 	if(item.description != undefined){
 		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
@@ -296,13 +321,18 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 						allowGrouping = false;
 					remove_meta = true;
 				}
+				else if(meta.match(/^\[Attachment:/i)){
+					//Attachments
+					attachments.push(meta.substring(12, meta.length-1).trim());
+					remove_meta = true;
+				}
 				
 				if(remove_meta)
 					item.description = item.description.replace(meta, "");
 			}
 		}
 	}
-	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline);
+	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline, attachments);
 
 	return allowGrouping;
 }
