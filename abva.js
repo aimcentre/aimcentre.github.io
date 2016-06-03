@@ -275,7 +275,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 				label = "Attachment " + (i+1);
 				href = attachments[i].trim();
 			}
-			$(attachment).html("<a href='" + href + "'>" + label + "</a>";
+			$(attachment).html("<a href='" + href + "'>" + label + "</a>");
 		}
 	}
 }
