@@ -53,6 +53,9 @@
 .feed-item-time, .feed-item > .sponsor{
 	font-weight:bold;
 	font-size: smaller;
+}
+
+.feed-item-time{
 	margin-bottom: 5px;
 }
 
