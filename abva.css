@@ -37,7 +37,7 @@
 
 /* Hiding extra feed items on small computer screen scales */
 @media (max-width:1200px) and (min-width:970px) {
-	#myEventsfeed:nth-child(4) {
+	#myEventsfeed:nth-child(n+4) {
     display: none;
   }
 }
