@@ -35,6 +35,13 @@
 	clear: both;
 }
 
+/* Hiding extra feed items on small computer screen scales */
+@media (max-width:1200px) and (min-width:970px) {
+	#myEventsfeed:nth-child(4) {
+    display: none;
+  }
+}
+
 .feed-item a, .feed-item a:visited{
 	color: #298cca!important;
 }
@@ -149,3 +156,4 @@
 .inner{
 	width:95%;
 }
+
