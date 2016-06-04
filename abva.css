@@ -50,10 +50,14 @@
 	color:#298cca;
 }
 
-.feed-item-time{
+.feed-item-time, .feed-item > .sponsor{
 	font-weight:bold;
 	font-size: smaller;
 	margin-bottom: 5px;
+}
+
+.feed-item > .sponsor{
+	margin-bottom: -5px;
 }
 
 .feed-item-time > .today, .feed-item-time > .tomorrow{

@@ -146,7 +146,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 		title = "<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;" + title;
 	$(h).html(title);
 	
-	//Date/time
+	//Tagline
 	var t = document.createElement("div");
 	wrapper.appendChild(t);
 	$(t).addClass("feed-item-time");
