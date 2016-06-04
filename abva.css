@@ -85,14 +85,14 @@
 	
 .feed-item.feature{
 	padding: 15px;
-	background-color:#DAF4F7;
-	border: solid #37D237 1px;
+	background-color:#F5F5ED;
+	border: solid #D2C332 1px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
 .feed-item.feature > .feed-item-title{
-	color: #296722!important;
+	color: #AF5809!important;
 }
 
 .feed-item-posted-date{
