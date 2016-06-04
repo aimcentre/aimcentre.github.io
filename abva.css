@@ -59,8 +59,9 @@
 	margin-bottom: 5px;
 }
 
+
 .feed-item > .sponsor{
-	color:#905C16!important;
+	color:#0B6D8E!important;
 }
 
 .feed-item-time > .today, .feed-item-time > .tomorrow{
@@ -91,8 +92,13 @@
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
+
 .feed-item.feature > .feed-item-title{
 	color: #AF5809!important;
+}
+
+.feed-item.feature > .sponsor{
+	color:#905C16!important;
 }
 
 .feed-item-posted-date{
