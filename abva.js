@@ -146,6 +146,14 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 		title = "<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;" + title;
 	$(h).html(title);
 	
+	//Sponsor
+	if(sponsor != null){
+		var sponsor_div = document.createElement("div");
+		wrapper.appendChild(sponsor_div);
+		$(sponsor_div).addClass("sponsor");
+		$(sponsor_div).html(sponsor);
+	}
+	
 	//Tagline
 	var t = document.createElement("div");
 	wrapper.appendChild(t);
@@ -196,14 +204,6 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 			prefix = "<span class='tomorrow'>Tomorrow: </span>";
 	}
 	$(t).html(prefix + tagline);
-	
-	//Sponsor
-	if(sponsor != null){
-		var sponsor_div = document.createElement("div");
-		wrapper.appendChild(sponsor_div);
-		$(sponsor_div).addClass("sponsor");
-		$(sponsor_div).html(sponsor);
-	}
 	
 	//item thumbnail
 	if(thumbnailUrl != undefined){
