@@ -124,7 +124,7 @@ function hide(divId){
 	gadgets.window.adjustHeight();	
 }
 
-function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline, attachments){
+function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline, attachments, sponsor){
 	if(title == undefined)
 		return;
 	
@@ -196,6 +196,14 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 			prefix = "<span class='tomorrow'>Tomorrow: </span>";
 	}
 	$(t).html(prefix + tagline);
+	
+	//Sponsor
+	if(sponsor != null){
+		var sponsor_div = document.createElement("div");
+		wrapper.appendChild(sponsor_div);
+		$(sponsor_div).addClass("sponsor");
+		$(sponsor_div).html(sponsor);
+	}
 	
 	//item thumbnail
 	if(thumbnailUrl != undefined){
@@ -289,6 +297,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 	var tagline = null;
 	var allowGrouping = true;
 	var attachments = [];
+	var sponsor = null;
 
 	if(item.description != undefined){
 		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
@@ -327,13 +336,18 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 					attachments.push(meta.substring(12, meta.length-1).trim());
 					remove_meta = true;
 				}
+				else if(meta.match(/^\[Sponsor:/i)){
+					//Sponsor
+					sponsor =  meta.substring(9, meta.length-1).trim();
+					remove_meta = true;
+				}
 				
 				if(remove_meta)
 					item.description = item.description.replace(meta, "");
 			}
 		}
 	}
-	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline, attachments);
+	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline, attachments, sponsor);
 
 	return allowGrouping;
 }
