@@ -57,6 +57,7 @@
 		
 			//Initialize feed loader
 			google.load("feeds", "1");
+			var gadgetMode = true;
 			
 
 			var siteDomain = null;

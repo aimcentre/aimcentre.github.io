@@ -21,7 +21,8 @@ function showPageContents(pathToPage, displayDivId, cacheSeed){
 				content.innerHTML = entry.content;
 				container.appendChild(content);
 			}
-			gadgets.window.adjustHeight();
+			if(gadgetMode)
+				gadgets.window.adjustHeight();
 		}
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
@@ -108,7 +109,9 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 					carousel_inner.appendChild(img_div);
 
 				}
-				gadgets.window.adjustHeight();			
+
+				if(gadgetMode)
+					gadgets.window.adjustHeight();			
 			}
 		}
 	});			
@@ -419,6 +422,9 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	        	if(maxItems != undefined &&  maxItems <= count)
 	        		break;
 	        }
+
+	        if(gadgetMode)
+	        	gadgets.window.adjustHeight();	
 	    },
 	    error: function (response) {
 	        //tell that an error has occurred
