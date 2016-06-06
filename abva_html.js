@@ -353,9 +353,9 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 		}
 	}
 
-	if(skipTypes != undefined && type !- undefined && ($.inArray(type, skipTypes) > -1))
+	if(skipTypes != undefined && type != undefined && ($.inArray(type, skipTypes) > -1))
 		return false;
-	
+
 	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline, attachments, sponsor);
 
 	return allowGrouping;
