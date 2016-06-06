@@ -155,7 +155,8 @@
 }
 
 #myAnnouncements .feed-item{
-	margin-left:-15px;
+	margin-left: -15px;
+	margin-top: -15px;
 }
 
 #myAnnouncements .feed-item-thumb{
@@ -163,14 +164,19 @@
 }
 
 #myAnnouncements h3{
-font: normal 26px 'Open Sans',sans-serif;
+	font: normal 26px 'Open Sans',sans-serif;
     color: #66002e!important;
+    margin-bottom: 0;
 }
 
 #myAnnouncements .feed-item-title{
 	font-size: 18px;
 	font-weight: normal;
     color: #66002e!important;
+}
+
+#myAnnouncements .feed-item-time{
+	display: none;
 }
 
 #myAnnouncements .feed-item-title > .today, #myAnnouncements .feed-item-title > .tomorrow{
