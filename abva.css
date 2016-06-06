@@ -167,6 +167,12 @@ font: normal 26px 'Open Sans',sans-serif;
     color: #66002e!important;
 }
 
+#myAnnouncements .feed-item-title{
+	font-size: 18px;
+	font-weight: normal;
+    color: #66002e!important;
+}
+
 #myAnnouncements .feed-item-title > .today, #myAnnouncements .feed-item-title > .tomorrow{
 	display: none;
 }
