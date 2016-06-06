@@ -119,12 +119,14 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 
 function show(divId){
 	$("#" + divId).show();
-	gadgets.window.adjustHeight();	
+	if(gadgetMode)
+		gadgets.window.adjustHeight();	
 }
 
 function hide(divId){
 	$("#" + divId).hide();
-	gadgets.window.adjustHeight();	
+	if(gadgetMode)
+		gadgets.window.adjustHeight();	
 }
 
 function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline, attachments, sponsor){
@@ -391,7 +393,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 			url = url + '&maxResults=' + maxItems;
 		else
 			url = url + '&maxResults=' + 10 * maxItems;
-	}
+	}	
 
 	if(query != undefined)
 		url = url + '&q=' + query;
