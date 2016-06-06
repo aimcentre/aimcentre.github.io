@@ -166,13 +166,11 @@
 #myAnnouncements h3{
 	font: normal 26px 'Open Sans',sans-serif;
     color: #66002e!important;
-    margin-bottom: 0;
 }
 
 #myAnnouncements .feed-item-title{
 	font-size: 18px;
 	font-weight: normal;
-    color: #66002e!important;
 }
 
 #myAnnouncements .feed-item-time{
