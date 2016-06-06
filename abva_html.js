@@ -294,7 +294,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	}
 }
 
-function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
+function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 	
 	var thumbnailUrl = null;
 	var fullPageUrl = null;
@@ -352,13 +352,17 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 			}
 		}
 	}
+
+	if(skipTypes != undefined && type !- undefined && ($.inArray(type, skipTypes) > -1))
+		return false;
+	
 	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline, attachments, sponsor);
 
 	return allowGrouping;
 }
 
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, groupByTitle, startTime, endTime, query){
+function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, groupByTitle, startTime, endTime, query, skipTypes){
 
 	if(startTime == null)
 		startTime = new Date();
@@ -420,7 +424,7 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
 	        		continue;
 	        	
-	        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength);
+	        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength, skipTypes);
 
 	        	if(allow_grouping)
 	        		title_list.push(title);
