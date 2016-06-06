@@ -162,7 +162,7 @@
 	display: none;
 }
 
-#myAnnouncements .feed-item-title{
+#myAnnouncements h3{
 font: normal 26px 'Open Sans',sans-serif;
     color: #66002e!important;
 }
