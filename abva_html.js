@@ -21,176 +21,11 @@ function showPageContents(pathToPage, displayDivId, cacheSeed){
 				content.innerHTML = entry.content;
 				container.appendChild(content);
 			}
+			if(gadgetMode)
+				gadgets.window.adjustHeight();
 		}
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
-
-function showAlerts(pathToPage, displayDivId, cacheSeed){
-	var feed_url_base = "https://sites.google.com/feeds/content/"; 
-	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToPage, "&t=", cacheSeed);
-
-	var feed = new google.feeds.Feed(feed_url);
-	feed.includeHistoricalEntries();
-	feed.load(function(result) {
-		if (!result.error) {
-			if(result.feed.entries.length > 0){
-				var entry = result.feed.entries[0];
-				var container = document.getElementById(displayDivId);
-				
-				try {
-					
-					if(entry.contentSnippet.trim().length > 0){
-						$(container).html(entry.content);
-						$(container).show();
-					}
-					else{
-						$(container).hide();
-					}
-				}
-				catch(err) {
-					$(container).html(err.message);
-					$(container).show();
-				}
-			}
-		}
-	});			
-}
-
-
-//function to convert date into a string
-//Intl.DateTimeFormat does a nice job but it fails for Safari 
-function Date2Str(date){
-	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",  "November", "December"];
-	
-}
-
-
-//A utility function which shows posts from an announcement-type page in a specified display div
-function showAnnouncements(parentPagePath, displayDivId, panelHeading, cacheSeed){
-	var feed_url_base = "https://sites.google.com/feeds/content/"; 
-	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", parentPagePath, "&t=", cacheSeed);
-
-	$.ajax({
-	  url: feed_url,
-	  dataType: "jsonp",
-	  success: function (data) {
-	  	var feed = jQuery.parseXML(data).documentElement;
-	  	var entries = feed. getElementsByTagName("entry");
-	  	if(entries.length > 0){
-	  		var ids = entries[0].getElementsByTagName("id");
-	  		if(ids.length > 0){
-		  		var url = $(ids[0]).text();
-		  		if(url.match("/$")){
-		  			url = url.slice(0,-1);
-		  		}
-		  		var pos = url.lastIndexOf("/");
-		  		var id = url.slice(pos+1);
-
-		  		showAnnouncements2(id, displayDivId, panelHeading, cacheSeed);
-		  	}
-	  	}
-	  }
-	});
-}
-
-function showAnnouncements2(parentPageId, displayDivId, panelHeading, cacheSeed, trialCount){
-	var feed_url_base = "https://sites.google.com/feeds/content/"; 
-	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?parent=", parentPageId, "&t=", cacheSeed);
-	var feed = new google.feeds.Feed(feed_url);
-	feed.load(function(result) {
-		var container = document.getElementById(displayDivId);
-		if (!result.error) {
-			
-			//Panel heading for all devices that are larger than xs
-			var heading = document.createElement("h3");
-			heading.className = "feed-panel-heading hidden-xs";
-			heading.appendChild(document.createTextNode(panelHeading));
-			container.appendChild(heading);
-			
-			//panel heading for xs devices, which uses same styles as page titles
-			heading = document.createElement("h3");
-			heading.className = "page-title visible-xs";
-			heading.appendChild(document.createTextNode(panelHeading));
-			container.appendChild(heading);
-
-			var canonical_site_url = "https://sites.google.com/a/" + siteDomain + "/" + siteName;
-
-			for (var i = 0; i < result.feed.entries.length; i++) {
-				if(i >= 4){
-					break;
-				}
-
-				//item wrapper
-				var entry = result.feed.entries[i];
-				var div = document.createElement("div");
-				$(div).addClass("feed-item");
-				
-				//item heading
-				var h = document.createElement("a");
-				$(h).attr("href", entry.link);
-				$(h).attr("target", "_top");
-				$(h).addClass("feed-item-title");
-				h.appendChild(document.createTextNode(entry.title));
-				div.appendChild(h);
-
-				//posted time
-				var published = document.createElement("div");							
-				var formatter = moment(entry.publishedDate, "UTZ");
-				var date_str = formatter.format('dddd MMMM DD, YYYY');	
-				published.appendChild(document.createTextNode("Posted: ".concat(date_str)));
-				$(published).addClass("feed-item-posted-date");
-				//div.appendChild(published);
-
-				//getting the first image, if any
-				var content = document.createElement("content");
-				content.innerHTML = entry.content;        
-				var images = $(content).find('img').map(function(){
-					return $(this).attr('src')
-				}).get();					
-				if(images.length > 0){
-					var thumb = document.createElement("div");
-					$(thumb).addClass("feed-item-thumb");
-					$(thumb).css("background-image", "url(".concat(images[0],")"));
-
-					div.appendChild(thumb);
-				}
-				
-				//item body
-				var content_div = document.createElement("div");
-				content_div.appendChild(document.createTextNode(entry.contentSnippet));
-				div.appendChild(content_div);
-				
-				//item read-more link
-				var more = document.createElement("a");
-				var more_link =  (siteRoot != null && siteRoot.length > 0) ? entry.link.replace(canonical_site_url, siteRoot) : canonical_site_url;
-				$(more).attr("href", more_link);
-				$(more).attr("target", "_top");
-				more.appendChild(document.createTextNode(" more"));
-				content_div.appendChild(more);
-				
-				//var clear = document.createElement("div");
-				//$(clear).css("clear", "both"));
-				//div.appendChild(clear);
-
-				container.appendChild(div);
-			}
-		}
-		else{
-			if(trialCount == null){
-				trialCount = 1;
-			}
-			
-			if(trialCount < 20){
-				//try to reload the content
-				showAnnouncements2(parentPageId, displayDivId, panelHeading, cacheSeed, trialCount+1);
-			}
-			else{
-				container.innerHTML = "Failed to load items from the feed.";
-			}
-		}
-	});
-} //End: function showAnnouncements(paregnPageId, displayDivId)
-
 
 //A utility function that shows images in a given page in the carousel
 function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio){
@@ -203,6 +38,7 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 	var carousel_width = $(display_div_id).width();
 	var carousel_height = Math.round(aspectRatio * carousel_width);
 	$(display_div_id).height(carousel_height);
+	//KR: gadgets.window.adjustHeight();
 	
 	//Loading carousel images from the data page
 	feed.load(function(result) {
@@ -273,15 +109,25 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 					carousel_inner.appendChild(img_div);
 
 				}
+
+				if(gadgetMode)
+					gadgets.window.adjustHeight();			
 			}
 		}
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
-function show(divId){$("#" + divId).show();}
-function hide(divId){$("#" + divId).hide();}
+function show(divId){
+	$("#" + divId).show();
+	gadgets.window.adjustHeight();	
+}
 
-function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline){
+function hide(divId){
+	$("#" + divId).hide();
+	gadgets.window.adjustHeight();	
+}
+
+function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline, attachments, sponsor){
 	if(title == undefined)
 		return;
 	
@@ -303,36 +149,64 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 		title = "<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;" + title;
 	$(h).html(title);
 	
-	//Date/time
+	//Sponsor
+	if(sponsor != null){
+		var sponsor_div = document.createElement("div");
+		wrapper.appendChild(sponsor_div);
+		$(sponsor_div).addClass("sponsor");
+		$(sponsor_div).html(sponsor);
+	}
+	
+	//Tagline
 	var t = document.createElement("div");
 	wrapper.appendChild(t);
 	$(t).addClass("feed-item-time");
-	if(tagline != null){
-		$(t).html(tagline);
+	
+	var today = new Date();
+	var tomorrow = new Date(today.getTime() + 86400000);
+	
+	if(start.dateTime == undefined){
+		//an all-day event
+		start = new Date(start.date.split('-').join('/'));
+		end = new Date(end.date.split('-').join('/'));
+		end.setTime(end.getTime() - 86400000);
+		
+		if(tagline == null){
+			if(start.getDate() == end.getDate())
+				tagline = start.toDateString();
+			else
+				tagline = start.toDateString() + " - " + end.toDateString();
+		}
 	}
 	else{
-		var t_str = null;
-		if(start.dateTime == undefined){
-			//an all-day event
-			start = new Date(start.date.split('-').join('/'));
-			end = new Date(end.date.split('-').join('/'));
-			end.setTime(end.getTime() - 1);
-			if(start == end)
-				t_str = start.toDateString();
+		start = new Date(start.dateTime);
+		end = new Date(end.dateTime);
+		
+		if(tagline == null){
+			if(start.getDate() == end.getDate()){
+				var s_h = start.getHours();
+				var e_h = end.getHours();
+				var s_ampm = (s_h < 12 && e_h >= 12) ? " AM" : "";
+				var e_ampm = e_h < 12 ? " AM" : " PM";
+				
+				tagline = start.toDateString() + ", " + 
+							(start.getHours() % 12) + ":" + ("0" + start.getMinutes()).slice(-2) + s_ampm + " - " + 
+							(end.getHours() % 12) + ":" + ("0" + end.getMinutes()).slice(-2) + e_ampm;
+				//tagline = start.toDateString() + ", " + start.toLocaleTimeString() + " - " + end.toLocaleTimeString();
+			}
 			else
-				t_str = start.toDateString() + " - " + end.toDateString();
+				tagline = start.toDateString() + " - " + end.toDateString();
 		}
-		else{
-			start = new Date(start.dateTime);
-			end = new Date(end.dateTime);
-			
-			if(start.getDate() == end.getDate())
-				t_str = start.toDateString() + ", " + start.toLocaleTimeString();
-			else
-				t_str = start.toDateString() + " - " + end.toDateString();
-		}
-		$(t).html(t_str);
 	}
+	
+	var prefix = "";
+	if(type != "warning"){
+		if(start.getDate() == today.getDate())
+			prefix = "<span class='today'>Today: </span>";
+		else if(start.getDate() == tomorrow.getDate())
+			prefix = "<span class='tomorrow'>Tomorrow: </span>";
+	}
+	$(t).html(prefix + tagline);
 	
 	//item thumbnail
 	if(thumbnailUrl != undefined){
@@ -381,7 +255,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 
 				$(snippet_div).html($(snippet_div).html() + " ... <a href = '#' onclick='show(\"" + full_desc_id + "\"); hide(\"" + snippet_id + "\"); return false;' >more.</a>");
 				
-				$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >See less.</a>");
+				$(full_desc_div).html(description + " <a href = '#' onclick='show(\"" + snippet_id + "\"); hide(\"" + full_desc_id + "\"); return false;' >less.</a>");
 			}
 			else{
 				var canonical_site_url = "https://sites.google.com/a/" + siteDomain + "/" + siteName;
@@ -389,6 +263,31 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 				var more_link =  (siteRoot != null && siteRoot.length > 0) ? fullPageUrl.replace(canonical_site_url, siteRoot) : fullPageUrl;
 				$(snippet_div).html($(snippet_div).html() + " ... <a href = '" + more_link + "' target = '_top' >more.</a>");
 			}
+		}
+	}
+	
+	//Attachments
+	if(attachments.length > 0){
+		var attachments_div = document.createElement("div");
+		wrapper.appendChild(attachments_div);
+		$(attachments_div).addClass("attachments")
+		for(var i=0; i< attachments.length; ++i){
+			var attachment = document.createElement("div");
+			attachments_div.appendChild(attachment);
+			$(attachment).addClass("attachment");
+			 
+			var splitter_idx = attachments[i].indexOf(":=");
+			var label = "";
+			var href = "";
+			if(splitter_idx > 0){
+				label = attachments[i].substring(0, splitter_idx).trim();
+				href = attachments[i].substring(splitter_idx+2, attachments[i].length).trim();
+			}
+			else{
+				label = "Attachment " + (i+1);
+				href = attachments[i].trim();
+			}
+			$(attachment).html("<span class='glyphicon glyphicon-link'></span>&nbsp;<a href='" + href + "' target='_top'>" + label + "</a>");
 		}
 	}
 }
@@ -399,7 +298,10 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 	var fullPageUrl = null;
 	var type = null;
 	var tagline = null;
-	
+	var allowGrouping = true;
+	var attachments = [];
+	var sponsor = null;
+
 	if(item.description != undefined){
 		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
 		if(metadata != undefined){
@@ -423,7 +325,23 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 				}
 				else if(meta.match(/^\[Tagline:/i)){
 					//Tagline
-					tagline =  meta.substring(9, meta.length-1).trim().toLowerCase();
+					tagline =  meta.substring(9, meta.length-1).trim();
+					remove_meta = true;
+				}
+				else if(meta.match(/^\[Grouping:/i)){
+					//Grouping
+					if(meta.substring(10, meta.length-1).trim().toLowerCase() == "no")
+						allowGrouping = false;
+					remove_meta = true;
+				}
+				else if(meta.match(/^\[Attachment:/i)){
+					//Attachments
+					attachments.push(meta.substring(12, meta.length-1).trim());
+					remove_meta = true;
+				}
+				else if(meta.match(/^\[Sponsor:/i)){
+					//Sponsor
+					sponsor =  meta.substring(9, meta.length-1).trim();
 					remove_meta = true;
 				}
 				
@@ -432,7 +350,9 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 			}
 		}
 	}
-	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline);
+	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline, attachments, sponsor);
+
+	return allowGrouping;
 }
 
 
@@ -491,14 +411,20 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	        	
 	        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
 	        		continue;
+	        	
+	        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength);
 
-	        	title_list.push(title);
-	        	appendCalendarItemToFeed(container, response.items[i], shortDescLength);
+	        	if(allow_grouping)
+	        		title_list.push(title);
+
 	        	count = count + 1;
 
 	        	if(maxItems != undefined &&  maxItems <= count)
 	        		break;
 	        }
+
+	        if(gadgetMode)
+	        	gadgets.window.adjustHeight();	
 	    },
 	    error: function (response) {
 	        //tell that an error has occurred
