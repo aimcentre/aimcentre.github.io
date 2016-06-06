@@ -154,6 +154,10 @@
 	margin-top:20px;
 }
 
+#myAnnouncements .feed-item-{
+	margin-left:-15px;
+}
+
 #myAnnouncements .feed-item-thumb{
 	display: none;
 }
