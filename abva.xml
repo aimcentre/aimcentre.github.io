@@ -88,10 +88,14 @@
 				showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed);
 
 				//Loading Special Events feed
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 140, 5, true);
+				//showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 140, 5, true);
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 125, 15, true, null, null, null, ["announcement"]);
 				
 				//Loading News feed
 				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "Program News", 140, 5, true);
+
+				//Loading announcements
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myAnnouncements", "Announcements", 300, 3, true, null, null, "[Type*:*announcement]");				
 
 			} //End: function initialize()
 
