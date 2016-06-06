@@ -66,14 +66,14 @@
 				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
 
 				//Loading Special Events feed
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 125, 15, true);
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 125, 15, true, ["announcement"]);
 				//showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
 				
 				//Loading calendar events
 				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 125, 5, true);
 
 				//Loading announcements
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myAnnouncements", "Announcements", 300, 3, true, null, null, "[Type*:*announcement]", ["announcement"]);
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myAnnouncements", "Announcements", 300, 3, true, null, null, "[Type*:*announcement]");
 
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
