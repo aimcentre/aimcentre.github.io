@@ -113,7 +113,8 @@
 		        						  (prevWindowWidth >= w+5);
 
 		        	if(resize_required){
-		        		gadgets.window.adjustHeight();
+		        		if(gadgetMode)
+		        			gadgets.window.adjustHeight();
 		        		prevSwitchedWidth = w;
 		        	}
 		        	
