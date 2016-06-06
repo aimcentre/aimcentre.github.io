@@ -154,7 +154,7 @@
 	margin-top:20px;
 }
 
-#myAnnouncements > .feed-item-thumb{
+#myAnnouncements .feed-item-thumb{
 	display: none;
 }
 
