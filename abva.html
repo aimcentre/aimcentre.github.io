@@ -24,9 +24,9 @@
 					<div class="inner">
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 						</div>
-						<div id="myAlerts" class="alert alert-warning" style="display:none;">
-						</div>
 						<div id="myWelcome">
+						</div>
+						<div id="myAnnouncements" class="alert alert-warning" style="display:none;">
 						</div>
 					</div>
 				</div>
@@ -70,8 +70,10 @@
 				//showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
 				
 				//Loading calendar events
-				//showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, startTime, endTime, groupByTitle)
 				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 125, 5, true);
+
+				//Loading announcements
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myAnnouncements", "Announcements", 300, 3, true, null, null, "[Type*:*feature]);
 
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()

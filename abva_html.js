@@ -356,7 +356,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 }
 
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, groupByTitle, startTime, endTime){
+function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, groupByTitle, startTime, endTime, query){
 
 	if(startTime == null)
 		startTime = new Date();
@@ -392,7 +392,9 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 		else
 			url = url + '&maxResults=' + 10 * maxItems;
 	}
-		
+
+	if(query != undefined)
+		url = url + '&q=' + query;
 
 	url = encodeURI(url);
 
