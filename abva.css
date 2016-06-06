@@ -162,9 +162,13 @@
 	display: none;
 }
 
-#myAnnouncements h3{
+#myAnnouncements .feed-item-title{
 font: normal 26px 'Open Sans',sans-serif;
     color: #66002e!important;
+}
+
+#myAnnouncements .feed-item-title > .today, #myAnnouncements .feed-item-title > .tomorrow{
+	display: none;
 }
 
 .inner{
