@@ -119,14 +119,12 @@ function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio
 
 function show(divId){
 	$("#" + divId).show();
-	if(gadgetMode)
-		gadgets.window.adjustHeight();	
+	gadgets.window.adjustHeight();	
 }
 
 function hide(divId){
 	$("#" + divId).hide();
-	if(gadgetMode)
-		gadgets.window.adjustHeight();	
+	gadgets.window.adjustHeight();	
 }
 
 function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline, attachments, sponsor){
@@ -294,7 +292,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	}
 }
 
-function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
+function appendCalendarItemToFeed(targetDiv, item, shortDescLength){
 	
 	var thumbnailUrl = null;
 	var fullPageUrl = null;
@@ -352,17 +350,13 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 			}
 		}
 	}
-
-	if(skipTypes != undefined && type != undefined && ($.inArray(type, skipTypes) > -1))
-		return false;
-
 	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline, attachments, sponsor);
 
 	return allowGrouping;
 }
 
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, groupByTitle, startTime, endTime, query, skipTypes){
+function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, groupByTitle, startTime, endTime){
 
 	if(startTime == null)
 		startTime = new Date();
@@ -397,10 +391,8 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 			url = url + '&maxResults=' + maxItems;
 		else
 			url = url + '&maxResults=' + 10 * maxItems;
-	}	
-
-	if(query != undefined)
-		url = url + '&q=' + query;
+	}
+		
 
 	url = encodeURI(url);
 
@@ -414,17 +406,13 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 
 	        var title_list = [];
 	        var count = 0;
-	        
-	        if(response.items.length > 0)
-	        	$("#" + displayDivId).show();
-	        
 	        for(var i=0; i<response.items.length; ++i){
 	        	var title = response.items[i].summary;
 	        	
 	        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
 	        		continue;
 	        	
-	        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength, skipTypes);
+	        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength);
 
 	        	if(allow_grouping)
 	        		title_list.push(title);
