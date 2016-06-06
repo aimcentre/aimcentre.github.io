@@ -26,7 +26,7 @@
 						</div>
 						<div id="myWelcome">
 						</div>
-						<div id="myAnnouncements" class="">
+						<div id="myAnnouncements" class="" style="display:none;">
 						</div>
 					</div>
 				</div>
@@ -73,7 +73,7 @@
 				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 125, 5, true);
 
 				//Loading announcements
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myAnnouncements", null, 300, 3, true, null, null, "[Type*:*section]");
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myAnnouncements", "Announcements", 300, 3, true, null, null, "[Type*:*feature]");
 
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()

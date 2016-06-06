@@ -410,6 +410,10 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 
 	        var title_list = [];
 	        var count = 0;
+
+	        if(response.items.length > 0)
+	        	$("#" + displayDivId).show();
+	        
 	        for(var i=0; i<response.items.length; ++i){
 	        	var title = response.items[i].summary;
 	        	
