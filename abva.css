@@ -150,11 +150,14 @@
 	background-size:cover;
 }
 
-#myAlerts{
+#myAnnouncements{
 	margin-top:20px;
-	font-weight:bold;
-	border: solid 1px #990000;
 }
+
+#myAnnouncements > .feed-item-thumb{
+	display: none;
+}
+
 .inner{
 	width:95%;
 }
