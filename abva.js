@@ -267,6 +267,8 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 			}
 		}
 	}
+
+	$(snippet_div).html($(snippet_div).html() + "<div style='clear:both'></div>");
 	
 	//Attachments
 	if(attachments.length > 0){
