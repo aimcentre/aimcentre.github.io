@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Player downloaded from http://www.dalebasler.com/2014/06/embed-an-html5-audio-player-in-google-sites/ -->
+<Module>
+<ModulePrefs title="Audio file title"
+width="460"
+height="75"
+scrolling="false"
+directory_title="Google Gadget to use an HTML5 audio player. Can play mp3 or ogg files"
+description="Using an html5 audio player. Can play mp3 or ogg files. Google Gadget.">
+
+
+</ModulePrefs>
+
+<UserPref name="FILE" display_name="File to play" required="true" default_value="https://ia601903.us.archive.org/31/items/1360121/136012%20%281%29.mp3" />
+
+<UserPref name="TYPE" display_name="File type" default_value="mp3" datatype="enum" >
+<EnumValue value="mp3" />
+<EnumValue value="ogg" />
+</UserPref>
+
+<UserPref name="START" display_name="Auto Start?" required="false" datatype="enum" >
+<EnumValue value="No" />
+<EnumValue value="Yes" />
+</UserPref>
+
+<UserPref name="LOOP" display_name="Loop Audio?" required="false" datatype="enum" >
+<EnumValue value="No" />
+<EnumValue value="Yes" />
+</UserPref>
+
+<UserPref name="DOWNLOAD" display_name="Show download link?" required="false" datatype="enum" >
+<EnumValue value="Yes" />
+<EnumValue value="No" />
+</UserPref>
+
+<UserPref name="CCOL" display_name="Background Color (search html color code for details)" required="true" default_value="#ffffff" />
+
+<Content type="html"><![CDATA[
+
+<style type="text/css">
+body
+{
+text-align: left;
+font-family: Arial,sans-serif;
+background-color: __UP_CCOL__;
+margin: 15 0;
+padding:0;
+}
+
+.download
+{
+font-size: 12px;
+text-align: left;
+font-family: Arial,sans-serif;
+padding: 12px 0 0 4px;
+font-style: italic;
+}
+  
+</style>
+
+<div id="player" style="position: absolute; bottom: 0px;"></div>
+ 
+<script type="text/javascript">
+
+// the parameters
+
+var prefs = new gadgets.Prefs();
+
+var s_fil = prefs.getString("FILE");
+
+var s_dld = false;
+var s_dld = prefs.getString("DOWNLOAD");
+if (s_dld == "Yes")
+{var s_downloadlink = "<br><div class='download'><a href='" + s_fil + "' target='_blank' download>download file</a></div>"; }
+else
+{var s_downloadlink = ""; }
+
+
+var sta = false;
+var s_sta = prefs.getString("START");
+if (s_sta)
+{
+s_sta = s_sta.toUpperCase();
+if (s_sta.substr(0,1) == 'N')
+   {sta=false;}
+else
+   {sta=true;}
+}
+
+if (sta == true)
+{var s_flv = "autoplay='autoplay'"; }
+else
+{var s_flv = ""; }
+
+var loop = false;
+var s_loop = prefs.getString("LOOP");
+if (s_loop)
+{
+s_loop = s_loop.toUpperCase();
+if (s_loop.substr(0,1) == 'N')
+   {loop=false;}
+else
+   {loop=true;}
+}
+
+if (loop == true)
+{var s_flvloop = "loop='autoplay'"; }
+else
+{var s_flvloop = ""; }
+
+var s_typ = prefs.getString("TYPE");
+
+
+var html="";
+
+
+html = "<audio controls='controls' " + s_flv + s_flvloop + ">"
+       + "<source src='" + s_fil + "' type='audio/" + s_typ + "' />"
+	+ "You cannot use audio tag with your browser" + "</audio>"
+	+ s_downloadlink;
+
+
+document.getElementById("player").innerHTML = html;
+
+
+</script>
+]]></Content>
+</Module>
