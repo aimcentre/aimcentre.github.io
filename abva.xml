@@ -76,6 +76,7 @@
 				var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
 				var newsCalendarI = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
 				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
+				var announcementCalendarId = "abva.org_mbt7jtsna7nkbm542qr7924c94@group.calendar.google.com";
 			
 				//Signup sheet link
 				$("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
@@ -94,7 +95,7 @@
 				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "Program News", 160, 5, true);
 
 				//Loading announcements
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myAnnouncements", "Announcements", 350, 3, true, null, null, "[Type*:*announcement*]");				
+				showCalendarEvents(announcementCalendarId, apiKey, "myAnnouncements", "Announcements", 350, 3, true, null, null, null, null);				
 
 			} //End: function initialize()
 
