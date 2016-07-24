@@ -137,6 +137,10 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	var wrapper = document.createElement("div");
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
+	
+	var type_list = $.map(type.split(","), $.trim);
+	var is_warning = $.inArray("warning", type_list);
+	
 	if(type != undefined){
 		if(type != "warning")
 			$(wrapper).addClass("alert");
