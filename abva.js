@@ -138,20 +138,23 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
 	
-	var type_list = type == null ? [] : $.map(type.split(","), $.trim);
-	var is_warning = $.inArray("warning", type_list);
+	var type_defined = type != undefined;
+	var type_list = type_defined ? $.map(type.split(","), $.trim) : [];
+	var is_warning = $.inArray("warning", type_list) > -1;
 	
-	if(type != undefined){
-		if(type != "warning")
-			$(wrapper).addClass("alert");
+	if(type_defined){
+		type = type.replace(",", " ");
 		$(wrapper).addClass(type);
+
+		if(!is_warning)
+			$(wrapper).addClass("alert");
 	}
 	
 	//item heading
 	var h = document.createElement("div");
 	wrapper.appendChild(h);
 	$(h).addClass("feed-item-title");
-	if(type == "warning")
+	if(is_warning)
 		title = "<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;" + title;
 	$(h).html(title);
 	
@@ -206,7 +209,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	}
 	
 	var prefix = "";
-	if(type != "warning"){
+	if(is_warning == false){
 		if(start.getDate() == today.getDate())
 			prefix = "<span class='today'>Today: </span>";
 		else if(start.getDate() == tomorrow.getDate())
