@@ -70,7 +70,8 @@
 
 
 .feed-item > .sponsor{
-	color:#0B6D8E!important;
+	/*color:#0B6D8E!important;*/
+	color:#DF24FF!important;
 }
 
 .feed-item-time > .today, .feed-item-time > .tomorrow{
