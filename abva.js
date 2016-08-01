@@ -210,9 +210,9 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	
 	var prefix = "";
 	if(is_warning == false){
-		if(start.getDate() == today.getDate())
+		if((start.getDate() == today.getDate()) && (start.getMonth() == today.getMonth()) && (start.getYear() == today.getYear()))
 			prefix = "<span class='today'>Today: </span>";
-		else if(start.getDate() == tomorrow.getDate())
+		else if((start.getDate() == tomorrow.getDate()) && (start.getMonth() == tomorrow.getMonth()) && (start.getYear() == tomorrow.getYear()))
 			prefix = "<span class='tomorrow'>Tomorrow: </span>";
 	}
 	$(t).html(prefix + tagline);
