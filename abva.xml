@@ -95,7 +95,7 @@
 				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "Program News", 160, 5, true);
 
 				//Loading announcements
-				showCalendarEvents(announcementCalendarId, apiKey, "myAnnouncements", "Announcements", 350, 3, true, null, null, null, null);				
+				showCalendarEvents(announcementCalendarId, apiKey, "myAnnouncements", "Announcements", 350, 6, true, null, null, null, null);				
 
 			} //End: function initialize()
 
