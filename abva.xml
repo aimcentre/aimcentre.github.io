@@ -56,6 +56,11 @@
 
 									<!-- panel heading for xs devices, which uses same styles as page titles -->
 									<h3 class="page-title visible-xs">Dhamma School</h3>
+
+									<div>
+										<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolLogo.jpg" alt="" />
+									</div>
+									
 									<p>
 										Giving children a good foundation in the Lord Buddha's Teachings will help them better navigate through life. 
 									</p>
