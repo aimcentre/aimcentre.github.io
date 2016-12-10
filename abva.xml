@@ -119,13 +119,13 @@
 				showCarouselImages("/data-pages/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
 				
 				//Loading welcome message from the Welcome page
-				showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed);
+				showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed, true);
 
 				//Loading text for the Dhamma School Widget from the Dhamma School Intro page
-				showPageContents("/data-pages/dhamma-school-intro", "dhammaSchoolWidgetText", feedUrlSeed);
+				showPageContents("/data-pages/dhamma-school-intro", "dhammaSchoolWidgetText", feedUrlSeed, false);
 
 				//Loading text for the Newsletter Widget from the Newsletter Intro page
-				showPageContents("/data-pages/newsletter-intro", "newsletterWidgetText", feedUrlSeed);
+				showPageContents("/data-pages/newsletter-intro", "newsletterWidgetText", feedUrlSeed, false);
 				
 /*
 				//Loading Special Events feed
