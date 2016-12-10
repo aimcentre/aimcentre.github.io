@@ -74,7 +74,7 @@
 				siteRoot = prefs.getString("siteRoot");
 				
 				var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
-				var newsCalendarI = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
+				var newsCalendarId = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
 				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
 				var announcementCalendarId = "abva.org_mbt7jtsna7nkbm542qr7924c94@group.calendar.google.com";
 			
@@ -88,11 +88,17 @@
 				//Loading welcome message from the Welcome page
 				showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed);
 
+/*
 				//Loading Special Events feed
 				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 200, 15, true, null, null, null, ["announcement"]);
 				
 				//Loading News feed
-				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "Program News", 160, 5, true);
+				showCalendarEvents(newsCalendarId, apiKey, "myNewsfeed", "Program News", 160, 5, true);
+*/
+
+				//Loading Programs and Events from the Special-Events and News calendars to the events column
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Programs and Events", 200, 3, true);
+				showCalendarEvents(newsCalendarId, apiKey, "myEventsfeed", null, 160, 3, true);
 
 				//Loading announcements
 				showCalendarEvents(announcementCalendarId, apiKey, "myAnnouncements", "Announcements", 350, 6, true, null, null, null, null);				
