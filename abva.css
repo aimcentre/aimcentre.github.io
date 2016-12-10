@@ -17,6 +17,10 @@
 	top: -10px;
 }
 
+.container-fluid table{
+	font-size: 14px;	
+}
+
 .page-title{
 	font:normal 26px 'Open Sans',sans-serif;
 	color:#66002e!important;
@@ -33,7 +37,6 @@
 	margin-bottom:15px;
 	padding-bottom:15px;
 	clear: both;
-	font-size: 14px !important;
 }
 
 /* Hiding extra feed items on small computer screen scales */
