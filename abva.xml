@@ -45,7 +45,22 @@
 						<div class="inner">
 							<div id="myEventsfeed" class="col-sm-6">
 							</div>
+<!--
 							<div id="myNewsfeed" class="col-sm-6">
+							</div>
+-->
+							<div id="myNewsfeed" class="col-sm-6">
+								<div id="dhammaSchool">
+									<!-- panel heading for normal devices -->
+									<h3 class="feed-panel-heading hidden-xs">Dhamma School</h3>
+
+									<!-- panel heading for xs devices, which uses same styles as page titles -->
+									<h3 class="page-title visible-xs">Dhamma School</h3>
+								</div>
+								<div id="newsletter">
+								</div>>
+
+
 							</div>
 						</div>
 					</div>
