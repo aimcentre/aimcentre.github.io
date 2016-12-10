@@ -56,9 +56,21 @@
 
 									<!-- panel heading for xs devices, which uses same styles as page titles -->
 									<h3 class="page-title visible-xs">Dhamma School</h3>
+									<p>
+										Giving children a good foundation in the Dhamma will help them better navigate through life,” sums up the essential purpose of the Edmonton Dhamma School. We teach the Buddha Dhamma to children, adolescents and youth with parental consent and support. It is a free service without regard to race, ethnicity, language, culture or religion.
+									</p>
+									<p>
+										The Dhamma School’s mission is to provide children, from kindergarten up to high school level, age-appropriate lessons in Theravada Buddhism within a comprehensive syllabus to inspire every student to learn and live the principles of Dhamma and become peaceful, happy, mature and responsible citizens who in future will contribute to the Canadian society and the world.
+									</p>
 								</div>
 								<div id="newsletter">
-								</div>>
+									<!-- panel heading for normal devices -->
+									<h3 class="feed-panel-heading hidden-xs">Newsletter</h3>
+
+									<!-- panel heading for xs devices, which uses same styles as page titles -->
+									<h3 class="page-title visible-xs">Newsletter</h3>
+
+								</div>
 
 
 							</div>
