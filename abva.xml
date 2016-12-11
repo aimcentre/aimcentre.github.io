@@ -62,7 +62,7 @@
 									</div>
 									<div id="dhammaSchoolWidgetText" class="feed-item">
 									</div>
-									<div class="feed-item">
+									<div class="feed-item" style="margin-top:-25px;">
 										<a href="http://www.abva.org/dhammaschool" target="_top">... read more</a>
 									</div>
 								</div>
@@ -78,7 +78,7 @@
 									</div>
 									<div id="newsletterWidgetText" class="feed-item">
 									</div>
-									<div class="feed-item">
+									<div class="feed-item" style="margin-top:-25px;">
 										<a href="http://www.abva.org/newsletter" target="_top">... read more</a>
 									</div>
 								</div>
