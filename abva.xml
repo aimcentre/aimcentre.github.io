@@ -141,7 +141,7 @@
 */
 
 				//Loading Programs and Events from the Special-Events and News calendars to the events column
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Programs and Events", 200, 3, true);
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Programs and Events", 200, 4, true);
 				showCalendarEvents(newsCalendarId, apiKey, "myEventsfeed", null, 160, 3, true);
 
 				//Loading announcements
