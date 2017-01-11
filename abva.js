@@ -10,61 +10,57 @@ function showPageContents(pathToPage, displayDivId, cacheSeed, showPageTitle){
 		if (!result.error) {
 			if(result.feed.entries.length > 0){
 				var entry = result.feed.entries[0];
-				var container = document.getElementById(displayDivId);
-				
-				if(showPageTitle == true){
-					var h = document.createElement("h3");
-					h.className = "page-title";
-					h.innerHTML = entry.title;
-					container.appendChild(h);
-				}
-				var content = document.createElement("div");
-				content.innerHTML = entry.content;
-				container.appendChild(content);
+				showText(displayDivId, 
+					     showPageTitle == true ? entry.title : null,
+					     entry.content);
 			}
-			if(gadgetMode)
-				gadgets.window.adjustHeight();
 		}
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
+
+function showText(displayDivId, title, text){
+	var container = document.getElementById(displayDivId);
+	
+	if(title != undefined){
+		var h = document.createElement("h3");
+		h.className = "page-title";
+		h.innerHTML = title;
+		container.appendChild(h);
+	}
+
+	var content = document.createElement("div");
+	content.innerHTML = text;
+	container.appendChild(content);
+
+	if(gadgetMode)
+		gadgets.window.adjustHeight();
+
+} //End: function showText(displayDivId, title, text)
 
 //A utility function that shows images in a given page in the carousel
 function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio){
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
 	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToDataPage, "&t=", cacheSeed);
 	
-	try{
-		var feed = new google.feeds.Feed(feed_url);
-			
-		//Loading carousel images from the data page
-		feed.load(function(result) {
-			if (!result.error) {
-				if(result.feed.entries.length > 0){
-					var entry = result.feed.entries[0];
+	var feed = new google.feeds.Feed(feed_url);
+		
+	//Loading carousel images from the data page
+	feed.load(function(result) {
+		if (!result.error) {
+			if(result.feed.entries.length > 0){
+				var entry = result.feed.entries[0];
 
-					//getting the first image, if any
-					var content = document.createElement("content");
-					content.innerHTML = entry.content;        
-					var images = $(content).find('img').map(function(){
-						return $(this).attr('src')
-					}).get();	
+				//getting the first image, if any
+				var content = document.createElement("content");
+				content.innerHTML = entry.content;        
+				var images = $(content).find('img').map(function(){
+					return $(this).attr('src')
+				}).get();	
 
-					showCarouselImagesFromArray(displayDivId, images, aspectRatio);
-				}
+				showCarouselImagesFromArray(displayDivId, images, aspectRatio);
 			}
-		});			
-	}
-	catch(err){
-		console.error("Carousel Loading Error:");
-		console.error(err);
-		console.warn("Loading default carousel images");
-		var images = ['http://www.abva.org/data-pages/carousel-data/DSC_0278.JPG', 
-					  'http://www.abva.org/data-pages/carousel-data/DSC_0092%20%281%29.JPG',
-					  'http://www.abva.org/data-pages/carousel-data/DSC_32.jpg',
-					  'http://www.abva.org/data-pages/carousel-data/DSC_74%20%281%29.jpg'];
-
-		showCarouselImagesFromArray(displayDivId, images, aspectRatio);
-	}
+		}
+	});			
 
 } //End: function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio)
 
