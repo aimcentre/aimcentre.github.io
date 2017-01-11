@@ -57,8 +57,8 @@
 									<!-- panel heading for xs devices, which uses same styles as page titles -->
 									<h3 class="page-title visible-xs">Dhamma School</h3>
 
-									<div style="text-align:centre;">
-										<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="" style="width:100%;"/>
+									<div style="text-align:center;">
+										<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="" style="width:75%;"/>
 									</div>
 									<div id="dhammaSchoolWidgetText" class="feed-item">
 									</div>
@@ -73,7 +73,7 @@
 									<!-- panel heading for xs devices, which uses same styles as page titles -->
 									<h3 class="page-title visible-xs">Newsletter</h3>
 
-									<div style="text-align:centre;">
+									<div style="text-align:center;">
 										<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:100%;"/>
 									</div>
 									<div id="newsletterWidgetText" class="feed-item">
