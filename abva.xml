@@ -74,7 +74,7 @@
 									<h3 class="page-title visible-xs">Newsletter</h3>
 
 									<div style="text-align:center;">
-										<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:100%;"/>
+										<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:75%;"/>
 									</div>
 									<div id="newsletterWidgetText" class="feed-item">
 									</div>
