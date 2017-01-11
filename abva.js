@@ -32,91 +32,111 @@ function showPageContents(pathToPage, displayDivId, cacheSeed, showPageTitle){
 function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio){
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
 	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToDataPage, "&t=", cacheSeed);
-	var feed = new google.feeds.Feed(feed_url);
+	
+	try{
+		var feed = new google.feeds.Feed(feed_url);
+			
+		//Loading carousel images from the data page
+		feed.load(function(result) {
+			if (!result.error) {
+				if(result.feed.entries.length > 0){
+					var entry = result.feed.entries[0];
+
+					//getting the first image, if any
+					var content = document.createElement("content");
+					content.innerHTML = entry.content;        
+					var images = $(content).find('img').map(function(){
+						return $(this).attr('src')
+					}).get();	
+
+					showCarouselImagesFromArray(displayDivId, images, aspectRatio);
+				}
+			}
+		});			
+	}
+	catch(err){
+		console.error("Carousel Loading Error:");
+		console.error(err);
+		console.warn("Loading default carousel images");
+		var images = ['http://www.abva.org/data-pages/carousel-data/DSC_0278.JPG', 
+					  'http://www.abva.org/data-pages/carousel-data/DSC_0092%20%281%29.JPG',
+					  'http://www.abva.org/data-pages/carousel-data/DSC_32.jpg',
+					  'http://www.abva.org/data-pages/carousel-data/DSC_74%20%281%29.jpg'];
+
+		showCarouselImagesFromArray(displayDivId, images, aspectRatio);
+	}
+
+} //End: function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio)
+
+function showCarouselImagesFromArray(displayDivId, imgUrls, aspectRatio){
 	
 	//setting carousel dimentions
 	var display_div_id = "#".concat(displayDivId);
 	var carousel_width = $(display_div_id).width();
 	var carousel_height = Math.round(aspectRatio * carousel_width);
 	$(display_div_id).height(carousel_height);
-	//KR: gadgets.window.adjustHeight();
-	
-	//Loading carousel images from the data page
-	feed.load(function(result) {
-		if (!result.error) {
-			if(result.feed.entries.length > 0){
-				var entry = result.feed.entries[0];
-				var container = document.getElementById(displayDivId);
 
-				//Creating cwrapper for arousel indicators
-				var ol = document.createElement("ol");
-				$(ol).addClass("carousel-indicators");
-				container.appendChild(ol);
+	var container = document.getElementById(displayDivId);
 
-				//Creating wrapper for slides
-				var carousel_inner = document.createElement("div");
-				$(carousel_inner).attr("role", "listbox");
-				$(carousel_inner).addClass("carousel-inner");
-				container.appendChild(carousel_inner);
+	//Creating cwrapper for arousel indicators
+	var ol = document.createElement("ol");
+	$(ol).addClass("carousel-indicators");
+	container.appendChild(ol);
 
-				//Creating left control
-				var left = document.createElement("a");
-				$(left).addClass("left");
-				$(left).addClass("carousel-control");
-				$(left).attr("href", "#" + displayDivId);
-				$(left).attr("role", "button");
-				$(left).attr("data-slide", "prev");
-				$(left).html("<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span> <span class='sr-only'>Previous</span>");
-				container.appendChild(left);
+	//Creating wrapper for slides
+	var carousel_inner = document.createElement("div");
+	$(carousel_inner).attr("role", "listbox");
+	$(carousel_inner).addClass("carousel-inner");
+	container.appendChild(carousel_inner);
+
+	//Creating left control
+	var left = document.createElement("a");
+	$(left).addClass("left");
+	$(left).addClass("carousel-control");
+	$(left).attr("href", "#" + displayDivId);
+	$(left).attr("role", "button");
+	$(left).attr("data-slide", "prev");
+	$(left).html("<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span> <span class='sr-only'>Previous</span>");
+	container.appendChild(left);
 
 
-				//Creating right control
-				var right = document.createElement("a");
-				$(right).addClass("right");
-				$(right).addClass("carousel-control");
-				$(right).attr("href", "#" + displayDivId);
-				$(right).attr("role", "button");
-				$(right).attr("data-slide", "next");
-				$(right).html("<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span> <span class='sr-only'>Next</span>");
-				container.appendChild(right);
+	//Creating right control
+	var right = document.createElement("a");
+	$(right).addClass("right");
+	$(right).addClass("carousel-control");
+	$(right).attr("href", "#" + displayDivId);
+	$(right).attr("role", "button");
+	$(right).attr("data-slide", "next");
+	$(right).html("<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span> <span class='sr-only'>Next</span>");
+	container.appendChild(right);
 
-				//getting the first image, if any
-				var content = document.createElement("content");
-				content.innerHTML = entry.content;        
-				var images = $(content).find('img').map(function(){
-					return $(this).attr('src')
-				}).get();	
+	for(var i=0; i<imgUrls.length; i = i+1){
+		var img = imgUrls[i];
 
-				for(var i=0; i<images.length; i = i+1){
-					var img = images[i];
-
-					//adding indicator
-					var li = document.createElement("li");
-					$(li).attr("data-target", "#" + displayDivId);
-					$(li).attr("data-slide-to", i);
-					if(i == 0){
-						$(right).addClass("active");
-					}
-					ol.appendChild(li);
-
-
-					//adding image
-					var img_div = document.createElement("div");
-					$(img_div).css("background-image", "url('".concat(img, "')"));
-					$(img_div).addClass("item");
-					if(i == 0){
-						$(img_div).addClass("active");
-					}
-					carousel_inner.appendChild(img_div);
-
-				}
-
-				if(gadgetMode)
-					gadgets.window.adjustHeight();			
-			}
+		//adding indicator
+		var li = document.createElement("li");
+		$(li).attr("data-target", "#" + displayDivId);
+		$(li).attr("data-slide-to", i);
+		if(i == 0){
+			$(right).addClass("active");
 		}
-	});			
-} //End: function showPageContents(paregnPageId, displayDivId)
+		ol.appendChild(li);
+
+
+		//adding image
+		var img_div = document.createElement("div");
+		$(img_div).css("background-image", "url('".concat(img, "')"));
+		$(img_div).addClass("item");
+		if(i == 0){
+			$(img_div).addClass("active");
+		}
+		carousel_inner.appendChild(img_div);
+	}
+
+	if(gadgetMode)
+		gadgets.window.adjustHeight();			
+
+} //End: function showCarouselImagesFromArray(displayDivId, imgUrls, aspectRatio)
 
 function show(divId){
 	$("#" + divId).show();
