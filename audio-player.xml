@@ -11,6 +11,10 @@ description="Using an html5 audio player. Can play mp3 or ogg files. Google Gadg
 
 </ModulePrefs>
 
+<UserPref name="TITLE" display_name="Title" required="false" default_value="" />
+
+<UserPref name="TITLE_STYLES" display_name="Title Styles" required="false" default_value="" />
+
 <UserPref name="FILE" display_name="File to play" required="true" default_value="https://ia601903.us.archive.org/31/items/1360121/136012%20%281%29.mp3" />
 
 <UserPref name="TYPE" display_name="File type" default_value="mp3" datatype="enum" >
@@ -66,6 +70,10 @@ font-style: italic;
 
 var prefs = new gadgets.Prefs();
 
+var s_title = prefs.getString("TITLE");
+
+var s_title_styles = prefs.getString("TITLE_STYLES");
+
 var s_fil = prefs.getString("FILE");
 
 var s_dld = false;
@@ -113,6 +121,10 @@ var s_typ = prefs.getString("TYPE");
 
 var html="";
 
+var title_html = "";
+if(s_title != ""){
+	title_html = "<div style='" + s_title_styles + "'>" + s_title + "</div>";
+}
 
 html = "<audio controls='controls' " + s_flv + s_flvloop + ">"
        + "<source src='" + s_fil + "' type='audio/" + s_typ + "' />"
