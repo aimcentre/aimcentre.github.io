@@ -129,9 +129,9 @@
 					console.error(err);
 					console.warn("Showing default carousel images");
 					var images = ['http://www.abva.org/data-pages/carousel-data/DSC_0278.JPG', 
-								  'http://www.abva.org/data-pages/carousel-data/DSC_0092%20%281%29.JPG',
-								  'http://www.abva.org/data-pages/carousel-data/DSC_32.jpg',
-								  'http://www.abva.org/data-pages/carousel-data/DSC_74%20%281%29.jpg'];
+								  'http://www.abva.org/data-pages/carousel-data/DSC_0091B.JPG',
+								  'http://www.abva.org/data-pages/carousel-data/DSC_0279B.JPG',
+								  'http://www.abva.org/data-pages/carousel-data/DSC_110.JPG'];
 
 					showCarouselImagesFromArray("myCarousel", images, aspectRatio);
 				}
