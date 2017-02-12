@@ -34,12 +34,13 @@
 }
 
 .feed-item{
-	margin-bottom:15px;
+	margin: 5px !important;
 	padding: 15px;
 	border: solid #D2C332 1px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	height: 260px;
 
 }
 
