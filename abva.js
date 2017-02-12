@@ -39,6 +39,8 @@ function showText(displayDivId, title, text){
 
 //A utility function that shows images in a given page in the carousel
 function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio){
+	var site = SitesApp.getSite(siteDomain, siteName);
+	
 	var feed_url_base = "https://sites.google.com/feeds/content/"; 
 	var feed_url = feed_url_base.concat(siteDomain, "/", siteName, "/?path=", pathToDataPage, "&t=", cacheSeed);
 	
