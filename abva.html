@@ -56,10 +56,36 @@
 				
 				//Loading carousel images
 				var aspectRatio = 9.0/16;
-				showCarouselImages("/data-pages/carousel-data", "myCarousel", feedUrlSeed, aspectRatio);
+				try{
+					showCarouselImages("/data-pages/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
+				}
+				catch(err){
+					console.error("Carousel Loading Error:");
+					console.error(err);
+					console.warn("Showing default carousel images");
+					var images = ['http://www.abva.org/data-pages/carousel-data/DSC_0278.JPG', 
+								  'http://www.abva.org/data-pages/carousel-data/DSC_0091B.JPG',
+								  'http://www.abva.org/data-pages/carousel-data/DSC_0279B.JPG',
+								  'http://www.abva.org/data-pages/carousel-data/DSC_110.JPG'];
+
+					showCarouselImagesFromArray("myCarousel", images, aspectRatio);
+				}
+
 				
 				//Loading welcome message from the Welcome page
-				showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed);
+				try{
+					showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed, true);
+				}
+				catch(err){
+					console.error("Welcome Message Loading Error:");
+					console.error(err);
+					console.warn("Showing default welcome message");
+
+					var title = "Welcome";
+					var text = "<p>Welcome to the Alberta Buddhist Vihara Association (ABVA) and the Samatha Vipassana Meditation Centre (SVMC). ABVA is a registered charitable organization in Alberta, established with the objective of providing our community an understanding of Buddhism and its practice, particularly of the Theravada tradition.</p><p>Based on original teachings of the Buddha, such as The Four Noble Truth and The Eightfold Path, we offer a range of services including meditation programs, sutta discussions, Sunday school for children, religious services at homes, special retreats and daily Buddhist sermons. Services are offered in both English and Sinhala languages and are freely available to the community irrespective of one's origin, faith, religion or ethnicity.</p><p>Theravada Buddhism, rooted into insight meditation, provides an elegant pathway for one to understand the journey of life within and beyond the dimensions of perception. This path can help one uncover the supreme liberation which ends suffering. Rightful view and honest dedication is what truly matters. You are welcome to come and experience a difference.</p>";
+
+					showText("myWelcome", title, text);
+				}
 				
 				var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
 				var newsCalendarI = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
