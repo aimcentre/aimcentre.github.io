@@ -199,12 +199,15 @@
 				showCalendarEvents(newsCalendarId, apiKey, "myNewsfeed", "Program News", 160, 5, true);
 */
 
-				//Loading Programs and Events from the Special-Events and News calendars to the events column
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Programs and Events", 200, 4, true);
-				showCalendarEvents(newsCalendarId, apiKey, "myEventsfeed", null, 160, 3, true);
+				//Loading Programs and News to the events display area
+				showCalendarEvents(announcementCalendarId, apiKey, "myEventsfeed", null, 200, 2, true);
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", null, 200, 4, true);
+				showCalendarEvents(newsCalendarId, apiKey, "myEventsfeed", null, 200, 3, true);
 
+/*
 				//Loading announcements
 				showCalendarEvents(announcementCalendarId, apiKey, "myAnnouncements", "Announcements", 350, 6, true, null, null, null, null);				
+*/
 
 			} //End: function initialize()
 
