@@ -45,8 +45,6 @@
 				<div class="">
 					<h3 class="page-title">Programs and News</h3>
 					<div class="inner">
-						<div id="myAnnouncements" class="" style="display:none;">
-						</div>
 						<div id="myEventsfeed" class="">
 						</div>
 					</div>
@@ -56,10 +54,7 @@
 					<div class="visible-sm"><br /></div>
 					<div class="row">
 						<div class="inner">
-<!--
-							<div id="myNewsfeed" class="col-sm-6">
-							</div>
--->
+						<!--	
 							<div id="myNewsfeed" class="col-sm-6">
 								<div id="dhammaSchool">
 									<!-- panel heading for normal devices -->
@@ -96,6 +91,7 @@
 
 
 							</div>
+						-->
 						</div>
 					</div>
 				</div>
@@ -191,23 +187,10 @@
 					showText("newsletterWidgetText", null, text);
 				}
 				
-/*
-				//Loading Special Events feed
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 200, 15, true, null, null, null, ["announcement"]);
-				
-				//Loading News feed
-				showCalendarEvents(newsCalendarId, apiKey, "myNewsfeed", "Program News", 160, 5, true);
-*/
-
 				//Loading Programs and News to the events display area
 				showCalendarEvents(announcementCalendarId, apiKey, "myEventsfeed", null, 200, 2, true);
 				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", null, 200, 4, true);
 				showCalendarEvents(newsCalendarId, apiKey, "myEventsfeed", null, 200, 3, true);
-
-/*
-				//Loading announcements
-				showCalendarEvents(announcementCalendarId, apiKey, "myAnnouncements", "Announcements", 350, 6, true, null, null, null, null);				
-*/
 
 			} //End: function initialize()
 
