@@ -157,7 +157,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	//item wrapper
 	var wrapper = document.createElement("div");
 	targetDiv.appendChild(wrapper);
-	$(wrapper).addClass("feed-item clo-md-2");
+	$(wrapper).addClass("feed-item col-md-3");
 	
 	var type_defined = type != undefined;
 	var type_list = type_defined ? $.map(type.split(","), $.trim) : [];
