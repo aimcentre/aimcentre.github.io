@@ -35,7 +35,12 @@
 
 .feed-item{
 	margin-bottom:15px;
-	padding-bottom:15px;
+	padding: 15px;
+	border: solid #D2C332 1px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
 }
 
 /* Hiding extra feed items on small computer screen scales */
@@ -156,34 +161,6 @@
 
 #myWelcome h3, #myWelcome  .h3{
 	margin-top: 0 !important;
-}
-#myAnnouncements{
-	margin-top:20px;
-}
-
-#myAnnouncements .feed-item{
-}
-
-#myAnnouncements .feed-item-thumb{
-	display: none;
-}
-
-#myAnnouncements h3{
-	font: normal 26px 'Open Sans',sans-serif;
-    color: #66002e!important;
-}
-
-#myAnnouncements .feed-item-title{
-	font-size: 18px;
-	font-weight: normal;
-}
-
-#myAnnouncements .feed-item-time{
-	display: none;
-}
-
-#myAnnouncements .feed-item-title > .today, #myAnnouncements .feed-item-title > .tomorrow{
-	display: none;
 }
 
 .inner{
