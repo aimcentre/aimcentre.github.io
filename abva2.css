@@ -155,6 +155,9 @@
 	background-size:cover;
 }
 
+#myWelcome h3, #myWelcome  .h3{
+	margin-top: 0 !important;
+}
 #myAnnouncements{
 	margin-top:20px;
 }
