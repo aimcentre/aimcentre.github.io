@@ -20,12 +20,12 @@
 		-->
 
 		<link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://abvasvmc.github.io/abva.css">
+		<link rel="stylesheet" href="https://abvasvmc.github.io/abva2.css">
 		
 		<script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
 		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script src="https://abvasvmc.github.io/abva.js"></script>
+		<script src="https://abvasvmc.github.io/abva2.js"></script>
 
 		<div class="container-fluid">
 			<div class="row">
