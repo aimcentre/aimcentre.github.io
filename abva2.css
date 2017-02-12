@@ -44,14 +44,14 @@
 
 }
 
-/* Hiding extra feed items on small computer screen scales */
-/*
-@media (max-width:1200px) and (min-width:970px) {
-	.feed-item:nth-child(n+4) {
-    display: none;
-  }
-}
+/* Event Feed Formatting 
+   =====================
 */
+
+#myEventsFeed{
+    display: flex;
+    flex-wrap: wrap;	
+}
 
 .feed-item a, .feed-item a:visited{
 	color: #298cca!important;
