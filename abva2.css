@@ -65,11 +65,11 @@
 }
 
 .main-slip h3, .main-slip .h3{
-	margin-left: 15px !important;
+	margin-left: 0px !important;
 }
 
 .main-slip > h3, .main-slip > .h3{
-	margin-left: 0 !important;
+	margin-left: 15px !important;
 }
 
 
