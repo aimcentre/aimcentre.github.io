@@ -67,9 +67,9 @@
 								</div>
 							</div
 						</div>
-					</div>
+					</div></div>
 
-					<div class="col-sm-6">
+					<div class="col-sm-6" style="border:solid 1px red;">
 						<h3 class="page-title">Newsletter</h3>
 						<div class="feed-item">
 							<div id="dhammaSchool">
