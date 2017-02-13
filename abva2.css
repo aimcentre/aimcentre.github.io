@@ -57,9 +57,14 @@
     flex-wrap: wrap;
 }
 
+.feed-tile
+    padding: 10px;
+}
+
 .main-slip h3, .main-slip .h3{
 	margin-left: 15px !important;
 }
+
 
 .feed-item a, .feed-item a:visited{
 	color: #298cca!important;

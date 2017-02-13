@@ -157,7 +157,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	//item wrapper
 	var outer_wrapper = document.createElement("div");
 	targetDiv.appendChild(outer_wrapper);
-	$(outer_wrapper).addClass("col-md-3");
+	$(outer_wrapper).addClass("col-md-3 feed-tile");
 
 	var wrapper = document.createElement("div");
 	outer_wrapper.appendChild(wrapper);
