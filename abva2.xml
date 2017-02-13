@@ -67,6 +67,7 @@
 								<div class="read-more">
 									<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
 								</div>
+								<div style="clear:both" />
 							</div>
 						</div>
 					</div>
@@ -76,13 +77,14 @@
 						<div class="feed-item">
 							<div id="newsletter">
 								<div style="text-align:center;">
-									<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:75%;" />
+									<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="Newsletter Image" class="col-sm-6"  />
 								</div>
 								<div id="newsletterWidgetText">
 								</div>
-								<div style="margin-top:-25px;">
+								<div class="read-more">
 									<a href="http://www.abva.org/newsletter" target="_top">... read more.</a>
 								</div>
+								<div style="clear:both" />
 							</div
 						</div>
 					</div>
