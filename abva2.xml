@@ -36,6 +36,7 @@
 					</div>
 				</div>
 				<div class="col-md-6">
+					<div class="visible-sm"><br /></div>
 					<div class="inner">
 						<div id="myWelcome">
 						</div>
@@ -43,7 +44,6 @@
 				</div>
 
 				<div class="main-slip">
-					<div class="visible-sm"><br /></div>
 					<h3 class="page-title">Programs and News</h3>
 					<div class="inner">
 						<div id="myEventsFeed" class="">
