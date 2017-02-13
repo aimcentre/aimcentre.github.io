@@ -129,7 +129,7 @@
 				$("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
 
 				//Loading carousel images
-				var aspectRatio = 3.0/4; //9.0/16;
+				var aspectRatio = 9.0/16;
 				try{
 					showCarouselImages("/data-pages/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
 				}
