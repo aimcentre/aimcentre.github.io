@@ -58,7 +58,7 @@
 }
 
 .feed-tile
-    padding: 10px;
+    padding: 10px !important;
 }
 
 .main-slip h3, .main-slip .h3{
