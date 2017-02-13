@@ -48,6 +48,9 @@
 					<h3 class="page-title">Programs and News</h3>
 					<div class="inner">
 						<div id="myEventsFeed" class="">
+							<span id="announcementsSpan"></span>
+							<span id="specialEventsSpan"></span>
+							<span id="generalEventsSpan"></span>
 						</div>
 					</div>
 				</div>
@@ -201,9 +204,12 @@
 				}
 				
 				//Loading Programs and News to the events display area
-				showCalendarEvents(announcementCalendarId, apiKey, "myEventsFeed", null, 200, 2, true);
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsFeed", null, 200, 4, true);
-				showCalendarEvents(newsCalendarId, apiKey, "myEventsFeed", null, 200, 3, true);
+				showCalendarEvents(announcementCalendarId, apiKey, "announcementsSpan", null, 200, 2, true);
+				showCalendarEvents(specialEventsCalendarId, apiKey, "specialEventsSpan", null, 200, 4, true);
+				showCalendarEvents(newsCalendarId, apiKey, "generalEventsSpan", null, 200, 3, true);
+				//showCalendarEvents(announcementCalendarId, apiKey, "myEventsFeed", null, 200, 2, true);
+				//showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsFeed", null, 200, 4, true);
+				//showCalendarEvents(newsCalendarId, apiKey, "myEventsFeed", null, 200, 3, true);
 
 			} //End: function initialize()
 
