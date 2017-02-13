@@ -57,7 +57,8 @@
 						<h3 class="page-title">Dhamma School</h3>
 						
 						<div class="feed-item">
-							<div id="dhammaSchool"><!--
+							<div id="dhammaSchool">
+								<!--
 								<div>
 									<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="Dhamma School Logo" class="col-sm-6" />
 
@@ -70,7 +71,8 @@
 
 								<div class="read-more">
 									<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
-								</div>-->
+								</div>
+								-->
 							</div>
 						</div>
 					</div>
@@ -79,6 +81,7 @@
 						<h3 class="page-title">Newsletter</h3>
 						<div class="feed-item">
 							<div id="newsletter">
+								<!--
 								<div>
 									<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="Newsletter Image" class="col-sm-6"  />
 
@@ -92,6 +95,7 @@
 									<a href="http://www.abva.org/newsletter" target="_top">... read more.</a>
 								</div>
 								<div style="clear:both" />
+								-->
 							</div>
 						</div>
 					</div>
