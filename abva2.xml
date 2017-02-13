@@ -58,7 +58,7 @@
 						<div class="feed-item">
 							<div id="dhammaSchool">
 								<div style="text-align:center;">
-									<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="Dhamma School Logo" style="width:75%;"/>
+									<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="Dhamma School Logo" style="width:75%;">
 								</div>
 								<div id="dhammaSchoolWidgetText">
 								</div>
@@ -74,7 +74,7 @@
 						<div class="feed-item">
 							<div id="newsletter">
 								<div style="text-align:center;">
-									<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:75%;"/>
+									<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:75%;">
 								</div>
 								<div id="newsletterWidgetText">
 								</div>
