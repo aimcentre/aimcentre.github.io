@@ -63,8 +63,13 @@
 .main-slip{
 	clear: both;;
 }
+
 .main-slip h3, .main-slip .h3{
 	margin-left: 15px !important;
+}
+
+.main-slip > h3, .main-slip > .h3{
+	margin-left: 0 !important;
 }
 
 
