@@ -54,7 +54,8 @@
 
 #myEventsFeed{
     display: flex;
-    flex-wrap: wrap;	
+    flex-wrap: wrap;
+    margin-left: -5px;
 }
 
 .main-slip h3, .main-slip .h3{
