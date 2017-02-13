@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="ABVA Home Gadget" height="100">
+  	<Require feature="dynamic-height"/> 
+  </ModulePrefs>
+  <UserPref name="siteDomain" display_name="Site Domain" datatype="string" required="true"/>
+  <UserPref name="siteName" display_name="Site Name" datatype="string" required="true"/>
+  <UserPref name="siteRoot" display_name="Site Root" datatype="string" required="true"/>
+  
+  <Content type="html">
+     <![CDATA[
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+		
+		<!--
+ 	    <meta http-Equiv="Cache-Control" Content="no-cache" />
+	    <meta http-Equiv="Pragma" Content="no-cache" />
+	    <meta http-Equiv="Expires" Content="-1" />
+		-->
+
+		<link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://abvasvmc.github.io/abva.css">
+		
+		<script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
+		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script src="https://abvasvmc.github.io/abva.js"></script>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="inner">
+						<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						</div>
+						<div id="myWelcome">
+						</div>
+						<div id="myAnnouncements" class="" style="display:none;">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="visible-sm"><br /></div>
+					<div class="row">
+						<div class="inner">
+							<div id="myEventsfeed" class="col-sm-6">
+							</div>
+<!--
+							<div id="myNewsfeed" class="col-sm-6">
+							</div>
+-->
+							<div id="myNewsfeed" class="col-sm-6">
+								<div id="dhammaSchool">
+									<!-- panel heading for normal devices -->
+									<h3 class="feed-panel-heading hidden-xs">Dhamma School</h3>
+
+									<!-- panel heading for xs devices, which uses same styles as page titles -->
+									<h3 class="page-title visible-xs">Dhamma School</h3>
+
+									<div style="text-align:center;">
+										<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="" style="width:75%;"/>
+									</div>
+									<div id="dhammaSchoolWidgetText" class="feed-item">
+									</div>
+									<div class="feed-item" style="margin-top:-25px;">
+										<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
+									</div>
+								</div>
+								<div id="newsletter">
+									<!-- panel heading for normal devices -->
+									<h3 class="feed-panel-heading hidden-xs">Newsletter</h3>
+
+									<!-- panel heading for xs devices, which uses same styles as page titles -->
+									<h3 class="page-title visible-xs">Newsletter</h3>
+
+									<div style="text-align:center;">
+										<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:75%;"/>
+									</div>
+									<div id="newsletterWidgetText" class="feed-item">
+									</div>
+									<div class="feed-item" style="margin-top:-25px;">
+										<a href="http://www.abva.org/newsletter" target="_top">... read more.</a>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		
+			//Initialize feed loader
+			google.load("feeds", "1");
+			var gadgetMode = true;
+			
+
+			var siteDomain = null;
+			var siteName = null;
+			var siteRoot = null;
+
+			//Page initialization routine. This is called by google.setOnLoadCallback callback
+			function initialize(feedUrlSeed) {
+				
+				//Getting user prefs
+				var prefs = new gadgets.Prefs();
+				siteDomain = prefs.getString("siteDomain");
+				siteName = prefs.getString("siteName");
+				siteRoot = prefs.getString("siteRoot");
+				
+				var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
+				var newsCalendarId = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
+				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
+				var announcementCalendarId = "abva.org_mbt7jtsna7nkbm542qr7924c94@group.calendar.google.com";
+			
+				//Signup sheet link
+				$("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
+
+				//Loading carousel images
+				var aspectRatio = 9.0/16;
+				try{
+					showCarouselImages("/data-pages/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
+				}
+				catch(err){
+					console.error("Carousel Loading Error:");
+					console.error(err);
+					console.warn("Showing default carousel images");
+					var images = ['http://www.abva.org/data-pages/carousel-data/DSC_0278.JPG', 
+								  'http://www.abva.org/data-pages/carousel-data/DSC_0091B.JPG',
+								  'http://www.abva.org/data-pages/carousel-data/DSC_0279B.JPG',
+								  'http://www.abva.org/data-pages/carousel-data/DSC_110.JPG'];
+
+					showCarouselImagesFromArray("myCarousel", images, aspectRatio);
+				}
+				
+				//Loading welcome message from the Welcome page
+				try{
+					showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed, true);
+				}
+				catch(err){
+					console.error("Welcome Message Loading Error:");
+					console.error(err);
+					console.warn("Showing default welcome message");
+
+					var title = "Welcome";
+					var text = "<p>Welcome to the Alberta Buddhist Vihara Association (ABVA) and the Samatha Vipassana Meditation Centre (SVMC). ABVA is a registered charitable organization in Alberta, established with the objective of providing our community an understanding of Buddhism and its practice, particularly of the Theravada tradition.</p><p>Based on original teachings of the Buddha, such as The Four Noble Truth and The Eightfold Path, we offer a range of services including meditation programs, sutta discussions, Sunday school for children, religious services at homes, special retreats and daily Buddhist sermons. Services are offered in both English and Sinhala languages and are freely available to the community irrespective of one's origin, faith, religion or ethnicity.</p><p>Theravada Buddhism, rooted into insight meditation, provides an elegant pathway for one to understand the journey of life within and beyond the dimensions of perception. This path can help one uncover the supreme liberation which ends suffering. Rightful view and honest dedication is what truly matters. You are welcome to come and experience a difference.</p>";
+
+					showText("myWelcome", title, text);
+				}
+
+				//Loading text for the Dhamma School Widget from the Dhamma School Intro page
+				try{
+					showPageContents("/data-pages/dhamma-school-intro", "dhammaSchoolWidgetText", feedUrlSeed, false);
+				}
+				catch(err){
+					console.error("Dhamma School Widget Loading Error:");
+					console.error(err);
+					console.warn("Showing default Dhamma School Widget Text");
+					
+					var text = "<p>Giving children a good foundation in the Lord Buddha's teachings will help them better navigate through life. Towards this, the Dhamma School teaches principles and practice of Dhamma to children, from kindergarten up to high school level, age-appropriate lessons in Theravada Buddhism within a comprehensive syllabus.</p>";
+
+					showText("dhammaSchoolWidgetText", null, text);
+				}
+				
+
+				//Loading text for the Newsletter Widget from the Newsletter Intro page
+				try{
+					showPageContents("/data-pages/newsletter-intro", "newsletterWidgetText", feedUrlSeed, false);
+				}
+				catch(err){
+					console.error("Newsletter Widget Loading Error:");
+					console.error(err);
+					console.warn("Showing default Newsletter Widget Text");
+
+					var text = "<p>The newsletter periodically recapitulate our programs and events and also serves as a means of communicating valuable Dhamma messages to our community. We hope to publish future newsletters on a regular basis, more frequently, and welcome articles and artworks from children and adults. We sincerely hope that you enjoy the newsletter and share it with your family and friends.</p>";
+
+					showText("newsletterWidgetText", null, text);
+				}
+				
+/*
+				//Loading Special Events feed
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 200, 15, true, null, null, null, ["announcement"]);
+				
+				//Loading News feed
+				showCalendarEvents(newsCalendarId, apiKey, "myNewsfeed", "Program News", 160, 5, true);
+*/
+
+				//Loading Programs and Events from the Special-Events and News calendars to the events column
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Programs and Events", 200, 4, true);
+				showCalendarEvents(newsCalendarId, apiKey, "myEventsfeed", null, 160, 3, true);
+
+				//Loading announcements
+				showCalendarEvents(announcementCalendarId, apiKey, "myAnnouncements", "Announcements", 350, 6, true, null, null, null, null);				
+
+			} //End: function initialize()
+
+			//Calling initialization routing on gadget loading
+			gadgets.util.registerOnLoadHandler(function() { 
+				initialize(Math.floor((Math.random() * 100000)));
+				gadgets.window.adjustHeight();
+				window.history.pushState({}, '', document.URL);
+		   });
+		   
+		   //Resize listener for gadget resizing on layout changes
+		   var prevWindowWidth= -1;
+		   var carousel_aspect_ratio = -1;
+		   var prevSwitchedWidth = -1;
+		   $( window ).resize(function() {
+		        if(prevWindowWidth < 0){
+		        	prevWindowWidth = $(window).width();
+		        	prevSwitchedWidth = prevWindowWidth;
+		        	carousel_aspect_ratio = $("#myCarousel").width() / $("#myCarousel").height()
+		        }
+		        else{
+		        	var w = $(window).width();
+		        	var resize_required = (prevWindowWidth >= 768 && w < 768) ||
+		        						  (prevWindowWidth < 768 && w >= 768) ||
+		        						  (prevWindowWidth >= 992 && w < 992) ||
+		        						  (prevWindowWidth < 992 && w >= 992) | 
+		        						  (prevWindowWidth <= w - 5) ||
+		        						  (prevWindowWidth >= w+5);
+
+		        	if(resize_required){
+		        		gadgets.window.adjustHeight();
+		        		prevSwitchedWidth = w;
+		        	}
+		        	
+		        	if(carousel_aspect_ratio > 0){
+		        		var new_carousel_height = $("#myCarousel").width() / carousel_aspect_ratio;
+		        		$("#myCarousel").height(new_carousel_height)
+		        	}
+		        	
+		        	//gadgets.window.adjustHeight();
+		        	prevWindowWidth = w;					  
+		        }
+		    });	
+						
+		</script>
+     ]]>
+  </Content> 
+</Module>
