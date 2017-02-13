@@ -57,7 +57,7 @@
     flex-wrap: wrap;
 }
 
-.feed-tile
+.feed-tile{
     padding: 10px !important;
 }
 
