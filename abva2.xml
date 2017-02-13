@@ -55,8 +55,8 @@
 				<div class="main-slip">
 					<div class="col-sm-6">
 						<h3 class="page-title">Dhamma School</h3>
-						<!--
-						<div class="feed-item">
+						
+						<div class="feed-item"><!--
 							<div id="dhammaSchool">
 								<div>
 									<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="Dhamma School Logo" class="col-sm-6" />
@@ -72,9 +72,8 @@
 									<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
 								</div>
 								<div style="clear:both" />
-							</div>
+							</div>-->
 						</div>
-					-->
 					</div>
 
 					<div class="col-sm-6">
