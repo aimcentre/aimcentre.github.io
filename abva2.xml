@@ -69,6 +69,7 @@
 
 					<div class="feed-item col-sm-6">
 						<h3 class="page-title">Newsletter</h3>
+						<!--
 						<div id="newsletter">
 							<div style="text-align:center;">
 								<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:75%;"/>
@@ -79,6 +80,7 @@
 								<a href="http://www.abva.org/newsletter" target="_top">... read more.</a>
 							</div>
 						</div>
+						-->
 					</div>
 				</div>
 			</div>
