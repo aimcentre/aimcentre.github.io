@@ -68,6 +68,7 @@
 								<div class="read-more">
 									<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
 								</div>
+								<div style="clear:both" />
 								<!--
 								<div id="dhammaSchoolWidgetText">
 								</div>
@@ -90,10 +91,11 @@
 								<div class="read-more">
 									<a href="http://www.abva.org/newsletter" target="_top">... read more.</a>
 								</div>
+								<div style="clear:both" />
 								<!--
 								<div id="newsletterWidgetText">
 								</div>
-								<div style="clear:both" />
+								
 								-->
 							</div>
 						</div>
