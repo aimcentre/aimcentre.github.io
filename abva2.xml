@@ -43,7 +43,7 @@
 				</div>
 
 				<div class="main-slip">
-					<div class="hidden-md"><br /></div>
+					<div class="visible-sm"><br /></div>
 					<h3 class="page-title">Programs and News</h3>
 					<div class="inner">
 						<div id="myEventsFeed" class="">
