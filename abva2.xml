@@ -52,44 +52,56 @@
 					</div>
 				</div>
 
+				<div class="main-slip">
+					<div id="dhammaSchool" class="col-sm-6">
+						<!-- panel heading for normal devices -->
+						<h3 class="feed-panel-heading hidden-xs">Dhamma School</h3>
+
+						<!-- panel heading for xs devices, which uses same styles as page titles -->
+						<h3 class="page-title visible-xs">Dhamma School</h3>
+
+						<div style="text-align:center;">
+							<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="" style="width:75%;"/>
+						</div>
+						<div id="dhammaSchoolWidgetText" class="feed-item">
+						</div>
+						<div class="feed-item" style="margin-top:-25px;">
+							<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
+						</div>
+					</div>
+					<div id="newsletter" class="col-sm-6">
+						<!-- panel heading for normal devices -->
+						<h3 class="feed-panel-heading hidden-xs">Newsletter</h3>
+
+						<!-- panel heading for xs devices, which uses same styles as page titles -->
+						<h3 class="page-title visible-xs">Newsletter</h3>
+
+						<div style="text-align:center;">
+							<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:75%;"/>
+						</div>
+						<div id="newsletterWidgetText" class="feed-item">
+						</div>
+						<div class="feed-item" style="margin-top:-25px;">
+							<a href="http://www.abva.org/newsletter" target="_top">... read more.</a>
+						</div>
+					</div>
+
+
+
+					<div class="hidden-sm"><br /></div>
+					<h3 class="page-title">Programs and News</h3>
+					<div class="inner">
+						<div id="myEventsFeed" class="">
+						</div>
+					</div>
+				</div>
+
 				<div class="col-md-6">
 					<div class="visible-md"><br /></div>
 					<div class="row">
 						<div class="inner">
 						<!--	
 							<div id="myNewsfeed" class="col-sm-6">
-								<div id="dhammaSchool">
-									<!-- panel heading for normal devices -->
-									<h3 class="feed-panel-heading hidden-xs">Dhamma School</h3>
-
-									<!-- panel heading for xs devices, which uses same styles as page titles -->
-									<h3 class="page-title visible-xs">Dhamma School</h3>
-
-									<div style="text-align:center;">
-										<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="" style="width:75%;"/>
-									</div>
-									<div id="dhammaSchoolWidgetText" class="feed-item">
-									</div>
-									<div class="feed-item" style="margin-top:-25px;">
-										<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
-									</div>
-								</div>
-								<div id="newsletter">
-									<!-- panel heading for normal devices -->
-									<h3 class="feed-panel-heading hidden-xs">Newsletter</h3>
-
-									<!-- panel heading for xs devices, which uses same styles as page titles -->
-									<h3 class="page-title visible-xs">Newsletter</h3>
-
-									<div style="text-align:center;">
-										<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:75%;"/>
-									</div>
-									<div id="newsletterWidgetText" class="feed-item">
-									</div>
-									<div class="feed-item" style="margin-top:-25px;">
-										<a href="http://www.abva.org/newsletter" target="_top">... read more.</a>
-									</div>
-								</div>
 
 
 							</div>
