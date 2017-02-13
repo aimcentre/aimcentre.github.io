@@ -59,7 +59,8 @@
 						<div class="feed-item">
 							<div id="dhammaSchool">
 								<div>
-									<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="Dhamma School Logo" class="col-sm-6" />
+									<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="Dhamma School Logo" class="col-sm-5" />
+									<div class="col-sm-1" />
 
 									<p>
 										Giving children a good foundation in the Lord Buddha's teachings will help them better navigate through life. Towards this, the Dhamma School teaches principles and practice of Dhamma to children, from kindergarten up to high school level, age-appropriate lessons in Theravada Buddhism within a comprehensive syllabus.
@@ -68,7 +69,7 @@
 								<div class="read-more">
 									<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
 								</div>
-								
+
 								<!--
 								<div id="dhammaSchoolWidgetText">
 								</div>
