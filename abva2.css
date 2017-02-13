@@ -64,6 +64,10 @@
 	clear: both;;
 }
 
+.main-slip:nth-child(even){
+	background-color: #f5ede3;
+}
+
 .main-slip h3, .main-slip .h3{
 	margin-left: 0px !important;
 }
