@@ -60,7 +60,7 @@
 							<div id="dhammaSchool">
 								<div>
 									<div class="col-sm-6" style="text-align:centre">
-										<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="Dhamma School Logo" class="col-sm-10" />
+										<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="Dhamma School Logo" class="col-sm-10" style="width:100%" />
 									</div>
 									<p>
 										Giving children a good foundation in the Lord Buddha's teachings will help them better navigate through life. Towards this, the Dhamma School teaches principles and practice of Dhamma to children, from kindergarten up to high school level, age-appropriate lessons in Theravada Buddhism within a comprehensive syllabus.
@@ -84,7 +84,7 @@
 						<div class="feed-item">
 							<div id="newsletter">
 								<div>
-									<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="Newsletter Image" class="col-sm-6"  />
+									<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="Newsletter Image" class="col-sm-6"  style="width:100%" />
 
 									<p>
 										The newsletter periodically recapitulate our programs and events and also serves as a means of communicating valuable Dhamma messages to our community. We hope to publish future newsletters on a regular basis, more frequently, and welcome articles and artworks from children and adults. We sincerely hope that you enjoy the newsletter and share it with your family and friends.
