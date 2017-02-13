@@ -68,6 +68,23 @@
 							</div
 						</div>
 					</div>
+
+					<div class="col-sm-6">
+						<h3 class="page-title">Newsletter</h3>
+						<div class="feed-item">
+							<div id="dhammaSchool">
+								<div style="text-align:center;">
+									<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="" style="width:75%;"/>
+								</div>
+								<div id="newsletterWidgetText">
+								</div>
+								<div style="margin-top:-25px;">
+									<a href="http://www.abva.org/newsletter" target="_top">... read more.</a>
+								</div>
+							</div
+						</div>
+					</div>
+
 					<!--
 					<div class="feed-item col-sm-6">
 						<h3 class="page-title">Newsletter</h3>
