@@ -24,7 +24,6 @@
 .page-title{
 	font:normal 26px 'Open Sans',sans-serif;
 	color:#66002e!important;
-	margin-left: 15px;
 }
   
 .feed-panel-heading{
@@ -52,6 +51,11 @@
 #myEventsFeed{
     display: flex;
     flex-wrap: wrap;	
+}
+
+#myWelcome h3, #myWelcome  .h3{
+	margin-top: 0 !important;
+	margin-left: 15px;
 }
 
 .feed-item a, .feed-item a:visited{
@@ -159,10 +163,6 @@
 	background-repeat:no-repeat;
 	background-position: center; 
 	background-size:cover;
-}
-
-#myWelcome h3, #myWelcome  .h3{
-	margin-top: 0 !important;
 }
 
 .inner{
