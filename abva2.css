@@ -57,7 +57,7 @@
     flex-wrap: wrap;	
 }
 
-#myEventsFeed h3, #myEventsFeed .h3{
+.main-slip h3, .main-slip .h3{
 	margin-left: 15px !important;
 }
 
