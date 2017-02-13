@@ -55,6 +55,7 @@
 				<div class="main-slip">
 					<div class="col-sm-6" style="border:solid 1px red;">
 						<h3 class="page-title">Dhamma School</h3>
+						<!--
 						<div class="feed-item">
 							<div id="dhammaSchool">
 								<div style="text-align:center;">
@@ -67,10 +68,12 @@
 								</div>
 							</div
 						</div>
+						1-->
 					</div>
 
 					<div class="col-sm-6" style="border:solid 1px green;">
 						<h3 class="page-title">Newsletter</h3>
+						<!--
 						<div class="feed-item">
 							<div id="dhammaSchool">
 								<div style="text-align:center;">
@@ -83,6 +86,7 @@
 								</div>
 							</div
 						</div>
+					-->
 					</div>
 				</div>
 			</div>
