@@ -53,18 +53,20 @@
 				</div>
 
 				<div class="main-slip">
-					<div class="feed-item col-sm-6">
-						<h3 class="page-title">Dhamma School</h3>
-						<div id="dhammaSchool">
-							<div style="text-align:center;">
-								<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="" style="width:75%;"/>
-							</div>
-							<div id="dhammaSchoolWidgetText">
-							</div>
-							<div style="margin-top:-25px;">
-								<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
-							</div>
-						</div
+					<div class="col-sm-6">
+						<div class="feed-item">
+							<h3 class="page-title">Dhamma School</h3>
+							<div id="dhammaSchool">
+								<div style="text-align:center;">
+									<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="" style="width:75%;"/>
+								</div>
+								<div id="dhammaSchoolWidgetText">
+								</div>
+								<div style="margin-top:-25px;">
+									<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
+								</div>
+							</div
+						</div>
 					</div>
 					<!--
 					<div class="feed-item col-sm-6">
