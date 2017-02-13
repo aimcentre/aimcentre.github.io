@@ -48,13 +48,16 @@
    =====================
 */
 
+#myWelcome h3, #myWelcome .h3{
+	margin-top: 0 !important;
+}
+
 #myEventsFeed{
     display: flex;
     flex-wrap: wrap;	
 }
 
-#myWelcome h3, #myWelcome .h3{
-	margin-top: 0 !important;
+#myEventsFeed h3, #myEventsFeed .h3{
 	margin-left: 15px !important;
 }
 
