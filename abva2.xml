@@ -52,7 +52,7 @@
 					</div>
 				</div>
 
-				<div class="main-slip">
+				<div class="main-slip" style="background-color: antiquewhite;">
 					<div class="col-sm-6">
 						<h3 class="page-title">Dhamma School</h3>
 						
@@ -106,6 +106,7 @@
 						</div>
 					</div>
 					<div style="clear:both"></div>
+					<br />
 				</div>
 			</div>
 		</div>
