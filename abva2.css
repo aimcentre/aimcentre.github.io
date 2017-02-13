@@ -34,7 +34,7 @@
 }
 
 .feed-item{
-	margin: 5px !important;
+	margin: 0px !important;
 	padding: 15px;
 	border: solid #D2C332 1px;
 	-webkit-border-radius: 5px;
@@ -55,7 +55,6 @@
 #myEventsFeed{
     display: flex;
     flex-wrap: wrap;
-    margin-left: -5px;
 }
 
 .main-slip h3, .main-slip .h3{
