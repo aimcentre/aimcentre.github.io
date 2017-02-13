@@ -83,7 +83,7 @@
 
 					</div>
 				</div>
-	-->
+-->
 			</div>
 		</div>
 		
@@ -158,7 +158,7 @@
 					
 					var text = "<p>Giving children a good foundation in the Lord Buddha's teachings will help them better navigate through life. Towards this, the Dhamma School teaches principles and practice of Dhamma to children, from kindergarten up to high school level, age-appropriate lessons in Theravada Buddhism within a comprehensive syllabus.</p>";
 
-					showText("dhammaSchoolWidgetText", null, text);
+					//showText("dhammaSchoolWidgetText", null, text);
 				}
 				
 
@@ -173,7 +173,7 @@
 
 					var text = "<p>The newsletter periodically recapitulate our programs and events and also serves as a means of communicating valuable Dhamma messages to our community. We hope to publish future newsletters on a regular basis, more frequently, and welcome articles and artworks from children and adults. We sincerely hope that you enjoy the newsletter and share it with your family and friends.</p>";
 
-					showText("newsletterWidgetText", null, text);
+					//showText("newsletterWidgetText", null, text);
 				}
 				
 				//Loading Programs and News to the events display area
