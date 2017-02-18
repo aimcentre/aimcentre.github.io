@@ -127,7 +127,7 @@ if(s_title != ""){
 }
 
 html = title_html
-	+ "<audio controls='controls' " + s_flv + s_flvloop + ">"
+	+ "<audio preload='metadata' controls='controls' " + s_flv + s_flvloop + ">"
     + "<source src='" + s_fil + "' type='audio/" + s_typ + "' />"
 	+ "You cannot use audio tag with your browser" + "</audio>"
 	+ s_downloadlink;
