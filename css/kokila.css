@@ -1,10 +1,7 @@
-.player {
+.kk-player {
 	display: block;
 	height: 48px;
-	width: 400px;
-	position: absolute;
-	top: 349px;
-	left: -1px;
+	position:relative;
 	-webkit-box-shadow: 0 -1px 0 rgba(20, 30, 40, .75);
 	-moz-box-shadow: 0 -1px 0 rgba(20, 30, 40, .75);
 	-o-box-shadow: 0 -1px 0 rgba(20, 30, 40, .75);
@@ -18,42 +15,25 @@
 	cursor: default;
 }
 
-#playtoggle {
+.kk-playtoggle {
 	position: absolute;
 	top: 9px;
 	left: 10px;
 	width: 30px;
 	height: 30px;
-	background: url(player.png) no-repeat -30px 0;
+	background: url(../assets/player.png) no-repeat -30px 0;
 	cursor: pointer;
 }
 
-#playtoggle.playing {
+.kk-playtoggle.playing {
 	background-position: 0 0;
 }
 
-#playtoggle:active {
+.kk-playtoggle:active {
 	top: 10px;
 }
 
-#timeleft {
-	line-height: 48px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 50px;
-	text-align: center;
-	font-size: 11px;
-	font-weight: bold;
-	color: #fff;
-	text-shadow: 0 1px 0 #546374;
-}
-
-#wrapper #timeleft {
-	right: 40px;
-}
-
-#gutter {
+.kk-gutter {
 	position: absolute;
 	top: 19px;
 	left: 50px;
@@ -74,11 +54,30 @@
 	box-shadow: 0 1px 4px rgba(20, 30, 40, .75) inset, 0 1px 0 rgba(176, 187, 198, .5);
 }
 
-#wrapper #gutter {
-	right: 90px;
+.kk-handle {
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	margin-left: -10px;
+	background: url(../assets/player.png) no-repeat -65px -5px;
+	cursor: pointer;
 }
 
-#loading {
+.kk-timeleft {
+	line-height: 48px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0 1px 0 #546374;
+}
+
+.kk-loading {
 	background: #fff;
 	background: #939eaa;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eaeef1), to(#c7cfd8));
@@ -98,28 +97,16 @@
 	height: 6px;
 }
 
-#handle {
-	position: absolute;
-	top: -5px;
-	left: 0;
-	width: 20px;
-	height: 20px;
-	margin-left: -10px;
-	background: url(player.png) no-repeat -65px -5px;
-	cursor: pointer;
+.kk-timeleft {
+	right: 20px;
 }
 
-.player a.popup {
-	position: absolute;
-	top: 9px;
-	right: 8px;
-	width: 32px;
-	height: 30px;
-	overflow: hidden;
-	text-indent: -999px;
-	background: url(player.png) no-repeat -90px 0;
+
+.kk-gutter {
+	right: 100px;
 }
 
-.player a.popup:active {
-	background-position: -90px 1px;
+.kk-download{
+	float: right;
 }
+

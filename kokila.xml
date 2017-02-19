@@ -2,10 +2,10 @@
 <!-- Player downloaded from http://www.dalebasler.com/2014/06/embed-an-html5-audio-player-in-google-sites/ -->
 <Module>
 <ModulePrefs title="Audio file title"
-width="460"
+width="680"
 height="75"
 scrolling="false"
-directory_title="Google Gadget to use an HTML5 audio player. Can play mp3 or ogg files"
+directory_title="HTML5 Audio Player."
 description="Using an html5 audio player. Can play mp3 or ogg files. Google Gadget.">
 
 
@@ -40,27 +40,8 @@ description="Using an html5 audio player. Can play mp3 or ogg files. Google Gadg
 <UserPref name="CCOL" display_name="Background Color (search html color code for details)" required="true" default_value="#ffffff" />
 
 <Content type="html"><![CDATA[
-
-<style type="text/css">
-body
-{
-text-align: left;
-font-family: Arial,sans-serif;
-background-color: __UP_CCOL__;
-margin: 15 0;
-padding:0;
-}
-
-.download
-{
-font-size: 12px;
-text-align: left;
-font-family: Arial,sans-serif;
-padding: 12px 0 0 4px;
-font-style: italic;
-}
-  
-</style>
+<script src="https://abvasvmc.github.io/js/kokila.js"></script>
+<link rel="stylesheet" href="https://abvasvmc.github.io/css/kokila.css">
 
 <div id="player" style="position: absolute; bottom: 0px;"></div>
  
@@ -78,63 +59,13 @@ var s_fil = prefs.getString("FILE");
 
 var s_dld = false;
 var s_dld = prefs.getString("DOWNLOAD");
-if (s_dld == "Yes")
-{var s_downloadlink = "<br><div class='download'><a href='" + s_fil + "' target='_blank' download>download file</a></div>"; }
-else
-{var s_downloadlink = ""; }
-
-
-var sta = false;
-var s_sta = prefs.getString("START");
-if (s_sta)
-{
-s_sta = s_sta.toUpperCase();
-if (s_sta.substr(0,1) == 'N')
-   {sta=false;}
-else
-   {sta=true;}
-}
-
-if (sta == true)
-{var s_flv = "autoplay='autoplay'"; }
-else
-{var s_flv = ""; }
-
-var loop = false;
-var s_loop = prefs.getString("LOOP");
-if (s_loop)
-{
-s_loop = s_loop.toUpperCase();
-if (s_loop.substr(0,1) == 'N')
-   {loop=false;}
-else
-   {loop=true;}
-}
-
-if (loop == true)
-{var s_flvloop = "loop='autoplay'"; }
-else
-{var s_flvloop = ""; }
 
 var s_typ = prefs.getString("TYPE");
 
-
-var html="";
-
-var title_html = "";
-if(s_title != ""){
-	title_html = "<span style='" + s_title_styles + "'>" + s_title + "</span>";
-}
-
-html = title_html
-	+ "<audio preload='metadata' controls='controls' " + s_flv + s_flvloop + ">"
-    + "<source src='" + s_fil + "' type='audio/" + s_typ + "' />"
-	+ "You cannot use audio tag with your browser" + "</audio>"
-	+ s_downloadlink;
-
-
-document.getElementById("player").innerHTML = html;
-
+$(function() {
+	kkInit("player", s_title);
+	kkAddSource("player", s_fil, s_typ, (s_dld == "Yes"));
+});
 
 </script>
 ]]></Content>
