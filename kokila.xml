@@ -16,29 +16,17 @@
 
 <UserPref name="TITLE_STYLES" display_name="Title Styles" required="false" default_value="" />
 
-<UserPref name="FILE" display_name="File to play" required="true" default_value="https://ia601903.us.archive.org/31/items/1360121/136012%20%281%29.mp3" />
+<UserPref name="OGG_FILE" display_name="OGG file" required="false" default_value="" />
+<UserPref name="MP3_FILE" display_name="MP3 file" required="false" default_value="" />
 
-<UserPref name="TYPE" display_name="File type" default_value="mp3" datatype="enum" >
-<EnumValue value="mp3" />
-<EnumValue value="ogg" />
-</UserPref>
-
-<UserPref name="START" display_name="Auto Start?" required="false" datatype="enum" >
-<EnumValue value="No" />
-<EnumValue value="Yes" />
-</UserPref>
-
-<UserPref name="LOOP" display_name="Loop Audio?" required="false" datatype="enum" >
-<EnumValue value="No" />
-<EnumValue value="Yes" />
-</UserPref>
-
+<!--
 <UserPref name="DOWNLOAD" display_name="Show download link?" required="false" datatype="enum" >
 <EnumValue value="Yes" />
 <EnumValue value="No" />
 </UserPref>
 
 <UserPref name="CCOL" display_name="Background Color (search html color code for details)" required="true" default_value="#ffffff" />
+-->
 
 <Content type="html"><![CDATA[
 <script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
@@ -49,31 +37,10 @@
 
 <div id="player" style="position: absolute; bottom: 0px;"></div>
 
-<style type="text/css">
-body
-{
-text-align: left;
-font-family: Arial,sans-serif;
-background-color: __UP_CCOL__;
-margin: 15 0;
-padding:0;
-}
-
-.download
-{
-font-size: 12px;
-text-align: left;
-font-family: Arial,sans-serif;
-padding: 12px 0 0 4px;
-font-style: italic;
-}
-  
-</style>
- 
 <script type="text/javascript">
 
 // the parameters
-
+/*
 var prefs = new gadgets.Prefs();
 
 var s_title = prefs.getString("TITLE");
@@ -92,8 +59,7 @@ $(function() {
 	kkAddSource("player", s_fil, s_typ, (s_dld == "Yes"));
 });
 
-gad
-
+*/
 </script>
 ]]></Content>
 </Module>
