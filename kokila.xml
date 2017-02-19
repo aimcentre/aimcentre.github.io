@@ -13,18 +13,15 @@
 </ModulePrefs>
 
 <UserPref name="TITLE" display_name="Title" required="false" default_value="" />
-
-<UserPref name="TITLE_STYLES" display_name="Title Styles" required="false" default_value="" />
-
 <UserPref name="OGG_FILE" display_name="OGG file" required="false" default_value="" />
 <UserPref name="MP3_FILE" display_name="MP3 file" required="false" default_value="" />
-
-<!--
-<UserPref name="DOWNLOAD" display_name="Show download link?" required="false" datatype="enum" >
-<EnumValue value="Yes" />
-<EnumValue value="No" />
+<UserPref name="STYLES" display_name="Styles" required="false" default_value="" />
+<UserPref name="ALLOW_DOWNLOAD" display_name="Allow downloading?" required="false" datatype="enum" >
+	<EnumValue value="Yes" />
+	<EnumValue value="No" />
 </UserPref>
 
+<!--
 <UserPref name="CCOL" display_name="Background Color (search html color code for details)" required="true" default_value="#ffffff" />
 -->
 
@@ -39,27 +36,23 @@
 
 <script type="text/javascript">
 
-// the parameters
-/*
+// User preference parameters
+//===========================
 var prefs = new gadgets.Prefs();
-
-var s_title = prefs.getString("TITLE");
-
-var s_title_styles = prefs.getString("TITLE_STYLES");
-
-var s_fil = prefs.getString("FILE");
-
-var s_dld = false;
-var s_dld = prefs.getString("DOWNLOAD");
-
-var s_typ = prefs.getString("TYPE");
+var title = prefs.getString("TITLE");
+var styles = prefs.getString("STYLES");
+var oggFile = prefs.getString("OGG_FILE").trim();
+var mp3File = prefs.getString("MP3_FILE").trim();
+var allowDownloading = prefs.getString("ALLOW_DOWNLOAD") == "Yes";
 
 $(function() {
-	kkInit("player", s_title);
-	kkAddSource("player", s_fil, s_typ, (s_dld == "Yes"));
+	kkInit("player", title);
+	if(oggFile)
+		kkAddSource("player", oggFile, "ogg", allowDownloading);
+	if(mp3File)
+		kkAddSource("player", mp3File, "mp3", allowDownloading);
 });
 
-*/
 </script>
 ]]></Content>
 </Module>
