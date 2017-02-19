@@ -17,6 +17,7 @@ function kkInit(wrapperId, title)
 		<span class="kk-download" style="display:none">Download: </span>'
 		);
 
+	//Create variables to access player elements based on the wrapper id and the element class
 	var audio = $(wrapper + " audio").get(0);
 	var timeleft = $(wrapper + " .kk-timeleft").get(0);
 	var loadingIndicator = $(wrapper + ' .kk-loading').get(0);
@@ -25,6 +26,7 @@ function kkInit(wrapperId, title)
 	var handle = $(wrapper + ' .kk-handle').get(0);
 
 	var loaded = false;
+	var manualPositioning = false;
 	var positionIndicator = $(handle);
 
 	var duration = "";
@@ -45,6 +47,7 @@ function kkInit(wrapperId, title)
 	$(audio).bind('loadedmetadata', function() {
 		$(timeleft).text(progressTime(0, audio.duration));
 		loaded = true;
+
 	    $(gutter).slider({
 	      value: 0,
 	      step: 0.01,
@@ -53,9 +56,13 @@ function kkInit(wrapperId, title)
 	      max: audio.duration,
 	      animate: true,
 	      slide: function(e,ui) {
-	        audio.currentTime = ui.value;
+	      	manualPositioning = true;
+	      	var pos = (ui.value / audio.duration) * 100;
+	      	positionIndicator.css({left: pos + '%'});
+	      	$(timeleft).text(progressTime(ui.value, audio.duration));
 	      },
 	      stop:function(e,ui) {
+	      	manualPositioning = false;
 	        audio.currentTime = ui.value;
 	      }
 	    });
@@ -74,16 +81,11 @@ function kkInit(wrapperId, title)
 	});
 
 	$(audio).bind('timeupdate', function() {
-		$(timeleft).text(progressTime(audio.currentTime, audio.duration));
-
-
-	  var rem = parseInt(audio.duration - audio.currentTime, 10),
-	  pos = (audio.currentTime / audio.duration) * 100,
-	  mins = Math.floor(rem/60,10),
-	  secs = rem - mins*60;
-
-	  positionIndicator.css({left: pos + '%'});
-
+		if(!manualPositioning){
+			$(timeleft).text(progressTime(audio.currentTime, audio.duration));
+			var pos = (audio.currentTime / audio.duration) * 100;
+			positionIndicator.css({left: pos + '%'});
+		}
 	});
 }
 
