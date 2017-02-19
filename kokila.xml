@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Player downloaded from http://www.dalebasler.com/2014/06/embed-an-html5-audio-player-in-google-sites/ -->
 <Module>
-<ModulePrefs title="Audio file title"
-width="680"
-height="75"
-scrolling="false"
-directory_title="HTML5 Audio Player."
-description="Using an html5 audio player. Can play mp3 or ogg files. Google Gadget.">
+<ModulePrefs 
+	title=""
+	width="680"
+	height="75"
+	scrolling="false"
+	directory_title="HTML5 Audio Player."
+	description="Using an html5 audio player. Can play mp3 or ogg files. Google Gadget.">
 
 
 </ModulePrefs>
@@ -40,13 +41,34 @@ description="Using an html5 audio player. Can play mp3 or ogg files. Google Gadg
 <UserPref name="CCOL" display_name="Background Color (search html color code for details)" required="true" default_value="#ffffff" />
 
 <Content type="html"><![CDATA[
-<link rel="stylesheet" href="https://abvasvmc.github.io/css/kokila.css">
 <script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
 <script src="https://abvasvmc.github.io/js/jquery-ui.min.js"></script>
 <script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
 <script src="https://abvasvmc.github.io/js/kokila.js"></script>
+<link rel="stylesheet" href="https://abvasvmc.github.io/css/kokila.css">
 
 <div id="player" style="position: absolute; bottom: 0px;"></div>
+
+<style type="text/css">
+body
+{
+text-align: left;
+font-family: Arial,sans-serif;
+background-color: __UP_CCOL__;
+margin: 15 0;
+padding:0;
+}
+
+.download
+{
+font-size: 12px;
+text-align: left;
+font-family: Arial,sans-serif;
+padding: 12px 0 0 4px;
+font-style: italic;
+}
+  
+</style>
  
 <script type="text/javascript">
 
@@ -69,6 +91,8 @@ $(function() {
 	kkInit("player", s_title);
 	kkAddSource("player", s_fil, s_typ, (s_dld == "Yes"));
 });
+
+gad
 
 </script>
 ]]></Content>
