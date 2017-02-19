@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/kokila.js"></script>
+	<link rel="stylesheet" href="css/kokila.css">
+
+	<style type="text/css">
+		#playerWrapper{
+			margin-top: 100px;
+			margin-left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="playerWrapper">
+	</di>
+
+	<script type="text/javascript">
+		$(function() {
+		  kkInit("playerWrapper", "Sample Audio");
+
+		  //kkAddSource("playerWrapper", "path/to/file.ogg", "ogg");
+		  kkAddSource("playerWrapper", "https://archive.org/download/MBVCASkypeDiscussionRathupamaSuttaFeb102017/MBVCA_Skype%20Discussion_Rathu%CC%84pama_Sutta_Feb%2010_2017.ogg", "ogg", true);
+		  kkAddSource("playerWrapper", "https://archive.org/download/MBVCASkypeDiscussionRathupamaSuttaFeb102017/MBVCA_Skype%20Discussion_Rathu%CC%84pama_Sutta_Feb%2010_2017.mp3", "mp3", true);
+		});
+	</script>
+</body>
