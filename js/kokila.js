@@ -27,6 +27,7 @@ function kkInit(wrapperId, title)
 
 	var loaded = false;
 	var manualPositioning = false;
+	var playPositionAtPause = 0;
 
 	var duration = "";
 	var durationHrs = 0;
@@ -46,6 +47,9 @@ function kkInit(wrapperId, title)
 
 	$(audio).bind('loadedmetadata', function() {
 		loaded = true;
+
+		if(playPositionAtPause > 0)
+			audio.currentTime = playPositionAtPause;
 
 		$(timeleft).text(progressTime(audio.currentTime, audio.duration));
 
@@ -83,10 +87,9 @@ function kkInit(wrapperId, title)
 	  }
 	  else { 
 	  	audio.pause();
-	  	var current_position = audio.currentTime;
+	  	playPositionAtPause = audio.currentTime;
 	  	$(playToggle).removeClass('playing');
 	  	audio.load();
-	  	audio.currentTime = current_position;
 	  }
 	});
 
