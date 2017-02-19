@@ -20,14 +20,15 @@ function kkInit(wrapperId, title)
 	//Create variables to access player elements based on the wrapper id and the element class
 	var audio = $(wrapper + " audio").get(0);
 	var timeleft = $(wrapper + " .kk-timeleft").get(0);
-	var loadingIndicator = $(wrapper + ' .kk-loading').get(0);
 	var playToggle = $(wrapper + ' .kk-playtoggle').get(0);
 	var gutter = $(wrapper + ' .kk-gutter').get(0);
-	var handle = $(wrapper + ' .kk-handle').get(0);
+	var positionIndicator = $(wrapper + ' .kk-handle').get(0);
+	var loadingIndicator = $(wrapper + ' .kk-loading').get(0);
 
 	var loaded = false;
 	var manualPositioning = false;
-	var positionIndicator = $(handle);
+	var paused = false;
+	var playPositionAtPause = 0;
 
 	var duration = "";
 	var durationHrs = 0;
@@ -45,8 +46,10 @@ function kkInit(wrapperId, title)
 	}
 
 	$(audio).bind('loadedmetadata', function() {
-		$(timeleft).text(progressTime(0, audio.duration));
 		loaded = true;
+
+		if(!paused)
+			$(timeleft).text(progressTime(0, audio.duration));
 
 	    $(gutter).slider({
 	      value: 0,
@@ -58,7 +61,7 @@ function kkInit(wrapperId, title)
 	      slide: function(e,ui) {
 	      	manualPositioning = true;
 	      	var pos = (ui.value / audio.duration) * 100;
-	      	positionIndicator.css({left: pos + '%'});
+	      	$(positionIndicator).css({left: pos + '%'});
 	      	$(timeleft).text(progressTime(ui.value, audio.duration));
 	      },
 	      stop:function(e,ui) {
@@ -68,24 +71,43 @@ function kkInit(wrapperId, title)
 	    });
 	});
 	
-
+/*
 	$(audio).bind('play',function() {
 	  $(playToggle).addClass('playing');
 	}).bind('pause ended', function() {
 	  $(playToggle).removeClass('playing');
 	});
-
+*/
 	$(playToggle).click(function() {
-	  if (audio.paused) { audio.play(); }
-	  else { audio.pause(); }
+	  if (audio.paused) {
+	  	if(playPositionAtPause > 0)
+	  		audio.currentTime = playPositionAtPause;
+
+	  	audio.play(); 
+	  	paused = false;
+	  	$(playToggle).addClass('playing');
+	  }
+	  else { 
+	  	audio.pause();
+	  	playPositionAtPause = audio.currentTime;
+	  	paused = true;
+	  	$(playToggle).removeClass('playing');
+	  	var n = audio.children;
+	  	for(var i=0; i<n; ++i)
+	  		audio.removeChild(audio.children[0]);
+	  	audio.load();
+
+	  }
 	});
 
 	$(audio).bind('timeupdate', function() {
-		if(!manualPositioning){
-			$(timeleft).text(progressTime(audio.currentTime, audio.duration));
-			var pos = (audio.currentTime / audio.duration) * 100;
-			positionIndicator.css({left: pos + '%'});
-		}
+		if(!paused){
+			if(!manualPositioning){
+				$(timeleft).text(progressTime(audio.currentTime, audio.duration));
+				var pos = (audio.currentTime / audio.duration) * 100;
+				$(positionIndicator).css({left: pos + '%'});
+			}
+		}	
 	});
 }
 
