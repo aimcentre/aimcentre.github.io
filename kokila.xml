@@ -32,7 +32,7 @@
 <script src="https://abvasvmc.github.io/js/kokila.js"></script>
 <link rel="stylesheet" href="https://abvasvmc.github.io/css/kokila.css">
 
-<div id="player" style="position: absolute; bottom: 0px;"></div>
+<div id="player"></div>
 
 <script type="text/javascript">
 
