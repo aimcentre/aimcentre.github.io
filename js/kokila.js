@@ -27,8 +27,6 @@ function kkInit(wrapperId, title)
 
 	var loaded = false;
 	var manualPositioning = false;
-	var paused = false;
-	var playPositionAtPause = 0;
 
 	var duration = "";
 	var durationHrs = 0;
@@ -37,19 +35,19 @@ function kkInit(wrapperId, title)
 
 	if ((audio.buffered != undefined) && (audio.buffered.length != 0)) {
 	  $(audio).bind('progress', function() {
-	     loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10);
+	  	$(loadingIndicator).show();
+	  	loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10);
 	    loadingIndicator.css({width: loaded + '%'});
 	  });
 	}
 	else {
-	  loadingIndicator.remove();
+	  $(loadingIndicator).hide();
 	}
 
 	$(audio).bind('loadedmetadata', function() {
 		loaded = true;
 
-		if(!paused)
-			$(timeleft).text(progressTime(0, audio.duration));
+		$(timeleft).text(progressTime(audio.currentTime, audio.duration));
 
 	    $(gutter).slider({
 	      value: 0,
@@ -80,34 +78,24 @@ function kkInit(wrapperId, title)
 */
 	$(playToggle).click(function() {
 	  if (audio.paused) {
-	  	if(playPositionAtPause > 0)
-	  		audio.currentTime = playPositionAtPause;
-
 	  	audio.play(); 
-	  	paused = false;
 	  	$(playToggle).addClass('playing');
 	  }
 	  else { 
 	  	audio.pause();
-	  	playPositionAtPause = audio.currentTime;
-	  	paused = true;
+	  	var current_position = audio.currentTime;
 	  	$(playToggle).removeClass('playing');
-	  	var n = audio.children;
-	  	for(var i=0; i<n; ++i)
-	  		audio.removeChild(audio.children[0]);
 	  	audio.load();
-
+	  	audio.currentTime = current_position;
 	  }
 	});
 
 	$(audio).bind('timeupdate', function() {
-		if(!paused){
-			if(!manualPositioning){
-				$(timeleft).text(progressTime(audio.currentTime, audio.duration));
-				var pos = (audio.currentTime / audio.duration) * 100;
-				$(positionIndicator).css({left: pos + '%'});
-			}
-		}	
+		if(!(manualPositioning || isNaN(audio.duration))){
+			$(timeleft).text(progressTime(audio.currentTime, audio.duration));
+			var pos = (audio.currentTime / audio.duration) * 100;
+			$(positionIndicator).css({left: pos + '%'});
+		}
 	});
 }
 
