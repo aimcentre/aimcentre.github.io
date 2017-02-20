@@ -1,32 +1,28 @@
+.kk-title {
+	margin-left: 20px;
+}
+
 .kk-player {
 	display: block;
-	height: 48px;
+	height: 30px;
 	position:relative;
-	-webkit-box-shadow: 0 -1px 0 rgba(20, 30, 40, .75);
-	-moz-box-shadow: 0 -1px 0 rgba(20, 30, 40, .75);
-	-o-box-shadow: 0 -1px 0 rgba(20, 30, 40, .75);
-	box-shadow: 0 -1px 0 rgba(20, 30, 40, .75);
-	border-top: 1px solid #c2cbd4;
-	border-bottom: 1px solid #283541;
-	background: #939eaa;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(174, 185, 196, .9)), to(rgba(110, 124, 140, .9)), color-stop(.5, rgba(152, 164, 176, .9)),color-stop(.501, rgba(132, 145, 159, .9)));
-	background: -moz-linear-gradient(top, rgba(174, 185, 196, .9), rgba(152, 164, 176, .9) 50%, rgba(132, 145, 159, .9) 50.1%, rgba(110, 124, 140, .9));
-	background: linear-gradient(top, rgba(174, 185, 196, .9), rgba(152, 164, 176, .9) 50%, rgba(132, 145, 159, .9) 50.1%, rgba(110, 124, 140, .9));
-	cursor: default;
 }
 
 .kk-playtoggle {
 	position: absolute;
-	top: 9px;
-	left: 10px;
+	top: 7px;
+	left: 20px;
 	width: 30px;
 	height: 30px;
-	background: url(../assets/player.png) no-repeat -30px 0;
 	cursor: pointer;
 }
 
-.kk-playtoggle.playing {
-	background-position: 0 0;
+.kk-playtoggle.glyphicon-play{
+	color: green;
+}
+
+.kk-playtoggle.glyphicon-pause{
+	color: red;
 }
 
 .kk-playtoggle:active {
@@ -35,46 +31,44 @@
 
 .kk-gutter {
 	position: absolute;
-	top: 19px;
-	left: 50px;
-	right: 50px;
-	height: 6px;
-	padding: 2px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-o-border-radius: 5px;
-	border-radius: 5px;
-	background: #546374;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#242f3b), to(#516070));
-	background: -moz-linear-gradient(top, #242f3b, #516070);
-	background: linear-gradient(top, #242f3b, #516070);
-	-webkit-box-shadow: 0 1px 4px rgba(20, 30, 40, .75) inset, 0 1px 0 rgba(176, 187, 198, .5);
-	-moz-box-shadow: 0 1px 4px rgba(20, 30, 40, .75) inset, 0 1px 0 rgba(176, 187, 198, .5);
-	-o-box-shadow: 0 1px 4px rgba(20, 30, 40, .75) inset, 0 1px 0 rgba(176, 187, 198, .5);
-	box-shadow: 0 1px 4px rgba(20, 30, 40, .75) inset, 0 1px 0 rgba(176, 187, 198, .5);
-}
-
-.kk-handle {
-	position: absolute;
-	top: -5px;
-	left: 0;
-	width: 20px;
+	top: 6px;
+	left: 40px;
+	right: 200px;
 	height: 20px;
-	margin-left: -10px;
-	background: url(../assets/player.png) no-repeat -65px -5px;
-	cursor: pointer;
+	background: #aaaaff;
+	border: solid 9px white;
 }
 
 .kk-timeleft {
 	line-height: 48px;
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: -9px;
+	right: 120px;
 	text-align: center;
 	font-size: 11px;
 	font-weight: bold;
-	color: #fff;
-	text-shadow: 0 1px 0 #546374;
+	color: #7f7f63;
+}
+
+.kk-download{
+	float: right;
+	margin-right: 20px;
+	margin-top: -24px;
+}
+
+.kk-handle {
+	position: absolute;
+	top: -4px;
+	left: 0px;
+	width: 10px;
+	height: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	border: solid 2px #aaaaaa;
+	background-color: red;
 }
 
 .kk-loading {
@@ -95,18 +89,5 @@
 	float: left;
 	min-width: 6px;
 	height: 6px;
-}
-
-.kk-timeleft {
-	right: 20px;
-}
-
-
-.kk-gutter {
-	right: 100px;
-}
-
-.kk-download{
-	float: right;
 }
 

@@ -2,10 +2,10 @@ function kkInit(wrapperId, title)
 {
 	var wrapper = "#" + wrapperId;
 	if(title != undefined)
-		$(wrapper).append('<span class="title">' + title + '</span>')
+		$(wrapper).append('<span class="kk-title">' + title + '</span>')
 		$(wrapper).append(
 		'<span class="kk-player">\
-			<span class="kk-playtoggle"></span>\
+			<span class="kk-playtoggle glyphicon glyphicon-play"></span>\
 			<span class="kk-gutter" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">\
 				<span class="kk-handle" class="ui-slider-handle"></span>\
 			</span>\
@@ -14,7 +14,7 @@ function kkInit(wrapperId, title)
 			</audio>\
 			<span class="kk-timeleft"></span>\
 		</span>\
-		<span class="kk-download" style="display:none">Download: </span>'
+		<span class="kk-download glyphicon glyphicon-arrow-down" style="display:none"></span>'
 		);
 
 	//Create variables to access player elements based on the wrapper id and the element class
@@ -83,12 +83,16 @@ function kkInit(wrapperId, title)
 	$(playToggle).click(function() {
 	  if (audio.paused) {
 	  	audio.play(); 
-	  	$(playToggle).addClass('playing');
+	  	$(playToggle).addClass('glyphicon-pause');
+	  	$(playToggle).removeClass('glyphicon-play');
+	  	//$(playToggle).addClass('playing');
 	  }
 	  else { 
 	  	audio.pause();
 	  	playPositionAtPause = audio.currentTime;
-	  	$(playToggle).removeClass('playing');
+	  	$(playToggle).addClass('glyphicon-play');
+	  	$(playToggle).removeClass('glyphicon-pause');
+	  	//$(playToggle).removeClass('playing');
 	  	audio.load();
 	  }
 	});
