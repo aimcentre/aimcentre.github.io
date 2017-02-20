@@ -30,6 +30,8 @@
 <script src="https://abvasvmc.github.io/js/jquery-ui.min.js"></script>
 <script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
 <script src="https://abvasvmc.github.io/js/kokila.js"></script>
+
+<link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://abvasvmc.github.io/css/kokila.css">
 
 <div id="player"></div>
