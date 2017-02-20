@@ -15,7 +15,7 @@
 <UserPref name="TITLE" display_name="Title" required="false" default_value="" />
 <UserPref name="OGG_FILE" display_name="OGG file" required="false" default_value="" />
 <UserPref name="MP3_FILE" display_name="MP3 file" required="false" default_value="" />
-<UserPref name="STYLES" display_name="Styles" required="false" default_value="" />
+<UserPref name="STYLES" display_name="Styles" required="false" default_value=".kk-gutter{top:5px;} .kk-handle {top:-2px;}" />
 <UserPref name="ALLOW_DOWNLOAD" display_name="Allow downloading?" required="false" datatype="enum" >
 	<EnumValue value="Yes" />
 	<EnumValue value="No" />
@@ -34,8 +34,6 @@
 <link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://abvasvmc.github.io/css/kokila.css">
 
-<div id="player"></div>
-
 <script type="text/javascript">
 
 // User preference parameters
@@ -48,7 +46,7 @@ var mp3File = prefs.getString("MP3_FILE").trim();
 var allowDownloading = prefs.getString("ALLOW_DOWNLOAD") == "Yes";
 
 $(function() {
-	kkInit("player", title);
+	kkInit("player", title, styles);
 	if(oggFile)
 		kkAddSource("player", oggFile, "ogg", allowDownloading);
 	if(mp3File)
@@ -56,5 +54,8 @@ $(function() {
 });
 
 </script>
+
+<div id="player"></div>
+
 ]]></Content>
 </Module>

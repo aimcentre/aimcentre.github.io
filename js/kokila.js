@@ -1,21 +1,25 @@
-function kkInit(wrapperId, title)
+function kkInit(wrapperId, title, styles)
 {
 	var wrapper = "#" + wrapperId;
-	if(title != undefined)
-		$(wrapper).append('<span class="kk-title">' + title + '</span>')
-		$(wrapper).append(
-		'<span class="kk-player">\
-			<span class="kk-playtoggle glyphicon glyphicon-play"></span>\
-			<span class="kk-gutter" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">\
-				<span class="kk-handle" class="ui-slider-handle"></span>\
-			</span>\
-			<span class="kk-loading"></span>\
-			<audio preload="metadata">\
-			</audio>\
-			<span class="kk-timeleft"></span>\
+	if(title)
+		$(wrapper).append('<span class="kk-title">' + title + '</span>');
+	
+	if(styles)
+		$(wrapper).append('<style type="text/css">' + styles + '</style>');
+
+	$(wrapper).append(
+	'<span class="kk-player">\
+		<span class="kk-playtoggle glyphicon glyphicon-play"></span>\
+		<span class="kk-gutter" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">\
+			<span class="kk-handle" class="ui-slider-handle"></span>\
 		</span>\
-		<span class="kk-download glyphicon glyphicon-arrow-down" style="display:none"></span>'
-		);
+		<span class="kk-loading"></span>\
+		<audio preload="metadata">\
+		</audio>\
+		<span class="kk-timeleft"></span>\
+	</span>\
+	<span class="kk-download glyphicon glyphicon-arrow-down" style="display:none"></span>'
+	);
 
 	//Create variables to access player elements based on the wrapper id and the element class
 	var audio = $(wrapper + " audio").get(0);
