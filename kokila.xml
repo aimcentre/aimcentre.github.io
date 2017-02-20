@@ -15,7 +15,7 @@
 <UserPref name="TITLE" display_name="Title" required="false" default_value="" />
 <UserPref name="OGG_FILE" display_name="OGG file" required="false" default_value="" />
 <UserPref name="MP3_FILE" display_name="MP3 file" required="false" default_value="" />
-<UserPref name="STYLES" display_name="Styles" required="false" default_value=".kk-gutter{top:5px;}" />
+<UserPref name="STYLES" display_name="Styles" required="false" default_value=".kk-gutter{top:5px;} .kk-download{top:-27px;}" />
 <UserPref name="ALLOW_DOWNLOAD" display_name="Allow downloading?" required="false" datatype="enum" >
 	<EnumValue value="Yes" />
 	<EnumValue value="No" />
