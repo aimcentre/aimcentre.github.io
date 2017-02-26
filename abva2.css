@@ -144,6 +144,11 @@
 	color:#905C16!important;
 }
 
+.feed-item.feature.special{
+	border: solid #15f31c 2px;
+	background-color: #e0f3e0;
+}
+
 .feed-item.feature.special > .feed-item-title{
 	color: #ea0e1f!important;
 }
