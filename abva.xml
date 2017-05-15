@@ -128,11 +128,11 @@
 					console.error("Carousel Loading Error:");
 					console.error(err);
 					console.warn("Showing default carousel images");
-					var images = ['http://www.abva.org/data-pages/carousel-data/carousel_1.JPG', 
-								  'http://www.abva.org/data-pages/carousel-data/carousel_2.JPG',
-								  'http://www.abva.org/data-pages/carousel-data/carousel_3.JPG',
-								  'http://www.abva.org/data-pages/carousel-data/carousel_4.JPG',
-								  'http://www.abva.org/data-pages/carousel-data/carousel_5.JPG'];
+					var images = ['http://www.abva.org/data-pages/carousel-data/carousel_1.jpg', 
+								  'http://www.abva.org/data-pages/carousel-data/carousel_2.jpg',
+								  'http://www.abva.org/data-pages/carousel-data/carousel_3.jpg',
+								  'http://www.abva.org/data-pages/carousel-data/carousel_4.jpg',
+								  'http://www.abva.org/data-pages/carousel-data/carousel_5.jpg'];
 
 					showCarouselImagesFromArray("myCarousel", images, aspectRatio);
 				}
