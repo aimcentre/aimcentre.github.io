@@ -209,7 +209,7 @@
 				//showCalendarEvents(specialEventsCalendarId, apiKey, "specialEventsSpan", null, 200, 4, true);
 				//showCalendarEvents(newsCalendarId, apiKey, "generalEventsSpan", null, 200, 3, true);
 				showCalendarEvents(announcementCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsFeed", null, 200, 20, true);
 				showCalendarEvents(newsCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
 
 			} //End: function initialize()
