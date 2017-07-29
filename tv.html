@@ -1,0 +1,135 @@
+<html>
+<head>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		function showCalendarEvents(calendarId, apiKey, displayDivId, startTime, endTime, query, skipTypes){
+
+			if(startTime == null)
+				startTime = new Date();
+
+
+			if(panelHeading != undefined){
+				var container = document.getElementById(displayDivId);
+				
+				//Panel heading for all devices that are larger than xs
+				var heading = document.createElement("h3");
+				heading.className = "feed-panel-heading hidden-xs";
+				heading.appendChild(document.createTextNode(panelHeading));
+				container.appendChild(heading);
+				
+				//panel heading for xs devices, which uses same styles as page titles
+				heading = document.createElement("h3");
+				heading.className = "page-title visible-xs";
+				heading.appendChild(document.createTextNode(panelHeading));
+				container.appendChild(heading);
+			}
+
+			var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + 
+					  '/events?alwaysIncludeEmail=false&orderBy=startTime&singleEvents=true' + 
+					  '&timeMin=' + startTime.toISOString() + 
+					  '&key=' + apiKey;
+					  
+			if(endTime != undefined)
+				url = url + '&timeMax=' + endTime.toISOString();
+
+			if(maxItems != undefined){
+				if(groupByTitle == false)
+					url = url + '&maxResults=' + maxItems;
+				else
+					url = url + '&maxResults=' + 10 * maxItems;
+			}	
+
+			if(query != undefined)
+				url = url + '&q=' + query;
+
+			url = encodeURI(url);
+
+			$.ajax({
+			    type: 'GET',
+			    url: url,
+			    dataType: 'json',
+			    success: function (response) {
+			        //do whatever you want with each
+			        var container = document.getElementById(displayDivId);
+
+			        var title_list = [];
+			        var count = 0;
+			        
+			        if(response.items.length > 0)
+			        	$("#" + displayDivId).show();
+			        
+			        for(var i=0; i<response.items.length; ++i){
+			        	var title = response.items[i].summary;
+			        	
+			        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
+			        		continue;
+			        	
+			        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength, skipTypes);
+
+			        	if(allow_grouping)
+			        		title_list.push(title);
+
+			        	count = count + 1;
+
+			        	if(maxItems != undefined &&  maxItems <= count)
+			        		break;
+			        }
+
+			        if(gadgetMode)
+			        	gadgets.window.adjustHeight();	
+			    },
+			    error: function (response) {
+			        //tell that an error has occurred
+			    }
+			});	
+		}	
+	</script>
+	<style type="text/css">
+		#myCarousel{
+			width:100%;
+		}
+		.carousel-inner{
+			background-color: black;
+		}
+		.item{
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+	</style>
+</head>
+<body>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	    <li data-target="#myCarousel" data-slide-to="1"></li>
+	  </ol>
+
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner">
+	    <div class="item active" style="background-image:url('http://www.abva.org/data-pages/tv/OneDayRetreat.jpg')"></div>
+	    <div class="item" style="background-image:url('http://www.abva.org/data-pages/tv/Kavi_Bana.jpg')"></div>
+	  </div>
+
+	  <!-- Left and right controls -->
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $('.item').css('height', $(window).height());
+
+		    var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
+
+		});
+
+		$(window).resize(function(){
+		    $('.item').css('height', $(window).height());
+		});		
+	</script>
+</body>
+
+</html>
