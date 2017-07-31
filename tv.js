@@ -78,12 +78,12 @@ function displaySlides(dynamicSlides, showIndicators)
 	}
 
 	initSize();
-
+/*
 	$('.carousel').carousel({//initialize
         interval: false,
         pause: null
  	});
-
+*/
  	$('.carousel').carousel('cycle');
 
 }
