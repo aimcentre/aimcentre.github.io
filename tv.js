@@ -152,7 +152,7 @@ function carouselSlide(slideInfoObj, index)
 	else
 		$(div).addClass("item");
 
-	$(div).attr("data-interval", 15000);
+	$(div).attr("data-interval", SLIDE_PERIOD);
 
 	if(slideInfoObj.image != undefined)
 	{
