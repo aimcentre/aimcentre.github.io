@@ -152,6 +152,8 @@ function carouselSlide(slideInfoObj, index)
 	else
 		$(div).addClass("item");
 
+	$(div).attr("data-interval", 15000);
+
 	if(slideInfoObj.image != undefined)
 	{
 		var style = "background-image:url('" + slideInfoObj.image + "')";
