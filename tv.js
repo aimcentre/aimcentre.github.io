@@ -85,11 +85,6 @@ function displaySlides(dynamicSlides, showIndicators)
  	});
 */
  	$('.carousel').carousel('cycle');
-
-	$('.carousel').carousel({
-	  interval: SLIDER_INTERVAL * 1000
-	}); 	
-
 }
 
 function getSlideInfo(description)
