@@ -86,6 +86,10 @@ function displaySlides(dynamicSlides, showIndicators)
 */
  	$('.carousel').carousel('cycle');
 
+	$('.carousel').carousel({
+	  interval: 1000 * SLIDER_INTERVAL;
+	}); 	
+
 }
 
 function getSlideInfo(description)
