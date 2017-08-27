@@ -40,10 +40,11 @@ function initSlideshow(showIndicators){
 	        	}
 	        }
 
-	        if(update_needed)
+	        if(INITIAL_LAUNCH || update_needed)
 	        {
 	        	displaySlides(slides, showIndicators);
 	        	PREV_SLIDES = slides;
+	        	INITIAL_LAUNCH = false;
 	        	//console.log("Update needed");
 	        }
 	    },
