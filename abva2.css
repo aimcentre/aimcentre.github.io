@@ -155,7 +155,7 @@
 
 .feed-item.feature.special2{
 	border: solid #e012e6 2px;
-	background-color: ##f9ebff;
+	background-color: ##f9ebff !important;
 }
 
 .feed-item.feature.special2 > .feed-item-title{
