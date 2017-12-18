@@ -326,6 +326,15 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	}
 }
 
+function cleanUrl(text){
+	try{
+		return $(text.replace(/^\s\s*/, '').replace(/\s\s*$/, '')).text()
+	}
+	catch(err){
+		return text;
+	}
+}
+
 function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 	
 	var thumbnailUrl = null;
@@ -345,7 +354,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 				var remove_meta = false;
 				if(meta.match(/^\[T:/i)){
 					//Thumbnail URL
-					thumbnailUrl = meta.substring(3, meta.length-1);
+					thumbnailUrl = cleanUrl(meta.substring(3, meta.length-1));
 					remove_meta = true;
 				}
 				else if(meta.match(/^\[P:/i)){
