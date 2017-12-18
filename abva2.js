@@ -323,6 +323,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 				label = "Attachment " + (i+1);
 				href = attachments[i].trim();
 			}
+			href = cleanUrl(href);
 			$(attachment).html("<span class='glyphicon glyphicon-link'></span>&nbsp;<a href='" + href + "' target='_top'>" + label + "</a>");
 		}
 	}
@@ -361,7 +362,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 				}
 				else if(meta.match(/^\[P:/i)){
 					//Full Page URL
-					fullPageUrl = meta.substring(3, meta.length-1);
+					fullPageUrl = cleanUrl(meta.substring(3, meta.length-1));
 					remove_meta = true;
 				}
 				else if(meta.match(/^\[Type:/i)){
