@@ -257,6 +257,9 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	$(wrapper).show();
 	
 	if(description != undefined){
+		//inserting blank target to all links in the description
+		description = description.replace(/<a\s/g, "<a target='_blank' ");
+		RegEx.Replace(description, "<(a)([^>]+)>", "<$1 target=""_blank""$2>")
 		var short_desc = null;
 		var trimmed = false;
 		if(shortDescLength != undefined && description.length > shortDescLength){

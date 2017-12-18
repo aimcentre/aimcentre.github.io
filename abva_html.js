@@ -257,6 +257,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	$(wrapper).show();
 	
 	if(description != undefined){
+		description = description.replace(/<a\s/g, "<a target='_blank' ");
 		var short_desc = null;
 		var trimmed = false;
 		if(shortDescLength != undefined && description.length > shortDescLength){
@@ -359,7 +360,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 				}
 				else if(meta.match(/^\[P:/i)){
 					//Full Page URL
-					fullPageUrl = meta.substring(3, meta.length-1);
+					fullPageUrl = cleanUrl(meta.substring(3, meta.length-1));
 					remove_meta = true;
 				}
 				else if(meta.match(/^\[Type:/i)){
