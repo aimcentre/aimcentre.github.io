@@ -27,6 +27,27 @@ function showPageContents(pathToPage, displayDivId, cacheSeed){
 	});			
 } //End: function showPageContents(paregnPageId, displayDivId)
 
+
+function showText(displayDivId, title, text){
+	var container = document.getElementById(displayDivId);
+	
+	if(title != undefined){
+		var h = document.createElement("h3");
+		h.className = "page-title";
+		h.innerHTML = title;
+		container.appendChild(h);
+	}
+
+	var content = document.createElement("div");
+	content.innerHTML = text;
+	container.appendChild(content);
+
+	if(gadgetMode)
+		gadgets.window.adjustHeight();
+
+} //End: function showText(displayDivId, title, text)
+
+
 //A utility function that shows images in a given page in the carousel
 function showCarouselImages(pathToDataPage, displayDivId, cacheSeed, aspectRatio){
 
