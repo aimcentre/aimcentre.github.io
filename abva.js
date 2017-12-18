@@ -336,7 +336,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 
 	if(item.description != undefined){
 		//replacing any html line breaks with newline characters
-		item.description = item.description.replace("<br>", "\n");
+		item.description = item.description.replace(/<br>/g, "\n");
 		var metadata = item.description.match(/\[.*\]/g); //Matches anything that comes within square brackets.
 		if(metadata != undefined){
 			for(var i=0; i<metadata.length; ++i){
