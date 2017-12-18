@@ -333,7 +333,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 
 function cleanUrl(text){
 	try{
-		return $(text.replace(/^\s\s*/, '').replace(/\s\s*$/, '')).text();
+		return $(text.replace(/^\s\s*/, '').replace(/\s\s*$/, '').replace(/\u00a0/g, '')).text();
 	}
 	catch(err){
 		return text;
