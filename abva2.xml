@@ -43,7 +43,7 @@
 					</div>
 				</div>
 
-				<div>
+				<div style="clear:both">
 					<div class="hidden-sm"><br /></div>
 					<div class="alert alert-warning" role="alert">
 					  <div style="font-weight:bold; font-size;larger; margin-bottom:5px;">Special Notice</div>
