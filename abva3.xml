@@ -29,12 +29,13 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<div class="inner">
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 						</div>
 					</div>
 				</div>
+				<!--
 				<div class="col-md-6">
 					<div class="hidden-md"><br /></div>
 					<div class="inner">
@@ -42,6 +43,7 @@
 						</div>
 					</div>
 				</div>
+				-->
 
 				<div class="main-slip">
 					<div class="hidden-sm"><br /></div>
@@ -166,11 +168,7 @@
 					console.error("Carousel Loading Error:");
 					console.error(err);
 					console.warn("Showing default carousel images");
-					var images = ['http://www.abva.org/data-pages/carousel-data/carousel_1.jpg', 
-								  'http://www.abva.org/data-pages/carousel-data/carousel_2.jpg',
-								  'http://www.abva.org/data-pages/carousel-data/carousel_3.jpg',
-								  'http://www.abva.org/data-pages/carousel-data/carousel_4.jpg',
-								  'http://www.abva.org/data-pages/carousel-data/carousel_5.jpg'];
+					var images = ['http://www.abva.org/home2/banner.jpg'];
 
 					showCarouselImagesFromArray("myCarousel", images, aspectRatio);
 				}
