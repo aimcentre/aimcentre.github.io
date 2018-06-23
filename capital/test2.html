@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+</head>
+<body>
+
+  <canvas id="lineChart"></canvas>
+
+  <script type="text/javascript">
+
+    function showGraph(canvasId, x, y, dpts){
+
+      var ctxL = document.getElementById(canvasId).getContext('2d');
+      var myLineChart = new Chart(ctxL, {
+          type: 'scatter',
+          data: {
+              labels: x, 
+              //labels: [1,2,3,4,5,6,7], 
+              datasets: [
+                  {
+                      label: "",
+                      //fillColor: "rgba(220,220,220,0.2)",
+                      //strokeColor: "rgba(220,220,220,1)",
+                      //pointColor: "rgba(220,220,220,1)",
+                      //pointStrokeColor: "#fff",
+                      //pointHighlightFill: "#fff",
+                      //pointHighlightStroke: "rgba(220,220,220,1)",
+                      data: dpts
+                      //data: [{x:1, y:1},{x:2, y:2},{x:2, y:3},{x:2, y:4},{x:3, y:5}] 
+                  }
+              ]
+          },
+          options: {
+            responsive: true,
+            legend:{
+              display:false
+            },
+            elements: {
+              line: {
+                  tension: 0.001, // disables bezier curves
+              }
+            },
+            animation: {
+              duration: 1000, // general animation time
+            },
+            scales: {
+            xAxes: [{
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        var d = new Date(value);
+                        return d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate();
+                    }
+                }
+            }]
+        }
+          }
+      });
+    }
+
+    $(function() {
+
+      var spreadsheetId = "1VfuLJzB6ygO4SKC77yU9iO7UZWOC9zI4PmhJAXbQR8A",
+        url = "https://spreadsheets.google.com/feeds/list/" +
+              spreadsheetId +
+              "/od6/public/basic?alt=json";
+
+      $.get({
+        url: url,
+        success: function(response) {
+        var data = response.feed.entry,
+            len = data.length,
+            i = 0,
+            parsedData = [],
+            dates = [],
+            values = [],
+            dpts = [];
+
+        for (i = 0; i < len; i++) {
+          var cont = data[i].content.$t;
+          var n = cont.indexOf("pledge");
+          if(n >= 0){
+            n = cont.indexOf("totalamount");
+            cont = cont.substring(n+13);
+            cont = cont.replace('$', '').replace(',', '');
+            parsedData.push({
+                label: data[i].title.$t,
+                value: Number(cont)
+            });
+            
+            var d = data[i].title.$t;
+            /*
+            dpts.push({x:d, y:Number(cont)});
+            dates.push(data[i].title.$t);
+            values.push(Number(cont));
+            */
+            
+            if(dates[dates.length - 1] == d){
+              values[values.length - 1] = values[values.length - 1] + Number(cont);
+            }
+            else{
+              dates.push(data[i].title.$t);
+              values.push(Number(cont));
+            }
+
+            //dpts.push({x:values.length, y:Number(cont)});
+            dpts.push({x:new Date(d), y:Number(cont)});
+
+          }
+        } 
+
+        console.log(values);   
+        showGraph("lineChart", dates, values, dpts);
+        //showGraph("lineChart", [1, 1, 2, 2, 3, 4], [1, 2, 3, 4, 5, 6]);
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>
