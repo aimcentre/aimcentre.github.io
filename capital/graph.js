@@ -155,8 +155,15 @@ function initialize(panelId, isGadgetMode){
 
       showGraph(panelId, dpts);
 
-      if(isGadgetMode)
+      if(isGadgetMode){
+        var height = $("#graphPanel").height;
+        console.log("height: " + height);
+
         gadgets.window.adjustHeight();
+
+        //$("#iframePanel ")
+      }
+
     }
   });  
 }
