@@ -29,6 +29,26 @@
     <script src="https://abvasvmc.github.io/abva2.js"></script>
     <script src="https://abvasvmc.github.io/capital/graph.js"></script>
 
+  <div id="panel">
+    <div class="title">Confirmed Commitment Growth</div>
+    <canvas></canvas>
+    
+    <div class="infoPanel container">
+      <div class="row">
+        <div class="infoLine col-md-6">
+          <span class="infoLabel">Number of Donors: </span>
+          <span class="infoValue donorCount"></span>
+        </div>
+        <div class="infoLine col-md-6">
+          <span class="infoLabel">Total Amount Pledged: </span>
+          <span class="infoValue amountPledged"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
