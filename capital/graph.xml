@@ -257,7 +257,7 @@
       //Calling initialization routing on gadget loading
       gadgets.util.registerOnLoadHandler(function() { 
         initializexx(Math.floor((Math.random() * 100000)));
-        initialize(true, "graphPanel"); 
+        initialize("graphPanel", true); 
         gadgets.window.adjustHeight();
         window.history.pushState({}, '', document.URL);
        });
