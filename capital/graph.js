@@ -114,7 +114,7 @@ function showGraph(panelId, dpts, target){
   //$("#donorCount").html(dpts.length);
 }
 
-function initialize(isGadgetMode, panel){
+function initialize(panelId, isGadgetMode){
   var spreadsheetId = "1VfuLJzB6ygO4SKC77yU9iO7UZWOC9zI4PmhJAXbQR8A",
   url = "https://spreadsheets.google.com/feeds/list/" +
         spreadsheetId +
@@ -152,7 +152,7 @@ function initialize(isGadgetMode, panel){
         }
       } 
 
-      showGraph(panel, dpts);
+      showGraph(panelId, dpts);
 
       if(isGadgetMode)
         gadgets.window.adjustHeight();
