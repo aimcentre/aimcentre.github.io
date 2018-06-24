@@ -14,6 +14,7 @@
   <canvas id="lineChart"></canvas>
 
   <script type="text/javascript">
+    const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     function showGraph(canvasId, x, y, dpts){
 
@@ -56,7 +57,8 @@
                   // Include a dollar sign in the ticks
                   callback: function(value, index, values) {
                     var d = new Date(value);
-                    return d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate();
+                    //return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + (d.getDate() + 1)).slice(-2);
+                    return MONTHS[d.getMonth()] + " " + ("0" + (d.getDate() + 1)).slice(-2)
                   } 
                 }
               }],
@@ -77,7 +79,8 @@
               callbacks: {
                label: function(tooltipItems, data) {
                   var d = new Date(tooltipItems.xLabel);
-                  var labelVals = [d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + d.getDate()];
+
+                  var labelVals = [d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + (d.getDate() + 1)).slice(-2)];
 
                   if(tooltipItems.index > 0){
                     var prev = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index - 1].y;
