@@ -33,6 +33,8 @@
 
     function showGraph(canvasId, x, y, dpts){
 
+      //Formatting reference:
+      //https://www.chartjs.org/docs/latest/charts/line.html
       var ctxL = document.getElementById(canvasId).getContext('2d');
       var myChart = new Chart(ctxL, {
           type: 'scatter',
@@ -40,8 +42,16 @@
             datasets: [
                 {
                   label: 'Pledges',
-                    //borderWidth: 2,
-                    data: dpts
+                    borderWidth: 2,
+                    data: dpts,
+                    backgroundColor: 'rgba(31, 222, 88, 0.25)',
+                    pointStyle: 'circle',
+                    pointBorderColor: 'red',
+                    pointBackgroundColor: 'red',
+                    pointRadius: 2,
+                    pointHoverBackgroundColor: 'purple',
+                    pointHoverBorderColor: 'purple',
+                    borderColor: 'green'
                 }
             ]
           },
