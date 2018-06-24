@@ -21,24 +21,21 @@
       var myChart = new Chart(ctxL, {
           type: 'scatter',
           backgroundColor: '#F50000',
-              labelTextColor: function(tooltipItem, chart) {
-                return '#ff0000';
-              },
           data: {
-              labels: x, 
-              //labels: [1,2,3,4,5,6,7], 
-              datasets: [
-                  {
-                      //strokeColor: "rgba(220,220,220,1)",
-                      pointColor: 'rgba(800,000,000,1)',
-                      borderWidth: 2,
-                      //pointStrokeColor: "#fff",
-                      //pointHighlightFill: "#fff",
-                      //pointHighlightStroke: "rgba(220,220,220,1)",
-                      data: dpts
-                      //data: [{x:1, y:1},{x:2, y:2},{x:2, y:3},{x:2, y:4},{x:3, y:5}] 
-                  }
-              ]
+            labels: x, 
+            //labels: [1,2,3,4,5,6,7], 
+            datasets: [
+                {
+                    //strokeColor: "rgba(220,220,220,1)",
+                    pointColor: 'rgba(800,000,000,1)',
+                    borderWidth: 2,
+                    //pointStrokeColor: "#fff",
+                    //pointHighlightFill: "#fff",
+                    //pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: dpts
+                    //data: [{x:1, y:1},{x:2, y:2},{x:2, y:3},{x:2, y:4},{x:3, y:5}] 
+                }
+            ]
           },
           options: {
             responsive: true,
@@ -54,12 +51,20 @@
               duration: 1000, // general animation time
             },
             scales: {
-            xAxes: [{
+              xAxes: [{
                 ticks: {
                   // Include a dollar sign in the ticks
                   callback: function(value, index, values) {
                     var d = new Date(value);
                     return d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate();
+                  } 
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  // Include a dollar sign in the ticks
+                  callback: function(value, index, values) {
+                    return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                   } 
                 }
               }]
