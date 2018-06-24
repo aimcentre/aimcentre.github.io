@@ -68,10 +68,10 @@
   	$(function() {
       gadgets.window.adjustHeight();
     });
-    
+
   	//Calling initialization routing on gadget loading
 	gadgets.util.registerOnLoadHandler(function() { 
-		initialize();
+		//initialize();
 		gadgets.window.adjustHeight();
 		window.history.pushState({}, '', document.URL);
    	});
