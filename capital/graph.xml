@@ -29,6 +29,9 @@
     <script src="https://abvasvmc.github.io/abva2.js"></script>
     <script src="https://abvasvmc.github.io/capital/graph.js"></script>
 
+  <iframe id="iframePanel" src="https://abvasvmc.github.io/capital/graph.html">
+  </iframe>
+  
   <div id="graphPanel">
     <div class="title">Confirmed Commitment Growth</div>
     <canvas></canvas>

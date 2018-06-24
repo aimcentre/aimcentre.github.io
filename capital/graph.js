@@ -23,6 +23,7 @@ function showGraph(panelId, dpts, target){
 
   //Formatting reference:
   //https://www.chartjs.org/docs/latest/charts/line.html
+
   var canvas = document.getElementById(panelId).getElementsByTagName('canvas')[0];
   var ctxL = canvas.getContext('2d');
   //var ctxL = document.getElementById(canvasId).getContext('2d');
