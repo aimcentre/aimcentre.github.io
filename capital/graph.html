@@ -79,7 +79,7 @@
             tooltips: {
               enabled: true,
               mode: 'single',
-              bodyFontSize: 14,
+              bodyFontSize: 12,
               backgroundColor: '#6A0000',
               callbacks: {
                 //Custom tooltip labels
@@ -138,7 +138,9 @@
               //at the spreadsheet. Also, the vertical gridline has some offset than
               //the label. We calculate and add some offset in milliseconds, which was 
               //caluclated emperically to compensate for this lag. 
-              var timeOffsetCompensation = 43200000; //add 12 hours
+              
+              //var timeOffsetCompensation = 43200000; //add 12 hours
+              var timeOffsetCompensation = 21600000; //add 6 hours
               var d = new Date(new Date(data[i].title.$t).getTime() + timeOffsetCompensation);
 
               //console.log(amount + " on " + d);
