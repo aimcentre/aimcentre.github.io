@@ -16,8 +16,11 @@
   <script type="text/javascript">
     const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    function date2Str(val, forceFull){
-      var d = new Date(new Date(val).getTime() + 24 * 60 * 60 * 1000);
+    function parseDate(val){
+      return new Date(val);
+    }
+
+    function date2Str(d, forceFull){
       var str = "";
 
       if(forceFull || d.getMonth() == 0)
@@ -33,20 +36,12 @@
       var ctxL = document.getElementById(canvasId).getContext('2d');
       var myChart = new Chart(ctxL, {
           type: 'scatter',
-          backgroundColor: '#F50000',
           data: {
-            labels: x, 
-            //labels: [1,2,3,4,5,6,7], 
             datasets: [
                 {
-                    //strokeColor: "rgba(220,220,220,1)",
-                    pointColor: 'rgba(800,000,000,1)',
-                    borderWidth: 2,
-                    //pointStrokeColor: "#fff",
-                    //pointHighlightFill: "#fff",
-                    //pointHighlightStroke: "rgba(220,220,220,1)",
+                  label: 'Pledges',
+                    //borderWidth: 2,
                     data: dpts
-                    //data: [{x:1, y:1},{x:2, y:2},{x:2, y:3},{x:2, y:4},{x:3, y:5}] 
                 }
             ]
           },
@@ -57,50 +52,24 @@
             },
             elements: {
               line: {
-                  tension: 0.001, // disables bezier curves
+                  tension: 0.001
               }
             },
             animation: {
-              duration: 1000, // general animation time
+              duration: 1000 // general animation time
             },
             scales: {
               xAxes: [{
                 ticks: {
-                  // Include a dollar sign in the ticks
+                  //Custom date labels in the ticks
                   callback: function(value, index, values) {
-                    //var d = new Date(value);
-                    //return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
-                    //return MONTHS[d.getMonth()] + " " + ("0" + d.getDate()).slice(-2);
-
                     return date2Str(new Date(value));
-
-/*
-                    if(index == 0 || d.getMonth() == 0){
-                      tick = d.getFullYear();
-                    }
-
-                    if(index == 0 || d.getDate() == 0){
-                      tick = tick + " " + MONTHS[d.getMonth()];
-                    }
-
-                    tick = tick + " " + ("0" + d.getDate()).slice(-2);
-
-                    return tick;
-*/
-
-//                    if(index == 0 || d.getMonth() == 0){
-//                      return MONTHS[d.getMonth()] + " " + ("0" + d.getDate()).slice(-2);
-//                    }
-//                    else{
-//                      return ("0" + d.getDate()).slice(-2);
-//                    }
-
-                  } 
+                  }
                 }
               }],
               yAxes: [{
                 ticks: {
-                  // Include a dollar sign in the ticks
+                  // Include a dollar sign and commas in the ticks
                   callback: function(value, index, values) {
                     return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                   } 
@@ -113,10 +82,11 @@
               bodyFontSize: 14,
               backgroundColor: '#6A0000',
               callbacks: {
-               label: function(tooltipItems, data) {
+                //Custom tooltip labels
+                label: function(tooltipItems, data) {
                   var d = new Date(tooltipItems.xLabel);
 
-                  var labelVals = [date2Str(d)]; // [d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2)];
+                  var labelVals = [date2Str(d, true)];
 
                   if(tooltipItems.index > 0){
                     var prev = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index - 1].y;
@@ -146,45 +116,38 @@
       $.get({
         url: url,
         success: function(response) {
-        var data = response.feed.entry,
-            len = data.length,
-            i = 0,
-            parsedData = [],
-            dates = [],
-            values = [],
-            dpts = [];
+          var data = response.feed.entry,
+              len = data.length,
+              i = 0,
+              dates = [],
+              values = [],
+              dpts = [];
 
-        for (i = 0; i < len; i++) {
-          var cont = data[i].content.$t;
-          var n = cont.indexOf("pledge");
-          if(n >= 0){
-            n = cont.indexOf("totalamount");
-            cont = cont.substring(n+13);
-            cont = cont.replace('$', '').replace(',', '');
-            parsedData.push({
-                label: data[i].title.$t,
-                value: Number(cont)
-            });
-            
-            var d = data[i].title.$t;
-            
-            if(dates[dates.length - 1] == d){
-              values[values.length - 1] = values[values.length - 1] + Number(cont);
+          for (i = 0; i < len; i++) {
+            var cont = data[i].content.$t;
+            //console.log(cont)
+            var n = cont.indexOf("pledge");
+            if(n >= 0){
+              n = cont.indexOf("totalamount");
+              cont = cont.substring(n+13);
+              cont = cont.replace('$', '').replace(',', '');
+              var amount = Number(cont);
+              
+              //NOTE: Due to some odd reason, the date-time value read from the
+              //spreadsheet cell is always one day behind the actual date set
+              //at the spreadsheet. Also, the vertical gridline has some offset than
+              //the label. We calculate and add some offset in milliseconds, which was 
+              //caluclated emperically to compensate for this lag. 
+              var timeOffsetCompensation = 43200000; //add 12 hours
+              var d = new Date(new Date(data[i].title.$t).getTime() + timeOffsetCompensation);
+
+              //console.log(amount + " on " + d);
+
+              dpts.push({x:d, y:amount});
             }
-            else{
-              dates.push(data[i].title.$t);
-              values.push(Number(cont));
-            }
+          } 
 
-            //dpts.push({x:values.length, y:Number(cont)});
-            dpts.push({x:new Date(d), y:Number(cont)});
-
-          }
-        } 
-
-        console.log(values);   
-        showGraph("lineChart", dates, values, dpts);
-        //showGraph("lineChart", [1, 1, 2, 2, 3, 4], [1, 2, 3, 4, 5, 6]);
+          showGraph("lineChart", dates, values, dpts);
         }
       });
 
