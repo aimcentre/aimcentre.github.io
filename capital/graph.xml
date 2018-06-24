@@ -26,6 +26,7 @@
     <script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="https://abvasvmc.github.io/abva2.js"></script>
+    <script src="https://abvasvmc.github.io/capital/graph.js"></script>
 
     <div class="container-fluid">
       <div class="row">
@@ -141,7 +142,7 @@
       var siteRoot = null;
 
       //Page initialization routine. This is called by google.setOnLoadCallback callback
-      function initialize(feedUrlSeed) {
+      function initializexx(feedUrlSeed) {
         
         //Getting user prefs
         var prefs = new gadgets.Prefs();
@@ -232,7 +233,7 @@
 
       //Calling initialization routing on gadget loading
       gadgets.util.registerOnLoadHandler(function() { 
-        initialize(Math.floor((Math.random() * 100000)));
+        initializexx(Math.floor((Math.random() * 100000)));
         gadgets.window.adjustHeight();
         window.history.pushState({}, '', document.URL);
        });
