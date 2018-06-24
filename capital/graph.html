@@ -16,6 +16,18 @@
   <script type="text/javascript">
     const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+    function date2Str(val, forceFull){
+      var d = new Date(new Date(val).getTime() + 24 * 60 * 60 * 1000);
+      var str = "";
+
+      if(forceFull || d.getMonth() == 0)
+        str = str + d.getFullYear() + " ";
+
+      str = str + MONTHS[d.getMonth()] + " " + ("0" + d.getDate()).slice(-2);
+
+      return str;
+    }
+
     function showGraph(canvasId, x, y, dpts){
 
       var ctxL = document.getElementById(canvasId).getContext('2d');
@@ -56,9 +68,33 @@
                 ticks: {
                   // Include a dollar sign in the ticks
                   callback: function(value, index, values) {
-                    var d = new Date(value);
-                    //return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + (d.getDate() + 1)).slice(-2);
-                    return MONTHS[d.getMonth()] + " " + ("0" + (d.getDate() + 1)).slice(-2)
+                    //var d = new Date(value);
+                    //return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+                    //return MONTHS[d.getMonth()] + " " + ("0" + d.getDate()).slice(-2);
+
+                    return date2Str(new Date(value));
+
+/*
+                    if(index == 0 || d.getMonth() == 0){
+                      tick = d.getFullYear();
+                    }
+
+                    if(index == 0 || d.getDate() == 0){
+                      tick = tick + " " + MONTHS[d.getMonth()];
+                    }
+
+                    tick = tick + " " + ("0" + d.getDate()).slice(-2);
+
+                    return tick;
+*/
+
+//                    if(index == 0 || d.getMonth() == 0){
+//                      return MONTHS[d.getMonth()] + " " + ("0" + d.getDate()).slice(-2);
+//                    }
+//                    else{
+//                      return ("0" + d.getDate()).slice(-2);
+//                    }
+
                   } 
                 }
               }],
@@ -80,7 +116,7 @@
                label: function(tooltipItems, data) {
                   var d = new Date(tooltipItems.xLabel);
 
-                  var labelVals = [d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + (d.getDate() + 1)).slice(-2)];
+                  var labelVals = [date2Str(d)]; // [d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2)];
 
                   if(tooltipItems.index > 0){
                     var prev = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index - 1].y;
@@ -131,11 +167,6 @@
             });
             
             var d = data[i].title.$t;
-            /*
-            dpts.push({x:d, y:Number(cont)});
-            dates.push(data[i].title.$t);
-            values.push(Number(cont));
-            */
             
             if(dates[dates.length - 1] == d){
               values[values.length - 1] = values[values.length - 1] + Number(cont);
