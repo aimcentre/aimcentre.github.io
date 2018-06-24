@@ -1,0 +1,15 @@
+.title{
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+  color: #66002e;
+}
+.infoPanel{
+  display: none;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.infoLabel{
+  
+}
