@@ -140,7 +140,7 @@
               //caluclated emperically to compensate for this lag. 
               
               //var timeOffsetCompensation = 43200000; //add 12 hours
-              var timeOffsetCompensation = 21600000; //add 6 hours
+              var timeOffsetCompensation = 0; //21600000; //add 6 hours
               var d = new Date(new Date(data[i].title.$t).getTime() + timeOffsetCompensation);
 
               //console.log(amount + " on " + d);
