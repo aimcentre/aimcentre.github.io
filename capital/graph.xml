@@ -229,12 +229,11 @@
     });
 
 
-
  	//Resize listener for gadget resizing on layout changes
 	$(window).resize(function() {
 		gadgets.window.adjustHeight();
     });
-      
+
   </script>
 
 ]]></Content>
