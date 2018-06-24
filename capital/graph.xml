@@ -65,6 +65,10 @@
   
 
   <script type="text/javascript">
+  	$(function() {
+      gadgets.window.adjustHeight();
+    });
+    
   	//Calling initialization routing on gadget loading
 	gadgets.util.registerOnLoadHandler(function() { 
 		initialize();
