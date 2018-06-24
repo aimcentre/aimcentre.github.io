@@ -52,50 +52,7 @@
 
   <script type="text/javascript">
     $(function() {
-      initalize();
-      
-      /*
-      var spreadsheetId = "1VfuLJzB6ygO4SKC77yU9iO7UZWOC9zI4PmhJAXbQR8A",
-        url = "https://spreadsheets.google.com/feeds/list/" +
-              spreadsheetId +
-              "/od6/public/basic?alt=json";
-
-      $.get({
-        url: url,
-        success: function(response) {
-          var data = response.feed.entry;
-          var dpts = [];
-
-          for (var i = 0; i < data.length; i++) {
-            var cont = data[i].content.$t;
-            //console.log(cont)
-            var n = cont.indexOf("pledge");
-            if(n >= 0){
-              n = cont.indexOf("totalamount");
-              cont = cont.substring(n+13);
-              cont = cont.replace('$', '').replace(',', '');
-              var amount = Number(cont);
-              
-              //NOTE: Due to some odd reason, the date-time value read from the
-              //spreadsheet cell is always one day behind the actual date set
-              //at the spreadsheet. Also, the vertical gridline has some offset than
-              //the label. We calculate and add some offset in milliseconds, which was 
-              //caluclated emperically to compensate for this lag. 
-              
-              var timeOffsetCompensation = 43200000; //add 12 hours
-              //var timeOffsetCompensation = 0; //21600000; //add 6 hours
-              var d = new Date(new Date(data[i].title.$t).getTime() + timeOffsetCompensation);
-
-              //console.log(amount + " on " + d);
-
-              dpts.push({x:d, y:amount});
-            }
-          } 
-
-          showGraph("panel", dpts);
-        }
-      });
-      */
+      initialize();
     });
   </script>
 </body>
