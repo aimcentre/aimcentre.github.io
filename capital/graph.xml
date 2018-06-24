@@ -29,7 +29,7 @@
     <script src="https://abvasvmc.github.io/abva2.js"></script>
     <script src="https://abvasvmc.github.io/capital/graph.js"></script>
 
-  <div id="panel">
+  <div id="graphPanel">
     <div class="title">Confirmed Commitment Growth</div>
     <canvas></canvas>
     
@@ -257,7 +257,7 @@
       //Calling initialization routing on gadget loading
       gadgets.util.registerOnLoadHandler(function() { 
         initializexx(Math.floor((Math.random() * 100000)));
-        initialize(true); 
+        initialize(true, "graphPanel"); 
         gadgets.window.adjustHeight();
         window.history.pushState({}, '', document.URL);
        });
