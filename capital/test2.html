@@ -18,17 +18,20 @@
     function showGraph(canvasId, x, y, dpts){
 
       var ctxL = document.getElementById(canvasId).getContext('2d');
-      var myLineChart = new Chart(ctxL, {
+      var myChart = new Chart(ctxL, {
           type: 'scatter',
+          backgroundColor: '#F50000',
+              labelTextColor: function(tooltipItem, chart) {
+                return '#ff0000';
+              },
           data: {
               labels: x, 
               //labels: [1,2,3,4,5,6,7], 
               datasets: [
                   {
-                      label: "",
-                      //fillColor: "rgba(220,220,220,0.2)",
                       //strokeColor: "rgba(220,220,220,1)",
-                      //pointColor: "rgba(220,220,220,1)",
+                      pointColor: 'rgba(800,000,000,1)',
+                      borderWidth: 2,
                       //pointStrokeColor: "#fff",
                       //pointHighlightFill: "#fff",
                       //pointHighlightStroke: "rgba(220,220,220,1)",
@@ -53,16 +56,40 @@
             scales: {
             xAxes: [{
                 ticks: {
-                    // Include a dollar sign in the ticks
-                    callback: function(value, index, values) {
-                        var d = new Date(value);
-                        return d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate();
-                    }
+                  // Include a dollar sign in the ticks
+                  callback: function(value, index, values) {
+                    var d = new Date(value);
+                    return d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate();
+                  } 
                 }
-            }]
-        }
+              }]
+            },
+            tooltips: {
+              enabled: true,
+              mode: 'single',
+              bodyFontSize: 14,
+              backgroundColor: '#6A0000',
+              callbacks: {
+               label: function(tooltipItems, data) {
+                  var d = new Date(tooltipItems.xLabel);
+                  var labelVals = [d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + d.getDate()];
+
+                  if(tooltipItems.index > 0){
+                    var prev = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index - 1].y;
+                    var inc = (tooltipItems.yLabel - prev).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    labelVals.push("    Pledge: $" + inc);   
+                  }
+
+                  var total = tooltipItems.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  labelVals.push("    Total: $" + total);   
+
+                  return labelVals;
+                }
+              }
+            }
           }
       });
+      myChart.render();
     }
 
     $(function() {
