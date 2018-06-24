@@ -8,15 +8,52 @@
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
-</head>
-<body>
 
-  <canvas id="lineChart"></canvas>
+  <style type="text/css">
+    .title{
+      font-size: 1.2em;
+      text-align: center;
+      font-weight: bold;
+      margin: 10px 0 10px 0;
+      color: #66002e;
+    }
+    .infoPanel{
+      display: none;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .infoLabel{
+      
+    }
+  </style>
 
   <script type="text/javascript">
     const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  </script>
+</head>
+<body>
 
-    function parseDate(val){
+  <div id="panel">
+    <div class="title">Confirmed Commitment Growth</div>
+    <canvas></canvas>
+    
+    <div class="infoPanel container">
+      <div class="row">
+        <div class="infoLine col-sm-6">
+          <span class="infoLabel">Number of Donors: </span>
+          <span class="infoValue donorCount"></span>
+        </div>
+        <div class="infoLine col-sm-6">
+          <span class="infoLabel">Total Amount Pledged: </span>
+          <span class="infoValue amountPledged"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script type="text/javascript">
+        function parseDate(val){
       return new Date(val);
     }
 
@@ -31,11 +68,17 @@
       return str;
     }
 
-    function showGraph(canvasId, x, y, dpts){
+    function dollars2str(val){
+      return '$' + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function showGraph(panelId, dpts, target){
 
       //Formatting reference:
       //https://www.chartjs.org/docs/latest/charts/line.html
-      var ctxL = document.getElementById(canvasId).getContext('2d');
+      var canvas = document.getElementById(panelId).getElementsByTagName('canvas')[0];
+      var ctxL = canvas.getContext('2d');
+      //var ctxL = document.getElementById(canvasId).getContext('2d');
       var myChart = new Chart(ctxL, {
           type: 'scatter',
           data: {
@@ -114,6 +157,14 @@
           }
       });
       myChart.render();
+
+      $(".infoPanel").show();
+
+      var totalPledged = dpts[dpts.length - 1].y;
+      $("#" + panelId + " .amountPledged").html(dollars2str(totalPledged));
+      $("#" + panelId + " .donorCount").html(dpts.length);
+      //$("#amountPledged").html(dollars2str(totalPledged));
+      //$("#donorCount").html(dpts.length);
     }
 
     $(function() {
@@ -126,14 +177,10 @@
       $.get({
         url: url,
         success: function(response) {
-          var data = response.feed.entry,
-              len = data.length,
-              i = 0,
-              dates = [],
-              values = [],
-              dpts = [];
+          var data = response.feed.entry;
+          var dpts = [];
 
-          for (i = 0; i < len; i++) {
+          for (var i = 0; i < data.length; i++) {
             var cont = data[i].content.$t;
             //console.log(cont)
             var n = cont.indexOf("pledge");
@@ -159,7 +206,7 @@
             }
           } 
 
-          showGraph("lineChart", dates, values, dpts);
+          showGraph("panel", dpts);
         }
       });
 
