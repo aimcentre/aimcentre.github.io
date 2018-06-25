@@ -270,11 +270,12 @@
         $('iframePanel').load(function() {
             //this.style.height =
             this.contentWindow.document.body.offsetHeight + 'px';
+            $("#iframePanel").css('border-color', 'red');
         });
 
         //$("#iframePanel").height("400");
         //$("#iframePanel").css('height', 400);
-        $("#iframePanel").css('border-color', 'green');
+        $("#iframePanel").css('border-color', 'blue');
 
         gadgets.window.adjustHeight();
         window.history.pushState({}, '', document.URL);
