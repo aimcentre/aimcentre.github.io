@@ -187,74 +187,8 @@
       
         //Signup sheet link
         $("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
-
-        //Loading carousel images
-        var aspectRatio = 9.0/16;
-        try{
-          showCarouselImages("/data-pages/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
-        }
-        catch(err){
-          console.error("Carousel Loading Error:");
-          console.error(err);
-          console.warn("Showing default carousel images");
-          var images = ['http://www.abva.org/data-pages/carousel-data/carousel_1.jpg', 
-                  'http://www.abva.org/data-pages/carousel-data/carousel_2.jpg',
-                  'http://www.abva.org/data-pages/carousel-data/carousel_3.jpg',
-                  'http://www.abva.org/data-pages/carousel-data/carousel_4.jpg',
-                  'http://www.abva.org/data-pages/carousel-data/carousel_5.jpg'];
-
-          showCarouselImagesFromArray("myCarousel", images, aspectRatio);
-        }
-        
-        //Loading welcome message from the Welcome page
-        try{
-          showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed, true);
-        }
-        catch(err){
-          console.error("Welcome Message Loading Error:");
-          console.error(err);
-          console.warn("Showing default welcome message");
-
-          var title = "Welcome";
-          //var text = "<p>Welcome to the Alberta Buddhist Vihara Association (ABVA) and the Samatha Vipassana Meditation Centre (SVMC). ABVA is a registered charitable organization in Alberta, established with the objective of providing our community an understanding of Buddhism and its practice, particularly of the Theravada tradition.</p><p>The Samatha Vipassana Meditation Centre is the main service venue of ABVA. It offers a range of services including meditation programs, sutta discussions, Sunday Dhamma School for children, religious services at homes, special retreats and daily Buddhist sermons. These services are based on original teachings of the Buddha, such as The Four Noble Truth and The Eightfold Path, and are offered in both English and Sinhala languages freely to the community irrespective of one's origin, faith, religion or ethnicity. You are welcome to come and experience a difference.</p>";
-          var text = "<p>Welcome to the Alberta Buddhist Vihara Association (ABVA) and the Samatha Vipassana Meditation Centre (SVMC). ABVA is a registered charitable organization in Alberta, established with the objective of providing our community an understanding of Buddhism and its practice, particularly of the Theravada tradition.</p><p>We offer a range of services including meditation programs, sutta discussions, Sunday Dhamma School for children, religious services at homes, special retreats and daily Buddhist sermons. These services are based on original teachings of the Buddha, such as The Four Noble Truth and The Eightfold Path, and are offered in both English and Sinhala languages freely to the community irrespective of one's origin, faith, religion or ethnicity. You are welcome to come and experience a difference.</p>";
-
-          showText("myWelcome", title, text);
-        }
-
-        //Loading text for the Dhamma School Widget from the Dhamma School Intro page
-        try{
-          showPageContents("/data-pages/dhamma-school-intro", "dhammaSchoolWidgetText", feedUrlSeed, false);
-        }
-        catch(err){
-          console.error("Dhamma School Widget Loading Error:");
-          console.error(err);
-          console.warn("Showing default Dhamma School Widget Text");
-          
-          var text = "<p>Giving children a good foundation in the Lord Buddha's teachings will help them better navigate through life. Towards this, the Dhamma School teaches principles and practice of Dhamma to children, from kindergarten up to high school level, age-appropriate lessons in Theravada Buddhism within a comprehensive syllabus.</p>";
-
-          //showText("dhammaSchoolWidgetText", null, text);
-        }
-        
-
-        //Loading text for the Newsletter Widget from the Newsletter Intro page
-        try{
-          showPageContents("/data-pages/newsletter-intro", "newsletterWidgetText", feedUrlSeed, false);
-        }
-        catch(err){
-          console.error("Newsletter Widget Loading Error:");
-          console.error(err);
-          console.warn("Showing default Newsletter Widget Text");
-
-          var text = "<p>The newsletter periodically recapitulate our programs and events and also serves as a means of communicating valuable Dhamma messages to our community. We hope to publish future newsletters on a regular basis, more frequently, and welcome articles and artworks from children and adults. We sincerely hope that you enjoy the newsletter and share it with your family and friends.</p>";
-
-          //showText("newsletterWidgetText", null, text);
-        }
         
         //Loading Programs and News to the events display area
-        //showCalendarEvents(announcementCalendarId, apiKey, "announcementsSpan", null, 200, 2, true);
-        //showCalendarEvents(specialEventsCalendarId, apiKey, "specialEventsSpan", null, 200, 4, true);
-        //showCalendarEvents(newsCalendarId, apiKey, "generalEventsSpan", null, 200, 3, true);
         showCalendarEvents(announcementCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
         showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsFeed", null, 200, 20, true);
         showCalendarEvents(newsCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
