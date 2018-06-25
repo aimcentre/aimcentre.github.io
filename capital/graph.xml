@@ -13,12 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
     
-    <!--
-      <meta http-Equiv="Cache-Control" Content="no-cache" />
-      <meta http-Equiv="Pragma" Content="no-cache" />
-      <meta http-Equiv="Expires" Content="-1" />
-    -->
-
     <link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://abvasvmc.github.io/abva2.css">
     <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
@@ -30,7 +24,7 @@
     <script src="https://abvasvmc.github.io/abva2.js"></script>
     <script src="https://abvasvmc.github.io/capital/graph.js"></script>
 
-  <div id="graphPanel" style="border: dashed 1px green">
+  <div id="graphPanel" style="border: dashed 2px green">
     <div class="title">Confirmed Commitment Growth</div>
     <canvas></canvas>
     
