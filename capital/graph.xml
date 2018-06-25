@@ -266,9 +266,15 @@
         initializexx(Math.floor((Math.random() * 100000)));
         initialize("graphPanel", true);
 
-        $("#iframePanel").height("400");
-        $("#iframePanel").css('height', 400);
-        $("#iframePanel").css('border-color', 'red');
+        //var height = $("#iframePanel").height()
+        $('iframePanel').load(function() {
+            this.style.height =
+            this.contentWindow.document.body.offsetHeight + 'px';
+        });
+
+        //$("#iframePanel").height("400");
+        //$("#iframePanel").css('height', 400);
+        $("#iframePanel").css('border-color', 'blue');
 
         gadgets.window.adjustHeight();
         window.history.pushState({}, '', document.URL);
