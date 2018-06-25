@@ -35,7 +35,7 @@
     src="https://abvasvmc.github.io/capital/graph.html">
   </iframe>
 
-  <div id="graphPanel">
+  <div id="graphPanel" style="border: dashed 1px green">
     <div class="title">Confirmed Commitment Growth</div>
     <canvas></canvas>
     
