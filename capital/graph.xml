@@ -23,7 +23,7 @@
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
         <script src="https://abvasvmc.github.io/capital/graph.js"></script>
 
-        <div id="graphPanel">
+        <div id="graphPanel" style="border:dashed 1px green">
           <!-- <div class="title">Confirmed Commitment Growth</div> -->
           <canvas></canvas>
           

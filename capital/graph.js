@@ -158,10 +158,10 @@ function initialize(panelId, isGadgetMode){
       showGraph(panelId, dpts);
 
       if(isGadgetMode){
-        var height = $("#graphPanel").height;
-        console.log("height: " + height);
+        //var height = $("#graphPanel").height;
+        //console.log("height: " + height);
 
-        gadgets.window.adjustHeight();
+        //gadgets.window.adjustHeight();
 
         //$("#iframePanel ")
       }
