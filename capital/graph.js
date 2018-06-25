@@ -113,8 +113,6 @@ function showGraph(panelId, dpts, target){
   var totalPledged = dpts[dpts.length - 1].y;
   $("#" + panelId + " .amountPledged").html(dollars2str(totalPledged));
   $("#" + panelId + " .donorCount").html(dpts.length);
-  //$("#amountPledged").html(dollars2str(totalPledged));
-  //$("#donorCount").html(dpts.length);
 }
 
 function initialize(panelId, isGadgetMode){
@@ -159,7 +157,6 @@ function initialize(panelId, isGadgetMode){
 
       if(isGadgetMode){
         gadgets.window.adjustHeight();
-
       }
 
     }
