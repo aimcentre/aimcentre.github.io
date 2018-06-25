@@ -53,7 +53,7 @@ function showGraph(panelId, dpts, target){
         },
         elements: {
           line: {
-              tension: 0
+              tension: 0.01
           }
         },
         animation: {
