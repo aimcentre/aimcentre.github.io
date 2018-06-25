@@ -31,7 +31,7 @@
 
   <iframe 
     id="iframePanel"
-    style="border:solid 1px green; width:100%;"
+    style="border:solid 1px green; width:100%;height:200px;"
     src="https://abvasvmc.github.io/capital/graph.html">
   </iframe>
 
