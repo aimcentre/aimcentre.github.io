@@ -48,7 +48,7 @@
           //Calling initialization routing on gadget loading
           gadgets.util.registerOnLoadHandler(function() { 
             initialize("graphPanel", true);
-            //gadgets.window.adjustHeight();
+            gadgets.window.adjustHeight();
             window.history.pushState({}, '', document.URL);
            });
         </script>
