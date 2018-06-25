@@ -9,50 +9,198 @@
   
   <Content type="html">
      <![CDATA[
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
-        
-        <link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://abvasvmc.github.io/abva2.css">
-        <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
-        
-        <script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
-        <script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
-        <script src="https://abvasvmc.github.io/capital/graph.js"></script>
-        <script src="https://abvasvmc.github.io/abva2.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    
+    <!--
+      <meta http-Equiv="Cache-Control" Content="no-cache" />
+      <meta http-Equiv="Pragma" Content="no-cache" />
+      <meta http-Equiv="Expires" Content="-1" />
+    -->
 
-        <div id="graphPanel" style="width:100%; border:dashed 2px blue">
-          <!-- <div class="title">Confirmed Commitment Growth</div> -->
-          <canvas style="max-height:400px; width:400px; height:400px;"></canvas>
-          
-          <div class="infoPanel container">
-            <div class="row">
-              <div class="infoLine col-md-6">
-                <span class="infoLabel">Number of Donors: </span>
-                <span class="infoValue donorCount"></span>
-              </div>
-              <div class="infoLine col-md-6">
-                <span class="infoLabel">Total Amount Pledged: </span>
-                <span class="infoValue amountPledged"></span>
+    <link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/abva2.css">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
+    
+    <script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
+    <script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+    <script src="https://abvasvmc.github.io/abva2.js"></script>
+    <script src="https://abvasvmc.github.io/capital/graph.js"></script>
+
+  <div id="graphPanel" style="border: dashed 1px green">
+    <div class="title">Confirmed Commitment Growth</div>
+    <canvas></canvas>
+    
+    <div class="infoPanel container">
+      <div class="row">
+        <div class="infoLine col-md-6">
+          <span class="infoLabel">Number of Donors: </span>
+          <span class="infoValue donorCount"></span>
+        </div>
+        <div class="infoLine col-md-6">
+          <span class="infoLabel">Total Amount Pledged: </span>
+          <span class="infoValue amountPledged"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  TEST
+  
+
+
+    <div class="container-fluid">
+        <div class="main-slip">
+          <div class="col-sm-6">
+            <h3 class="page-title">Dhamma School</h3>
+            
+            <div class="feed-item">
+              <div id="dhammaSchool">
+                <div>
+                  <div class="col-sm-6" style="text-align:centre">
+                    <img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="Dhamma School Logo" class="col-sm-10" style="width:100%" />
+                  </div>
+                  <div class="visible-xs"><br /></div>
+                  <p>
+                    Giving children a good foundation in the Lord Buddha's teachings will help them better navigate through life. Towards this, the Dhamma School teaches principles and practice of Dhamma to children, from kindergarten up to high school level, age-appropriate lessons in Theravada Buddhism within a comprehensive syllabus.
+                  </p>
+                </div>
+                <div class="read-more">
+                  <a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
+                </div>
+                <div style="clear:both"></div>
+
+                <!--
+                <div id="dhammaSchoolWidgetText">
+                </div>
+                -->
               </div>
             </div>
           </div>
+
+          <div class="col-sm-6">
+            <h3 class="page-title">Newsletter</h3>
+            <div class="feed-item">
+              <div id="newsletter">
+                <div>
+                  <div class="col-sm-6" style="text-align:centre">
+                    <img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="Newsletter Image" class="col-sm-6"  style="width:100%" />
+                  </div>
+                  <div class="visible-xs"><br /></div>
+                  <p>
+                    The newsletter periodically recapitulate our programs and events and also serves as a means of communicating valuable Dhamma messages to our community. We hope to publish future newsletters on a regular basis, more frequently, and welcome articles and artworks from children and adults. We sincerely hope that you enjoy the newsletter and share it with your family and friends.
+                  </p>
+                </div>
+                <div class="read-more">
+                  <a href="http://www.abva.org/newsletter" target="_top">... read more.</a>
+                </div>
+                <div style="clear:both"></div>
+                <!--
+                <div id="newsletterWidgetText">
+                </div>
+                
+                -->
+              </div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+          <br />
         </div>
+      </div>
+    </div>
+    
+    <script type="text/javascript">
+    
+      //Initialize feed loader
+//      google.load("feeds", "1");
+      var gadgetMode = true;
+      
+
+      var siteDomain = null;
+      var siteName = null;
+      var siteRoot = null;
+
+      //Page initialization routine. This is called by google.setOnLoadCallback callback
+      function initializexx(feedUrlSeed) {
         
-        <script type="text/javascript">
+        //Getting user prefs
+        var prefs = new gadgets.Prefs();
+        siteDomain = prefs.getString("siteDomain");
+        siteName = prefs.getString("siteName");
+        siteRoot = prefs.getString("siteRoot");
+        
+        var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
+        var newsCalendarId = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
+        var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
+        var announcementCalendarId = "abva.org_mbt7jtsna7nkbm542qr7924c94@group.calendar.google.com";
+      
+        //Signup sheet link
+        $("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
+        
+        //Loading Programs and News to the events display area
+        showCalendarEvents(announcementCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
+        showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsFeed", null, 200, 20, true);
+        showCalendarEvents(newsCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
 
-          var gadgetMode = true;
+      } //End: function initialize()
 
-          //Calling initialization routing on gadget loading
-          gadgets.util.registerOnLoadHandler(function() { 
-            initialize("graphPanel", true);
-            gadgets.window.adjustHeight();
-            window.history.pushState({}, '', document.URL);
-           });
-        </script>
+      //Calling initialization routing on gadget loading
+      gadgets.util.registerOnLoadHandler(function() { 
+        initializexx(Math.floor((Math.random() * 100000)));
+        initialize("graphPanel", true);
+
+        //var height = $("#iframePanel").height()
+        $('iframePanel').load(function() {
+            //this.style.height =
+            this.contentWindow.document.body.offsetHeight + 'px';
+            $("#iframePanel").css('border-color', 'red');
+        });
+
+        //$("#iframePanel").height("400");
+        //$("#iframePanel").css('height', 400);
+        $("#iframePanel").css('border-color', 'blue');
+
+        gadgets.window.adjustHeight();
+        window.history.pushState({}, '', document.URL);
+       });
+       
+       //Resize listener for gadget resizing on layout changes
+       var prevWindowWidth= -1;
+       var carousel_aspect_ratio = -1;
+       var prevSwitchedWidth = -1;
+       $( window ).resize(function() {
+            if(prevWindowWidth < 0){
+              prevWindowWidth = $(window).width();
+              prevSwitchedWidth = prevWindowWidth;
+              carousel_aspect_ratio = $("#myCarousel").width() / $("#myCarousel").height()
+            }
+            else{
+              var w = $(window).width();
+              var resize_required = (prevWindowWidth >= 768 && w < 768) ||
+                          (prevWindowWidth < 768 && w >= 768) ||
+                          (prevWindowWidth >= 992 && w < 992) ||
+                          (prevWindowWidth < 992 && w >= 992) | 
+                          (prevWindowWidth <= w - 5) ||
+                          (prevWindowWidth >= w+5);
+
+              if(resize_required){
+                gadgets.window.adjustHeight();
+                prevSwitchedWidth = w;
+              }
+              
+              if(carousel_aspect_ratio > 0){
+                var new_carousel_height = $("#myCarousel").width() / carousel_aspect_ratio;
+                $("#myCarousel").height(new_carousel_height)
+              }
+              
+              //gadgets.window.adjustHeight();
+              prevWindowWidth = w;            
+            }
+        }); 
+            
+    </script>
      ]]>
   </Content> 
 </Module>
