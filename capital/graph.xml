@@ -274,7 +274,7 @@
 
         //$("#iframePanel").height("400");
         //$("#iframePanel").css('height', 400);
-        $("#iframePanel").css('border-color', 'blue');
+        $("#iframePanel").css('border-color', 'green');
 
         gadgets.window.adjustHeight();
         window.history.pushState({}, '', document.URL);
