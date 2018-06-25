@@ -54,56 +54,16 @@
       //Initialize feed loader
 //      google.load("feeds", "1");
       var gadgetMode = true;
-      
-
-      var siteDomain = null;
-      var siteName = null;
-      var siteRoot = null;
-
-      //Page initialization routine. This is called by google.setOnLoadCallback callback
-      function initializexx(feedUrlSeed) {
-        
-        //Getting user prefs
-        var prefs = new gadgets.Prefs();
-        siteDomain = prefs.getString("siteDomain");
-        siteName = prefs.getString("siteName");
-        siteRoot = prefs.getString("siteRoot");
-        
-        var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
-        var newsCalendarId = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
-        var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
-        var announcementCalendarId = "abva.org_mbt7jtsna7nkbm542qr7924c94@group.calendar.google.com";
-      
-        //Signup sheet link
-        $("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
-        
-        //Loading Programs and News to the events display area
-        showCalendarEvents(announcementCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
-        showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsFeed", null, 200, 20, true);
-        showCalendarEvents(newsCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
-
-      } //End: function initialize()
 
       //Calling initialization routing on gadget loading
       gadgets.util.registerOnLoadHandler(function() { 
-        initializexx(Math.floor((Math.random() * 100000)));
         initialize("graphPanel", true);
-
-        //var height = $("#iframePanel").height()
-        $('iframePanel').load(function() {
-            //this.style.height =
-            this.contentWindow.document.body.offsetHeight + 'px';
-            $("#iframePanel").css('border-color', 'red');
-        });
-
-        //$("#iframePanel").height("400");
-        //$("#iframePanel").css('height', 400);
-        $("#iframePanel").css('border-color', 'blue');
 
         gadgets.window.adjustHeight();
         window.history.pushState({}, '', document.URL);
        });
        
+       /*
        //Resize listener for gadget resizing on layout changes
        var prevWindowWidth= -1;
        var carousel_aspect_ratio = -1;
@@ -137,7 +97,8 @@
               prevWindowWidth = w;            
             }
         }); 
-            
+        */
+
     </script>
      ]]>
   </Content> 
