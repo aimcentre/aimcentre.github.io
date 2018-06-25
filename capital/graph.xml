@@ -10,7 +10,7 @@
   <Content type="html">
      <![CDATA[
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
         
         <link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
         <script src="https://abvasvmc.github.io/capital/graph.js"></script>
         <script src="https://abvasvmc.github.io/abva2.js"></script>
 
-        <div id="graphPanel" style="width:100%; border:dashed 2px green">
+        <div id="graphPanel" style="width:100%; border:dashed 2px blue">
           <!-- <div class="title">Confirmed Commitment Growth</div> -->
           <canvas style="max-height:400px; width:400px; height:400px;"></canvas>
           
