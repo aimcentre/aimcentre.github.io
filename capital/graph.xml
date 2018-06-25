@@ -24,9 +24,9 @@
         <script src="https://abvasvmc.github.io/capital/graph.js"></script>
         <script src="https://abvasvmc.github.io/abva2.js"></script>
 
-        <div id="graphPanel" style="border:dashed 2px red">
+        <div id="graphPanel" style="width:100%; border:dashed 2px green">
           <!-- <div class="title">Confirmed Commitment Growth</div> -->
-          <canvas></canvas>
+          <canvas style="max-"></canvas>
           
           <div class="infoPanel container">
             <div class="row">
