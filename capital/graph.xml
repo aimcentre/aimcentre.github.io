@@ -37,9 +37,9 @@
         <script src="https://abvasvmc.github.io/abva2.js"></script>
 -->
 
-        <div id="graphPanel" style="width: 100%; border:dashed 2px green">
+        <div id="graphPanel" style="width: 100%; border:dashed 2px blue">
           <!-- <div class="title">Confirmed Commitment Growth</div> -->
-          <canvas style="width:100%"></canvas>
+          <canvas style="width:400px"></canvas>
           
           <div class="infoPanel container">
             <div class="row">
