@@ -59,37 +59,6 @@
 
 
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="inner">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="hidden-md"><br /></div>
-          <div class="inner">
-            <div id="myWelcome">
-            </div>
-          </div>
-        </div>
-
-        <div class="main-slip">
-          <div class="hidden-sm"><br /></div>
-          <div class="alert alert-warning" role="alert">
-            <div style="font-weight:bold; font-size;larger; margin-bottom:5px;">Special Notice</div>
-            Samatha Vipassana Meditation Centre has relocated its programs to various venues 
-            due to facility restrictions in the current premise. Please note that recurrent 
-            instances of a program may be held at different places and we will announce the 
-            details in instance-specific communications. If you intend to attend a program 
-            where the venue is not advertised here, 
-            please contact SVMC at 780-641-9795 or spiritualdirector@abva.org before visiting. 
-            Thank you.
-          </div>
-        </div>
-
-        
-
         <div class="main-slip">
           <h3 class="page-title">Programs and News</h3>
           <div class="inner">
