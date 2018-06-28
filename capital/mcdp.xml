@@ -264,7 +264,7 @@
     <!-- <script src="./bootstrap/holder.min.js"></script> -->
     <script type="text/javascript">
       $(function() {
-        initialize("graphPanel", "donorNames", false, 700000);
+        initialize("graphPanel", "donorNames", true, 700000);
         $('.carousel').carousel({
           "pause": false
         });
