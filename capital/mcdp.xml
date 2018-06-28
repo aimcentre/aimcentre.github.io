@@ -269,12 +269,28 @@
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <!-- <script src="./bootstrap/holder.min.js"></script> -->
     <script type="text/javascript">
+
+      function resetCarouselSize(){
+        var width = $(window).width();
+        var aspectRatio = 1900/540;
+        var height = Math.round(width / aspectRatio);
+        $("#myCarousel .carousel-item").height(height);
+        $("#myCarousel .carousel-item .img").height(height);
+
+      }
+
       $(function() {
+        resetCarouselSize();
         initialize("graphPanel", "donorNames", true, 700000);
         $('.carousel').carousel({
           "pause": false
         });
       });
+
+      $( window ).resize(function() {
+        resetCarouselSize();
+      });
+      
     </script>
 
      ]]>
