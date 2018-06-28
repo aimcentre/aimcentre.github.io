@@ -146,7 +146,7 @@
           </div>
             <!--<div class="col-md-12">
             <a name="section1"></a>
-            <h2 class="featurette-heading">Meditation Centre Development<span class="text-muted"></span></h2>
+            <h2 id="section1" class="featurette-heading">Meditation Centre Development<span class="text-muted"></span></h2>
           </div>-->
           <div class="col-md-5 d-md-none">
             <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/centre.jpg" alt="New Meditation Centre Image">
@@ -172,7 +172,7 @@
         <div class="row featurette">
           <div class="col-md-12">
             <a name="section2"></a>
-            <h2 class="featurette-heading">Financial Status Overview<span class="text-muted"></span></h2>
+            <h2 id="section2" class="featurette-heading">Financial Status Overview<span class="text-muted"></span></h2>
           </div>
           <div class="col-md-5 order-md-1 feature-visual d-md-none">
             <img class="featurette-image img-fluid mx-auto" src="https://abvasvmc.github.io/capital/savings.jpg" alt="Financial Status Image">
@@ -195,7 +195,7 @@
         <div class="row featurette">
           <div class="col-md-12">
             <a name="section3"></a>
-            <h2 class="featurette-heading">Development Fund Contributions<span class="text-muted"></span></h2>
+            <h2 id="section3" class="featurette-heading">Development Fund Contributions<span class="text-muted"></span></h2>
           </div>
           <div class="col-md-5 d-md-none" style="text-align:center;">
             <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
