@@ -218,7 +218,7 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
         }
 
         if(names.length > 0)
-          donors.push('<div class="col-md-3 col-sm-4">' + names.join(' &amp; ') + '</div>');
+          donors.push('<div class="col-md-3 col-sm-6">' + names.join(' &amp; ') + '</div>');
       } 
 
       showGraph(panelId, dpts, target);
