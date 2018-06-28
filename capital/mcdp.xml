@@ -59,9 +59,6 @@
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
                 
               </div>-->
-              <div class="carousel-caption">
-                <h1>Banner Image 1</h1>
-              </div>
             </div>
           </div>
           <div class="carousel-item">
@@ -86,9 +83,6 @@
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
                 
               </div>-->
-              <div class="carousel-caption">
-                <h1>Banner Image 3</h1>
-             </div>
             </div>
           </div>
         </div>
