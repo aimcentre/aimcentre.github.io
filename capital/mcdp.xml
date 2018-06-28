@@ -14,9 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!--<link rel="icon" href="../../../../favicon.ico">-->
-
-    <title>Carousel Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://abvasvmc.github.io/capital/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +29,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
-    <!--<script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> -->
     <script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> 
 
 
@@ -142,10 +138,6 @@
             <a name="section1"></a>
             <h2 class="featurette-heading">Meditation Centre Development<span class="text-muted"></span></h2>
           </div>
-            <!--<div class="col-md-12">
-            <a name="section1"></a>
-            <h2 id="section1" class="featurette-heading">Meditation Centre Development<span class="text-muted"></span></h2>
-          </div>-->
           <div class="col-md-5 d-md-none">
             <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/centre.jpg" alt="New Meditation Centre Image">
           </div>
@@ -257,14 +249,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="./bootstrap/jquery-slim.min.js"><\/script>')</script>
-  -->
+    
     <script src="https://abvasvmc.github.io/capital/bootstrap/popper.min.js"></script>
     <script src="https://abvasvmc.github.io/capital/bootstrap/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <!-- <script src="./bootstrap/holder.min.js"></script> -->
+
     <script type="text/javascript">
 
       function resetCarouselSize(){
