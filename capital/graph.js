@@ -159,14 +159,49 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
         var cont = data[i].content.$t;
         //console.log(cont)
 
-        //Collecting pledge data
-        var n = cont.indexOf("pledge");
-        if(n >= 0){
-          n = cont.indexOf("totalamount");
-          cont = cont.substring(n+13);
-          cont = cont.replace('$', '').replace(',', '');
-          var amount = Number(cont);
-          
+        //Collecting pledge data and donor names
+        cont = cont.split(', '); //spliting data key-value pairs
+
+        if(cont.length < 2)
+          continue;
+
+        var pledge = 0;
+        var total = 0;
+        var names = [];
+
+        for(var k=0; k<cont.length; ++k){
+          var n = cont[k].indexOf(': ');
+
+          if(n < 0)
+            continue;
+
+          var key = cont[k].substring(0, n);
+          var val = cont[k].substring(n+2);
+
+          switch(key)
+          {
+            case 'pledge':
+              val = val.replace('$', '').replace(',', '');
+              pledge = Number(val);
+            break;
+
+            case 'totalamount':
+              val = val.replace('$', '').replace(',', '');
+              total = Number(val);
+            break;
+
+            case 'donor':
+              names.push(val);
+            break;
+
+            case 'spouse':
+              names.push(val);
+            break;            
+          }
+
+        }
+
+        if(pledge > 0){
           //NOTE: Due to some odd reason, the date-time value read from the
           //spreadsheet cell is always one day behind the actual date set
           //at the spreadsheet. Also, the vertical gridline has some offset than
@@ -179,15 +214,18 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
 
           //console.log(amount + " on " + d);
 
-          dpts.push({x:d, y:amount});
+          dpts.push({x:d, y:total});  
         }
 
+        if(names.length > 0)
+          donors.push('<div class="col-md-3 col-sm-4">' + names.join(' &amp; ') + '</div>');
       } 
 
       showGraph(panelId, dpts, target);
 
       //Displaying donors' names
       if(donorPanelId != undefined){
+        $("#" + donorPanelId).html(donors.join(' '))
 
       }
 
