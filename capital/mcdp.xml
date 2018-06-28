@@ -226,6 +226,9 @@
                 <div class="title">
                   Much Merits to the Following Donors for their Commitment
                 </div>
+                <div class="alert alert-warning">
+                  Due to privacy reasons, the names are listed in the alphabetical order, with no relationship to the commitment dates shown in the above graph.
+                </div>                
                 <div class="container">
                   <div id="donorNames" class="row">
                   </div>
