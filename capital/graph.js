@@ -26,30 +26,53 @@ function showGraph(panelId, dpts, target){
 
   var canvas = document.getElementById(panelId).getElementsByTagName('canvas')[0];
   var ctxL = canvas.getContext('2d');
-  //var ctxL = document.getElementById(canvasId).getContext('2d');
+
+  if(target != undefined){
+    target = target + 1;
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    targetLinePts = [{x:dpts[0].x, y:target}, {x:tomorrow, y:target}];
+
+    targetLine = {
+              label: 'Total Amount to be Raised',
+              borderWidth: 2,
+              data: targetLinePts,
+              backgroundColor: 'transparent',
+              pointStyle: 'circle',
+              pointBorderColor: 'transparent',
+              pointBackgroundColor: 'red',
+              pointRadius: 0,
+              pointHoverBackgroundColor: 'purple',
+              pointHoverBorderColor: 'purple',
+              borderColor: 'orange'
+    }
+  }
+
   var myChart = new Chart(ctxL, {
       type: 'scatter',
       data: {
         datasets: [
             {
-              label: 'Pledges',
-                borderWidth: 2,
-                data: dpts,
-                backgroundColor: 'rgba(31, 222, 88, 0.25)',
-                pointStyle: 'circle',
-                pointBorderColor: 'red',
-                pointBackgroundColor: 'red',
-                pointRadius: 2,
-                pointHoverBackgroundColor: 'purple',
-                pointHoverBorderColor: 'purple',
-                borderColor: 'green'
-            }
+              label: 'Donation Commitments Received',
+              borderWidth: 2,
+              data: dpts,
+              backgroundColor: 'rgba(31, 222, 88, 0.25)',
+              pointStyle: 'circle',
+              pointBorderColor: 'red',
+              pointBackgroundColor: 'red',
+              pointRadius: 2,
+              pointHoverBackgroundColor: 'purple',
+              pointHoverBorderColor: 'purple',
+              borderColor: 'green'
+            },
+
+            targetLine
         ]
       },
       options: {
         responsive: true,
         legend:{
-          display:false
+          display:true
         },
         elements: {
           line: {
@@ -74,7 +97,8 @@ function showGraph(panelId, dpts, target){
               callback: function(value, index, values) {
                 return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
               } 
-            }
+            },
+            max: target + 10000
           }]
         },
         tooltips: {
@@ -85,6 +109,9 @@ function showGraph(panelId, dpts, target){
           callbacks: {
             //Custom tooltip labels
             label: function(tooltipItems, data) {
+              if(target != undefined && target == tooltipItems.yLabel)
+                return []; //No tooltip is shown for the target line.
+
               var d = new Date(tooltipItems.xLabel);
 
               var labelVals = [date2Str(d, true)];
@@ -115,7 +142,7 @@ function showGraph(panelId, dpts, target){
   $("#" + panelId + " .donorCount").html(dpts.length);
 }
 
-function initialize(panelId, isGadgetMode){
+function initialize(panelId, donorPanelId, isGadgetMode, target){
   var spreadsheetId = "1VfuLJzB6ygO4SKC77yU9iO7UZWOC9zI4PmhJAXbQR8A",
   url = "https://spreadsheets.google.com/feeds/list/" +
         spreadsheetId +
@@ -126,10 +153,13 @@ function initialize(panelId, isGadgetMode){
     success: function(response) {
       var data = response.feed.entry;
       var dpts = [];
+      var donors = [];
 
       for (var i = 0; i < data.length; i++) {
         var cont = data[i].content.$t;
         //console.log(cont)
+
+        //Collecting pledge data
         var n = cont.indexOf("pledge");
         if(n >= 0){
           n = cont.indexOf("totalamount");
@@ -151,9 +181,15 @@ function initialize(panelId, isGadgetMode){
 
           dpts.push({x:d, y:amount});
         }
+
       } 
 
-      showGraph(panelId, dpts);
+      showGraph(panelId, dpts, target);
+
+      //Displaying donors' names
+      if(donorPanelId != undefined){
+
+      }
 
       if(isGadgetMode){
         gadgets.window.adjustHeight();

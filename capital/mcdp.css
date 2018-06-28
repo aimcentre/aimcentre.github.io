@@ -6,24 +6,28 @@
 	border: dashed green 2px;
 }
 .title{
-  font-size: 1.2em;
+  font-size: 1.7em;
   text-align: center;
   font-weight: bold;
-  margin: 10px 0 10px 0;
+  margin: 1em 0 1em 0;
   color: #66002e;
 }
 .infoPanel{
   display: none;
-  margin-top: 20px;
-  margin-left: 10px;
+  margin-top: 1em;
+  margin-left: 0px;
   font-weight: bold;
+  text-align: center;
 }
-.infoLabel{
-  
+.infoLine{
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
 }
-
-
 
 .featurette h2{
   margin-bottom: 1em !important;
+}
+
+#graphPanel{
+  margin-top: 4em;
 }
