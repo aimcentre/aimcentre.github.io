@@ -108,7 +108,7 @@
         <!-- Three columns of text below the carousel -->
         <div class="row">
           <div class="col-lg-4">
-            <img class="rounded-circle" src="centreIcon.jpg" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle" src="https://abvasvmc.github.io/capital/centreIcon.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>Meditation Centre Development</h2>
             <p>
               Our goal is to acquire a new facility with the permission for Religious Assembly so that we can resume our meditation programs, Dhamma discussions, children's programs, mindfulness development and stress relief programs, counselling, retreats and daily sermons without any hindrance.
@@ -116,7 +116,7 @@
             <p><a class="btn btn-secondary" href="#section1" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <img class="rounded-circle" src="savingsIcon.jpg" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle" src="https://abvasvmc.github.io/capital/savingsIcon.jpg" alt="Generic placeholder image" width="140" height="140">
             <h2>Financial Status Overview</h2>
             <p>
               It takes about a minimum investment of 1.5 million dollars to aquire a new facility in a location with proper bylaw permissions to continue our public programs. Towards this, we can put about $500,000 by selling the current house and then obtain loan of about $300,000 from the bank. To fill the ...
@@ -125,7 +125,7 @@
             <p><a class="btn btn-secondary" href="#section2" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <img class="rounded-circle" src="projectlogoIcon.png" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded-circle" src="https://abvasvmc.github.io/capital/projectlogoIcon.png" alt="Generic placeholder image" width="140" height="140">
             <h2>Development Fund Contributions</h2>
             <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
             <p><a class="btn btn-secondary" href="#section3" role="button">View details &raquo;</a></p>
@@ -147,7 +147,7 @@
             <h2 class="featurette-heading">Meditation Centre Development<span class="text-muted"></span></h2>
           </div>-->
           <div class="col-md-5 d-md-none">
-            <img class="featurette-image img-fluid mx-auto feature-visual" src="centre.jpg" alt="New Meditation Centre Image">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/centre.jpg" alt="New Meditation Centre Image">
           </div>
           <div class="col-md-7">
             <p class="lead">
@@ -161,7 +161,7 @@
             </p>
           </div>
           <div class="col-md-5 d-none d-md-block">
-            <img class="featurette-image img-fluid mx-auto feature-visual" src="centre.jpg" alt="New Meditation Centre Image">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/centre.jpg" alt="New Meditation Centre Image">
           </div>
         </div>
 
@@ -173,7 +173,7 @@
             <h2 class="featurette-heading">Financial Status Overview<span class="text-muted"></span></h2>
           </div>
           <div class="col-md-5 order-md-1 feature-visual d-md-none">
-            <img class="featurette-image img-fluid mx-auto" src="savings.jpg" alt="Financial Status Image">
+            <img class="featurette-image img-fluid mx-auto" src="https://abvasvmc.github.io/capital/savings.jpg" alt="Financial Status Image">
           </div>          
           <div class="col-md-7 order-md-2">
             <p class="lead">
@@ -184,7 +184,7 @@
             </p>
           </div>
           <div class="col-md-5 order-md-1 feature-visual d-none d-md-block">
-            <img class="featurette-image img-fluid mx-auto" src="savings.jpg" alt="Financial Status Image">
+            <img class="featurette-image img-fluid mx-auto" src="https://abvasvmc.github.io/capital/savings.jpg" alt="Financial Status Image">
           </div>
         </div>
 
@@ -196,7 +196,7 @@
             <h2 class="featurette-heading">Development Fund Contributions<span class="text-muted"></span></h2>
           </div>
           <div class="col-md-5 d-md-none" style="text-align:center;">
-            <img class="featurette-image img-fluid mx-auto feature-visual" src="projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
           </div>
 
           <div class="col-md-7">
@@ -208,7 +208,7 @@
             </p>
           </div>
           <div class="col-md-5 d-none d-md-block" style="text-align:center;">
-            <img class="featurette-image img-fluid mx-auto feature-visual" src="projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
           </div>
 
           <div class="col-md-12">
@@ -258,8 +258,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="./bootstrap/jquery-slim.min.js"><\/script>')</script>
   -->
-    <script src="./bootstrap/popper.min.js"></script>
-    <script src="./bootstrap/bootstrap.min.js"></script>
+    <script src="https://abvasvmc.github.io/capital/bootstrap/popper.min.js"></script>
+    <script src="https://abvasvmc.github.io/capital/bootstrap/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <!-- <script src="./bootstrap/holder.min.js"></script> -->
     <script type="text/javascript">
@@ -270,7 +270,7 @@
         });
       });
     </script>
-    
+
      ]]>
   </Content> 
 </Module>
