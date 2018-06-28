@@ -22,9 +22,9 @@
     <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    <link href="https://abvasvmc.github.io/capital/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
-    <link rel="stylesheet" href="mcdp.css">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/capital/mcdp.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
@@ -33,7 +33,7 @@
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
     <!--<script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> -->
-    <script src="graph.js" crossorigin="anonymous"></script> 
+    <script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> 
 
 
 
