@@ -223,7 +223,7 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
           var name_0_parts = names[0].split(" ");
           var name_1_parts = names[1].split(" ");
 
-          if(name_0_parts[name_0_parts.length-1] == name_0_parts[name_1_parts.length-1]){
+          if(name_0_parts.legth > 1 && name_0_parts[name_0_parts.length-1] == name_0_parts[name_1_parts.length-1]){
             name_0_parts.pop(); //remove the last entry
             names[0] = name_0_parts.join(" ");
           }
