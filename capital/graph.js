@@ -191,7 +191,7 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
             break;
 
             case 'donor':
-              names.push($.trim(val);
+              names.push($.trim(val));
             break;
 
             case 'spouse':
