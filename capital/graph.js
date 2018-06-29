@@ -202,15 +202,18 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
         }
 
         if(pledge > 0){
+          var d = new Date(data[i].title.$t);
+          
+          if(d < new Date("2000-01-01"))  //date is not specified
+            d = new Date();       
+
           //NOTE: Due to some odd reason, the date-time value read from the
           //spreadsheet cell is always one day behind the actual date set
           //at the spreadsheet. Also, the vertical gridline has some offset than
           //the label. We calculate and add some offset in milliseconds, which was 
           //caluclated emperically to compensate for this lag. 
-          
           var timeOffsetCompensation = 43200000; //add 12 hours
-          //var timeOffsetCompensation = 0; //21600000; //add 6 hours
-          var d = new Date(new Date(data[i].title.$t).getTime() + timeOffsetCompensation);
+          d = new Date(d.getTime() + timeOffsetCompensation);
 
           //console.log(amount + " on " + d);
 
