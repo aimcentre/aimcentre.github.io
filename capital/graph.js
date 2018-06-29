@@ -191,11 +191,11 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
             break;
 
             case 'donor':
-              names.push(val);
+              names.push($.trim(val);
             break;
 
             case 'spouse':
-              names.push(val);
+              names.push($.trim(val));
             break;            
           }
 
@@ -215,6 +215,18 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
           //console.log(amount + " on " + d);
 
           dpts.push({x:d, y:total});  
+        }
+
+        //Removing the last name of the first entry in the name 
+        //if both names have the same lastname
+        if(names.length == 2){
+          var name_0_parts = names[0].split(" ");
+          var name_1_parts = names[1].split(" ");
+
+          if(name_0_parts[name_0_parts.length-1] == name_0_parts[name_1_parts.length-1]){
+            name_0_parts.pop(); //remove the last entry
+            names[0] = name_0_parts.join(" ");
+          }
         }
 
         if(names.length > 0)
