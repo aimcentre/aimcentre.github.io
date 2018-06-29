@@ -34,7 +34,7 @@ function showGraph(panelId, dpts, target){
     targetLinePts = [{x:dpts[0].x, y:target}, {x:tomorrow, y:target}];
 
     targetLine = {
-              label: 'Total Amount to be Raised',
+              label: 'Final Amount Needed',
               borderWidth: 2,
               data: targetLinePts,
               backgroundColor: 'transparent',
@@ -53,7 +53,7 @@ function showGraph(panelId, dpts, target){
       data: {
         datasets: [
             {
-              label: 'Donation Commitments Received',
+              label: 'Commitments Received',
               borderWidth: 2,
               data: dpts,
               backgroundColor: 'rgba(31, 222, 88, 0.25)',

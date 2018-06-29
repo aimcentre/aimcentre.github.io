@@ -3,15 +3,16 @@
 	width: 100%;
 	max-width:1900px;
 	height: 540px;
-	border: dashed green 2px;
+	/*border: dashed green 2px;*/
 }
-.title{
-  font-size: 1.7em;
+.subtitle{
+  font-size: 1.25em;
   text-align: center;
   font-weight: bold;
   margin: 1em 0 1em 0;
   color: #66002e;
 }
+
 .infoPanel{
   display: none;
   margin-top: 1em;
