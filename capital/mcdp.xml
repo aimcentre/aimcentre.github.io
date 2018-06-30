@@ -40,7 +40,7 @@
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
           </ol>
         </div>
         
@@ -69,18 +69,20 @@
               </div>-->
             </div>
           </div>
+          <!--
           <div class="carousel-item">
             <div class="img third-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p3.jpg")'></div>
             <div class="container">
-              <!--<div class="carousel-caption text-right">
+              <div class="carousel-caption text-right">
                 <h1>Banner Image 1</h1>
                 
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
                 
-              </div>-->
+              </div>
             </div>
           </div>
+          -->
         </div>
         <!--
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
