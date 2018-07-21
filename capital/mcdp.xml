@@ -29,6 +29,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+    <script src="https://abvasvmc.github.io/capital/chroma.min.js" crossorigin="anonymous"></script>     
     <script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> 
 
 
