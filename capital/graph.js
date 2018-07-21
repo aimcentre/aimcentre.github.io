@@ -166,7 +166,8 @@ function showDistributions(panelId, dpts){
     data: {
       datasets: [{
         data: pledges,
-        backgroundColor: colours
+        backgroundColor: colours,
+        hoverBackgroundColor: '#c91e0e'
       }],
       labels: []
     },
