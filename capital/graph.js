@@ -196,7 +196,7 @@ function showDistributions(panelId, dpts){
               //var pledge = tooltipItems.yLabel;
 
               var pledgeStr = pledge.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-              var labelVals = ["Pledge: $" + pledgeStr];
+              var labelVals = ["$" + pledgeStr];
 
               return labelVals;
             }
