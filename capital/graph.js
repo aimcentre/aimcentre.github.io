@@ -153,11 +153,13 @@ function showDistributions(panelId, dpts){
   var ctx = canvas.getContext('2d');
 
   //var data = dpts.map(d => d.y);
-  var pledges = dpts.map(d => d.p);
+  var exponent = 0.875;
+  var pledges = dpts.map(d => Math.pow(d.p, exponent));
   var maxPledge = Math.max.apply(Math, pledges);
 
   //'#DC143C' #9e2ce0 #1f3691 blue #006666
   var colours = dpts.map(d => chroma.mix('#00b300', '#003300', 1 - d.p/maxPledge).hex());
+  //var colours = dpts.map(d => chroma.mix('red', 'blue', 1 - d.p/maxPledge).hex());
   //var colours = [];
 
   new Chart(ctx, {
@@ -188,6 +190,7 @@ function showDistributions(panelId, dpts){
 
               //Extracting pledge for pie charts
               var pledge = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index];
+              pledge = Math.round(Math.pow(pledge, (1/exponent)));
 
               //Extracting pledge for polarArea charts
               //var pledge = tooltipItems.yLabel;
