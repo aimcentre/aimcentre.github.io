@@ -140,9 +140,69 @@ function showGraph(panelId, dpts, target){
   var totalPledged = dpts[dpts.length - 1].y;
   $("#" + panelId + " .amountPledged").html(dollars2str(totalPledged));
   $("#" + panelId + " .donorCount").html(dpts.length);
-}
+} //END: showGraph(panelId, dpts, target)
 
-function initialize(panelId, donorPanelId, isGadgetMode, target){
+function showDistributions(panelId, dpts){
+
+  //Formatting reference:
+  //https://www.chartjs.org/docs/latest/charts/line.html
+
+  var canvas = document.getElementById(panelId).getElementsByTagName('canvas')[0];
+  var ctx = canvas.getContext('2d');
+
+  //var data = dpts.map(d => d.y);
+  var pledges = dpts.map(d => d.p);
+  var maxPledge = Math.max.apply(Math, pledges);
+
+  //'#DC143C' #9e2ce0 #1f3691 blue #006666
+  var colours = dpts.map(d => chroma.mix('#00b300', '#003300', 1 - d.p/maxPledge).hex());
+  //var colours = [];
+
+  new Chart(ctx, {
+    data: {
+      datasets: [{
+        data: pledges,
+        backgroundColor: colours
+      }],
+      labels: []
+    },
+    type: 'pie',
+    options: {
+      responsive: true,
+      legend:{
+        display:false
+      },
+      tooltips: {
+          enabled: true,
+          mode: 'single',
+          bodyFontSize: 12,
+          backgroundColor: '#6A0000',
+          callbacks: {
+            //Custom tooltip labels
+            label: function(tooltipItems, data) {
+
+              //if(target != undefined && target == tooltipItems.yLabel)
+              //  return []; //No tooltip is shown for the target line.
+
+              //Extracting pledge for pie charts
+              var pledge = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index];
+
+              //Extracting pledge for polarArea charts
+              //var pledge = tooltipItems.yLabel;
+
+              var pledgeStr = pledge.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              var labelVals = ["Pledge: $" + pledgeStr];
+
+              return labelVals;
+            }
+          }
+        }
+    }
+});
+
+} //END: showDistributions(panelId, dpts)
+
+function initialize(panelId, donorPanelId, isGadgetMode, target, polarPanelId){
   var spreadsheetId = "1VfuLJzB6ygO4SKC77yU9iO7UZWOC9zI4PmhJAXbQR8A",
   url = "https://spreadsheets.google.com/feeds/list/" +
         spreadsheetId +
@@ -217,7 +277,7 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
 
           //console.log(amount + " on " + d);
 
-          dpts.push({x:d, y:total});  
+          dpts.push({x:d, y:total, p:pledge});  
         }
 
         //Removing the last name of the first entry in the name 
@@ -238,6 +298,10 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
 
       showGraph(panelId, dpts, target);
 
+      if(polarPanelId != undefined){
+        showDistributions(polarPanelId, dpts);
+      }
+
       //Displaying donors' names
       if(donorPanelId != undefined){
         $("#" + donorPanelId).html(donors.join(' '))
@@ -248,6 +312,6 @@ function initialize(panelId, donorPanelId, isGadgetMode, target){
         gadgets.window.adjustHeight();
       }
 
-    }
-  });  
+    } //END: success: function(response)
+  }); //END: $.get 
 }

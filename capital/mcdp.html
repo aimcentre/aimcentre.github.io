@@ -23,6 +23,7 @@
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
     <!--<script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> -->
+    <script src="chroma.min.js" crossorigin="anonymous"></script> 
     <script src="graph.js" crossorigin="anonymous"></script> 
 
 
@@ -258,16 +259,20 @@
               <div id="graphPanel">
                 <div class="subtitle">Growth of Contributions</div>
                 <canvas></canvas>
+                <div class="infoPanel container">
+                  <div class="infoLine">
+                    <span class="infoLabel">Number of Donors: </span>
+                    <span class="infoValue donorCount"></span>
+                  </div>
+                  <div class="infoLine">
+                    <span class="infoLabel">Total Amount Pledged: </span>
+                    <span class="infoValue amountPledged"></span>
+                  </div>
+                </div>
               </div>
-              <div class="infoPanel container">
-                <div class="infoLine">
-                  <span class="infoLabel">Number of Donors: </span>
-                  <span class="infoValue donorCount"></span>
-                </div>
-                <div class="infoLine">
-                  <span class="infoLabel">Total Amount Pledged: </span>
-                  <span class="infoValue amountPledged"></span>
-                </div>
+              <div id="pledgeDistributionPanel">
+                <div class="subtitle">Pledge Distribution</div>
+                <canvas></canvas>
               </div>
               <div id="donorPanel">
                 <div class="subtitle">
@@ -327,7 +332,7 @@
 
       $(function() {
         resetCarouselSize();
-        initialize("graphPanel", "donorNames", false, 700000);
+        initialize("graphPanel", "donorNames", false, 700000, "pledgeDistributionPanel");
         $('.carousel').carousel({
           "pause": false
         });

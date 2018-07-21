@@ -233,16 +233,20 @@
               <div id="graphPanel">
                 <div class="subtitle">Growth of Contributions</div>
                 <canvas></canvas>
+                <div class="infoPanel container">
+                  <div class="infoLine">
+                    <span class="infoLabel">Number of Donors: </span>
+                    <span class="infoValue donorCount"></span>
+                  </div>
+                  <div class="infoLine">
+                    <span class="infoLabel">Total Amount Pledged: </span>
+                    <span class="infoValue amountPledged"></span>
+                  </div>
+                </div>
               </div>
-              <div class="infoPanel container">
-                <div class="infoLine">
-                  <span class="infoLabel">Number of Donors: </span>
-                  <span class="infoValue donorCount"></span>
-                </div>
-                <div class="infoLine">
-                  <span class="infoLabel">Total Amount Pledged: </span>
-                  <span class="infoValue amountPledged"></span>
-                </div>
+              <div id="pledgeDistributionPanel">
+                <div class="subtitle">Pledge Distribution</div>
+                <canvas></canvas>
               </div>
               <div id="donorPanel">
                 <div class="subtitle">
@@ -295,7 +299,7 @@
 
       $(function() {
         resetCarouselSize();
-        initialize("graphPanel", "donorNames", true, 700000);
+        initialize("graphPanel", "donorNames", true, 700000, "pledgeDistributionPanel");
         $('.carousel').carousel({
           "pause": false,
           "interval": 8000
