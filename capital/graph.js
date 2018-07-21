@@ -121,11 +121,13 @@ function showGraph(panelId, dpts, target){
                 prev = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index - 1].y;
               }
 
-              var inc = (tooltipItems.yLabel - prev).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-              labelVals.push("    Pledge: $" + inc);   
+              //var inc = (tooltipItems.yLabel - prev).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              //labelVals.push("    Pledge: $" + inc);   
+              //var total = tooltipItems.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              //labelVals.push("    Total: $" + total); 
 
               var total = tooltipItems.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-              labelVals.push("    Total: $" + total);   
+              labelVals.push("Total: $" + total);   
 
               return labelVals;
             }
