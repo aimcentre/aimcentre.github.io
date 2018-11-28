@@ -1,20 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="ABVA Home Gadget" height="100">
+    <Require feature="dynamic-height"/> 
+  </ModulePrefs>
+  <UserPref name="siteDomain" display_name="Site Domain" datatype="string" required="true"/>
+  <UserPref name="siteName" display_name="Site Name" datatype="string" required="true"/>
+  <UserPref name="siteRoot" display_name="Site Root" datatype="string" required="true"/>
+  
+  <Content type="html">
+     <![CDATA[
 
-<!doctype html>
-<html lang="en">
-  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!--<link rel="icon" href="../../../../favicon.ico">-->
 
     <!-- Bootstrap core CSS -->
-    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="https://abvasvmc.github.io/capital/bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    <link href="https://abvasvmc.github.io/capital/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
-    <link rel="stylesheet" href="mcdp.css">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/capital/mcdp.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
@@ -22,51 +29,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
-    <!--<script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> -->
-    <script src="https://abvasvmc.github.io/capital/chroma.min.js" crossorigin="anonymous"></script> 
-    <script src="graph.js" crossorigin="anonymous"></script> 
+    <script src="https://abvasvmc.github.io/capital/chroma.min.js" crossorigin="anonymous"></script>     
+    <script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> 
 
 
-  </head>
-  <body>
-<!--
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Carousel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-    </header>
--->
     <main role="main">
 
       <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+        
         <div class="d-none d-md-block">
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
           </ol>
         </div>
-      
+        
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="img first-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p1.jpg")'></div>
@@ -77,9 +54,6 @@
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
                 
-              </div>-->
-              <!--<div class="carousel-caption">
-                <h1>Banner Image 1</h1>
               </div>-->
             </div>
           </div>
@@ -93,24 +67,6 @@
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
                 
               </div>-->
-              <!--<div class="carousel-caption">
-                <h1>Banner Image 2</h1>
-              </div>-->
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="img third-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p3.jpg")'></div>
-            <div class="container">
-              <!--<div class="carousel-caption text-right">
-                <h1>Banner Image 1</h1>
-                
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                
-              </div>-->
-              <!--<div class="carousel-caption">
-                <h1>Banner Image 3</h1>
-             </div>-->
             </div>
           </div>
         </div>
@@ -125,6 +81,7 @@
         </a>
         -->
       </div>
+
 
       <!-- Marketing messaging and featurettes
       ================================================== -->
@@ -162,7 +119,6 @@
             <h2>Development Fund</h2>
             <p>
               In order to meet our goal of raising $700,000 we have set-up a Meditation Centre Development Fund. We are approaching our own devotees at the Meditation Centre, as well as appealing to other generous donors and organizations worldwide for their support. Contributions in any amount will bring us closer to fulfilling our deepest wish to assemble and carry forward the teachings of the Buddha.  Much merit for your support!
-              
               <!--
               We have set-up a Meditation Centre Development Fund to cover the shortfall of $700,000. We kindly request the devotees of our centre, as well as other organizations and the generous donors around the world, to contribute to this fund and assist us to fill this shortfall. Much merits for your support!
               -->
@@ -181,26 +137,31 @@
             <a name="section1"></a>
             <h2 class="featurette-heading">Meditation Centre Development<span class="text-muted"></span></h2>
           </div>
-            <!--<div class="col-md-12">
-            <a name="section1"></a>
-            <h2 class="featurette-heading">Meditation Centre Development<span class="text-muted"></span></h2>
-          </div>-->
           <div class="col-md-5 d-md-none">
-            <img class="featurette-image img-fluid mx-auto feature-visual" src="centre.jpg" alt="New Meditation Centre Image">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/centre.jpg" alt="New Meditation Centre Image">
           </div>
           <div class="col-md-7">
             <p class="lead">
+              Due to an order given by The City of Edmonton to cease public assemblies for religious purposes, we have relocated many of our programs and suspended others. The current property is located in a neighbourhood zoned as residential, which means religious assemblies were not permitted, according to the zoning bylaw, and we needed to stop offering public services.
+              <!--
               We have relocated part of our public programs and suspended others in due respect to an order given by The City of Edmonton to cease public services offered at our current facility due to bylaw restrictions. 
+              -->
             </p>
             <p class="lead">
+              Our goal is to purchase or build a facility in a suitable location that allows for public gatherings, in order to resume our programs and services. We also want to ensure that there is sufficient space available to host our annual religious, cultural and community programs.
+              <!--
               Our goal is to purchase or build a facility in a location where we have the permission for Religious Assembly so that we can resume our meditation programs, Dhamma discussions, children's programs, youth programs, mindfulness development programs, stress relief programs, counselling, retreats and daily sermons, etc. that we offered, without any hindrance. We also want to ensure that there is sufficient space available for hosting our annual religious, cultural and community programs in it.
+              -->
             </p>
             <p class="lead">
-               Purchase of a this kind of facility is much more financially challenging than buying a residential place. However, we are confident that this challenge can be overcome, and allow this meditation centre to continue its public service, thanking to the commitment and generosity of the local and global community.
-            </p>
+              Obtaining a facility for these purposes is financially challenging, however, we are confident that we can meet this challenge through the support and generosity of many donors from within our own community and from around the globe.
+              <!--
+              Purchase of this kind of facility is much more financially challenging than buying a residential place. However, we are confident that this challenge can be overcome, and allow this meditation centre to continue its public service, thanks to the commitment and generosity of the local and global community.
+              -->
+          </p>
           </div>
           <div class="col-md-5 d-none d-md-block">
-            <img class="featurette-image img-fluid mx-auto feature-visual" src="centre.jpg" alt="New Meditation Centre Image">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/centre.jpg" alt="New Meditation Centre Image">
           </div>
         </div>
 
@@ -209,21 +170,27 @@
         <div class="row featurette">
           <div class="col-md-12">
             <a name="section2"></a>
-            <h2 class="featurette-heading">Financial Status Overview<span class="text-muted"></span></h2>
+            <h2 id="section2" class="featurette-heading">Financial Status Overview<span class="text-muted"></span></h2>
           </div>
           <div class="col-md-5 order-md-1 feature-visual d-md-none">
-            <img class="featurette-image img-fluid mx-auto" src="savings.jpg" alt="Financial Status Image">
+            <img class="featurette-image img-fluid mx-auto" src="https://abvasvmc.github.io/capital/savings.jpg" alt="Financial Status Image">
           </div>          
           <div class="col-md-7 order-md-2">
             <p class="lead">
-              In current market conditions, it requires about a minimum investment of 1.5 million dollars to purchase or build a suitable facility for the meditation centre in a location where there is permission for Religious Assembly. Towards this, we can allocate about $500,000 by selling the current house where the meditation centre is established at, and also obtain loan of about $300,000 from the bank. This leaves a <span class="font-weight-bold">shortfall of about $700,000</span>. 
+              Currently, we estimate it will take a minimum investment of 1.5 million dollars to relocate our Meditation Centre to a site that is suitable for the purposes of religious assemblies. The property we possess is valued at $500,000 and we can obtain a loan of approximately $300,000 from the bank. However, this leaves a shortfall of $700,000.
+              <!--
+              In the current market, it requires about a minimum investment of 1.5 million dollars to purchase or build a suitable facility for the meditation centre in a location where there is permission for Religious Assembly. Towards this, we can allocate about $500,000 by selling the current house where the meditation centre is established at, and also obtain a loan of about $300,000 from the bank. This leaves a shortfall of about $700,000.
+              -->
             </p>
             <p class="lead">
-              To cover this shortfall, we have established a Meditation Centre Development Fund and started obtaining pledges from our devotees and well wishers. Contributions made to this fund will solely be used for the establishment of the new meditation centre facility. We kindly request the generous people in Edmonton, across Canada and the World, to come forward and assist us in this difficult but noble mission. 
+              In order to raise funds to cover this shortfall, we have established a Meditation Centre Development Fund and are obtaining pledges from our devotees and well-wishers. Contributions made to this fund will be used solely for the establishment of a new Meditation Centre.  We are appealing to generous people in Edmonton, across Canada and around the world to support us in this noble and difficult mission.
+              <!--
+              To cover this shortfall, we have established a Meditation Centre Development Fund and started obtaining pledges from our devotees and well-wishers. Contributions made to this fund will solely be used for the establishment of the new meditation centre facility. We kindly request the generous people in Edmonton, across Canada and the World, to come forward and assist us in this difficult but noble mission.
+              -->
             </p>
           </div>
           <div class="col-md-5 order-md-1 feature-visual d-none d-md-block">
-            <img class="featurette-image img-fluid mx-auto" src="savings.jpg" alt="Financial Status Image">
+            <img class="featurette-image img-fluid mx-auto" src="https://abvasvmc.github.io/capital/savings.jpg" alt="Financial Status Image">
           </div>
         </div>
 
@@ -232,26 +199,34 @@
         <div class="row featurette">
           <div class="col-md-12">
             <a name="section3"></a>
-            <h2 class="featurette-heading">Development Fund Contributions<span class="text-muted"></span></h2>
+            <h2 id="section3" class="featurette-heading">Development Fund Contributions<span class="text-muted"></span></h2>
           </div>
           <div class="col-md-5 d-md-none" style="text-align:center;">
-            <img class="featurette-image img-fluid mx-auto feature-visual" src="projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
           </div>
 
           <div class="col-md-7">
             <p class="lead">
-              Your generosity is the only source of funding available to save this meditation centre. Please help this meritorius deed and inform your commitment by email to <a href="mailto:president@abva.org">president@abva.org</a> or by contacting the Meditation Centre at 780-641-9795.
+              Generosity is a meritorious deed, highly praised by the Buddha, and your contribution is important because it will keep our Meditation Centre open and alive. Make your pledge by contacting the Samatha Vipassana Meditation Centre at 780-641-9795 or emailing the Alberta Buddhist Vihara Association (ABVA) at <a href="mailto:president@abva.org">president@abva.org</a>.
+              <!--
+              Your generosity is the only source of funding available to save this meditation centre. Please help this meritorious deed and inform your commitment by email to <a href="mailto:president@abva.org">president@abva.org</a> or by contacting the Meditation Centre at 780-641-9795.
+              -->
             </p>
             <p class="lead"> 
+              Since we are a registered, charitable, non-profit organization with the Canada Revenue Agency, we will be able to provide an official tax receipt for all donations. You can estimate the tax credit you will receive by using the <a href="http://www.cra-arc.gc.ca/chrts-gvng/dnrs/svngs/clmng1b2-eng.html" target="_blank"><span class="font-weight-bold">Charitable Donation Tax Credit Calculator</span></a>.  The credit is based on your total annual charitable contributions made.
+              <!--
               As a registered, charitable, non-profit organization, we will provide you <span class="font-weight-bold">Official Tax Receipts</span> for your donation. You may use the <a href="http://www.cra-arc.gc.ca/chrts-gvng/dnrs/svngs/clmng1b2-eng.html" target="_blank"><span class="font-weight-bold">Charitable Donation Tax Credit Calculator</span></a> of the Canada Revenue Agency to see how much tax credit you will be entitled to receive based on the total annual charitable donations you make.
+              -->
             </p>
             <p class="lead"> 
-              The following chart shows the growth of the Meditation Centre Development Fund in real time. We are thankful to the donors who already expressed their commitments and we hubly ask you also to consider helping this worthy cause.
+              The following chart shows the growth of the Meditation Centre Development Fund in real time. We are grateful to the donors who have already pledged their commitment to our fund and we hope you will also consider supporting this worthy cause.
+              <!--
+              The following chart shows the growth of the Meditation Centre Development Fund in real time. We are thankful to the donors who already expressed their commitments and we humbly ask you also to consider helping this worthy cause.
+              -->
             </p>
-
           </div>
           <div class="col-md-5 d-none d-md-block" style="text-align:center;">
-            <img class="featurette-image img-fluid mx-auto feature-visual" src="projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/capital/projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
           </div>
 
           <div class="col-md-12">
@@ -272,7 +247,6 @@
               </div>
               <div id="pledgeDistributionPanel">
                 <div class="subtitle">Pledge Distribution</div>
-                <div class="chartHelp">Hover or Click on Me</div>
                 <canvas></canvas>
               </div>
               <div id="donorPanel">
@@ -280,21 +254,23 @@
                   Donors
                 </div>
                 <p>
-                  Much merits to the following donors and their families for informing us their commitment. The contribution graph and the donor list are updated in real time. If your name is shown incorrectly, please let us know at <a href="president@abva.org">president@abva.org</a>. Thank you.
+                  Much merit to the following donors and their families for making a pledge to our fund. The contribution graph and the donor list are updated in real time. If your name is incorrect, please contact us at <a href="president@abva.org">president@abva.org</a>. Thank you.
+                  <!--
+                  Much merits to the following donors and their families for informing us of their commitment. The contribution graph and the donor list are updated in real time. If your name is shown incorrectly, please let us know at <a href="president@abva.org">president@abva.org</a>. Thank you.
+                  -->
                 </p>
                 <div class="alert alert-warning">
-                  Due to privacy reasons, the names are listed in alphabetical order with no relationship to the commitment dates and amounts shown in the above graph.</br>
-                  
+                  Due to privacy reasons, the names are listed in alphabetical order with no relationship to the commitment dates or amounts shown in the above graphs. The amounts will only be identified in the annual financial report of ABVA.</br>
                 </div>
-                
                 <div class="container">
                   <div id="donorNames" class="row">
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
+
+        </div>
 
         <hr class="featurette-divider">
 
@@ -302,26 +278,17 @@
 
       </div><!-- /.container -->
 
-
-      <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <!--<p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>-->
-      </footer>
     </main>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="./bootstrap/jquery-slim.min.js"><\/script>')</script>
-  -->
-    <script src="./bootstrap/popper.min.js"></script>
-    <script src="./bootstrap/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <!-- <script src="./bootstrap/holder.min.js"></script> -->
+    
+    <script src="https://abvasvmc.github.io/capital/bootstrap/popper.min.js"></script>
+    <script src="https://abvasvmc.github.io/capital/bootstrap/bootstrap.min.js"></script>
+
     <script type="text/javascript">
+
       function resetCarouselSize(){
         var width = $(window).width();
         var aspectRatio = 1900/540;
@@ -333,9 +300,10 @@
 
       $(function() {
         resetCarouselSize();
-        initialize("graphPanel", "donorNames", false, 700000, "pledgeDistributionPanel");
+        initialize("graphPanel", "donorNames", true, 700000, "pledgeDistributionPanel");
         $('.carousel').carousel({
-          "pause": false
+          "pause": false,
+          "interval": 8000
         });
       });
 
@@ -344,5 +312,7 @@
       });
 
     </script>
-  </body>
-</html>
+
+     ]]>
+  </Content> 
+</Module>
