@@ -1,0 +1,427 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../../../favicon.ico">-->
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
+    <link rel="stylesheet" href="mcdp.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+    <!--<script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> -->
+    <script src="https://abvasvmc.github.io/capital/chroma.min.js" crossorigin="anonymous"></script> 
+    <script src="graph.js" crossorigin="anonymous"></script> 
+
+    <style type="text/css">
+      .nav-tabs{
+        margin: 0 0 10px 0;
+        float: right;
+        border: none;
+      }
+      .nav-tabs li{
+        margin-left: 4px;
+      }
+      .nav-tabs li a.active {
+          /*display: none;*/
+          color: #888;
+          text-decoration: none;
+          cursor: default; 
+      }
+      .tab-pane{
+        clear: both;
+      }
+      .tab-pane{
+        text-align: justify;
+      }
+      .sinhala{
+        font-size: 0.85em;
+      }
+      .sinhala h2{
+        font-size: 1.7em;
+        margin-bottom: 15px;
+        padding-top: 8px;
+      }
+      .sidebar{
+        text-align: justify;
+      }
+      .sidebar-section-title{
+        font-size: 1.2em;
+        border-radius: 5px;
+        background-color: #abecff;
+        padding: 4px;
+      }
+      .sidebar h3{
+        font-size: 1.1em;
+        margin: 10px;
+        
+      }
+    </style>
+
+  </head>
+  <body>
+<!--
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Carousel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+-->
+    <main role="main">
+
+      <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="d-none d-md-block">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+        </div>
+      
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="img first-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p1.jpg")'></div>
+            <div class="container" style="">
+              <!--<div class="carousel-caption text-left">
+                <h1>Banner Image 1</h1>
+                
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                
+              </div>-->
+              <!--<div class="carousel-caption">
+                <h1>Banner Image 1</h1>
+              </div>-->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="img second-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p2.jpg")'></div>
+            <div class="container">
+              <!--<div class="carousel-caption">
+                <h1>Banner Image 2</h1>
+                
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                
+              </div>-->
+              <!--<div class="carousel-caption">
+                <h1>Banner Image 2</h1>
+              </div>-->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="img third-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p3.jpg")'></div>
+            <div class="container">
+              <!--<div class="carousel-caption text-right">
+                <h1>Banner Image 1</h1>
+                
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                
+              </div>-->
+              <!--<div class="carousel-caption">
+                <h1>Banner Image 3</h1>
+             </div>-->
+            </div>
+          </div>
+        </div>
+        <!--
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        -->
+      </div>
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-8">
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" class="active" href="#English">English</a></li>
+              <li><a data-toggle="tab" href="#Sinhala" class="sinhala">සිංහල</a></li>
+            </ul>  
+
+            <div class="tab-content">
+              <div id="English" class="tab-pane active">
+                <h2>AIM Centre Development</h2>
+                <p>
+                  Our goal is to build the infrastructure facilities necessary for hosting the range of meditation, mindfulness, stress-relief, moral & ethical development and cultural programs offered by our meditation centre on the serene land it acquired thanks to tremendous generosity exhibited by our community and well wishers. We want to ensure this facility has optimized spaces for conducting meditation programs, classes, workshops and social events. Similar to our programs, the facility will also be accessible to families, community groups and organizations without limiting on one’s origin, ethnicity, culture or beliefs.
+                </p>
+                <p>
+                  We strive to raise funds and welcome expertise from all possible sources, groups and individuals to timely complete this project. We truly acknowledge that were able to come this far successfully thanks to the unparalleled support, ideas, guidance, and hands-on help we received from our community. We are committed to complete the rest of this project as well with the same level of transparency and respect.
+                </p>
+                <p>
+                  We are currently in the process of designing the facility, and we will implement it as a series of milestones, prioritized based on the needs and resources. Each milestone will deliver a well-designed permanent solution towards the final facility. We will publish full details of each milestone online as their details becomes available and we will respect your feedbacks and help. 
+                </p>
+                <p>
+                  As one of the first milestones, we are hoping to install outdoor lighting to provide sufficient illumination over the 350 metre pathway from the property entrance to the present house. We expect to start this project in Sprint 2019. Stay tuned for the details.
+                </p>
+              </div>
+              <div id="Sinhala" class="tab-pane fade sinhala">
+                <h2>බුද්ධ මන්දිරය හා දහම්පාසල් ශාලාව ඉදිකිරීම</h2>
+                <p>
+                සැදැහැවත් ඔබගේ පුණ්‍යවන්ත දායකත්වයෙන් නවමු ස්ථානයක පිහිටුවනු ලැබූ අපේ පන්සලෙහි අනාගත සැළසුම් පිළිබඳව මෙලෙස ඔබව දැනුවත් කරන්නට කැමැත්තෙමු. 
+              </p>
+              <p>
+                ස්වභාවික සුන්දර වටපිටාවක පිහිටි අපේ පන්සල් භුමිය සියලු දෙනාටම සැදැහැ උපදවන ප්‍රිය උපදවන අයුරින් නිර්මාණය කිරීම අපගේ අපේක්ෂාවයි. එහි පළමු පියවර වනුයේ විහාර මන්දිරයක් හා දහම් පාසලට ගොඩනැගිල්ලක් ඉදිකිරීමයි. 
+              </p>
+              <p>
+                බුද්ධ මන්දිරයක් ඉදිකිරිම යනු සැමදා පින් වැඩෙන පින්කමක් බව ඔබ අප සියලු දෙනාම ඉතාමත් හොඳින් දන්නා කරුණකි. සිය දහස් ගණනකගේ අතිශය වන්දනාවට භාජනය වන තථාගතයන් වහන්සේ වෙනුවෙන් ආරාමයක් ඉදිකරන්නට යමෙකුට අවස්ථාව ලැබෙන්නේ ඉතාමත් කලාතුරකිනි. ඒ උතුම් පිංකම සිදුකරන්නට ඔබ සිටින පරිසරයෙන්ම අවස්ථාවක් උදාවීම කොතරම් පුණ්‍යවන්ත ද. එසේම සසර දුකෙන් මිදෙන්නට තථාගත දේශනාව අනුව සිත පුහුණු කරන්නට වෙහෙසන සැදැහැවතුනට ඒ වෙනුවෙන් පහසුකම් සැළසීම අපට ද ඒ මග ගමන් කරන්නට සුදුසුකම් සපුරා ගැනීමකි. 
+              </p>
+              <p>
+                අනාගත පරපුර වන දරු පරපුරට අපගේ සාරධර්ම ඉගැන්වීම ඔබේ ඒකායන අපේක්ෂාවයි. අපෙන් පසුව අපේ උරුමය ඉදිරියට ගෙනයන අපගේ දරුවන් වෙනුවෙන් ගුණ දහම් උගන්වන්නට සුදුසු පරිදි පහසුකම් සැළසීම අපගේ වගකීමයි. එක සිතින් උත්සාහ කළොත් ඒ පියවරද අපට ජයගත හැකිවේ. 
+              </p>
+              <p>
+                ඒ සඳහා වන අලංකාරවත් ගෘහ නිර්මාණ සැළැස්මක් මේ වනවිටත් සකසමින් පවතින බව සතුටු සිතින් යුතුව ඔබට දැනුම්දෙන්නට කැමැත්තෙමු. 
+              </p>
+              <p>
+                මේ සියලු වැඩපිළිවෙලෙහි කටයුතු ඉතා ඉක්මනින් ආරම්භ කිරීම අපගේ බලාපොරොත්තුවයි. එහි පළමු අදියර වශයෙන් ඉතා නොබෝදිනකින් ම පන්සල් භුමියේ පිවිසුම් මාර්ගය විදුලි පහන් කණු යොදා අලංකාරවත් ලෙස ආලෝක කිරීම සිදුකරනු ලැබේ. එම මූලික කටයුතු නිමකොට ලබන වසරේ මුල් කාලය තුළ යටකී ගොඩනැගීම් ආරම්භ කිරීම ද සිදුකරනු ලැබෙති. 
+              </p>
+              <p>
+                මෙතෙක් සිදුකළ කටයුතු සියල්ල ඔබව දැනුවත් කරමින් ඔබගේ ද අදහස් ගරුකරමින් සිදුකලාක් මෙන් ඉදිරි කටයුතුද එලෙසම සිදු කිරීම අපගේ අපේක්ෂාවයි.
+              </p>
+              </div>
+            </div>   
+             
+            <!--                  
+            <img class="rounded-circle" src="https://abvasvmc.github.io/capital/centreIcon.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>New Meditation Centre</h2>
+            <p>
+              Our goal is to acquire a new facility that meets zoning requirements for holding religious assemblies, in order to resume our mindfulness and meditation programs, Dhamma discussions, children’s programs, stress relief programs, counselling, retreats and daily sermons.
+            </p>
+            -->
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4 sidebar">
+            <div class="sidebar-section-title">Upcoming Milestones</div>
+            <h3>Pathway Lighting</h3>
+            <!--
+              <img class="rounded-circle" src="https://abvasvmc.github.io/capital/projectlogoIcon.png" alt="Generic placeholder image" width="140" height="140">
+            -->
+            <p>
+              In order to meet our goal of raising $700,000 we have set-up a Meditation Centre Development Fund. We are approaching our own devotees at the Meditation Centre, as well as appealing to other generous donors and organizations worldwide for their support. Contributions in any amount will bring us closer to fulfilling our deepest wish to assemble and carry forward the teachings of the Buddha.  Much merit for your support!
+            </p>
+
+            <div class="sidebar-section-title">Archive</div>
+            <h3>Development Fund</h3>
+
+            <!--<p><a class="btn btn-secondary" href="#section3" role="button" target="_top">View details &raquo;</a></p>-->
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-12">
+            <a name="section1"></a>
+            <h2 class="featurette-heading">Meditation Centre Development<span class="text-muted"></span></h2>
+          </div>
+            <!--<div class="col-md-12">
+            <a name="section1"></a>
+            <h2 class="featurette-heading">Meditation Centre Development<span class="text-muted"></span></h2>
+          </div>-->
+          <div class="col-md-5 d-md-none">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="centre.jpg" alt="New Meditation Centre Image">
+          </div>
+          <div class="col-md-7">
+            <p class="lead">
+              We have relocated part of our public programs and suspended others in due respect to an order given by The City of Edmonton to cease public services offered at our current facility due to bylaw restrictions. 
+            </p>
+            <p class="lead">
+              Our goal is to purchase or build a facility in a location where we have the permission for Religious Assembly so that we can resume our meditation programs, Dhamma discussions, children's programs, youth programs, mindfulness development programs, stress relief programs, counselling, retreats and daily sermons, etc. that we offered, without any hindrance. We also want to ensure that there is sufficient space available for hosting our annual religious, cultural and community programs in it.
+            </p>
+            <p class="lead">
+               Purchase of a this kind of facility is much more financially challenging than buying a residential place. However, we are confident that this challenge can be overcome, and allow this meditation centre to continue its public service, thanking to the commitment and generosity of the local and global community.
+            </p>
+          </div>
+          <div class="col-md-5 d-none d-md-block">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="centre.jpg" alt="New Meditation Centre Image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-12">
+            <a name="section2"></a>
+            <h2 class="featurette-heading">Financial Status Overview<span class="text-muted"></span></h2>
+          </div>
+          <div class="col-md-5 order-md-1 feature-visual d-md-none">
+            <img class="featurette-image img-fluid mx-auto" src="savings.jpg" alt="Financial Status Image">
+          </div>          
+          <div class="col-md-7 order-md-2">
+            <p class="lead">
+              In current market conditions, it requires about a minimum investment of 1.5 million dollars to purchase or build a suitable facility for the meditation centre in a location where there is permission for Religious Assembly. Towards this, we can allocate about $500,000 by selling the current house where the meditation centre is established at, and also obtain loan of about $300,000 from the bank. This leaves a <span class="font-weight-bold">shortfall of about $700,000</span>. 
+            </p>
+            <p class="lead">
+              To cover this shortfall, we have established a Meditation Centre Development Fund and started obtaining pledges from our devotees and well wishers. Contributions made to this fund will solely be used for the establishment of the new meditation centre facility. We kindly request the generous people in Edmonton, across Canada and the World, to come forward and assist us in this difficult but noble mission. 
+            </p>
+          </div>
+          <div class="col-md-5 order-md-1 feature-visual d-none d-md-block">
+            <img class="featurette-image img-fluid mx-auto" src="savings.jpg" alt="Financial Status Image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-12">
+            <a name="section3"></a>
+            <h2 class="featurette-heading">Development Fund Contributions<span class="text-muted"></span></h2>
+          </div>
+          <div class="col-md-5 d-md-none" style="text-align:center;">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
+          </div>
+
+          <div class="col-md-7">
+            <p class="lead">
+              Your generosity is the only source of funding available to save this meditation centre. Please help this meritorius deed and inform your commitment by email to <a href="mailto:president@abva.org">president@abva.org</a> or by contacting the Meditation Centre at 780-641-9795.
+            </p>
+            <p class="lead"> 
+              As a registered, charitable, non-profit organization, we will provide you <span class="font-weight-bold">Official Tax Receipts</span> for your donation. You may use the <a href="http://www.cra-arc.gc.ca/chrts-gvng/dnrs/svngs/clmng1b2-eng.html" target="_blank"><span class="font-weight-bold">Charitable Donation Tax Credit Calculator</span></a> of the Canada Revenue Agency to see how much tax credit you will be entitled to receive based on the total annual charitable donations you make.
+            </p>
+            <p class="lead"> 
+              The following chart shows the growth of the Meditation Centre Development Fund in real time. We are thankful to the donors who already expressed their commitments and we hubly ask you also to consider helping this worthy cause.
+            </p>
+
+          </div>
+          <div class="col-md-5 d-none d-md-block" style="text-align:center;">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
+          </div>
+
+          <div class="col-md-12">
+            <div class="feature-visual">
+              <div id="graphPanel">
+                <div class="subtitle">Growth of Contributions</div>
+                <canvas></canvas>
+                <div class="infoPanel container">
+                  <div class="infoLine">
+                    <span class="infoLabel">Number of Donors: </span>
+                    <span class="infoValue donorCount"></span>
+                  </div>
+                  <div class="infoLine">
+                    <span class="infoLabel">Total Amount Pledged: </span>
+                    <span class="infoValue amountPledged"></span>
+                  </div>
+                </div>
+              </div>
+              <div id="pledgeDistributionPanel">
+                <div class="subtitle">Pledge Distribution</div>
+                <canvas></canvas>
+              </div>
+              <div id="donorPanel">
+                <div class="subtitle">
+                  Donors
+                </div>
+                <p>
+                  Much merits to the following donors and their families for informing us their commitment. The contribution graph and the donor list are updated in real time. If your name is shown incorrectly, please let us know at <a href="president@abva.org">president@abva.org</a>. Thank you.
+                </p>
+                <div class="alert alert-warning">
+                  Due to privacy reasons, the names are listed in alphabetical order with no relationship to the commitment dates and amounts shown in the above graph.</br>
+                  
+                </div>
+                
+                <div class="container">
+                  <div id="donorNames" class="row">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <!--<p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>-->
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="./bootstrap/jquery-slim.min.js"><\/script>')</script>
+  -->
+    <script src="./bootstrap/popper.min.js"></script>
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <!-- <script src="./bootstrap/holder.min.js"></script> -->
+    <script type="text/javascript">
+      function resetCarouselSize(){
+        var width = $(window).width();
+        var aspectRatio = 1900/540;
+        var height = Math.round(width / aspectRatio);
+        $("#myCarousel .carousel-item").height(height);
+        $("#myCarousel .carousel-item .img").height(height);
+
+      }
+
+      $(function() {
+        resetCarouselSize();
+        initialize("graphPanel", "donorNames", false, 700000, "pledgeDistributionPanel");
+        $('.carousel').carousel({
+          "pause": false
+        });
+      });
+
+      $( window ).resize(function() {
+        resetCarouselSize();
+      });
+
+    </script>
+  </body>
+</html>

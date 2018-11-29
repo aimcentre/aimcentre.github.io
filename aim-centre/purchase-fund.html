@@ -1,0 +1,221 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../../../favicon.ico">-->
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
+    <link rel="stylesheet" href="mcdp.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+    <!--<script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> -->
+    <script src="https://abvasvmc.github.io/capital/chroma.min.js" crossorigin="anonymous"></script> 
+    <script src="graph.js" crossorigin="anonymous"></script> 
+
+    <style type="text/css">
+      .nav-tabs{
+        margin: 0 0 10px 0;
+        float: right;
+        border: none;
+      }
+      .nav-tabs li{
+        margin-left: 4px;
+      }
+      .nav-tabs li a.active {
+          /*display: none;*/
+          color: #888;
+          text-decoration: none;
+          cursor: default; 
+      }
+      .tab-pane{
+        clear: both;
+      }
+      .tab-pane{
+        text-align: justify;
+      }
+      .sinhala{
+        font-size: 0.85em;
+      }
+      .sinhala h2{
+        font-size: 1.7em;
+        margin-bottom: 15px;
+        padding-top: 8px;
+      }
+      .sidebar{
+        text-align: justify;
+      }
+      .sidebar-section-title{
+        font-size: 1.2em;
+        border-radius: 5px;
+        background-color: #abecff;
+        padding: 4px;
+      }
+      .sidebar h3{
+        font-size: 1.1em;
+        margin: 10px;
+        
+      }
+    </style>
+
+  </head>
+  <body>
+<!--
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Carousel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+-->
+    <main role="main">
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+        <div class="row featurette">
+          <div class="col-md-12">
+            <h2 class="featurette-heading">Development Fund Contributions<span class="text-muted"></span></h2>
+          </div>
+          <div class="col-md-5 d-md-none" style="text-align:center;">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
+          </div>
+
+          <div class="col-md-7">
+            <p class="lead">
+              Much merits to everyone who contributed the nearly $350,000 property-purchase fund. This fund was initiated in June 2018 and the unprecedented support you provided over the four months from that point was vital to the purchase of this serene land for our meditation centre.
+            </p>
+            <p class="lead"> 
+              The following chart shows the growth of the Meditation Centre Development Fund in real time. We are thankful to the donors who already expressed their commitments and we hubly ask you also to consider helping this worthy cause.
+            </p>
+
+          </div>
+          <div class="col-md-5 d-none d-md-block" style="text-align:center;">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
+          </div>
+
+          <div class="col-md-12">
+            <div class="feature-visual">
+              <div id="graphPanel">
+                <div class="subtitle">Growth of Contributions</div>
+                <canvas></canvas>
+                <div class="infoPanel container">
+                  <div class="infoLine">
+                    <span class="infoLabel">Number of Donors: </span>
+                    <span class="infoValue donorCount"></span>
+                  </div>
+                  <div class="infoLine">
+                    <span class="infoLabel">Total Amount Pledged: </span>
+                    <span class="infoValue amountPledged"></span>
+                  </div>
+                </div>
+              </div>
+              <div id="pledgeDistributionPanel">
+                <div class="subtitle">Pledge Distribution</div>
+                <canvas></canvas>
+              </div>
+              <div id="donorPanel">
+                <div class="subtitle">
+                  Donors
+                </div>
+                <p>
+                  Much merits to the following donors and their families for informing us their commitment. The contribution graph and the donor list are updated in real time. If your name is shown incorrectly, please let us know at <a href="president@abva.org">president@abva.org</a>. Thank you.
+                </p>
+                <div class="alert alert-warning">
+                  Due to privacy reasons, the names are listed in alphabetical order with no relationship to the commitment dates and amounts shown in the above graph.</br>
+                  
+                </div>
+                
+                <div class="container">
+                  <div id="donorNames" class="row">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <!--<p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>-->
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="./bootstrap/jquery-slim.min.js"><\/script>')</script>
+  -->
+    <script src="./bootstrap/popper.min.js"></script>
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <!-- <script src="./bootstrap/holder.min.js"></script> -->
+    <script type="text/javascript">
+      function resetCarouselSize(){
+        var width = $(window).width();
+        var aspectRatio = 1900/540;
+        var height = Math.round(width / aspectRatio);
+        $("#myCarousel .carousel-item").height(height);
+        $("#myCarousel .carousel-item .img").height(height);
+
+      }
+
+      $(function() {
+        resetCarouselSize();
+        initialize("graphPanel", "donorNames", false, 700000, "pledgeDistributionPanel");
+        $('.carousel').carousel({
+          "pause": false
+        });
+      });
+
+      $( window ).resize(function() {
+        resetCarouselSize();
+      });
+
+    </script>
+  </body>
+</html>
