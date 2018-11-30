@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="ABVA Home Gadget" height="100">
+    <Require feature="dynamic-height"/> 
+  </ModulePrefs>
+  <UserPref name="siteDomain" display_name="Site Domain" datatype="string" required="true"/>
+  <UserPref name="siteName" display_name="Site Name" datatype="string" required="true"/>
+  <UserPref name="siteRoot" display_name="Site Root" datatype="string" required="true"/>
+  
+  <Content type="html">
+     <![CDATA[
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://abvasvmc.github.io/aim-centre/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://abvasvmc.github.io/aim-centre/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/aim-centre/graph.css">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/aim-centre/mcdp.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+    <script src="https://abvasvmc.github.io/aim-centre/chroma.min.js" crossorigin="anonymous"></script>     
+    <script src="https://abvasvmc.github.io/aim-centre/graph.js" crossorigin="anonymous"></script> 
+
+
+    <main role="main">
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+        <div class="row featurette">
+          <div class="col-md-12">
+            <h2 class="featurette-heading">Property Purchase Fund<span class="text-muted"></span></h2>
+          </div>
+          <div class="col-md-5 d-md-none" style="text-align:center;">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
+          </div>
+
+          <div class="col-md-7">
+            <p class="lead">
+              Much merits to everyone who contributed to the property-purchase fund. Since its inception in June 2018, it received unprecedented support from most of you and was able to raise nearly $350,000 within a few months. This amount along with the mortgage approved by the Servus Credit Union, allowed us to purchase the present serene property for our meditation centre.
+            </p>
+            <p class="lead">
+              The following graphs show the growth of the property purchase fund and the distribution of donations. We have also identified the generous donors who contributed to this fund. We sincerely appreciate their generosity and we hope their all good wishes come true!
+            </p>
+
+          </div>
+          <div class="col-md-5 d-none d-md-block" style="text-align:center;">
+            <img class="featurette-image img-fluid mx-auto feature-visual" src="projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
+          </div>
+
+          <div class="col-md-12">
+            <div class="feature-visual">
+              <div id="graphPanel">
+                <div class="subtitle">Growth of Contributions</div>
+                <canvas></canvas>
+                <div class="infoPanel container">
+                  <div class="infoLine">
+                    <span class="infoLabel">Number of Donors: </span>
+                    <span class="infoValue donorCount"></span>
+                  </div>
+                  <div class="infoLine">
+                    <span class="infoLabel">Total Amount Received: </span>
+                    <span class="infoValue amountPledged"></span>
+                  </div>
+                </div>
+              </div>
+              <div id="pledgeDistributionPanel">
+                <div class="subtitle">Donation Distribution</div>
+                <canvas></canvas>
+              </div>
+              <div id="donorPanel">
+                <div class="subtitle">
+                  Donors
+                </div>
+                <div class="alert alert-warning">
+                  Due to privacy reasons, the names are listed in alphabetical order with no relationship to the commitment dates and amounts shown in the above graphs. If your name is shown incorrectly, please let us know at <a href="president@abva.org">president@abva.org</a>. Thank you.</br>
+                </div>
+                
+                <div class="container">
+                  <div id="donorNames" class="row">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <!--<p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>-->
+      </footer>
+    </main>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="https://abvasvmc.github.io/aim-centre/bootstrap/popper.min.js"></script>
+    <script src="https://abvasvmc.github.io/aim-centre/bootstrap/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+      function resetCarouselSize(){
+        var width = $(window).width();
+        var aspectRatio = 1900/540;
+        var height = Math.round(width / aspectRatio);
+        $("#myCarousel .carousel-item").height(height);
+        $("#myCarousel .carousel-item .img").height(height);
+
+      }
+
+      $(function() {
+        initialize("graphPanel", "donorNames", false, undefined, "pledgeDistributionPanel", true);
+        $('.carousel').carousel({
+          "pause": false,
+          "interval": 8000
+        });
+      });
+
+      $( window ).resize(function() {
+        resetCarouselSize();
+      });
+
+    </script>
+
+     ]]>
+  </Content> 
+</Module>
