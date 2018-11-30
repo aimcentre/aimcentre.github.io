@@ -36,7 +36,7 @@
 
     <main role="main">
 
-      <div class="alert alert-info">Test 5</div>
+      <div class="alert alert-info">Test 6</div>
 
       <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         
@@ -201,6 +201,7 @@
         $("#myCarousel .carousel-item").height(height);
         $("#myCarousel .carousel-item .img").height(height);
 
+        gadgets.window.adjustHeight();
       }
 
       $(function() {
