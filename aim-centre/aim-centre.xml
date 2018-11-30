@@ -21,8 +21,8 @@
     <!-- Custom styles for this template -->
     <link href="https://abvasvmc.github.io/capital/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
-    <link rel="stylesheet" href="https://abvasvmc.github.io/aim-centre/aim-centre.css">
     <link rel="stylesheet" href="https://abvasvmc.github.io/capital/mcdp.css">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/aim-centre/aim-centre.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
@@ -36,7 +36,7 @@
 
     <main role="main">
 
-      <div class="alert alert-info">Test 11</div>
+      <div class="alert alert-info">Test 12</div>
 
       <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         
@@ -104,6 +104,12 @@
 
 			  <div class="featurette">
 			    <h1>Contribution Options</h1>
+          <p>
+            You have option to contribute to this meritorious project in many ways. These include, but are not limited to, sharing your design and construction expertiese, sponsoring for materials and services, or making financial contributions.
+          </p>
+          <p> 
+            Since we are a registered, charitable, non-profit organization with the Canada Revenue Agency, we will be able to provide an official tax receipt for all material sponsorships and financial contributions. You can estimate the tax credit you will receive by using the <a href="http://www.cra-arc.gc.ca/chrts-gvng/dnrs/svngs/clmng1b2-eng.html" target="_blank"><span class="font-weight-bold">Charitable Donation Tax Credit Calculator</span></a>.  The credit is based on your total annual charitable contributions made.
+          </p>
 			  </div>
 
 			</div> <!-- English tab -->
