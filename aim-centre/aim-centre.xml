@@ -26,39 +26,129 @@
 		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script src="https://abvasvmc.github.io/abva2.js"></script>
+    	<script src="https://abvasvmc.github.io/aim-centre/chroma.min.js" crossorigin="anonymous"></script> 
+
+	   <style type="text/css">
+	      .nav-tabs{
+	        margin: 0 0 10px 0;
+	        float: right;
+	        border: none;
+	      }
+	      .nav-tabs li{
+	        margin-left: 4px;
+	      }
+	      .nav-tabs li a.active {
+	          /*display: none;*/
+	          color: #888;
+	          text-decoration: none;
+	          cursor: default; 
+	      }
+	      .tab-pane{
+	        clear: both;
+	      }
+	      .tab-pane{
+	        text-align: justify;
+	      }
+	      .sinhala{
+	        font-size: 0.85em;
+	      }
+	      .sinhala h2{
+	        font-size: 1.8em;
+	        margin-bottom: 15px;
+	        padding-top: 8px;
+	      }
+	      .sidebar{
+	        text-align: justify;
+	        margin-top: 50px;
+	      }
+	      .sidebar-content{
+	        margin: 0 10px 0 10px;
+	      }
+	      .sidebar-section-title{
+	        font-size: 1.2em;
+	        border-radius: 5px;
+	        background-color: #abecff;
+	        padding: 4px;
+	      }
+	      .sidebar h3{
+	        font-size: 1.1em;
+	        margin: 10px 10px 10px 0;
+	        
+	      }
+	    </style>
+
+      <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="d-none d-md-block">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+        </div>
+      
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="img first-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p1.jpg")'></div>
+            <div class="container" style="">
+              <!--<div class="carousel-caption text-left">
+                <h1>Banner Image 1</h1>
+                
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                
+              </div>-->
+              <!--<div class="carousel-caption">
+                <h1>Banner Image 1</h1>
+              </div>-->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="img second-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p2.jpg")'></div>
+            <div class="container">
+              <!--<div class="carousel-caption">
+                <h1>Banner Image 2</h1>
+                
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                
+              </div>-->
+              <!--<div class="carousel-caption">
+                <h1>Banner Image 2</h1>
+              </div>-->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="img third-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p3.jpg")'></div>
+            <div class="container">
+              <!--<div class="carousel-caption text-right">
+                <h1>Banner Image 1</h1>
+                
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                
+              </div>-->
+              <!--<div class="carousel-caption">
+                <h1>Banner Image 3</h1>
+             </div>-->
+            </div>
+          </div>
+        </div>
+        <!--
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        -->
+      </div>
+
+
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-6">
-					<div class="inner">
-						<div id="myCarousel" class="carousel slide" data-ride="carousel">
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="hidden-md"><br /></div>
-					<div class="inner">
-						<div id="myWelcome">
-						</div>
-					</div>
-				</div>
-<!--
-				<div class="main-slip">
-					<div class="hidden-sm"><br /></div>
-					<div class="alert alert-warning" role="alert">
-					  <div style="font-weight:bold; font-size;larger; margin-bottom:5px;">Special Notice</div>
-					  Samatha Vipassana Meditation Centre has relocated its programs to various venues 
-					  due to facility restrictions in the current premise. Please note that recurrent 
-					  instances of a program may be held at different places and we will announce the 
-					  details in instance-specific communications. If you intend to attend a program 
-					  where the venue is not advertised here, 
-					  please contact SVMC at 780-641-9795 or spiritualdirector@abva.org before visiting. 
-					  Thank you.
-					</div>
-				</div>
--->
-				
-
 				<div class="main-slip">
 					<h3 class="page-title">Programs and News</h3>
 					<div class="inner">
