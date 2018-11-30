@@ -36,7 +36,7 @@
 
     <main role="main">
 
-      <div class="alert alert-info">Test 3</div>
+      <div class="alert alert-info">Test 4</div>
 
       <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         
@@ -84,6 +84,105 @@
         </a>
         -->
       </div>
+
+         <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" class="active" href="#English">English</a>&nbsp;|&nbsp;</li>
+            <li><a data-toggle="tab" href="#Sinhala" class="sinhala">සිංහල</a></li>
+          </ul>  
+          <div class="tab-content">
+            <div id="English" class="tab-pane active">
+              <div class="row">
+                <div class="col-lg-7">
+                  <h2>AIM Centre Development</h2>
+                  <p>
+                    Our goal is to build the infrastructure facilities required to host the range of meditation, mindfulness, stress-relief, moral &amp; ethical development and cultural programs offered by our meditation centre on the serene land we were able to acquire thanks to the tremendous generosity of our well wishers. This facility will have optimized spaces for conducting meditation programs, classes, workshops and social events. The facility will be accessible to the community without limiting on one’s origin, ethnicity, culture or beliefs.
+                  </p>
+                  <p>
+                    We welcome funds and expertise from all possible sources, groups and individuals to timely complete this project. We truly acknowledge the unprecedented support we received so far in terms of financially, guidance, and hands-on help from the community and we are committed to complete the rest of this project with the same level of transparency and respect that we exhibited so far.
+                  </p>
+                  <p>
+                    We are currently in the process of designing the facility. We will implement it as a series of milestones, prioritized based on the needs and resources. Each milestone will deliver a well-designed permanent solution towards the final goal. We will publish full details of each milestone online timely and we will respect your feedback and help. 
+                  </p>
+                </div> <!-- col-lg-7 -->
+                <div class="col-lg-5 sidebar">
+                  <div class="sidebar-section-title">Upcoming Milestones</div>
+                  <div class="sidebar-content">
+                    <h3>Pathway Lighting</h3>
+                    <!--
+                      <img class="rounded-circle" src="https://abvasvmc.github.io/capital/projectlogoIcon.png" alt="Generic placeholder image" width="140" height="140">
+                    -->
+                    <p>
+                      As one of the very first milestones of the AIM Centre Development project, we expect to install outdoor lighting on the 350 metre pathway from the property entrance to the present house. We have obtained preliminary directions from the Parkland County and we are about to deisgn the lighting system. If you have expertise in design or installation of outdoor lighting, please <a href="mailto:president@abva.org">contact us</a>; we need help. The installation will commence in Spring 2019. More details to come soon.
+                    </p>
+                  </div>
+                  <div class="sidebar-section-title">Archive</div>
+                  <div class="sidebar-content">
+                    <h3>Property Purchase Fund</h3>
+                    <p>
+                      Much merits to everyone who contributed the nearly $350,000 property-purchase fund. This fund was initiated in June 2018 and the unprecedented support you provided over the four months from that point was vital to the purchase of this serene land for our meditation centre. You may view the contribution details on <a href="purchase-fund.html">this page</a>.
+                    </p>
+                  </div>
+                </div><!-- col-lg-5 -->
+              </div><!-- row -->
+
+              <hr class="featurette-divider">
+
+              <div class="row featurette">
+                <h2>Contribution Options</h2>
+              </div>
+
+            </div> <!-- English tab -->
+
+            <div id="Sinhala" class="tab-pane fade sinhala">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2>පන්සල් පරිශ්‍රය ගොඩ නැංවීම</h2>
+                  <p>
+                  සැදැහැවත් ඔබගේ පුණ්‍යවන්ත දායකත්වයෙන් නවමු ස්ථානයක පිහිටුවනු ලැබූ අපේ පන්සලෙහි අනාගත සැළසුම් පිළිබඳව මෙලෙස ඔබව දැනුවත් කරන්නට කැමැත්තෙමු. 
+                  </p>
+                  <p>
+                   ස්වභාවික සුන්දර වටපිටාවක පිහිටි අපේ පන්සල් භුමිය සියලු දෙනාටම සැදැහැ උපදවන ප්‍රිය උපදවන අයුරින් නිර්මාණය කිරීම අපගේ අපේක්ෂාවයි. එහි ප්‍රධාන පියවර වනුයේ විහාර මන්දිරයක් හා දහම් පාසලට ගොඩනැගිල්ලක් ඉදිකිරීමයි. 
+                  </p>
+                  <p>
+                    බුද්ධ මන්දිරයක් ඉදිකිරිම යනු සැමදා පින් වැඩෙන පින්කමක් බව ඔබ අප සියලු දෙනාම ඉතාමත් හොඳින් දන්නා කරුණකි. සිය දහස් ගණනකගේ අතිශය වන්දනාවට භාජනය වන තථාගතයන් වහන්සේ වෙනුවෙන් ආරාමයක් ඉදිකරන්නට යමෙකුට අවස්ථාව ලැබෙන්නේ ඉතාමත් කලාතුරකිනි. ඒ උතුම් පිංකම සිදුකරන්නට ඔබ සිටින පරිසරයෙන්ම අවස්ථාවක් උදාවීම කොතරම් පුණ්‍යවන්ත ද. එසේම සසර දුකෙන් මිදෙන්නට තථාගත දේශනාව අනුව සිත පුහුණු කරන්නට වෙහෙසන සැදැහැවතුනට ඒ වෙනුවෙන් පහසුකම් සැළසීම අපට ද ඒ මග ගමන් කරන්නට සුදුසුකම් සපුරා ගැනීමකි. 
+                  </p>
+                  <p>
+                    අනාගත පරපුර වන දරු පරපුරට අපගේ සාරධර්ම ඉගැන්වීම ඔබේ ඒකායන අපේක්ෂාවයි. අපෙන් පසුව අපේ උරුමය ඉදිරියට ගෙනයන අපගේ දරුවන් වෙනුවෙන් ගුණ දහම් උගන්වන්නට සුදුසු පරිදි පහසුකම් සැළසීම අපගේ වගකීමයි. එක සිතින් උත්සාහ කළොත් ඒ පියවරද අපට ජයගත හැකිවේ. 
+                    ඒ සඳහා වන අලංකාරවත් ගෘහ නිර්මාණ සැළැස්මක් මේ වනවිටත් සකසමින් පවතින බව සතුටු සිතින් යුතුව ඔබට දැනුම්දෙන්නට කැමැත්තෙමු. 
+                  </p>
+                  <p>
+                    මේ සියලු වැඩපිළිවෙලෙහි කටයුතු ඉතා ඉක්මනින් ආරම්භ කිරීම අපගේ බලාපොරොත්තුවයි. එහි පළමු අදියර වශයෙන් ඉතා නොබෝදිනකින් ම පන්සල් භුමියේ පිවිසුම් මාර්ගය විදුලි පහන් කණු යොදා අලංකාරවත් ලෙස ආලෝක කිරීම සිදුකරනු ලැබේ. එම මූලික කටයුතු නිමකොට ලබන වසරේ මුල් කාලය තුළ යටකී ගොඩනැගීම් ආරම්භ කිරීම ද සිදුකරනු ලැබෙති. 
+                  </p>
+                  <p>
+                    මෙතෙක් සිදුකළ කටයුතු සියල්ල ඔබව දැනුවත් කරමින් ඔබගේ ද අදහස් ගරුකරමින් සිදුකලාක් මෙන් ඉදිරි කටයුතුද එලෙසම සිදු කිරීම අපගේ අපේක්ෂාවයි.
+                  </p>
+                </div> <!-- col-lg-8 -->
+                <div class="col-lg-4 sidebar">
+                  <div class="sidebar-section-title">ඉදිරි පියවර </div>
+                  <h3>මාවත ආලෝකකරණය</h3>
+                  <!--
+                    <img class="rounded-circle" src="https://abvasvmc.github.io/capital/projectlogoIcon.png" alt="Generic placeholder image" width="140" height="140">
+                  -->
+                  <p>
+                    In order to meet our goal of raising $700,000 we have set-up a Meditation Centre Development Fund. We are approaching our own devotees at the Meditation Centre, as well as appealing to other generous donors and organizations worldwide for their support. Contributions in any amount will bring us closer to fulfilling our deepest wish to assemble and carry forward the teachings of the Buddha.  Much merit for your support!
+                  </p>
+
+                  <div class="sidebar-section-title">ආ මගක සටහන්</div>
+                  <h3>ආරාම පූජා අරමුදල</h3>
+                </div><!-- col-lg-4 -->
+              </div> <!-- row -->
+
+              <hr class="featurette-divider">
+
+              <div class="row featurette">
+                <h2>ඔබට දායක වියහැකි අයුරු</h2>
+              </div>
+
+            </div> <!-- Sinhala tab -->
+          </div> <!-- tab-content -->
+
+          <hr class="featurette-divider">
+
 
 
       <!-- Marketing messaging and featurettes
