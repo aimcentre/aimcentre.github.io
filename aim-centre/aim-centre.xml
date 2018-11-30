@@ -102,10 +102,31 @@
 			</div>
 		</div>
 
+		<script src="./bootstrap/popper.min.js"></script>
+		<script src="./bootstrap/bootstrap.min.js"></script>
 		
 		<script type="text/javascript">
-						
-		</script>
+	      function resetCarouselSize(){
+	        var width = $(window).width();
+	        var aspectRatio = 1900/540;
+	        var height = Math.round(width / aspectRatio);
+	        $("#myCarousel .carousel-item").height(height);
+	        $("#myCarousel .carousel-item .img").height(height);
+
+	      }
+
+	      $(function() {
+	        resetCarouselSize();
+	        $('.carousel').carousel({
+	          "pause": false
+	        });
+	      });
+
+	      $( window ).resize(function() {
+	        resetCarouselSize();
+	      });
+
+	    </script>
      ]]>
   </Content> 
 </Module>
