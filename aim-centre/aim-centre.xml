@@ -77,152 +77,34 @@
 	      }
 	    </style>
 
-      <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="d-none d-md-block">
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-        </div>
-      
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="img first-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p1.jpg")'></div>
-            <div class="container" style="">
-              <!--<div class="carousel-caption text-left">
-                <h1>Banner Image 1</h1>
-                
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                
-              </div>-->
-              <!--<div class="carousel-caption">
-                <h1>Banner Image 1</h1>
-              </div>-->
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="img second-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p2.jpg")'></div>
-            <div class="container">
-              <!--<div class="carousel-caption">
-                <h1>Banner Image 2</h1>
-                
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                
-              </div>-->
-              <!--<div class="carousel-caption">
-                <h1>Banner Image 2</h1>
-              </div>-->
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="img third-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p3.jpg")'></div>
-            <div class="container">
-              <!--<div class="carousel-caption text-right">
-                <h1>Banner Image 1</h1>
-                
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                
-              </div>-->
-              <!--<div class="carousel-caption">
-                <h1>Banner Image 3</h1>
-             </div>-->
-            </div>
-          </div>
-        </div>
-        <!--
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-        -->
-      </div>
+		<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+			<div class="d-none d-md-block">
+			  <ol class="carousel-indicators">
+			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			    <li data-target="#myCarousel" data-slide-to="1"></li>
+			    <li data-target="#myCarousel" data-slide-to="2"></li>
+			  </ol>
+			</div>
 
-
-
-		<div class="container-fluid">
-			<div class="row">
-				<div class="main-slip">
-					<h3 class="page-title">Programs and News</h3>
-					<div class="inner">
-						<div id="myEventsFeed" class="">
-							<span id="announcementsSpan"></span>
-							<span id="specialEventsSpan"></span>
-							<span id="generalEventsSpan"></span>
-						</div>
-					</div>
-				</div>
-
-				<div class="main-slip">
-					<div class="col-sm-6">
-						<h3 class="page-title">Dhamma School</h3>
-						
-						<div class="feed-item">
-							<div id="dhammaSchool">
-								<div>
-									<div class="col-sm-6" style="text-align:centre">
-										<img src="http://www.abva.org/data-pages/thumbnails/DhammaSchoolThumb.jpg" alt="Dhamma School Logo" class="col-sm-10" style="width:100%" />
-									</div>
-									<div class="visible-xs"><br /></div>
-									<p>
-										Giving children a good foundation in the Lord Buddha's teachings will help them better navigate through life. Towards this, the Dhamma School teaches principles and practice of Dhamma to children, from kindergarten up to high school level, age-appropriate lessons in Theravada Buddhism within a comprehensive syllabus.
-									</p>
-								</div>
-								<div class="read-more">
-									<a href="http://www.abva.org/dhammaschool" target="_top">... read more.</a>
-								</div>
-								<div style="clear:both"></div>
-
-								<!--
-								<div id="dhammaSchoolWidgetText">
-								</div>
-								-->
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6">
-						<h3 class="page-title">Newsletter</h3>
-						<div class="feed-item">
-							<div id="newsletter">
-								<div>
-									<div class="col-sm-6" style="text-align:centre">
-										<img src="http://www.abva.org/data-pages/thumbnails/NewsletterThumb.jpg" alt="Newsletter Image" class="col-sm-6"  style="width:100%" />
-									</div>
-									<div class="visible-xs"><br /></div>
-									<p>
-										The newsletter periodically recapitulate our programs and events and also serves as a means of communicating valuable Dhamma messages to our community. We hope to publish future newsletters on a regular basis, more frequently, and welcome articles and artworks from children and adults. We sincerely hope that you enjoy the newsletter and share it with your family and friends.
-									</p>
-								</div>
-								<div class="read-more">
-									<a href="http://www.abva.org/newsletter" target="_top">... read more.</a>
-								</div>
-								<div style="clear:both"></div>
-								<!--
-								<div id="newsletterWidgetText">
-								</div>
-								
-								-->
-							</div>
-						</div>
-					</div>
-					<div style="clear:both"></div>
-					<br />
-				</div>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+			    <div class="img first-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p1.jpg")'></div>
+			    <div class="container" style="">
+			    </div>
+			  </div>
+			  <div class="carousel-item">
+			    <div class="img second-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p2.jpg")'></div>
+			    <div class="container">
+			    </div>
+			  </div>
 			</div>
 		</div>
+
 		
 		<script type="text/javascript">
 		
 			//Initialize feed loader
-			google.load("feeds", "1");
+//			google.load("feeds", "1");
 			var gadgetMode = true;
 			
 
@@ -249,58 +131,11 @@
 
 				//Loading carousel images
 				var aspectRatio = 9.0/16;				
-				//Loading welcome message from the Welcome page
-				try{
-					showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed, true);
-				}
-				catch(err){
-					console.error("Welcome Message Loading Error:");
-					console.error(err);
-					console.warn("Showing default welcome message");
-
-					var title = "Welcome";
-					//var text = "<p>Welcome to the Alberta Buddhist Vihara Association (ABVA) and the Samatha Vipassana Meditation Centre (SVMC). ABVA is a registered charitable organization in Alberta, established with the objective of providing our community an understanding of Buddhism and its practice, particularly of the Theravada tradition.</p><p>The Samatha Vipassana Meditation Centre is the main service venue of ABVA. It offers a range of services including meditation programs, sutta discussions, Sunday Dhamma School for children, religious services at homes, special retreats and daily Buddhist sermons. These services are based on original teachings of the Buddha, such as The Four Noble Truth and The Eightfold Path, and are offered in both English and Sinhala languages freely to the community irrespective of one's origin, faith, religion or ethnicity. You are welcome to come and experience a difference.</p>";
-					var text = "<p>Welcome to the Alberta Buddhist Vihara Association (ABVA) and the Samatha Vipassana Meditation Centre (SVMC). ABVA is a registered charitable organization in Alberta, established with the objective of providing our community an understanding of Buddhism and its practice, particularly of the Theravada tradition.</p><p>We offer a range of services including meditation programs, sutta discussions, Sunday Dhamma School for children, religious services at homes, special retreats and daily Buddhist sermons. These services are based on original teachings of the Buddha, such as The Four Noble Truth and The Eightfold Path, and are offered in both English and Sinhala languages freely to the community irrespective of one's origin, faith, religion or ethnicity. You are welcome to come and experience a difference.</p>";
-
-					showText("myWelcome", title, text);
-				}
-
-				//Loading text for the Dhamma School Widget from the Dhamma School Intro page
-				try{
-					showPageContents("/data-pages/dhamma-school-intro", "dhammaSchoolWidgetText", feedUrlSeed, false);
-				}
-				catch(err){
-					console.error("Dhamma School Widget Loading Error:");
-					console.error(err);
-					console.warn("Showing default Dhamma School Widget Text");
-					
-					var text = "<p>Giving children a good foundation in the Lord Buddha's teachings will help them better navigate through life. Towards this, the Dhamma School teaches principles and practice of Dhamma to children, from kindergarten up to high school level, age-appropriate lessons in Theravada Buddhism within a comprehensive syllabus.</p>";
-
-					//showText("dhammaSchoolWidgetText", null, text);
-				}
-				
-
-				//Loading text for the Newsletter Widget from the Newsletter Intro page
-				try{
-					showPageContents("/data-pages/newsletter-intro", "newsletterWidgetText", feedUrlSeed, false);
-				}
-				catch(err){
-					console.error("Newsletter Widget Loading Error:");
-					console.error(err);
-					console.warn("Showing default Newsletter Widget Text");
-
-					var text = "<p>The newsletter periodically recapitulate our programs and events and also serves as a means of communicating valuable Dhamma messages to our community. We hope to publish future newsletters on a regular basis, more frequently, and welcome articles and artworks from children and adults. We sincerely hope that you enjoy the newsletter and share it with your family and friends.</p>";
-
-					//showText("newsletterWidgetText", null, text);
-				}
 				
 				//Loading Programs and News to the events display area
-				//showCalendarEvents(announcementCalendarId, apiKey, "announcementsSpan", null, 200, 2, true);
-				//showCalendarEvents(specialEventsCalendarId, apiKey, "specialEventsSpan", null, 200, 4, true);
-				//showCalendarEvents(newsCalendarId, apiKey, "generalEventsSpan", null, 200, 3, true);
-				showCalendarEvents(announcementCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsFeed", null, 200, 20, true);
-				showCalendarEvents(newsCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
+//				showCalendarEvents(announcementCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
+//				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsFeed", null, 200, 20, true);
+//				showCalendarEvents(newsCalendarId, apiKey, "myEventsFeed", null, 200, 5, true);
 
 			} //End: function initialize()
 
@@ -311,7 +146,7 @@
 				window.history.pushState({}, '', document.URL);
 		   });
 		   
-		   //Resize listener for gadget resizing on layout changes
+		   //Resize-listener for gadget resizing on layout changes
 		   var prevWindowWidth= -1;
 		   var carousel_aspect_ratio = -1;
 		   var prevSwitchedWidth = -1;
