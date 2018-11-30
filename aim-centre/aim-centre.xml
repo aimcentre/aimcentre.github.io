@@ -77,6 +77,8 @@
 	      }
 	    </style>
 
+	    <div class="alert alert-info">Test</div>
+
 		<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 			<div class="d-none d-md-block">
 			  <ol class="carousel-indicators">
