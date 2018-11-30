@@ -15,11 +15,11 @@
 .tab-pane{
   clear: both;
 }
-.tab-pane{
+.tab-pane p{
   text-align: justify;
 }
 .sinhala{
-  font-size: 0.85em;
+  
 }
 .sinhala h2{
   font-size: 1.8em;
