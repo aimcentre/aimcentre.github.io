@@ -1,48 +1,46 @@
-<style type="text/css">
-  .nav-tabs{
-    margin: 0 10px 10px 0;
-    float: right !important;
-    border: none !important;
-  }
-  .nav-tabs li{
-    margin-left: 4px;
-  }
-  .nav-tabs li a.active {
-      /*display: none;*/
-      color: #888;
-      text-decoration: none;
-      cursor: default; 
-  }
-  .tab-pane{
-    clear: both;
-  }
-  .tab-pane{
-    text-align: justify;
-  }
-  .sinhala{
-    font-size: 0.85em;
-  }
-  .sinhala h2{
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    padding-top: 8px;
-  }
-  .sidebar{
-    text-align: justify;
-    margin-top: 50px;
-  }
-  .sidebar-content{
-    margin: 0 10px 0 10px;
-  }
-  .sidebar-section-title{
-    font-size: 1.2em;
-    border-radius: 5px;
-    background-color: #abecff;
-    padding: 4px;
-  }
-  .sidebar h3{
-    font-size: 1.1em;
-    margin: 10px 10px 10px 0;
-    
-  }
-</style>
+.nav-tabs{
+  margin: 0 10px 10px 0;
+  float: right !important;
+  border: none !important;
+}
+.nav-tabs li{
+  margin-left: 4px;
+}
+.nav-tabs li a.active {
+    /*display: none;*/
+    color: #888;
+    text-decoration: none;
+    cursor: default; 
+}
+.tab-pane{
+  clear: both;
+}
+.tab-pane{
+  text-align: justify;
+}
+.sinhala{
+  font-size: 0.85em;
+}
+.sinhala h2{
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  padding-top: 8px;
+}
+.sidebar{
+  text-align: justify;
+  margin-top: 50px;
+}
+.sidebar-content{
+  margin: 0 10px 0 10px;
+}
+.sidebar-section-title{
+  font-size: 1.2em;
+  border-radius: 5px;
+  background-color: #abecff;
+  padding: 4px;
+}
+.sidebar h3{
+  font-size: 1.1em;
+  margin: 10px 10px 10px 0;
+  
+}
