@@ -35,7 +35,7 @@
 
     <main role="main">
 
-      <div class="alert alert-info">Test 1</div>
+      <div class="alert alert-info">Test 2</div>
 
       <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         
@@ -302,7 +302,7 @@
 
       $(function() {
         resetCarouselSize();
-        initialize("graphPanel", "donorNames", true, 700000, "pledgeDistributionPanel");
+//        initialize("graphPanel", "donorNames", true, 700000, "pledgeDistributionPanel");
         $('.carousel').carousel({
           "pause": false,
           "interval": 8000
