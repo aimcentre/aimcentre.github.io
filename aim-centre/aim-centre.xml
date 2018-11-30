@@ -13,20 +13,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
 		
-		<!--
  	    <meta http-Equiv="Cache-Control" Content="no-cache" />
 	    <meta http-Equiv="Pragma" Content="no-cache" />
 	    <meta http-Equiv="Expires" Content="-1" />
-		-->
 
-		<link rel="stylesheet" href="https://abvasvmc.github.io/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://abvasvmc.github.io/abva2.css">
-		
-		<script src="https://abvasvmc.github.io/js/jquery.min.js"></script>
-		<script src="https://abvasvmc.github.io/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script src="https://abvasvmc.github.io/abva2.js"></script>
-    	<script src="https://abvasvmc.github.io/aim-centre/chroma.min.js" crossorigin="anonymous"></script> 
+		<!-- Bootstrap core CSS -->
+		<link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="carousel.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
+		<link rel="stylesheet" href="mcdp.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
+		<!--<script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> -->
+		<script src="https://abvasvmc.github.io/capital/chroma.min.js" crossorigin="anonymous"></script> 
+		<script src="graph.js" crossorigin="anonymous"></script> 
 
 	   <style type="text/css">
 	      .nav-tabs{
@@ -77,7 +84,7 @@
 	      }
 	    </style>
 
-	    <div class="alert alert-info">Test3</div>
+	    <div class="alert alert-info">Test4</div>
 
 		<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 			<div class="d-none d-md-block">
