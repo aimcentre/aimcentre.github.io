@@ -108,7 +108,7 @@
 			      <div class="sidebar-section-title">Upcoming Milestones</div>
 			      <div class="sidebar-content">
 			        <h3>Pathway Lighting</h3>
-			          <img class="rounded-circle" src="https://abvasvmc.github.io/aim-centre/images/lamp-post-thumb.jpg" alt="Generic placeholder image" width="140" height="140">
+		          <img class="rounded-circle" src="https://abvasvmc.github.io/aim-centre/images/lamp-post-thumb.jpg" alt="Generic placeholder image" width="140" height="140">
 			        <p>
 			          As one of the very first milestones of the AIM Centre Development project, we expect to install outdoor lighting on the 350 metre pathway from the property entrance to the present house. We have obtained preliminary directions from the Parkland County and we are about to deisgn the lighting system. If you have expertise in design or installation of outdoor lighting, please <a href="mailto:president@abva.org">contact us</a>; we need help. The installation will commence in Spring 2019. More details to come soon.
 			        </p>
@@ -158,9 +158,7 @@
 			    <div class="col-lg-4 sidebar">
 			      <div class="sidebar-section-title">ඉදිරි පියවර </div>
 			      <h3>මාවත ආලෝකකරණය</h3>
-			      <!--
-			        <img class="rounded-circle" src="https://abvasvmc.github.io/capital/projectlogoIcon.png" alt="Generic placeholder image" width="140" height="140">
-			      -->
+              <img class="rounded-circle" src="https://abvasvmc.github.io/aim-centre/images/lamp-post-thumb.jpg" alt="Generic placeholder image" width="140" height="140">
 			      <p>
 			        In order to meet our goal of raising $700,000 we have set-up a Meditation Centre Development Fund. We are approaching our own devotees at the Meditation Centre, as well as appealing to other generous donors and organizations worldwide for their support. Contributions in any amount will bring us closer to fulfilling our deepest wish to assemble and carry forward the teachings of the Buddha.  Much merit for your support!
 			      </p>
