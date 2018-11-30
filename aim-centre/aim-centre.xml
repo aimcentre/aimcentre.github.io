@@ -102,6 +102,7 @@
 
       $(function() {
         resetCarouselSize();
+        initialize("graphPanel", "donorNames", true, 700000, "pledgeDistributionPanel");
         $('.carousel').carousel({
           "pause": false,
           "interval": 8000
