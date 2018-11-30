@@ -36,7 +36,7 @@
 
     <main role="main">
 
-      <div class="alert alert-info">Test 6</div>
+      <div class="alert alert-info">Test 7</div>
 
       <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         
@@ -127,7 +127,7 @@
 
 			  <hr class="featurette-divider">
 
-			  <div class="row featurette">
+			  <div class="featurette">
 			    <h2>Contribution Options</h2>
 			  </div>
 

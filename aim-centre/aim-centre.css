@@ -1,8 +1,8 @@
 <style type="text/css">
   .nav-tabs{
-    margin: 0 0 10px 0;
-    float: right;
-    border: none;
+    margin: 0 10px 10px 0;
+    float: right !important;
+    border: none !important;
   }
   .nav-tabs li{
     margin-left: 4px;
