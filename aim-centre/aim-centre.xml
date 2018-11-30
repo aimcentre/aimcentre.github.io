@@ -22,6 +22,7 @@
     <link href="https://abvasvmc.github.io/capital/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
     <link rel="stylesheet" href="https://abvasvmc.github.io/capital/mcdp.css">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/aim-centre/aim-centre.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
@@ -35,7 +36,7 @@
 
     <main role="main">
 
-      <div class="alert alert-info">Test 2</div>
+      <div class="alert alert-info">Test 3</div>
 
       <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         
