@@ -35,98 +35,12 @@
 
     <main role="main">
 
-      <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-        
-        <div class="d-none d-md-block">
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-          </ol>
-        </div>
-        
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="img first-slide" style='background-image: url("https://abvasvmc.github.io/aim-centre/banner_p1.jpg")'></div>
-            <div class="container" style="">
-              <!--<div class="carousel-caption text-left">
-                <h1>Banner Image 1</h1>
-                
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                
-              </div>-->
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="img second-slide" style='background-image: url("https://abvasvmc.github.io/aim-centre/banner_p2.jpg")'></div>
-            <div class="container">
-              <!--<div class="carousel-caption">
-                <h1>Banner Image 2</h1>
-                
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                
-              </div>-->
-            </div>
-          </div>
-        </div>
-        <!--
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-        -->
-      </div>
-
 
       <!-- Marketing messaging and featurettes
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
 
       <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="https://abvasvmc.github.io/aim-centre/centreIcon.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>New Meditation Centre</h2>
-            <p>
-              Our goal is to acquire a new facility that meets zoning requirements for holding religious assemblies, in order to resume our mindfulness and meditation programs, Dhamma discussions, children’s programs, stress relief programs, counselling, retreats and daily sermons.
-              <!--
-              Our goal is to acquire a new facility with the permission for Religious Assembly so that we can resume our meditation programs, Dhamma discussions, children's programs, mindfulness programs, stress relief programs, counselling, retreats and daily sermons without a hindrance.
-              -->
-            </p>
-
-            <!--<p><a class="btn btn-secondary" href="#section1" role="button">View details &raquo;</a></p>-->
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="https://abvasvmc.github.io/aim-centre/savingsIcon.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Financial Status</h2>
-            <p>
-              We estimate a new facility would require a minimum investment of 1.5 million dollars. The current property is valued at approximately $500,000 plus we would be able to obtain a bank loan for another $300,000. However, this leaves a shortfall of $700,000 which means we will need to raise this amount.
-              <!--
-              It takes about a minimum investment of 1.5 million dollars to acquire a new facility with proper bylaw permissions. At the moment, we can get about $500,000 for this by selling the current property of the centre and another $300,000 as a bank loan. The remaining $700,000 needs to be raised.
-              -->
-            </p>
-            <!--<p><a class="btn btn-secondary" href="#section2" role="button">View details &raquo;</a></p> -->
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="https://abvasvmc.github.io/aim-centre/projectlogoIcon.png" alt="Generic placeholder image" width="140" height="140">
-            <h2>Development Fund</h2>
-            <p>
-              In order to meet our goal of raising $700,000 we have set-up a Meditation Centre Development Fund. We are approaching our own devotees at the Meditation Centre, as well as appealing to other generous donors and organizations worldwide for their support. Contributions in any amount will bring us closer to fulfilling our deepest wish to assemble and carry forward the teachings of the Buddha.  Much merit for your support!
-              <!--
-              We have set-up a Meditation Centre Development Fund to cover the shortfall of $700,000. We kindly request the devotees of our centre, as well as other organizations and the generous donors around the world, to contribute to this fund and assist us to fill this shortfall. Much merits for your support!
-              -->
-            </p>
-            <!--<p><a class="btn btn-secondary" href="#section3" role="button" target="_top">View details &raquo;</a></p>-->
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
 
         <!-- START THE FEATURETTES -->
 
