@@ -162,7 +162,9 @@
 			  <hr class="featurette-divider">
 
 			  <div class="row featurette">
-			    <h1>ඔබට දායක වියහැකි අයුරු</h1>
+          <div class="row">
+			     <h1>ඔබට දායක වියහැකි අයුරු</h1>
+         </div>
 			  </div>
 
 			</div> <!-- Sinhala tab -->
