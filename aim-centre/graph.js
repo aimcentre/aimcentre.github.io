@@ -19,13 +19,29 @@ function dollars2str(val){
   return '$' + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function showGraph(panelId, dpts, target){
+function showGraph(panelId, dpts, target, showIndividualAmounts){
 
   //Formatting reference:
   //https://www.chartjs.org/docs/latest/charts/line.html
 
   var canvas = document.getElementById(panelId).getElementsByTagName('canvas')[0];
   var ctxL = canvas.getContext('2d');
+
+  var datasets = [
+            {
+              label: 'Contributions Received',
+              borderWidth: 2,
+              data: dpts,
+              backgroundColor: 'rgba(31, 222, 88, 0.25)',
+              pointStyle: 'circle',
+              pointBorderColor: 'red',
+              pointBackgroundColor: 'red',
+              pointRadius: 2,
+              pointHoverBackgroundColor: 'purple',
+              pointHoverBorderColor: 'purple',
+              borderColor: 'green'
+            }
+          ];
 
   if(target != undefined){
     target = target + 1;
@@ -45,29 +61,15 @@ function showGraph(panelId, dpts, target){
               pointHoverBackgroundColor: 'purple',
               pointHoverBorderColor: 'purple',
               borderColor: 'orange'
-    }
+    };
+
+    datasets = [datasets[0], targetLine];
   }
 
   var myChart = new Chart(ctxL, {
       type: 'scatter',
       data: {
-        datasets: [
-            {
-              label: 'Commitments Received',
-              borderWidth: 2,
-              data: dpts,
-              backgroundColor: 'rgba(31, 222, 88, 0.25)',
-              pointStyle: 'circle',
-              pointBorderColor: 'red',
-              pointBackgroundColor: 'red',
-              pointRadius: 2,
-              pointHoverBackgroundColor: 'purple',
-              pointHoverBorderColor: 'purple',
-              borderColor: 'green'
-            },
-
-            targetLine
-        ]
+        datasets: datasets
       },
       options: {
         responsive: true,
@@ -121,13 +123,16 @@ function showGraph(panelId, dpts, target){
                 prev = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index - 1].y;
               }
 
-              //var inc = (tooltipItems.yLabel - prev).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-              //labelVals.push("    Pledge: $" + inc);   
-              //var total = tooltipItems.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-              //labelVals.push("    Total: $" + total); 
-
-              var total = tooltipItems.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-              labelVals.push("Total: $" + total);   
+              if(showIndividualAmounts){
+                var inc = (tooltipItems.yLabel - prev).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                labelVals.push("    Pledge: $" + inc);   
+                var total = tooltipItems.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                labelVals.push("    Total: $" + total); 
+              }
+              else{
+                var total = tooltipItems.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                labelVals.push("Total: $" + total);
+              }   
 
               return labelVals;
             }
@@ -208,7 +213,7 @@ function showDistributions(panelId, dpts){
 
 } //END: showDistributions(panelId, dpts)
 
-function initialize(panelId, donorPanelId, isGadgetMode, target, polarPanelId){
+function initialize(panelId, donorPanelId, isGadgetMode, target, polarPanelId, showIndividualAmounts){
   var spreadsheetId = "1VfuLJzB6ygO4SKC77yU9iO7UZWOC9zI4PmhJAXbQR8A",
   url = "https://spreadsheets.google.com/feeds/list/" +
         spreadsheetId +
@@ -302,7 +307,7 @@ function initialize(panelId, donorPanelId, isGadgetMode, target, polarPanelId){
           donors.push('<div class="col-md-4">' + names.join(' &amp; ') + '</div>');
       } 
 
-      showGraph(panelId, dpts, target);
+      showGraph(panelId, dpts, target, showIndividualAmounts);
 
       if(polarPanelId != undefined){
         showDistributions(polarPanelId, dpts);

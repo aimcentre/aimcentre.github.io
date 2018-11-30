@@ -1,20 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="ABVA Home Gadget" height="100">
+    <Require feature="dynamic-height"/> 
+  </ModulePrefs>
+  <UserPref name="siteDomain" display_name="Site Domain" datatype="string" required="true"/>
+  <UserPref name="siteName" display_name="Site Name" datatype="string" required="true"/>
+  <UserPref name="siteRoot" display_name="Site Root" datatype="string" required="true"/>
+  
+  <Content type="html">
+     <![CDATA[
 
-<!doctype html>
-<html lang="en">
-  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!--<link rel="icon" href="../../../../favicon.ico">-->
 
     <!-- Bootstrap core CSS -->
-    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="https://abvasvmc.github.io/capital/bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    <link href="https://abvasvmc.github.io/capital/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
-    <link rel="stylesheet" href="mcdp.css">
+    <link rel="stylesheet" href="https://abvasvmc.github.io/capital/mcdp.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
@@ -22,57 +29,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
-    <!--<script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> -->
-    <script src="https://abvasvmc.github.io/capital/chroma.min.js" crossorigin="anonymous"></script> 
-    <script src="graph.js" crossorigin="anonymous"></script> 
+    <script src="https://abvasvmc.github.io/capital/chroma.min.js" crossorigin="anonymous"></script>     
+    <script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> 
 
-    <style type="text/css">
-      .nav-tabs{
-        margin: 0 0 10px 0;
-        float: right;
-        border: none;
-      }
-      .nav-tabs li{
-        margin-left: 4px;
-      }
-      .nav-tabs li a.active {
-          /*display: none;*/
-          color: #888;
-          text-decoration: none;
-          cursor: default; 
-      }
-      .tab-pane{
-        clear: both;
-      }
-      .tab-pane{
-        text-align: justify;
-      }
-      .sinhala{
-        font-size: 0.85em;
-      }
-      .sinhala h2{
-        font-size: 1.7em;
-        margin-bottom: 15px;
-        padding-top: 8px;
-      }
-      .sidebar{
-        text-align: justify;
-      }
-      .sidebar-section-title{
-        font-size: 1.2em;
-        border-radius: 5px;
-        background-color: #abecff;
-        padding: 4px;
-      }
-      .sidebar h3{
-        font-size: 1.1em;
-        margin: 10px;
-        
-      }
-    </style>
-
-  </head>
-  <body>
 
     <main role="main">
 
@@ -153,18 +112,16 @@
       </footer>
     </main>
 
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="./bootstrap/jquery-slim.min.js"><\/script>')</script>
-  -->
-    <script src="./bootstrap/popper.min.js"></script>
-    <script src="./bootstrap/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <!-- <script src="./bootstrap/holder.min.js"></script> -->
+    
+    <script src="https://abvasvmc.github.io/capital/bootstrap/popper.min.js"></script>
+    <script src="https://abvasvmc.github.io/capital/bootstrap/bootstrap.min.js"></script>
+
     <script type="text/javascript">
+
       function resetCarouselSize(){
         var width = $(window).width();
         var aspectRatio = 1900/540;
@@ -177,7 +134,8 @@
       $(function() {
         initialize("graphPanel", "donorNames", false, undefined, "pledgeDistributionPanel", true);
         $('.carousel').carousel({
-          "pause": false
+          "pause": false,
+          "interval": 8000
         });
       });
 
@@ -186,5 +144,7 @@
       });
 
     </script>
-  </body>
-</html>
+
+     ]]>
+  </Content> 
+</Module>
