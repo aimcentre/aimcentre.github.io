@@ -20,7 +20,6 @@
 
     <!-- Custom styles for this template -->
     <link href="https://abvasvmc.github.io/aim-centre/carousel.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://abvasvmc.github.io/aim-centre/graph.css">
     <link rel="stylesheet" href="https://abvasvmc.github.io/aim-centre/mcdp.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
@@ -30,7 +29,6 @@
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
     <script src="https://abvasvmc.github.io/aim-centre/chroma.min.js" crossorigin="anonymous"></script>     
-    <script src="https://abvasvmc.github.io/aim-centre/graph.js" crossorigin="anonymous"></script> 
 
 
     <main role="main">
@@ -104,7 +102,6 @@
 
       $(function() {
         resetCarouselSize();
-        //initialize("graphPanel", "donorNames", true, 700000, "pledgeDistributionPanel");
         $('.carousel').carousel({
           "pause": false,
           "interval": 8000
