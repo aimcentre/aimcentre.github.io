@@ -35,6 +35,8 @@
 
     <main role="main">
 
+      <div class="alert alert-info">Test 1</div>
+
       <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         
         <div class="d-none d-md-block">
