@@ -36,7 +36,7 @@
 
     <main role="main">
 
-      <div class="alert alert-info">Test 4</div>
+      <div class="alert alert-info">Test 5</div>
 
       <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         
@@ -84,7 +84,7 @@
         </a>
         -->
       </div>
-      
+
 		<ul class="nav nav-tabs">
 			<li class="active"><a data-toggle="tab" class="active" href="#English">English</a>&nbsp;|&nbsp;</li>
 			<li><a data-toggle="tab" href="#Sinhala" class="sinhala">සිංහල</a></li>
