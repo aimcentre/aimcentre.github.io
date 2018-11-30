@@ -42,78 +42,10 @@
 
       <div class="container marketing">
 
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-12">
-            <a name="section1"></a>
-            <h2 class="featurette-heading">Meditation Centre Development<span class="text-muted"></span></h2>
-          </div>
-          <div class="col-md-5 d-md-none">
-            <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/aim-centre/centre.jpg" alt="New Meditation Centre Image">
-          </div>
-          <div class="col-md-7">
-            <p class="lead">
-              Due to an order given by The City of Edmonton to cease public assemblies for religious purposes, we have relocated many of our programs and suspended others. The current property is located in a neighbourhood zoned as residential, which means religious assemblies were not permitted, according to the zoning bylaw, and we needed to stop offering public services.
-              <!--
-              We have relocated part of our public programs and suspended others in due respect to an order given by The City of Edmonton to cease public services offered at our current facility due to bylaw restrictions. 
-              -->
-            </p>
-            <p class="lead">
-              Our goal is to purchase or build a facility in a suitable location that allows for public gatherings, in order to resume our programs and services. We also want to ensure that there is sufficient space available to host our annual religious, cultural and community programs.
-              <!--
-              Our goal is to purchase or build a facility in a location where we have the permission for Religious Assembly so that we can resume our meditation programs, Dhamma discussions, children's programs, youth programs, mindfulness development programs, stress relief programs, counselling, retreats and daily sermons, etc. that we offered, without any hindrance. We also want to ensure that there is sufficient space available for hosting our annual religious, cultural and community programs in it.
-              -->
-            </p>
-            <p class="lead">
-              Obtaining a facility for these purposes is financially challenging, however, we are confident that we can meet this challenge through the support and generosity of many donors from within our own community and from around the globe.
-              <!--
-              Purchase of this kind of facility is much more financially challenging than buying a residential place. However, we are confident that this challenge can be overcome, and allow this meditation centre to continue its public service, thanks to the commitment and generosity of the local and global community.
-              -->
-          </p>
-          </div>
-          <div class="col-md-5 d-none d-md-block">
-            <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/aim-centre/centre.jpg" alt="New Meditation Centre Image">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-12">
-            <a name="section2"></a>
-            <h2 id="section2" class="featurette-heading">Financial Status Overview<span class="text-muted"></span></h2>
-          </div>
-          <div class="col-md-5 order-md-1 feature-visual d-md-none">
-            <img class="featurette-image img-fluid mx-auto" src="https://abvasvmc.github.io/aim-centre/savings.jpg" alt="Financial Status Image">
-          </div>          
-          <div class="col-md-7 order-md-2">
-            <p class="lead">
-              Currently, we estimate it will take a minimum investment of 1.5 million dollars to relocate our Meditation Centre to a site that is suitable for the purposes of religious assemblies. The property we possess is valued at $500,000 and we can obtain a loan of approximately $300,000 from the bank. However, this leaves a shortfall of $700,000.
-              <!--
-              In the current market, it requires about a minimum investment of 1.5 million dollars to purchase or build a suitable facility for the meditation centre in a location where there is permission for Religious Assembly. Towards this, we can allocate about $500,000 by selling the current house where the meditation centre is established at, and also obtain a loan of about $300,000 from the bank. This leaves a shortfall of about $700,000.
-              -->
-            </p>
-            <p class="lead">
-              In order to raise funds to cover this shortfall, we have established a Meditation Centre Development Fund and are obtaining pledges from our devotees and well-wishers. Contributions made to this fund will be used solely for the establishment of a new Meditation Centre.  We are appealing to generous people in Edmonton, across Canada and around the world to support us in this noble and difficult mission.
-              <!--
-              To cover this shortfall, we have established a Meditation Centre Development Fund and started obtaining pledges from our devotees and well-wishers. Contributions made to this fund will solely be used for the establishment of the new meditation centre facility. We kindly request the generous people in Edmonton, across Canada and the World, to come forward and assist us in this difficult but noble mission.
-              -->
-            </p>
-          </div>
-          <div class="col-md-5 order-md-1 feature-visual d-none d-md-block">
-            <img class="featurette-image img-fluid mx-auto" src="https://abvasvmc.github.io/aim-centre/savings.jpg" alt="Financial Status Image">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
         <div class="row featurette">
           <div class="col-md-12">
             <a name="section3"></a>
-            <h2 id="section3" class="featurette-heading">Development Fund Contributions<span class="text-muted"></span></h2>
+            <h2 id="section3" class="featurette-heading">Property Purchase Fund<span class="text-muted"></span></h2>
           </div>
           <div class="col-md-5 d-md-none" style="text-align:center;">
             <img class="featurette-image img-fluid mx-auto feature-visual" src="https://abvasvmc.github.io/aim-centre/projectlogo.png" alt="Fund Contributions Image" style="width:340px;">
