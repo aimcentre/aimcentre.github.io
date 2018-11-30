@@ -60,10 +60,10 @@
 }
 
 @media (max-width: 768px) { 
-  .sinhala h2{
+  h2{
     font-size: 1.5rem;
   }
-  .sinhala h1{
+  h1{
     font-size: 1.7rem;
   }
 }
