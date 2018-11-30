@@ -248,23 +248,7 @@
 				$("#signup-sheet-link").attr("href", siteRoot + "/sign-up");
 
 				//Loading carousel images
-				var aspectRatio = 9.0/16;
-				try{
-					showCarouselImages("/data-pages/carousel-data", "myCarousel", feedUrlSeed, aspectRatio)
-				}
-				catch(err){
-					console.error("Carousel Loading Error:");
-					console.error(err);
-					console.warn("Showing default carousel images");
-					var images = ['http://www.abva.org/data-pages/carousel-data/carousel_1.jpg', 
-								  'http://www.abva.org/data-pages/carousel-data/carousel_2.jpg',
-								  'http://www.abva.org/data-pages/carousel-data/carousel_3.jpg',
-								  'http://www.abva.org/data-pages/carousel-data/carousel_4.jpg',
-								  'http://www.abva.org/data-pages/carousel-data/carousel_5.jpg'];
-
-					showCarouselImagesFromArray("myCarousel", images, aspectRatio);
-				}
-				
+				var aspectRatio = 9.0/16;				
 				//Loading welcome message from the Welcome page
 				try{
 					showPageContents("/data-pages/welcome", "myWelcome", feedUrlSeed, true);
