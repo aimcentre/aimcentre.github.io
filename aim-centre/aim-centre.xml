@@ -50,39 +50,11 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="img first-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p1.jpg")'></div>
-            <div class="container" style="">
-              <!--<div class="carousel-caption text-left">
-                <h1>Banner Image 1</h1>
-                
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                
-              </div>-->
-            </div>
           </div>
           <div class="carousel-item">
             <div class="img second-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p2.jpg")'></div>
-            <div class="container">
-              <!--<div class="carousel-caption">
-                <h1>Banner Image 2</h1>
-                
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                
-              </div>-->
-            </div>
           </div>
         </div>
-        <!--
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-        -->
       </div>
 
 		<ul class="nav nav-tabs">
@@ -93,7 +65,7 @@
 			<div id="English" class="tab-pane active">
 			  <div class="row">
 			    <div class="col-lg-7">
-			      <h2>AIM Centre Development</h2>
+			      <h1>AIM Centre Development</h1>
             <div class="content-image">
               <img src="https://abvasvmc.github.io/aim-centre/images/model-1.jpg" alt="Generic placeholder image">
             </div>            
@@ -131,7 +103,7 @@
 			  <hr class="featurette-divider">
 
 			  <div class="featurette">
-			    <h2>Contribution Options</h2>
+			    <h1>Contribution Options</h1>
 			  </div>
 
 			</div> <!-- English tab -->
@@ -139,7 +111,10 @@
 			<div id="Sinhala" class="tab-pane fade sinhala">
 			  <div class="row">
 			    <div class="col-lg-8">
-			      <h2>පන්සල් පරිශ්‍රය ගොඩ නැංවීම</h2>
+			      <h1>පන්සල් පරිශ්‍රය ගොඩ නැංවීම</h1>
+            <div class="content-image">
+              <img src="https://abvasvmc.github.io/aim-centre/images/model-1.jpg" alt="Generic placeholder image">
+            </div>                        
 			      <p>
 			      සැදැහැවත් ඔබගේ පුණ්‍යවන්ත දායකත්වයෙන් නවමු ස්ථානයක පිහිටුවනු ලැබූ අපේ පන්සලෙහි අනාගත සැළසුම් පිළිබඳව මෙලෙස ඔබව දැනුවත් කරන්නට කැමැත්තෙමු. 
 			      </p>
@@ -178,7 +153,7 @@
 			  <hr class="featurette-divider">
 
 			  <div class="row featurette">
-			    <h2>ඔබට දායක වියහැකි අයුරු</h2>
+			    <h1>ඔබට දායක වියහැකි අයුරු</h1>
 			  </div>
 
 			</div> <!-- Sinhala tab -->
