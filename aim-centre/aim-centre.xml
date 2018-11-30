@@ -105,7 +105,10 @@
 			  <div class="featurette">
 			    <h1>Contribution Options</h1>
           <p>
-            You have option to contribute to this meritorious project in many ways. These include, but are not limited to, sharing your design and construction expertiese, sponsoring for materials and services, or making financial contributions.
+            You can contribute to this meritorious project in many ways. These include, but are not limited to, sharing your design or construction expertiese, sponsoring for materials or services, and making financial contributions.
+          </p> 
+          <p>
+            We would like to kindly request you to consider making a pre-authorized monthly donation as well, if that's possible. This will tremendously help us pay the mortgage obtained from the Servus Credit Union. Please contact Suditha at <a href="mailto:donations@abva.org">donations@abva.org</a> for details.
           </p>
           <p> 
             Since we are a registered, charitable, non-profit organization with the Canada Revenue Agency, we will be able to provide an official tax receipt for all material sponsorships and financial contributions. You can estimate the tax credit you will receive by using the <a href="http://www.cra-arc.gc.ca/chrts-gvng/dnrs/svngs/clmng1b2-eng.html" target="_blank"><span class="font-weight-bold">Charitable Donation Tax Credit Calculator</span></a>.  The credit is based on your total annual charitable contributions made.
@@ -116,7 +119,7 @@
 
 			<div id="Sinhala" class="tab-pane fade sinhala">
 			  <div class="row">
-			    <div class="col-lg-8">
+			    <div class="col-lg-7">
 			      <h1>පන්සල් පරිශ්‍රය ගොඩ නැංවීම</h1>
             <div class="content-image">
               <img src="https://abvasvmc.github.io/aim-centre/images/model-1.jpg" alt="Generic placeholder image">
@@ -140,8 +143,8 @@
 			      <p>
 			        මෙතෙක් සිදුකළ කටයුතු සියල්ල ඔබව දැනුවත් කරමින් ඔබගේ ද අදහස් ගරුකරමින් සිදුකලාක් මෙන් ඉදිරි කටයුතුද එලෙසම සිදු කිරීම අපගේ අපේක්ෂාවයි.
 			      </p>
-			    </div> <!-- col-lg-8 -->
-			    <div class="col-lg-4 sidebar">
+			    </div> <!-- col-lg-7 -->
+			    <div class="col-lg-5 sidebar">
 			      <div class="sidebar-section-title">ඉදිරි පියවර </div>
 			      <h3>මාවත ආලෝකකරණය</h3>
               <div class="sidebar-image">
@@ -153,7 +156,7 @@
 
 			      <div class="sidebar-section-title">ආ මගක සටහන්</div>
 			      <h3>ආරාම පූජා අරමුදල</h3>
-			    </div><!-- col-lg-4 -->
+			    </div><!-- col-lg-5 -->
 			  </div> <!-- row -->
 
 			  <hr class="featurette-divider">
