@@ -16,13 +16,13 @@
     <meta name="author" content="">
 
     <!-- Bootstrap core CSS -->
-    <link href="https://abvasvmc.github.io/capital/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="https://aimcentre.github.io/capital/bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="https://abvasvmc.github.io/capital/carousel.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://abvasvmc.github.io/capital/graph.css">
-    <link rel="stylesheet" href="https://abvasvmc.github.io/capital/mcdp.css">
-    <link rel="stylesheet" href="https://abvasvmc.github.io/aim-centre/aim-centre.css">
+    <link href="https://aimcentre.github.io/capital/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://aimcentre.github.io/capital/graph.css">
+    <link rel="stylesheet" href="https://aimcentre.github.io/capital/mcdp.css">
+    <link rel="stylesheet" href="https://aimcentre.github.io/aim-centre/aim-centre.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
@@ -30,8 +30,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.2/Chart.min.js"></script>
-    <script src="https://abvasvmc.github.io/capital/chroma.min.js" crossorigin="anonymous"></script>     
-    <script src="https://abvasvmc.github.io/capital/graph.js" crossorigin="anonymous"></script> 
+    <script src="https://aimcentre.github.io/capital/chroma.min.js" crossorigin="anonymous"></script>     
+    <script src="https://aimcentre.github.io/capital/graph.js" crossorigin="anonymous"></script> 
 
 
     <main role="main">
@@ -47,10 +47,10 @@
         
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="img first-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p1.jpg")'></div>
+            <div class="img first-slide" style='background-image: url("https://aimcentre.github.io/capital/banner_p1.jpg")'></div>
           </div>
           <div class="carousel-item">
-            <div class="img second-slide" style='background-image: url("https://abvasvmc.github.io/capital/banner_p2.jpg")'></div>
+            <div class="img second-slide" style='background-image: url("https://aimcentre.github.io/capital/banner_p2.jpg")'></div>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
 			    <div class="col-lg-7">
 			      <h1>AIM Centre Development</h1>
             <div class="content-image">
-              <img src="https://abvasvmc.github.io/aim-centre/images/model-1.jpg" alt="Generic placeholder image">
+              <img src="https://aimcentre.github.io/aim-centre/images/model-1.jpg" alt="Generic placeholder image">
             </div>            
 			      <p>
 			        Our goal is to build the infrastructure facilities required to host the range of meditation, mindfulness, stress-relief, moral & ethical development, and cultural programs offered by our meditation centre on the serene land we were able to acquire thanks to the tremendous generosity of our well-wishers. This facility will have optimized spaces for conducting meditation programs, classes, workshops and social events. The facility will be accessible to the community without limiting on one’s origin, ethnicity, culture or beliefs.
@@ -82,7 +82,7 @@
 			      <div class="sidebar-content">
 			        <h3>Pathway Lighting</h3>
               <div class="sidebar-image">
-		            <img src="https://abvasvmc.github.io/aim-centre/images/park-lights.jpg" alt="Generic placeholder image">
+		            <img src="https://aimcentre.github.io/aim-centre/images/park-lights.jpg" alt="Generic placeholder image">
               </div>
 			        <p>
 			          As one of the very first milestones of the AIM Centre Development project, we expect to install outdoor lighting on the 350-metre pathway from the property entrance to the present house. We have obtained preliminary directions from Parkland County, and we are about to design the lighting system. If you have expertise in the design or installation of outdoor lighting, please contact us; we need help. The installation will commence in Spring 2019. More details to come soon.
@@ -120,7 +120,7 @@
 			    <div class="col-lg-7">
 			      <h1>පන්සල් පරිශ්‍රය ගොඩ නැංවීම</h1>
             <div class="content-image">
-              <img src="https://abvasvmc.github.io/aim-centre/images/model-1.jpg" alt="Generic placeholder image">
+              <img src="https://aimcentre.github.io/aim-centre/images/model-1.jpg" alt="Generic placeholder image">
             </div>                        
 			      <p>
 			      සැදැහැවත් ඔබගේ පුණ්‍යවන්ත දායකත්වයෙන් නවමු ස්ථානයක පිහිටුවනු ලැබූ අපේ පන්සලෙහි අනාගත සැළසුම් පිළිබඳව මෙලෙස ඔබව දැනුවත් කරන්නට කැමැත්තෙමු. 
@@ -146,7 +146,7 @@
 			      <div class="sidebar-section-title">ඉදිරි පියවර </div>
 			      <h3>මාවත ආලෝකකරණය</h3>
               <div class="sidebar-image">
-                <img src="https://abvasvmc.github.io/aim-centre/images/park-lights.jpg" alt="Generic placeholder image">
+                <img src="https://aimcentre.github.io/aim-centre/images/park-lights.jpg" alt="Generic placeholder image">
               </div>
 			      <p>
 			        පන්සල ගොඩනැගීමේ වැඩ පිළිවෙලේ එක් මූලික අදියරක් ලෙස පන්සල් පරිශ්‍රයට ඇතුළු වූ තැන සිට දැනට ඇති විහාරස්ථාන ගොඩනැගිල්ල දක්වා ඇති මීටර 350ක පමණ වූ මාර්ගය ආලෝකකරණය කිරීමේ ව්‍යාපෘතියක් මේ වනවිට සැලසුම් කරමින් පවතින බව සතුටින් දැනුම් දෙමු. මේ සඳහා අවශ්‍ය මුලික තොරතුරු දැනට අප සතුව ඇති අතර, එහි සැලසුම්කරණයට ඔබට සහාය විය හැකිනම් ඒ බව අපට කාරුණිකව දැනුම් දෙන්න. මේ සඳහා අපට සහාය අවශ්‍යව ඇත. මෙම ව්‍යාපෘතිය ලබන වසරේ වසන්ත සමය තුල ක්‍රියාවට නැංවීම අපගේ බලාපොරොත්තුවයි. වැඩි දුර විස්තර ළඟදීම ඔබ වෙත ගෙන එමු.
@@ -188,8 +188,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     
-    <script src="https://abvasvmc.github.io/capital/bootstrap/popper.min.js"></script>
-    <script src="https://abvasvmc.github.io/capital/bootstrap/bootstrap.min.js"></script>
+    <script src="https://aimcentre.github.io/capital/bootstrap/popper.min.js"></script>
+    <script src="https://aimcentre.github.io/capital/bootstrap/bootstrap.min.js"></script>
 
     <script type="text/javascript">
 
