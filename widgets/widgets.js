@@ -7,6 +7,68 @@ function hide(divId){
 	$("#" + divId).hide();
 }
 
+function showCalendarEvents(calendarId, apiKey, displayDivId, shortDescLength, maxItems, groupByTitle, startTime, endTime, query, skipTypes){
+
+	if(startTime == null)
+		startTime = new Date();
+
+	var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + 
+			  '/events?alwaysIncludeEmail=false&orderBy=startTime&singleEvents=true' + 
+			  '&timeMin=' + startTime.toISOString() + 
+			  '&key=' + apiKey;
+			  
+	if(endTime != undefined)
+		url = url + '&timeMax=' + endTime.toISOString();
+
+	if(maxItems != undefined){
+		if(groupByTitle == false)
+			url = url + '&maxResults=' + maxItems;
+		else
+			url = url + '&maxResults=' + 10 * maxItems;
+	}	
+
+	if(query != undefined)
+		url = url + '&q=' + query;
+
+	url = encodeURI(url);
+
+	$.ajax({
+	    type: 'GET',
+	    url: url,
+	    dataType: 'json',
+	    success: function (response) {
+	        //do whatever you want with each
+	        var container = document.getElementById(displayDivId);
+
+	        var title_list = [];
+	        var count = 0;
+	        
+	        if(response.items.length > 0)
+	        	$("#" + displayDivId).show();
+	        
+	        for(var i=0; i<response.items.length; ++i){
+	        	var title = response.items[i].summary;
+	        	
+	        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
+	        		continue;
+	        	
+	        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength, skipTypes);
+
+	        	if(allow_grouping)
+	        		title_list.push(title);
+
+	        	count = count + 1;
+
+	        	if(maxItems != undefined &&  maxItems <= count)
+	        		break;
+	        }
+	    },
+	    error: function (response) {
+	        //tell that an error has occurred
+	    }
+	});	
+}
+
 function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline, attachments, sponsor){
 	if(title == undefined)
 		return;
@@ -16,11 +78,10 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
 	
-	var type_defined = type != undefined;
-	var type_list = type_defined ? $.map(type.split(","), $.trim) : [];
+	var type_list = type != undefined ? $.map(type.split(","), $.trim) : [];
 	var is_warning = $.inArray("warning", type_list) > -1;
 	
-	if(type_defined){
+	if(type != undefined){
 		type = type.replace(",", " ");
 		$(wrapper).addClass(type);
 
@@ -251,81 +312,4 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 }
 
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shortDescLength, maxItems, groupByTitle, startTime, endTime, query, skipTypes){
 
-	if(startTime == null)
-		startTime = new Date();
-
-
-	if(panelHeading != undefined){
-		var container = document.getElementById(displayDivId);
-		
-		//Panel heading for all devices that are larger than xs
-		var heading = document.createElement("h3");
-		heading.className = "feed-panel-heading hidden-xs";
-		heading.appendChild(document.createTextNode(panelHeading));
-		container.appendChild(heading);
-		
-		//panel heading for xs devices, which uses same styles as page titles
-		heading = document.createElement("h3");
-		heading.className = "page-title visible-xs";
-		heading.appendChild(document.createTextNode(panelHeading));
-		container.appendChild(heading);
-	}
-
-	var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + 
-			  '/events?alwaysIncludeEmail=false&orderBy=startTime&singleEvents=true' + 
-			  '&timeMin=' + startTime.toISOString() + 
-			  '&key=' + apiKey;
-			  
-	if(endTime != undefined)
-		url = url + '&timeMax=' + endTime.toISOString();
-
-	if(maxItems != undefined){
-		if(groupByTitle == false)
-			url = url + '&maxResults=' + maxItems;
-		else
-			url = url + '&maxResults=' + 10 * maxItems;
-	}	
-
-	if(query != undefined)
-		url = url + '&q=' + query;
-
-	url = encodeURI(url);
-
-	$.ajax({
-	    type: 'GET',
-	    url: url,
-	    dataType: 'json',
-	    success: function (response) {
-	        //do whatever you want with each
-	        var container = document.getElementById(displayDivId);
-
-	        var title_list = [];
-	        var count = 0;
-	        
-	        if(response.items.length > 0)
-	        	$("#" + displayDivId).show();
-	        
-	        for(var i=0; i<response.items.length; ++i){
-	        	var title = response.items[i].summary;
-	        	
-	        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
-	        		continue;
-	        	
-	        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength, skipTypes);
-
-	        	if(allow_grouping)
-	        		title_list.push(title);
-
-	        	count = count + 1;
-
-	        	if(maxItems != undefined &&  maxItems <= count)
-	        		break;
-	        }
-	    },
-	    error: function (response) {
-	        //tell that an error has occurred
-	    }
-	});	
-}

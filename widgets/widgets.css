@@ -1,12 +1,4 @@
 
-#follow-us-panel{
-	margin-bottom: 16px;
-}
-
-#follow-us-panel > a, #follow-us-panel > a:visited{
-	color: #298cca!important;
-}
-
 .container{
 	width:100%;
 	padding:0;
@@ -17,27 +9,34 @@
 	top: -10px;
 }
 
+/*
 .container-fluid table{
 	font-size: 14px;	
 }
+*/
 
+/*
 .page-title{
 	font:normal 26px 'Open Sans',sans-serif;
 	color:#66002e!important;
 }
-  
+*/
+
+/*
 .feed-panel-heading{
 	font: 600 19px "Open Sans",sans-serif;
 	color: #66002e!important;
 	margin-top:0;
 	padding-top:0;
 }
+*/
+
 
 .feed-item{
-	margin-bottom:15px;
-	padding-bottom:15px;
+	margin:15px;
 	clear: both;
 }
+
 
 /* Hiding extra feed items on small computer screen scales */
 /*

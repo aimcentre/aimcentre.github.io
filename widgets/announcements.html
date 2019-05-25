@@ -9,9 +9,12 @@
 
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://aimcentre.github.io/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://aimcentre.github.io/widgets/widgets.css">
 		
-		<script src="https://aimcentre.github.io/widgets/widgets.js"></script>
+		<!--<link rel="stylesheet" href="https://aimcentre.github.io/widgets/widgets.css">-->
+		<link rel="stylesheet" href="widgets.css">
+		
+		<!--<script src="https://aimcentre.github.io/widgets/widgets.js"></script>-->
+		<script src="widgets.js"></script>
 
 		<script src="https://aimcentre.github.io/js/jquery.min.js"></script>
 		<script src="https://aimcentre.github.io/js/bootstrap.min.js"></script>
@@ -49,8 +52,15 @@
 				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
 				var announcementsCalendarId = "abva.org_mbt7jtsna7nkbm542qr7924c94@group.calendar.google.com";
 
+				//Loading Special Events feed
+				//showCalendarEvents(specialEventsCalendarId, apiKey, "announcements", "Special Events", 125, 15, true, null, null, null, ["announcement"]);
+				//showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
+				
+				//Loading calendar events
+				//showCalendarEvents(newsCalendarId, apiKey, "announcements", "News", 125, 5, true);
+
 				//Loading announcements
-				showCalendarEvents(announcementsCalendarId, apiKey, "announcements", "Announcements", 300, 3, true, null, null, "[Type*:*announcement]");
+				showCalendarEvents(newsCalendarId, apiKey, "announcements", 125, 5, true);
 
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
