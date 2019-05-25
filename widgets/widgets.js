@@ -1,14 +1,10 @@
 
 function show(divId){
 	$("#" + divId).show();
-	if(gadgetMode)
-		gadgets.window.adjustHeight();	
 }
 
 function hide(divId){
 	$("#" + divId).hide();
-	if(gadgetMode)
-		gadgets.window.adjustHeight();	
 }
 
 function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbnailUrl, fullPageUrl, type, start, end, tagline, attachments, sponsor){
@@ -327,9 +323,6 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, panelHeading, shor
 	        	if(maxItems != undefined &&  maxItems <= count)
 	        		break;
 	        }
-
-	        if(gadgetMode)
-	        	gadgets.window.adjustHeight();	
 	    },
 	    error: function (response) {
 	        //tell that an error has occurred
