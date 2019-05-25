@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+			var siteDomain = "abva.org";
+			var siteName = "www3";
+			var siteRoot =  "http://www.abva.org";
+		</script>
+
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://aimcentre.github.io/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://aimcentre.github.io/widgets/widgets.css">
+		
+		<script src="https://aimcentre.github.io/widgets/widgets.js"></script>
+		<script src="https://aimcentre.github.io/js/jquery.min.js"></script>
+		<script src="https://aimcentre.github.io/js/bootstrap.min.js"></script>
+		<script src="https://aimcentre.github.io/js/moment.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="">
+					<div class="visible-sm"><br /></div>
+					<div class="row">
+						<div class="inner">
+							<div id="myEventsfeed" class="col-sm-6">
+							</div>
+							<div id="myNewsfeed" class="col-sm-6">
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		
+			//Initialize feed loader
+			google.load("feeds", "1");
+			var gadgetMode = false;
+
+			//Page initialization routine. This is called by google.setOnLoadCallback callback
+			function initialize(feedUrlSeed) {
+				
+				//Loading carousel images
+				var aspectRatio = 9.0/16;
+				
+				var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
+				var newsCalendarI = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
+				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
+
+				//Loading Special Events feed
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 125, 15, true, null, null, null, ["announcement"]);
+				//showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
+				
+				//Loading calendar events
+				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 125, 5, true);
+
+				//Loading announcements
+				showCalendarEvents(specialEventsCalendarId, apiKey, "myAnnouncements", "Announcements", 300, 3, true, null, null, "[Type*:*announcement]");
+
+				////gadgets.window.adjustHeight();
+			} //End: function initialize()
+			
+
+			//Calling initialization routing on page loading
+			$(document).ready(function () {
+				
+				initialize(Math.floor((Math.random() * 100000)));
+			});			
+
+
+//			//Calling initialization routing on gadget loading
+//			gadgets.util.registerOnLoadHandler(function() { 
+//				initialize(Math.floor((Math.random() * 100000)));
+//				gadgets.window.adjustHeight();
+//		   });
+
+		   
+		   //Resize listener for gadget resizing on layout changes
+		   var prevWindowWidth= -1;
+		   var carousel_aspect_ratio = -1;
+		   var prevSwitchedWidth = -1;
+		   $( window ).resize(function() {
+		        if(prevWindowWidth < 0){
+		        	prevWindowWidth = $(window).width();
+		        	prevSwitchedWidth = prevWindowWidth;
+		        	carousel_aspect_ratio = $("#myCarousel").width() / $("#myCarousel").height()
+		        }
+		        else{
+		        	var w = $(window).width();
+		        	var resize_required = (prevWindowWidth >= 768 && w < 768) ||
+		        						  (prevWindowWidth < 768 && w >= 768) ||
+		        						  (prevWindowWidth >= 992 && w < 992) ||
+		        						  (prevWindowWidth < 992 && w >= 992) | 
+		        						  (prevWindowWidth <= w - 5) ||
+		        						  (prevWindowWidth >= w+5);
+
+		        	if(resize_required){
+		        		if(gadgetMode)
+		        			gadgets.window.adjustHeight();
+		        		prevSwitchedWidth = w;
+		        	}
+		        	
+		        	if(carousel_aspect_ratio > 0){
+		        		var new_carousel_height = $("#myCarousel").width() / carousel_aspect_ratio;
+		        		$("#myCarousel").height(new_carousel_height)
+		        	}
+		        	
+		        	//gadgets.window.adjustHeight();
+		        	prevWindowWidth = w;					  
+		        }
+		    });	
+						
+		</script>
+    </body>
+</html>
