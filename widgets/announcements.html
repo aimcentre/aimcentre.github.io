@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="https://aimcentre.github.io/widgets/widgets.css">
 		
 		<script src="https://aimcentre.github.io/widgets/widgets.js"></script>
+
 		<script src="https://aimcentre.github.io/js/jquery.min.js"></script>
 		<script src="https://aimcentre.github.io/js/bootstrap.min.js"></script>
 		<script src="https://aimcentre.github.io/js/moment.js"></script>
@@ -24,7 +25,7 @@
 					<div class="visible-sm"><br /></div>
 					<div class="row">
 						<div class="inner">
-							<div id="myEventsfeed" class="col-sm-6">
+							<div id="announcements" class="col-sm-6">
 							</div>
 							<div id="myNewsfeed" class="col-sm-6">
 							</div>
@@ -38,28 +39,18 @@
 		<script type="text/javascript">
 		
 			//Initialize feed loader
-			google.load("feeds", "1");
-			var gadgetMode = false;
+			//google.load("feeds", "1");
 
 			//Page initialization routine. This is called by google.setOnLoadCallback callback
 			function initialize(feedUrlSeed) {
-				
-				//Loading carousel images
-				var aspectRatio = 9.0/16;
-				
+								
 				var apiKey = "AIzaSyCTisDVkthQZRXOcQH1mu17gOscxM0R-Y4";
-				var newsCalendarI = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
+				var newsCalendarId = "6aj48ba05tq87h990d2jr60i5g@group.calendar.google.com";
 				var specialEventsCalendarId = "abva.org_mj5houtbi1u21ps8m5dc9chjsg@group.calendar.google.com";
-
-				//Loading Special Events feed
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myEventsfeed", "Special Events", 125, 15, true, null, null, null, ["announcement"]);
-				//showAnnouncements("/events", "myEventsfeed", "Special Events", feedUrlSeed);
-				
-				//Loading calendar events
-				showCalendarEvents(newsCalendarI, apiKey, "myNewsfeed", "News", 125, 5, true);
+				var announcementsCalendarId = "abva.org_mbt7jtsna7nkbm542qr7924c94@group.calendar.google.com";
 
 				//Loading announcements
-				showCalendarEvents(specialEventsCalendarId, apiKey, "myAnnouncements", "Announcements", 300, 3, true, null, null, "[Type*:*announcement]");
+				showCalendarEvents(announcementsCalendarId, apiKey, "announcements", "Announcements", 300, 3, true, null, null, "[Type*:*announcement]");
 
 				////gadgets.window.adjustHeight();
 			} //End: function initialize()
@@ -99,8 +90,6 @@
 		        						  (prevWindowWidth >= w+5);
 
 		        	if(resize_required){
-		        		if(gadgetMode)
-		        			gadgets.window.adjustHeight();
 		        		prevSwitchedWidth = w;
 		        	}
 		        	
