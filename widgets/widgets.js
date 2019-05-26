@@ -7,7 +7,7 @@ function hide(divId){
 	$("#" + divId).hide();
 }
 
-function showCalendarEvents(calendarId, apiKey, displayDivId, shortDescLength, maxItems, groupByTitle, startTime, endTime, query, skipTypes){
+function showCalendarEvents(calendarId, apiKey, displayDivId, shortDescLength, maxItems, itemNum, groupByTitle, startTime, endTime, query, skipTypes){
 
 	if(startTime == null)
 		startTime = new Date();
@@ -45,22 +45,29 @@ function showCalendarEvents(calendarId, apiKey, displayDivId, shortDescLength, m
 	        
 	        if(response.items.length > 0)
 	        	$("#" + displayDivId).show();
-	        
-	        for(var i=0; i<response.items.length; ++i){
-	        	var title = response.items[i].summary;
-	        	
-	        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
-	        		continue;
-	        	
-	        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength, skipTypes);
 
-	        	if(allow_grouping)
-	        		title_list.push(title);
+	        if(itemNum >= 0){
+	        	if(itemNum < response.items.length){
+	        		appendCalendarItemToFeed(container, response.items[itemNum], shortDescLength, skipTypes);
+	        	}
+	        }
+	        else{
+		        for(var i=0; i<response.items.length; ++i){
+		        	var title = response.items[i].summary;
+		        	
+		        	if(groupByTitle == true && $.inArray(title, title_list) >= 0)
+		        		continue;
+		        	
+		        	var allow_grouping = appendCalendarItemToFeed(container, response.items[i], shortDescLength, skipTypes);
 
-	        	count = count + 1;
+		        	if(allow_grouping)
+		        		title_list.push(title);
 
-	        	if(maxItems != undefined &&  maxItems <= count)
-	        		break;
+		        	count = count + 1;
+
+		        	if(maxItems != undefined &&  maxItems <= count)
+		        		break;
+		        }
 	        }
 	    },
 	    error: function (response) {
@@ -107,10 +114,11 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	//item heading
 	var h = document.createElement("h2");
 	wrapper.appendChild(h);
-	//$(h).addClass("feed-item-title");
+
 	if(is_warning)
 		title = "<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;" + title;
 	$(h).html(title);
+
 	
 	//Sponsor
 	if(sponsor != null){
