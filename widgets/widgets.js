@@ -77,6 +77,8 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	var wrapper = document.createElement("div");
 	targetDiv.appendChild(wrapper);
 	$(wrapper).addClass("feed-item");
+	$(wrapper).addClass("col-sm-3");
+
 	
 	var type_list = type != undefined ? $.map(type.split(","), $.trim) : [];
 	var is_warning = $.inArray("warning", type_list) > -1;
@@ -88,11 +90,24 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 		if(!is_warning)
 			$(wrapper).addClass("alert");
 	}
+
+	//item thumbnail
+	var thumb = document.createElement("div");
+	wrapper.appendChild(thumb);
+	$(thumb).addClass("thumb");
+	var width = $(thumb).width();
+	var height = 0.7 * width;
+	$(thumb).height(height);
+
+	if(thumbnailUrl != undefined){
+		$(thumb).css("background-image", "url(".concat(thumbnailUrl,")"));
+	}
+	
 	
 	//item heading
-	var h = document.createElement("div");
+	var h = document.createElement("h2");
 	wrapper.appendChild(h);
-	$(h).addClass("feed-item-title");
+	//$(h).addClass("feed-item-title");
 	if(is_warning)
 		title = "<span class='glyphicon glyphicon-warning-sign'></span>&nbsp;" + title;
 	$(h).html(title);
@@ -155,14 +170,6 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 			prefix = "<span class='tomorrow'>Tomorrow: </span>";
 	}
 	$(t).html(prefix + tagline);
-	
-	//item thumbnail
-	if(thumbnailUrl != undefined){
-		var thumb = document.createElement("div");
-		wrapper.appendChild(thumb);
-		$(thumb).addClass("feed-item-thumb");
-		$(thumb).css("background-image", "url(".concat(thumbnailUrl,")"));
-	}
 	
 	
 	//item body

@@ -33,11 +33,28 @@
 
 
 .feed-item{
-	margin:15px;
-	clear: both;
+	margin:0px;
 }
 
+.feed-item .thumb{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	float: left;
+	display: block;
+	margin-right: 7px;
+	background-color: #695E4A;
+}
 
+.feed-item h2{
+	font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.56;
+}
 /* Hiding extra feed items on small computer screen scales */
 /*
 @media (max-width:1200px) and (min-width:970px) {
@@ -81,17 +98,7 @@
 	color:#DF24FF;
 	font-weight: bolder;
 }	
-.feed-item-thumb{
-	width: 90px;
-	height: 75px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	float: left;
-	display: block;
-	margin-right: 7px;
-	background-color: #695E4A;
-}
+
 
 .feed-item.warning > .feed-item-title{
 	color: #AD0606!important;
