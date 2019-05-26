@@ -96,7 +96,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	wrapper.appendChild(thumb);
 	$(thumb).addClass("thumb");
 	var width = $(thumb).width();
-	var height = 0.7 * width;
+	var height = Math.round(0.7 * width);
 	$(thumb).height(height);
 
 	if(thumbnailUrl != undefined){

@@ -54,6 +54,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 1.56;
+    color: #BB6268 !important;
 }
 /* Hiding extra feed items on small computer screen scales */
 /*
@@ -63,6 +64,8 @@
   }
 }
 */
+
+/*
 
 .feed-item a, .feed-item a:visited{
 	color: #298cca!important;
@@ -90,7 +93,6 @@
 
 
 .feed-item > .sponsor{
-	/*color:#0B6D8E!important;*/
 	color:#DF24FF!important;
 }
 
@@ -134,63 +136,5 @@
 	font-size: smaller;
 	color:#064ED6!important;
 }
-
-#myCarousel{
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-}
-
-#myCarousel > .carousel-inner{
-	position: relative;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-  
-#myCarousel > .carousel-inner > .item{
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	right: 0;
-	top: 0;
-	background-repeat:no-repeat;
-	background-position: center; 
-	background-size:cover;
-}
-
-#myAnnouncements{
-	margin-top:20px;
-}
-
-#myAnnouncements .feed-item{
-}
-
-#myAnnouncements .feed-item-thumb{
-	display: none;
-}
-
-#myAnnouncements h3{
-	font: normal 26px 'Open Sans',sans-serif;
-    color: #66002e!important;
-}
-
-#myAnnouncements .feed-item-title{
-	font-size: 18px;
-	font-weight: normal;
-}
-
-#myAnnouncements .feed-item-time{
-	display: none;
-}
-
-#myAnnouncements .feed-item-title > .today, #myAnnouncements .feed-item-title > .tomorrow{
-	display: none;
-}
-
-.inner{
-	width:95%;
-}
+*/
 
