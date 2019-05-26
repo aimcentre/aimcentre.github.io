@@ -1,40 +1,10 @@
 
-.container{
+.container, .container-fluid{
 	width:100%;
 	padding:0;
-	margin-top:0;
-	margin-left:0; 
-	margin-right:0;
-	margin-bottom:10px;
-	top: -10px;
+	margin:24px 0 24px 0;
 }
 
-/*
-.container-fluid table{
-	font-size: 14px;	
-}
-*/
-
-/*
-.page-title{
-	font:normal 26px 'Open Sans',sans-serif;
-	color:#66002e!important;
-}
-*/
-
-/*
-.feed-panel-heading{
-	font: 600 19px "Open Sans",sans-serif;
-	color: #66002e!important;
-	margin-top:0;
-	padding-top:0;
-}
-*/
-
-
-.feed-item{
-	margin:0px;
-}
 
 .feed-item .thumb{
 	width: 100%;
