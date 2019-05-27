@@ -6,8 +6,9 @@
 }
 
 .feed-item{
+	width: 80% !important;
+	margin: 0 10% 0 10% !important;
 	padding:0 !important;
-	margin: 0 !important;
 }
 
 .feed-item .thumb{

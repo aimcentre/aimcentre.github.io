@@ -179,6 +179,7 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 	}
 	$(t).html(prefix + tagline);
 	
+	/*
 	
 	//item body
 	var snippet_div = document.createElement("div");
@@ -255,6 +256,8 @@ function appendItemToFeed(targetDiv, title, description, shortDescLength, thumbn
 			$(attachment).html("<span class='glyphicon glyphicon-link'></span>&nbsp;<a href='" + href + "' target='_top'>" + label + "</a>");
 		}
 	}
+
+	*/
 }
 
 function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
