@@ -2,9 +2,8 @@
 .container, .container-fluid{
 	width:100%;
 	padding:0;
-	margin:0;
+	margin:-20px 0 0 0; /* Remove top border come into effect when embedded in Google Site */
 }
-
 
 .feed-item .thumb{
 	width: 100%;
@@ -14,7 +13,6 @@
 	background-position: center;
 	float: left;
 	display: block;
-	margin-right: 7px;
 	background-color: #695E4A;
 }
 
