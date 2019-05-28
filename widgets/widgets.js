@@ -280,12 +280,12 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 				var remove_meta = false;
 				if(meta.match(/^\[T:/i)){
 					//Thumbnail URL
-					thumbnailUrl = meta.substring(3, meta.length-1);
+					thumbnailUrl = extractLink(meta.substring(3, meta.length-1));
 					remove_meta = true;
 				}
 				else if(meta.match(/^\[P:/i)){
 					//Full Page URL
-					fullPageUrl = meta.substring(3, meta.length-1);
+					fullPageUrl = extractLink(meta.substring(3, meta.length-1));
 					remove_meta = true;
 				}
 				else if(meta.match(/^\[Type:/i)){
@@ -327,6 +327,15 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 	appendItemToFeed(targetDiv, item.summary, item.description, shortDescLength, thumbnailUrl, fullPageUrl, type, item.start, item.end, tagline, attachments, sponsor);
 
 	return allowGrouping;
+}
+
+function extractLink(link){
+	if(link.match("^<a ")){
+		return $(link).attr("href")
+	}
+	else{
+		return link;
+	}
 }
 
 
