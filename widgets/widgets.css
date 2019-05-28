@@ -35,6 +35,14 @@
     line-height: 1.56;
     color: #BB6268 !important;
 }
+
+
+.feed-item-time > .today, .feed-item-time > .tomorrow{
+	color:#DF24FF;
+	font-weight: bolder;
+}	
+
+
 /* Hiding extra feed items on small computer screen scales */
 /*
 @media (max-width:1200px) and (min-width:970px) {
