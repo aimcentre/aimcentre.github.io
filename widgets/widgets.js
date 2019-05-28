@@ -331,7 +331,7 @@ function appendCalendarItemToFeed(targetDiv, item, shortDescLength, skipTypes){
 
 function extractLink(link){
 	if(link.match("^<a ")){
-		return $(link).attr("href")
+		return $(link).html()
 	}
 	else{
 		return link;
