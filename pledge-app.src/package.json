@@ -10,7 +10,7 @@
     "test:unit": "vitest",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "publish": "cp -r dist/* ../pledge/"
+    "deploy": "cp -r dist/* ../pledge/"
   },
   "dependencies": {
     "pinia": "^2.3.0",
