@@ -10,6 +10,7 @@ export default {
         },
         {
             title: "Electricity bill",
+            description: "One unit is one-month sponsorship.",
             unitPrice: 200,
             unitsRequired: 12,
             unitsReceived: 2,
@@ -27,7 +28,7 @@ export default {
         {
             title: "100 Watt equivalent, 6-pack LED lamps",
             unitsRequired: 3,
-            unitsReceived: 0,
+            unitsReceived: 2,
             unitLabelSingular: "pack",
             unitLabelPlural: "packs"
         }
