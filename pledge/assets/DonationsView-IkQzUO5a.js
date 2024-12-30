@@ -1,0 +1,1 @@
+import{P as o,f as n}from"./PledgeForm-DpULOIKD.js";import{d as a,c as t,a as r,b as s,u as i,F as f,o as m}from"./index-BN11lD3p.js";const c=a({__name:"DonationsView",setup(l){return(d,e)=>(m(),t(f,null,[e[0]||(e[0]=r("h1",null,"Donation Pledges",-1)),s(o,{"form-definition":i(n)},null,8,["form-definition"])],64))}});export{c as default};
