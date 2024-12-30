@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { watch } from 'vue';
 import type {PledgeFormDefinition} from '../models'
+//@ts-ignore
 import ProgressBar from './ProgressBar.vue';
+import { usePledgeSubmissionStore } from '../stores/pledgeSubmission';
 
 const props = defineProps<{
   formDefinition: PledgeFormDefinition
@@ -9,10 +12,10 @@ const props = defineProps<{
 </script>
 
 <template>
-    <h1>{{ props.formDefinition.title }}</h1>
-    <div v-if="props.formDefinition.description?.length>0" v-html="props.formDefinition.description" />
+    <h1>{{ props.formDefinition?.title }}</h1>
+    <div v-if="props.formDefinition && props.formDefinition.description?.length>0" v-html="props.formDefinition.description" />
 
-    <div v-for="(item, index) in props.formDefinition.items" :key="index">
+    <div v-for="(item, index) in props.formDefinition?.items" :key="index">
         <div v-if="!item.unitsRequired || item.unitsRequired == 0">
             <h2>{{ item.title }}</h2>
             <div v-if="item.description && item.description.length>0" v-html="item.description"></div>
@@ -35,6 +38,7 @@ const props = defineProps<{
                             class=" col-1" 
                             :id="'fieldHelp'+index" 
                             :aria-describedby="'fieldHelp'+index"
+                            v-model="props.formDefinition.items[index].unitsPledged"
                             value="0" /> 
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import type { PledgeFormDefinition } from "./models";
+import type { ListEntry, PledgeFormDefinition } from "./models";
 
 export default {
     title: "Kathina Donations",
@@ -32,6 +32,6 @@ export default {
             unitLabelSingular: "pack",
             unitLabelPlural: "packs"
         }
-    ]
+    ] as ListEntry[]
 
 } as PledgeFormDefinition;

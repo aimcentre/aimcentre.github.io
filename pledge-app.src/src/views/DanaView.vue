@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import {default as  formDefinition} from '../sampleData'
+//@ts-ignore
 import PledgeForm from '../components/PledgeForm.vue'
+import { usePledgeSubmissionStore } from '../stores/pledgeSubmission';
+
+const store = usePledgeSubmissionStore();
+store.loadDanaPledgeFrom().then();
+
 
 </script>
 
 <template>
-    <h1>Dana Pledges</h1>
-    <pledge-form :form-definition="formDefinition" />
-    
+    <pledge-form :form-definition="store.danaPledgeForm" />
+    {{ store.danaPledgeForm }}
 </template>

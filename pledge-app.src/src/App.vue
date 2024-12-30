@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { usePledgeSubmissionStore } from './stores/pledgeSubmission';
+
 </script>
 
 <template>
@@ -15,6 +17,7 @@ import { RouterLink, RouterView } from 'vue-router'
   </header>
 
   <RouterView />
+
 </template>
 
 <style scoped>

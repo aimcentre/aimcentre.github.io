@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import {default as  formDefinition} from '../sampleData'
+import { usePledgeSubmissionStore } from '../stores/pledgeSubmission';
+//@ts-ignore
 import PledgeForm from '../components/PledgeForm.vue'
+
+const store = usePledgeSubmissionStore();
+store.loadDonationsPledgeFrom().then();
 
 </script>
 
 <template>
-    <h1>Donation Pledges</h1>
-    <pledge-form :form-definition="formDefinition" />
-    
+    <pledge-form :form-definition="store.donationPledgeForm" />
+    {{ JSON.stringify(store.donationPledgeForm, null, 4) }}
 </template>

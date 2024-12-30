@@ -3,6 +3,7 @@ export interface ListEntry {
     description?: string;
     unitsRequired?: number;
     unitsReceived?: number;
+    unitsPledged?: number;
     unitPrice?: number;
     unitLabelSingular?: string;
     unitLabelPlural?: string;
@@ -14,3 +15,4 @@ export interface PledgeFormDefinition {
     description: string;
     items: ListEntry[];
 }
+
