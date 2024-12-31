@@ -1,8 +1,11 @@
 import type { PledgeFormDefinition } from '@/models'
 import { defineStore } from 'pinia'
+import { GoogleSpreadsheet } from 'google-spreadsheet';
+import {JWT} from 'google-auth-library';
+import creds from '../google-service-account-credentials.json'; 
+import { default as config } from '../appsettings';
 
 import {default as  formDefinition} from '../sampleData'
-import { default as config } from '../appsettings';
 
 export const usePledgeSubmissionStore = defineStore('pledgeSubmission', {
   state: () => {
@@ -16,6 +19,20 @@ export const usePledgeSubmissionStore = defineStore('pledgeSubmission', {
   },
   actions: {
     async loadForm (googleSheetId: string, tabName: string): Promise<PledgeFormDefinition> {
+      const SCOPES = [
+        'https://www.googleapis.com/auth/spreadsheets',
+        'https://www.googleapis.com/auth/drive.file',
+      ];
+      const jwt = new JWT({
+        email: creds.client_email,
+        // key: creds.private_key,
+        key: atob(creds.b64pkey),
+        scopes: SCOPES,
+      });
+
+      const doc = new GoogleSpreadsheet(config.spreadsheetId, jwt);
+      await doc.loadInfo();
+      console.log(doc.title);
       return formDefinition;
     },
 
