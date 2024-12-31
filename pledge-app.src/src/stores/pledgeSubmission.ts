@@ -19,20 +19,36 @@ export const usePledgeSubmissionStore = defineStore('pledgeSubmission', {
   },
   actions: {
     async loadForm (googleSheetId: string, tabName: string): Promise<PledgeFormDefinition> {
-      const SCOPES = [
-        'https://www.googleapis.com/auth/spreadsheets',
-        'https://www.googleapis.com/auth/drive.file',
-      ];
-      const jwt = new JWT({
-        email: creds.client_email,
-        // key: creds.private_key,
-        key: atob(creds.b64pkey),
-        scopes: SCOPES,
-      });
 
-      const doc = new GoogleSpreadsheet(config.spreadsheetId, jwt);
-      await doc.loadInfo();
-      console.log(doc.title);
+      const credApi = "https://script.google.com/macros/s/AKfycbwgVw-1Q1ugg6wLCbE-y0DbMWNm-P99LFrXDWVilsXf_mKOnwJBo9qLzUcxzpmEUE_Z/exec";
+      const response = await fetch(credApi, {
+        redirect: "follow",
+        method: 'POST',
+        body: JSON.stringify({user:"pledge-form-app@pledge-form-app.iam.gserviceaccount.com"}),
+        headers: {'Content-Type': 'text/plain; charset=UTF-8'} 
+      });
+      
+      let key = "";
+      if(response.ok) {
+        key = await response.text();
+        key = key.replace(/\\n/gi, '\n');
+
+        const SCOPES = [
+          'https://www.googleapis.com/auth/spreadsheets',
+          'https://www.googleapis.com/auth/drive.file',
+        ];
+
+        const jwt = new JWT({
+          email: creds.client_email,
+          key: key,
+          scopes: SCOPES,
+        });
+
+
+        const doc = new GoogleSpreadsheet(config.spreadsheetId, jwt);
+        await doc.loadInfo();
+        console.log(doc.title);
+      }
       return formDefinition;
     },
 
