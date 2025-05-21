@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>7-Image Smooth Infinite Slider with Pause</title>
+  <title>Smooth Continuous Looping Slider</title>
   <style>
     * {
       box-sizing: border-box;
     }
-
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      overflow-x: hidden;
       font-family: sans-serif;
+      overflow-x: hidden;
     }
 
     .slider-container {
@@ -23,8 +21,7 @@
 
     .slider-track {
       display: flex;
-      width: max-content;
-      scroll-behavior: smooth;
+      will-change: transform;
     }
 
     .slide {
@@ -44,58 +41,64 @@
 <div class="slider-container">
   <div class="slider-track" id="sliderTrack">
     <!-- Original 7 slides -->
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5423.JPEG?text=Slide+1" alt="Slide 1"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5424.JPEG?text=Slide+2" alt="Slide 2"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5427.JPEG?text=Slide+3" alt="Slide 3"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5429.JPEG?text=Slide+4" alt="Slide 4"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5430.JPEG?text=Slide+5" alt="Slide 5"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5431.JPEG?text=Slide+6" alt="Slide 6"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5432.JPEG?text=Slide+7" alt="Slide 7"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5423.JPEG" alt="Slide 1"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5424.JPEG" alt="Slide 2"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5427.JPEG" alt="Slide 3"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5429.JPEG" alt="Slide 4"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5430.JPEG" alt="Slide 5"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5431.JPEG" alt="Slide 6"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5432.JPEG" alt="Slide 7"></div>
 
-    <!-- Clone of 7 slides for seamless looping -->
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5423.JPEG?text=Slide+1" alt="Slide 1 Clone"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5424.JPEG?text=Slide+2" alt="Slide 2 Clone"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5427.JPEG?text=Slide+3" alt="Slide 3 Clone"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5429.JPEG?text=Slide+4" alt="Slide 4 Clone"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5430.JPEG?text=Slide+5" alt="Slide 5 Clone"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5431.JPEG?text=Slide+6" alt="Slide 6 Clone"></div>
-    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5432.JPEG?text=Slide+7" alt="Slide 7 Clone"></div>
+    <!-- Clone slides for seamless looping -->
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5423.JPEG" alt="Slide 1 Clone"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5424.JPEG" alt="Slide 2 Clone"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5427.JPEG" alt="Slide 3 Clone"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5429.JPEG" alt="Slide 4 Clone"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5430.JPEG" alt="Slide 5 Clone"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5431.JPEG" alt="Slide 6 Clone"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5432.JPEG" alt="Slide 7 Clone"></div>
   </div>
 </div>
 
 <script>
-  const slider = document.getElementById('sliderTrack');
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length / 2; // Original (non-clone) slide count
-  const slideWidth = () => window.innerWidth;
+  const track = document.getElementById("sliderTrack");
+  const slides = track.children;
+  const slideCount = slides.length;
+  const singleWidth = window.innerWidth;
 
-  let currentIndex = 0;
+  let offset = 0;
+  const speed = 2; // pixels per frame
+  const delayBetweenSlides = 3000; // 3s pause after each full slide
+  let pause = false;
 
-  function scrollToNext() {
-    currentIndex++;
-    slider.scrollTo({
-      left: currentIndex * slideWidth(),
-      behavior: 'smooth'
-    });
-
-    // Reset after reaching clone set
-    if (currentIndex >= totalSlides) {
-      setTimeout(() => {
-        slider.scrollTo({ left: 0, behavior: 'auto' });
-        currentIndex = 0;
-      }, 500); // Wait for smooth scroll to finish
+  function loop() {
+    if (!pause) {
+      offset += speed;
+      track.style.transform = `translateX(-${offset}px)`;
     }
+
+    if (offset % singleWidth === 0 && offset !== 0) {
+      pause = true;
+      setTimeout(() => {
+        pause = false;
+      }, delayBetweenSlides);
+    }
+
+    // Reset when reaching halfway (we duplicated the slides)
+    if (offset >= singleWidth * (slideCount / 2)) {
+      offset = 0;
+      track.style.transform = `translateX(0)`;
+    }
+
+    requestAnimationFrame(loop);
   }
 
-  // Scroll every 3.5 seconds (0.5s scroll + 3s pause)
-  setInterval(scrollToNext, 3500);
+  loop();
 
-  // Recalculate on window resize
-  window.addEventListener('resize', () => {
-    slider.scrollTo({
-      left: currentIndex * slideWidth(),
-      behavior: 'auto'
-    });
+  // Adjust on resize
+  window.addEventListener("resize", () => {
+    offset = 0;
+    track.style.transform = `translateX(0)`;
   });
 </script>
 
