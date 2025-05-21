@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Horizontal Image Slider</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.3s ease;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    .slider-track::-webkit-scrollbar {
+      display: none; /* hide scrollbar */
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .nav-button.left {
+      left: 10px;
+    }
+
+    .nav-button.right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider-container">
+  <button class="nav-button left" onclick="scrollSlider(-1)">&#10094;</button>
+  <div class="slider-track" id="sliderTrack">
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5423.JPEG?text=Slide+1" alt="Slide 1"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5424.JPEG?text=Slide+2" alt="Slide 2"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5427.JPEG?text=Slide+3" alt="Slide 3"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5429.JPEG?text=Slide+3" alt="Slide 3"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5430.JPEG?text=Slide+3" alt="Slide 3"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5431.JPEG?text=Slide+3" alt="Slide 3"></div>
+    <div class="slide"><img src="https://aimcentre.github.io/windows-replacement/pictures/IMG_5432.JPEG?text=Slide+3" alt="Slide 3"></div>
+  </div>
+  <button class="nav-button right" onclick="scrollSlider(1)">&#10095;</button>
+</div>
+
+<script>
+  function scrollSlider(direction) {
+    const slider = document.getElementById('sliderTrack');
+    const slideWidth = slider.clientWidth;
+    slider.scrollBy({
+      left: direction * slideWidth,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+</body>
+</html>
